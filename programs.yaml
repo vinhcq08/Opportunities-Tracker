@@ -469,6 +469,7 @@ programs:
     featured: true
     name: Discover Citadel (Singapore)
     url: https://www.citadelsecurities.com/careers/programs-and-events/discover-citadel-securities/singapore/
+    manual_check: true   # the site blocks automated requests (HTTP 403)
     summary: In-person insight event for first- and second-year students, around end of February.
     region: asia
     country: Singapore
@@ -485,6 +486,7 @@ programs:
     featured: true
     name: Discover Citadel (Hong Kong)
     url: https://www.citadelsecurities.com/careers/programs-and-events/discover-citadel-securities/hong-kong/
+    manual_check: true   # the site blocks automated requests (HTTP 403)
     summary: In-person insight event for first- and second-year students, around end of March.
     region: asia
     country: Hong Kong
@@ -516,6 +518,7 @@ programs:
     org_type: big_tech
     name: Explore HRT (Singapore)
     url: https://www.hudsonrivertrading.com/careers/
+    manual_check: true   # the site blocks automated requests (HTTP 403)
     summary: Three-day program in Singapore for undergraduates in maths, CS, statistics or physics.
     region: asia
     country: Singapore
@@ -656,6 +659,7 @@ programs:
     featured: true
     name: James Dyson Award
     url: https://www.jamesdysonaward.org/
+    manual_check: true   # the site blocks automated requests (HTTP 403)
     summary: International design-engineering award for students and recent graduates.
     region: global
     format: online
