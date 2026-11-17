@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-17T17:23:48+00:00",
+ "generated_at": "2026-11-17T17:44:54+00:00",
  "profile": {
   "country": "VN",
   "year": 2,
   "timezone": "Asia/Ho_Chi_Minh"
  },
  "sources": {
-  "registry": "25 items",
+  "registry": "45 items",
   "devpost": "40 items",
   "mlh": "0 items",
   "simplify": "2 items"
@@ -57,7 +57,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:06+00:00"
+   "last_checked": "2026-11-17T17:45:15+00:00"
   },
   {
    "id": "mit-100k",
@@ -107,7 +107,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:06+00:00"
+   "last_checked": "2026-11-17T17:45:15+00:00"
   },
   {
    "id": "harvard-pic",
@@ -154,7 +154,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:07+00:00"
+   "last_checked": "2026-11-17T17:45:15+00:00"
   },
   {
    "id": "ibm-call-for-code",
@@ -205,7 +205,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:05+00:00"
+   "last_checked": "2026-11-17T17:45:14+00:00"
   },
   {
    "id": "imagine-cup",
@@ -252,7 +252,55 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:04+00:00"
+   "last_checked": "2026-11-17T17:45:12+00:00"
+  },
+  {
+   "id": "james-dyson-award",
+   "source": "registry",
+   "kind": "challenge",
+   "org": "James Dyson Foundation",
+   "org_type": "nonprofit",
+   "featured": true,
+   "name": "James Dyson Award",
+   "url": "https://www.jamesdysonaward.org/",
+   "summary": "International design-engineering award for students and recent graduates.",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "online",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "other_restriction",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "Up to GBP 30,000",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Runs in about 28 countries and regions; Vietnam was not on recent lists. Check the participating countries each year.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Runs in about 28 countries and regions; Vietnam was not on recent lists. Check the participating countries each year."
+   ],
+   "page_hash": null,
+   "fetch_error": "HTTP 403",
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:30+00:00"
   },
   {
    "id": "kaggle-competitions",
@@ -307,7 +355,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:06+00:00"
+   "last_checked": "2026-11-17T17:45:15+00:00"
   },
   {
    "id": "mit-solve",
@@ -354,7 +402,62 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:03+00:00"
+   "last_checked": "2026-11-17T17:45:12+00:00"
+  },
+  {
+   "id": "openideo-challenges",
+   "source": "registry",
+   "kind": "challenge",
+   "org": "OpenIDEO",
+   "org_type": "nonprofit",
+   "featured": false,
+   "name": "OpenIDEO open innovation challenges",
+   "url": "https://www.openideo.com/",
+   "summary": "Global, online design challenges on health, climate and social impact, run with partner foundations.",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "online",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Each challenge has its own rules and sometimes country limits.",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": "8e35393085eb697c",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:31+00:00"
   },
   {
    "id": "google-solution-challenge",
@@ -400,7 +503,156 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:05+00:00"
+   "last_checked": "2026-11-17T17:45:13+00:00"
+  },
+  {
+   "id": "stanford-longevity-design-challenge",
+   "source": "registry",
+   "kind": "challenge",
+   "org": "Stanford Center on Longevity",
+   "org_type": "university",
+   "featured": true,
+   "name": "Stanford Longevity Design Challenge",
+   "url": "https://longevity.stanford.edu/design-challenge/",
+   "summary": "2026–27 theme: Human-Centered Robotics for Longevity. Teams of 1–5 from any accredited university worldwide; finals at Stanford with travel support.",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "hybrid",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "USD 10,000 / 5,000 / 2,000 + USD 1,000 per finalist",
+   "team_size": "1–5",
+   "themes": [],
+   "status": "unknown",
+   "window": [
+    9,
+    10,
+    11
+   ],
+   "deadline": "2026-12-01",
+   "verified": false,
+   "manual_check": false,
+   "notes": "Deadline taken from third-party listings (1–2 Dec 2026, Pacific time); confirm on the official page. Phase I needs only an idea, not a prototype.",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": "650ecd8c0e61f3ea",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:30+00:00"
+  },
+  {
+   "id": "undergraduate-awards",
+   "source": "registry",
+   "kind": "challenge",
+   "org": "The Global Undergraduate Awards",
+   "org_type": "nonprofit",
+   "featured": true,
+   "name": "The Global Undergraduate Awards",
+   "url": "https://undergraduateawards.com/",
+   "summary": "Submit your best coursework or project in one of 25+ categories; global winners join a summit.",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "online",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": "88049caf334f8e54",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:30+00:00"
+  },
+  {
+   "id": "xprize",
+   "source": "registry",
+   "kind": "challenge",
+   "org": "XPRIZE Foundation",
+   "org_type": "nonprofit",
+   "featured": true,
+   "name": "XPRIZE competitions",
+   "url": "https://www.xprize.org/",
+   "summary": "Large global prize competitions; some have student or youth tracks.",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "hybrid",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Team requirements and country rules differ per prize.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": "41c4e1aac3c0f814",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:32+00:00"
   },
   {
    "id": "devpost-31808",
@@ -437,7 +689,7 @@
    "deadline": "2026-11-30",
    "verified": false,
    "manual_check": false,
-   "notes": "2956 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "2959 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -575,7 +827,7 @@
    "deadline": "2026-12-18",
    "verified": false,
    "manual_check": false,
-   "notes": "460 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "462 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -759,7 +1011,7 @@
    "deadline": "2026-12-11",
    "verified": false,
    "manual_check": false,
-   "notes": "400 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "401 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1035,7 +1287,7 @@
    "deadline": "2026-12-22",
    "verified": false,
    "manual_check": false,
-   "notes": "3998 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "4005 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1173,7 +1425,7 @@
    "deadline": "2026-12-07",
    "verified": false,
    "manual_check": false,
-   "notes": "980 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "984 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1219,7 +1471,7 @@
    "deadline": "2026-12-26",
    "verified": false,
    "manual_check": false,
-   "notes": "480 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "481 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1264,7 +1516,7 @@
    "deadline": "2026-12-10",
    "verified": false,
    "manual_check": false,
-   "notes": "244 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "245 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1318,7 +1570,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:02+00:00"
+   "last_checked": "2026-11-17T17:45:10+00:00"
   },
   {
    "id": "devpost-31737",
@@ -1548,7 +1800,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:23:56+00:00"
+   "last_checked": "2026-11-17T17:45:04+00:00"
   },
   {
    "id": "devpost-31667",
@@ -1585,7 +1837,7 @@
    "deadline": "2026-12-04",
    "verified": false,
    "manual_check": false,
-   "notes": "15609 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "15614 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1722,7 +1974,7 @@
    "deadline": "2026-12-07",
    "verified": false,
    "manual_check": false,
-   "notes": "295 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "296 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1768,7 +2020,7 @@
    "deadline": "2026-11-18",
    "verified": false,
    "manual_check": false,
-   "notes": "6701 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "6709 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1905,7 +2157,7 @@
    "deadline": "2026-12-15",
    "verified": false,
    "manual_check": false,
-   "notes": "1862 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "1865 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1950,7 +2202,7 @@
    "deadline": "2026-12-08",
    "verified": false,
    "manual_check": false,
-   "notes": "1577 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "1582 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2180,7 +2432,7 @@
    "deadline": "2026-11-21",
    "verified": false,
    "manual_check": false,
-   "notes": "599 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "600 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2367,11 +2619,411 @@
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
-   "page_hash": "f38e1d739c31b2cf",
+   "page_hash": "d6f833dfb587b6f0",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
-   "last_changed": "2026-11-17T17:23:48+00:00",
-   "last_checked": "2026-11-17T17:24:03+00:00"
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:11+00:00"
+  },
+  {
+   "id": "citadel-discover-hong-kong",
+   "source": "registry",
+   "kind": "insight",
+   "org": "Citadel | Citadel Securities",
+   "org_type": "big_tech",
+   "featured": true,
+   "name": "Discover Citadel (Hong Kong)",
+   "url": "https://www.citadelsecurities.com/careers/programs-and-events/discover-citadel-securities/hong-kong/",
+   "summary": "In-person insight event for first- and second-year students, around end of March.",
+   "region": "asia",
+   "country": "Hong Kong",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "local_only",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    1,
+    2
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Requires attending a university in Hong Kong or mainland China (deadline 14 Feb 2027).",
+   "eligible_for_me": "not_eligible",
+   "elig_reasons": [
+    "Requires attending a university in Hong Kong or mainland China (deadline 14 Feb 2027)."
+   ],
+   "page_hash": null,
+   "fetch_error": "HTTP 403",
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:24+00:00"
+  },
+  {
+   "id": "citadel-discover-singapore",
+   "source": "registry",
+   "kind": "insight",
+   "org": "Citadel | Citadel Securities",
+   "org_type": "big_tech",
+   "featured": true,
+   "name": "Discover Citadel (Singapore)",
+   "url": "https://www.citadelsecurities.com/careers/programs-and-events/discover-citadel-securities/singapore/",
+   "summary": "In-person insight event for first- and second-year students, around end of February.",
+   "region": "asia",
+   "country": "Singapore",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "local_only",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    12,
+    1,
+    2
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Requires residing in Singapore (2027 cohort, deadline around early Feb 2027).",
+   "eligible_for_me": "not_eligible",
+   "elig_reasons": [
+    "Requires residing in Singapore (2027 cohort, deadline around early Feb 2027)."
+   ],
+   "page_hash": null,
+   "fetch_error": "HTTP 403",
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:23+00:00"
+  },
+  {
+   "id": "hrt-explore-singapore",
+   "source": "registry",
+   "kind": "insight",
+   "org": "Hudson River Trading",
+   "org_type": "big_tech",
+   "featured": false,
+   "name": "Explore HRT (Singapore)",
+   "url": "https://www.hudsonrivertrading.com/careers/",
+   "summary": "Three-day program in Singapore for undergraduates in maths, CS, statistics or physics.",
+   "region": "asia",
+   "country": "Singapore",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    2,
+    3
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Search \"Explore HRT Singapore\" on the careers page. Eligibility by graduation year; university rules not published.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": null,
+   "fetch_error": "HTTP 403",
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:25+00:00"
+  },
+  {
+   "id": "jane-street-fttp-hkg",
+   "source": "registry",
+   "kind": "insight",
+   "org": "Jane Street",
+   "org_type": "big_tech",
+   "featured": true,
+   "name": "First-year Trading and Technology Program (Hong Kong)",
+   "url": "https://www.janestreet.com/fttp-hkg-email",
+   "summary": "Program in Hong Kong for first-year undergraduates who started university in Aug/Sep 2026.",
+   "region": "asia",
+   "country": "Hong Kong",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [
+    11,
+    12,
+    1
+   ],
+   "deadline": "2027-01-31",
+   "verified": false,
+   "manual_check": false,
+   "notes": "Deadline 31 Jan 2027, 11:59pm HKT (from Jane Street's invitation). Check which universities are eligible.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Listed for years 1, you are in year 2"
+   ],
+   "page_hash": "8bb177c3472980ca",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:23+00:00"
+  },
+  {
+   "id": "optiver-futurefocus-singapore",
+   "source": "registry",
+   "kind": "insight",
+   "org": "Optiver",
+   "org_type": "big_tech",
+   "featured": true,
+   "name": "FutureFocus Singapore (Trading and Research)",
+   "url": "https://optiver.com/recruitment-events/singapore-futurefocus/",
+   "summary": "Five-day, all-expenses-paid trading program that leads to internship offers; travel covered for candidates outside Singapore.",
+   "region": "asia",
+   "country": "Singapore",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    2
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "fully_funded",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "open",
+   "window": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "For pre-penultimate students (2 years before final year). The Technology track requires Singapore citizenship or PR; the Trading track did not say so. Check the current listing.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": "ebc852145922ddd6",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:24+00:00"
+  },
+  {
+   "id": "sig-discovery-hong-kong",
+   "source": "registry",
+   "kind": "insight",
+   "org": "SIG",
+   "org_type": "big_tech",
+   "featured": false,
+   "name": "Hong Kong Trading Discovery Program",
+   "url": "https://careers.sig.com/",
+   "summary": "Trading discovery program in Hong Kong for pre-penultimate-year students.",
+   "region": "asia",
+   "country": "Hong Kong",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    2
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    1,
+    2,
+    3
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Last seen for April 2026; check whether a 2027 round is announced.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": "5efdd1fbcb579f0f",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:25+00:00"
+  },
+  {
+   "id": "jane-street-insight-hkg",
+   "source": "registry",
+   "kind": "insight",
+   "org": "Jane Street",
+   "org_type": "big_tech",
+   "featured": true,
+   "name": "Jane Street INSIGHT (Hong Kong)",
+   "url": "https://janestreet.com/apply-insight-hkg/",
+   "summary": "One-week January program in Hong Kong for students who identify as women, transgender and/or gender-expansive.",
+   "region": "asia",
+   "country": "Hong Kong",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [
+    9,
+    10,
+    11
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "The January 2027 cohort closed on 8 Nov 2026; the next round usually opens around September. Identity-based eligibility; check the university rules.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": "44e0491265f0c5a2",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:23+00:00"
+  },
+  {
+   "id": "jane-street-portal-sgp",
+   "source": "registry",
+   "kind": "insight",
+   "org": "Jane Street",
+   "org_type": "big_tech",
+   "featured": false,
+   "name": "Jane Street Portal (Singapore)",
+   "url": "https://www.janestreet.com/apply-portal-sgp/",
+   "summary": "Fully funded short program in Singapore that fast-tracks internship interviews.",
+   "region": "asia",
+   "country": "Singapore",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "local_only",
+   "funding": "fully_funded",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    4,
+    5
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Only for students currently enrolled at universities in Singapore.",
+   "eligible_for_me": "not_eligible",
+   "elig_reasons": [
+    "Only for students currently enrolled at universities in Singapore."
+   ],
+   "page_hash": "6d6a7622ad51819b",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:23+00:00"
+  },
+  {
+   "id": "jane-street-see-hkg",
+   "source": "registry",
+   "kind": "insight",
+   "org": "Jane Street",
+   "org_type": "big_tech",
+   "featured": true,
+   "name": "Jane Street SEE (Hong Kong)",
+   "url": "https://janestreet.com/apply-see-hkg/",
+   "summary": "Short, fully funded visit to Jane Street Hong Kong (travel, meals and housing covered) for students interested in trading and technology.",
+   "region": "asia",
+   "country": "Hong Kong",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "fully_funded",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    6,
+    7,
+    9,
+    10
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Eligibility (graduation years, which universities) changes every cohort; read the current invitation. Jane Street flies participants in from around the region.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": "d60d62532ea1f352",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:22+00:00"
   },
   {
    "id": "fpt-software-internships",
@@ -2426,7 +3078,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:13+00:00"
+   "last_checked": "2026-11-17T17:45:22+00:00"
   },
   {
    "id": "grab-internships",
@@ -2474,7 +3126,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:09+00:00"
+   "last_checked": "2026-11-17T17:45:18+00:00"
   },
   {
    "id": "simplify-57b18ebb-8937-4a85-8fa0-0e890cbe0187",
@@ -2566,7 +3218,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:09+00:00"
+   "last_checked": "2026-11-17T17:45:19+00:00"
   },
   {
    "id": "simplify-2f956c52-edf6-4b68-99c9-7db4d96de3c0",
@@ -2657,7 +3309,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:10+00:00"
+   "last_checked": "2026-11-17T17:45:19+00:00"
   },
   {
    "id": "amgen-scholars",
@@ -2703,7 +3355,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:23:55+00:00"
+   "last_checked": "2026-11-17T17:45:03+00:00"
   },
   {
    "id": "mitacs-globalink",
@@ -2750,7 +3402,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:23:48+00:00"
+   "last_checked": "2026-11-17T17:44:55+00:00"
   },
   {
    "id": "oist-internship",
@@ -2805,7 +3457,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:23:50+00:00"
+   "last_checked": "2026-11-17T17:44:56+00:00"
   },
   {
    "id": "nsf-reu",
@@ -2852,7 +3504,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:08+00:00"
+   "last_checked": "2026-11-17T17:45:18+00:00"
   },
   {
    "id": "eth-ssrf",
@@ -2898,7 +3550,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:23:48+00:00"
+   "last_checked": "2026-11-17T17:44:55+00:00"
   },
   {
    "id": "cern-summer-student",
@@ -2943,7 +3595,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:23:53+00:00"
+   "last_checked": "2026-11-17T17:44:59+00:00"
   },
   {
    "id": "epfl-summer",
@@ -2989,7 +3641,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:23:49+00:00"
+   "last_checked": "2026-11-17T17:44:56+00:00"
   },
   {
    "id": "utokyo-utrip",
@@ -3035,7 +3687,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:23:54+00:00"
+   "last_checked": "2026-11-17T17:45:01+00:00"
   },
   {
    "id": "kaust-vsrp",
@@ -3090,7 +3742,247 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:23:50+00:00"
+   "last_checked": "2026-11-17T17:44:57+00:00"
+  },
+  {
+   "id": "berkeley-summer-sessions",
+   "source": "registry",
+   "kind": "summer_school",
+   "org": "UC Berkeley",
+   "org_type": "university",
+   "featured": true,
+   "name": "Berkeley Summer Sessions",
+   "url": "https://summer.berkeley.edu/",
+   "summary": "Regular Berkeley courses over the summer for visiting students from any university.",
+   "region": "north_america",
+   "country": "USA",
+   "city": "Berkeley",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "any",
+   "funding": "fee_required",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": "a533a2f0e6978c0a",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:26+00:00"
+  },
+  {
+   "id": "cambridge-isp",
+   "source": "registry",
+   "kind": "summer_school",
+   "org": "University of Cambridge",
+   "org_type": "university",
+   "featured": true,
+   "name": "Cambridge International Summer Programmes",
+   "url": "https://www.ice.cam.ac.uk/intsummer",
+   "summary": "Residential summer programmes at Cambridge for international university students.",
+   "region": "europe",
+   "country": "UK",
+   "city": "Cambridge",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "any",
+   "funding": "fee_required",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": "2dfa40cc191b0398",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:28+00:00"
+  },
+  {
+   "id": "harvard-summer-school",
+   "source": "registry",
+   "kind": "summer_school",
+   "org": "Harvard University",
+   "org_type": "university",
+   "featured": true,
+   "name": "Harvard Summer School",
+   "url": "https://summer.harvard.edu/",
+   "summary": "Summer courses at Harvard or Harvard-led study abroad programs, open to visiting college students.",
+   "region": "north_america",
+   "country": "USA",
+   "city": "Cambridge",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "any",
+   "funding": "fee_required",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Study-abroad programs for 2027 open 1 Dec 2026 and close 28 Jan 2027.",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": "072bef3e457a4060",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:26+00:00"
+  },
+  {
+   "id": "lse-summer-school",
+   "source": "registry",
+   "kind": "summer_school",
+   "org": "LSE",
+   "org_type": "university",
+   "featured": true,
+   "name": "LSE Summer School",
+   "url": "https://www.lse.ac.uk/study-at-lse/summer-schools/summer-school",
+   "summary": "Three-week courses in economics, finance, data and policy in London, with merit scholarships.",
+   "region": "europe",
+   "country": "UK",
+   "city": "London",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "any",
+   "funding": "fee_required",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "upcoming",
+   "window": [
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Academic Director's Scholarships cover a full course for a few students each year.",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": "5bf3b3f99415895b",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:27+00:00"
+  },
+  {
+   "id": "stanford-summer-session",
+   "source": "registry",
+   "kind": "summer_school",
+   "org": "Stanford University",
+   "org_type": "university",
+   "featured": true,
+   "name": "Stanford Summer Session (incl. International Honors Program)",
+   "url": "https://summer.stanford.edu/",
+   "summary": "Take Stanford courses for credit over the summer as a visiting undergraduate. The International Honors Program is aimed at international students.",
+   "region": "north_america",
+   "country": "USA",
+   "city": "Stanford",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "global",
+   "enrollment_req": "any",
+   "funding": "fee_required",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "open",
+   "window": [
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Age 18+, English proficiency and a US study visa needed. Tuition is high; ask about the merit grant interest list. Apply early if you need an I-20.",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": "7ecc3bdadc8fdbad",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:26+00:00"
   },
   {
    "id": "microsoft-explore",
@@ -3134,10 +4026,243 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:24:07+00:00"
+   "last_checked": "2026-11-17T17:45:15+00:00"
+  },
+  {
+   "id": "google-step",
+   "source": "registry",
+   "kind": "underclassmen",
+   "org": "Google",
+   "org_type": "big_tech",
+   "featured": true,
+   "name": "Google STEP internship",
+   "url": "https://buildyourfuture.withgoogle.com/programs/step",
+   "summary": "Internship for first- and second-year CS students.",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2
+   ],
+   "nationality_ok": "other_restriction",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [
+    9,
+    10,
+    11
+   ],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "No STEP posting found for summer 2027 as of Oct 2026, and the old page redirects; the program may have ended. Past versions were country-specific (e.g. STEP Japan); none ran in Vietnam.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "No STEP posting found for summer 2027 as of Oct 2026, and the old page redirects; the program may have ended. Past versions were country-specific (e.g. STEP Japan); none ran in Vietnam."
+   ],
+   "page_hash": "329399d41ad246e0",
+   "fetch_error": null,
+   "first_seen": "2026-11-17T17:44:54+00:00",
+   "last_changed": "2026-11-17T17:44:54+00:00",
+   "last_checked": "2026-11-17T17:45:26+00:00"
   }
  ],
  "changes": [
+  {
+   "type": "page_updated",
+   "id": "treehacks",
+   "name": "TreeHacks",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "jane-street-see-hkg",
+   "name": "Jane Street SEE (Hong Kong)",
+   "kind": "insight",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "jane-street-fttp-hkg",
+   "name": "First-year Trading and Technology Program (Hong Kong)",
+   "kind": "insight",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "jane-street-insight-hkg",
+   "name": "Jane Street INSIGHT (Hong Kong)",
+   "kind": "insight",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "jane-street-portal-sgp",
+   "name": "Jane Street Portal (Singapore)",
+   "kind": "insight",
+   "eligible_for_me": "not_eligible",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "citadel-discover-singapore",
+   "name": "Discover Citadel (Singapore)",
+   "kind": "insight",
+   "eligible_for_me": "not_eligible",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "citadel-discover-hong-kong",
+   "name": "Discover Citadel (Hong Kong)",
+   "kind": "insight",
+   "eligible_for_me": "not_eligible",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "optiver-futurefocus-singapore",
+   "name": "FutureFocus Singapore (Trading and Research)",
+   "kind": "insight",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "hrt-explore-singapore",
+   "name": "Explore HRT (Singapore)",
+   "kind": "insight",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "sig-discovery-hong-kong",
+   "name": "Hong Kong Trading Discovery Program",
+   "kind": "insight",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "google-step",
+   "name": "Google STEP internship",
+   "kind": "underclassmen",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "stanford-summer-session",
+   "name": "Stanford Summer Session (incl. International Honors Program)",
+   "kind": "summer_school",
+   "eligible_for_me": "likely",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "harvard-summer-school",
+   "name": "Harvard Summer School",
+   "kind": "summer_school",
+   "eligible_for_me": "likely",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "berkeley-summer-sessions",
+   "name": "Berkeley Summer Sessions",
+   "kind": "summer_school",
+   "eligible_for_me": "likely",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "lse-summer-school",
+   "name": "LSE Summer School",
+   "kind": "summer_school",
+   "eligible_for_me": "likely",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "cambridge-isp",
+   "name": "Cambridge International Summer Programmes",
+   "kind": "summer_school",
+   "eligible_for_me": "likely",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "stanford-longevity-design-challenge",
+   "name": "Stanford Longevity Design Challenge",
+   "kind": "challenge",
+   "eligible_for_me": "likely",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "james-dyson-award",
+   "name": "James Dyson Award",
+   "kind": "challenge",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "undergraduate-awards",
+   "name": "The Global Undergraduate Awards",
+   "kind": "challenge",
+   "eligible_for_me": "likely",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "openideo-challenges",
+   "name": "OpenIDEO open innovation challenges",
+   "kind": "challenge",
+   "eligible_for_me": "likely",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
+  {
+   "type": "new",
+   "id": "xprize",
+   "name": "XPRIZE competitions",
+   "kind": "challenge",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:44:54+00:00"
+  },
   {
    "type": "page_updated",
    "id": "treehacks",
