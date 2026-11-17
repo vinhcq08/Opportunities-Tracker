@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T17:44:54+00:00",
+ "generated_at": "2026-11-17T17:46:38+00:00",
  "profile": {
   "country": "VN",
   "year": 2,
@@ -57,7 +57,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:15+00:00"
+   "last_checked": "2026-11-17T17:46:54+00:00"
   },
   {
    "id": "mit-100k",
@@ -107,7 +107,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:15+00:00"
+   "last_checked": "2026-11-17T17:46:54+00:00"
   },
   {
    "id": "harvard-pic",
@@ -154,7 +154,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:15+00:00"
+   "last_checked": "2026-11-17T17:46:54+00:00"
   },
   {
    "id": "ibm-call-for-code",
@@ -205,7 +205,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:14+00:00"
+   "last_checked": "2026-11-17T17:46:53+00:00"
   },
   {
    "id": "imagine-cup",
@@ -252,7 +252,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:12+00:00"
+   "last_checked": "2026-11-17T17:46:52+00:00"
   },
   {
    "id": "james-dyson-award",
@@ -290,17 +290,17 @@
    ],
    "deadline": null,
    "verified": false,
-   "manual_check": false,
+   "manual_check": true,
    "notes": "Runs in about 28 countries and regions; Vietnam was not on recent lists. Check the participating countries each year.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Runs in about 28 countries and regions; Vietnam was not on recent lists. Check the participating countries each year."
    ],
    "page_hash": null,
-   "fetch_error": "HTTP 403",
+   "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:30+00:00"
+   "last_checked": "2026-11-17T17:47:05+00:00"
   },
   {
    "id": "kaggle-competitions",
@@ -355,7 +355,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:15+00:00"
+   "last_checked": "2026-11-17T17:46:53+00:00"
   },
   {
    "id": "mit-solve",
@@ -402,7 +402,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:12+00:00"
+   "last_checked": "2026-11-17T17:46:52+00:00"
   },
   {
    "id": "openideo-challenges",
@@ -457,7 +457,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:31+00:00"
+   "last_checked": "2026-11-17T17:47:07+00:00"
   },
   {
    "id": "google-solution-challenge",
@@ -503,7 +503,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:13+00:00"
+   "last_checked": "2026-11-17T17:46:53+00:00"
   },
   {
    "id": "stanford-longevity-design-challenge",
@@ -549,7 +549,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:30+00:00"
+   "last_checked": "2026-11-17T17:47:05+00:00"
   },
   {
    "id": "undergraduate-awards",
@@ -597,7 +597,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:30+00:00"
+   "last_checked": "2026-11-17T17:47:05+00:00"
   },
   {
    "id": "xprize",
@@ -652,7 +652,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:32+00:00"
+   "last_checked": "2026-11-17T17:47:07+00:00"
   },
   {
    "id": "devpost-31808",
@@ -689,7 +689,7 @@
    "deadline": "2026-11-30",
    "verified": false,
    "manual_check": false,
-   "notes": "2959 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "2960 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1570,7 +1570,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:10+00:00"
+   "last_checked": "2026-11-17T17:46:51+00:00"
   },
   {
    "id": "devpost-31737",
@@ -1800,7 +1800,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:04+00:00"
+   "last_checked": "2026-11-17T17:46:45+00:00"
   },
   {
    "id": "devpost-31667",
@@ -2020,7 +2020,7 @@
    "deadline": "2026-11-18",
    "verified": false,
    "manual_check": false,
-   "notes": "6709 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "6710 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2619,11 +2619,11 @@
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
-   "page_hash": "d6f833dfb587b6f0",
+   "page_hash": "32e4d65be9e97397",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
-   "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:11+00:00"
+   "last_changed": "2026-11-17T17:46:38+00:00",
+   "last_checked": "2026-11-17T17:46:51+00:00"
   },
   {
    "id": "citadel-discover-hong-kong",
@@ -2656,17 +2656,17 @@
    ],
    "deadline": null,
    "verified": false,
-   "manual_check": false,
+   "manual_check": true,
    "notes": "Requires attending a university in Hong Kong or mainland China (deadline 14 Feb 2027).",
    "eligible_for_me": "not_eligible",
    "elig_reasons": [
     "Requires attending a university in Hong Kong or mainland China (deadline 14 Feb 2027)."
    ],
    "page_hash": null,
-   "fetch_error": "HTTP 403",
+   "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:24+00:00"
+   "last_checked": "2026-11-17T17:47:02+00:00"
   },
   {
    "id": "citadel-discover-singapore",
@@ -2700,17 +2700,17 @@
    ],
    "deadline": null,
    "verified": false,
-   "manual_check": false,
+   "manual_check": true,
    "notes": "Requires residing in Singapore (2027 cohort, deadline around early Feb 2027).",
    "eligible_for_me": "not_eligible",
    "elig_reasons": [
     "Requires residing in Singapore (2027 cohort, deadline around early Feb 2027)."
    ],
    "page_hash": null,
-   "fetch_error": "HTTP 403",
+   "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:23+00:00"
+   "last_checked": "2026-11-17T17:47:02+00:00"
   },
   {
    "id": "hrt-explore-singapore",
@@ -2745,17 +2745,17 @@
    ],
    "deadline": null,
    "verified": false,
-   "manual_check": false,
+   "manual_check": true,
    "notes": "Search \"Explore HRT Singapore\" on the careers page. Eligibility by graduation year; university rules not published.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
-   "fetch_error": "HTTP 403",
+   "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:25+00:00"
+   "last_checked": "2026-11-17T17:47:02+00:00"
   },
   {
    "id": "jane-street-fttp-hkg",
@@ -2798,7 +2798,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:23+00:00"
+   "last_checked": "2026-11-17T17:47:02+00:00"
   },
   {
    "id": "optiver-futurefocus-singapore",
@@ -2842,7 +2842,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:24+00:00"
+   "last_checked": "2026-11-17T17:47:02+00:00"
   },
   {
    "id": "sig-discovery-hong-kong",
@@ -2885,7 +2885,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:25+00:00"
+   "last_checked": "2026-11-17T17:47:02+00:00"
   },
   {
    "id": "jane-street-insight-hkg",
@@ -2931,7 +2931,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:23+00:00"
+   "last_checked": "2026-11-17T17:47:02+00:00"
   },
   {
    "id": "jane-street-portal-sgp",
@@ -2976,7 +2976,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:23+00:00"
+   "last_checked": "2026-11-17T17:47:02+00:00"
   },
   {
    "id": "jane-street-see-hkg",
@@ -3023,7 +3023,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:22+00:00"
+   "last_checked": "2026-11-17T17:47:01+00:00"
   },
   {
    "id": "fpt-software-internships",
@@ -3078,7 +3078,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:22+00:00"
+   "last_checked": "2026-11-17T17:47:01+00:00"
   },
   {
    "id": "grab-internships",
@@ -3126,7 +3126,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:18+00:00"
+   "last_checked": "2026-11-17T17:46:56+00:00"
   },
   {
    "id": "simplify-57b18ebb-8937-4a85-8fa0-0e890cbe0187",
@@ -3218,7 +3218,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:19+00:00"
+   "last_checked": "2026-11-17T17:46:57+00:00"
   },
   {
    "id": "simplify-2f956c52-edf6-4b68-99c9-7db4d96de3c0",
@@ -3309,7 +3309,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:19+00:00"
+   "last_checked": "2026-11-17T17:46:58+00:00"
   },
   {
    "id": "amgen-scholars",
@@ -3355,7 +3355,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:03+00:00"
+   "last_checked": "2026-11-17T17:46:44+00:00"
   },
   {
    "id": "mitacs-globalink",
@@ -3402,7 +3402,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:44:55+00:00"
+   "last_checked": "2026-11-17T17:46:38+00:00"
   },
   {
    "id": "oist-internship",
@@ -3457,7 +3457,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:44:56+00:00"
+   "last_checked": "2026-11-17T17:46:39+00:00"
   },
   {
    "id": "nsf-reu",
@@ -3504,7 +3504,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:18+00:00"
+   "last_checked": "2026-11-17T17:46:56+00:00"
   },
   {
    "id": "eth-ssrf",
@@ -3550,7 +3550,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:44:55+00:00"
+   "last_checked": "2026-11-17T17:46:38+00:00"
   },
   {
    "id": "cern-summer-student",
@@ -3595,7 +3595,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:44:59+00:00"
+   "last_checked": "2026-11-17T17:46:41+00:00"
   },
   {
    "id": "epfl-summer",
@@ -3641,7 +3641,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:44:56+00:00"
+   "last_checked": "2026-11-17T17:46:38+00:00"
   },
   {
    "id": "utokyo-utrip",
@@ -3687,7 +3687,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:01+00:00"
+   "last_checked": "2026-11-17T17:46:42+00:00"
   },
   {
    "id": "kaust-vsrp",
@@ -3742,7 +3742,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:44:57+00:00"
+   "last_checked": "2026-11-17T17:46:39+00:00"
   },
   {
    "id": "berkeley-summer-sessions",
@@ -3789,7 +3789,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:26+00:00"
+   "last_checked": "2026-11-17T17:47:03+00:00"
   },
   {
    "id": "cambridge-isp",
@@ -3838,7 +3838,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:28+00:00"
+   "last_checked": "2026-11-17T17:47:04+00:00"
   },
   {
    "id": "harvard-summer-school",
@@ -3886,7 +3886,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:26+00:00"
+   "last_checked": "2026-11-17T17:47:03+00:00"
   },
   {
    "id": "lse-summer-school",
@@ -3934,7 +3934,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:27+00:00"
+   "last_checked": "2026-11-17T17:47:03+00:00"
   },
   {
    "id": "stanford-summer-session",
@@ -3982,7 +3982,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:26+00:00"
+   "last_checked": "2026-11-17T17:47:02+00:00"
   },
   {
    "id": "microsoft-explore",
@@ -4026,7 +4026,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-17T17:45:15+00:00"
+   "last_checked": "2026-11-17T17:46:54+00:00"
   },
   {
    "id": "google-step",
@@ -4070,10 +4070,19 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-17T17:45:26+00:00"
+   "last_checked": "2026-11-17T17:47:02+00:00"
   }
  ],
  "changes": [
+  {
+   "type": "page_updated",
+   "id": "treehacks",
+   "name": "TreeHacks",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-17T17:46:38+00:00"
+  },
   {
    "type": "page_updated",
    "id": "treehacks",
