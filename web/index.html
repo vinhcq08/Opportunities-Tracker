@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Opportunity Tracker</title>
+<meta name="description" content="Summer programs, competitions and big-tech programs open to students in Vietnam, updated every 6 hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="wrap">
+  <div class="masthead">
+    <a href="#overview" class="h brand">The Opportunity Tracker</a>
+    <div class="mast-right">
+      <span class="k muted" id="issue">Loading…</span>
+      <button class="go small" id="elig-toggle" aria-pressed="true">Eligible for me · VN</button>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Sections">
+    <a href="#overview">Overview</a>
+    <a href="#summer">Summer</a>
+    <a href="#compete">Compete</a>
+    <a href="#bigtech">Big tech</a>
+    <a href="#review">Review</a>
+    <a href="#tracker">Tracker</a>
+  </nav>
+</header>
+<main class="wrap" id="view" tabindex="-1"></main>
+<footer class="wrap" id="footer"></footer>
+<script src="app.js"></script>
+</body>
+</html>

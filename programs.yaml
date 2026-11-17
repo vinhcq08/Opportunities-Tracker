@@ -1,0 +1,393 @@
+# Curated registry of programs, competitions and internships.
+#
+# Every entry is watched: its official page is fetched each run, and the status is read
+# from phrases such as "applications are open" / "applications closed".
+#
+# HOW TO VERIFY AN ENTRY
+#   1. Open the url and read the eligibility rules.
+#   2. Set nationality_ok / enrollment_req / class_years to what the page says.
+#   3. Set verified: true. Only verified entries are labelled "Eligible"; the rest say "Likely".
+#   4. When the page shows this year's date, set deadline: YYYY-MM-DD (23:59 Vietnam time).
+#
+# FIELD VALUES
+#   kind:            underclassmen | internship | summer_research | summer_school |
+#                    hackathon | challenge | business_comp
+#   org_type:        big_tech | government_space | university | nonprofit | local_company | other
+#   region:          asia | europe | north_america | middle_east | global
+#   format:          online | in_person | hybrid
+#   nationality_ok:  global | vn_ok | us_only | eu_only | other_restriction | unknown
+#   enrollment_req:  any | vn_university_ok | us_canada_only | host_university_only
+#   funding:         fully_funded | stipend | travel_covered | free | fee_required
+#   window:          months the application window usually covers (estimate until verified)
+#   watch_open / watch_closed: extra regexes for this page's own wording (optional)
+
+programs:
+
+  # ---------------------------------------------------------------- summer research & schools
+  - id: mitacs-globalink
+    kind: summer_research
+    org: Mitacs
+    org_type: nonprofit
+    featured: true
+    name: Globalink Research Internship
+    url: https://www.mitacs.ca/our-programs/globalink-research-internship-students/
+    summary: 12-week research project at a Canadian university for undergraduates from partner countries.
+    region: north_america
+    country: Canada
+    funding: fully_funded
+    nationality_ok: vn_ok
+    window: [6, 7, 8, 9]
+    notes: Vietnam has been a partner country; confirm it is on this year's list.
+
+  - id: eth-ssrf
+    kind: summer_research
+    org: ETH Zurich
+    org_type: university
+    featured: true
+    name: Student Summer Research Fellowship
+    url: https://inf.ethz.ch/studies/summer-research-fellowship.html
+    summary: Summer research in the Department of Computer Science for strong undergraduates worldwide.
+    region: europe
+    country: Switzerland
+    city: Zurich
+    funding: fully_funded
+    nationality_ok: global
+    window: [11, 12, 1]
+
+  - id: epfl-summer
+    kind: summer_research
+    org: EPFL
+    org_type: university
+    featured: true
+    name: Summer@EPFL
+    url: https://www.epfl.ch/schools/ic/education/summer-at-epfl/
+    summary: Research internship in computer and communication sciences.
+    region: europe
+    country: Switzerland
+    city: Lausanne
+    funding: fully_funded
+    nationality_ok: global
+    window: [10, 11, 12]
+
+  - id: oist-internship
+    kind: summer_research
+    org: OIST
+    org_type: university
+    featured: true
+    name: OIST Research Internship
+    url: https://admissions.oist.jp/research-internship
+    summary: Lab-based research internship in Okinawa with stipend and housing; several intake rounds a year.
+    region: asia
+    country: Japan
+    city: Okinawa
+    funding: stipend
+    nationality_ok: global
+    window: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+  - id: kaust-vsrp
+    kind: summer_research
+    org: KAUST
+    org_type: university
+    featured: true
+    name: Visiting Student Research Program
+    url: https://vsrp.kaust.edu.sa/
+    summary: Rolling-admission research internship with travel and stipend.
+    region: middle_east
+    country: Saudi Arabia
+    city: Thuwal
+    funding: fully_funded
+    nationality_ok: global
+    window: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+  - id: cern-summer-student
+    kind: summer_research
+    org: CERN
+    org_type: government_space
+    featured: true
+    name: Summer Student Programme
+    url: https://careers.cern/summer
+    summary: Summer at CERN in physics, computing or engineering. Separate track for non-member-state nationals.
+    region: europe
+    country: Switzerland
+    city: Geneva
+    funding: stipend
+    nationality_ok: other_restriction
+    window: [12, 1]
+    notes: Non-member-state track has its own nationality list; check whether Vietnam is included this year.
+
+  - id: utokyo-utrip
+    kind: summer_research
+    org: University of Tokyo
+    org_type: university
+    featured: true
+    name: UTRIP (UTokyo Research Internship Program)
+    url: https://www.s.u-tokyo.ac.jp/en/utrip/
+    summary: Summer research internship in the Graduate School of Science for students at universities outside Japan.
+    region: asia
+    country: Japan
+    city: Tokyo
+    funding: stipend
+    nationality_ok: global
+    window: [12, 1, 2]
+
+  - id: amgen-scholars
+    kind: summer_research
+    org: Amgen Scholars
+    org_type: nonprofit
+    name: Amgen Scholars (Asia and Europe sites)
+    url: https://amgenscholars.com/
+    summary: Summer research in biotech-related science at partner universities.
+    region: global
+    funding: fully_funded
+    nationality_ok: unknown
+    window: [12, 1, 2]
+    notes: Each site has its own eligibility; check the Asia and Europe sites.
+
+  # ------------------------------------------------------------------- hackathons
+  - id: nasa-space-apps
+    kind: hackathon
+    org: NASA
+    org_type: government_space
+    featured: true
+    name: International Space Apps Challenge
+    url: https://www.spaceappschallenge.org/
+    summary: Global 48-hour hackathon on NASA open data, with local events (often including Hanoi and Ho Chi Minh City).
+    region: global
+    format: hybrid
+    funding: free
+    team_size: 1–6
+    nationality_ok: global
+    window: [7, 8, 9]
+
+  - id: hackmit
+    kind: hackathon
+    org: MIT
+    org_type: university
+    featured: true
+    name: HackMIT
+    url: https://hackmit.org/
+    summary: MIT's annual student hackathon in Cambridge, USA.
+    region: north_america
+    country: USA
+    city: Cambridge
+    nationality_ok: unknown
+    window: [6, 7]
+    notes: In person in the USA; check whether international students are admitted and whether travel is covered.
+
+  - id: treehacks
+    kind: hackathon
+    org: Stanford
+    org_type: university
+    featured: true
+    name: TreeHacks
+    url: https://www.treehacks.com/
+    summary: Stanford's flagship hackathon.
+    region: north_america
+    country: USA
+    nationality_ok: unknown
+    window: [11, 12]
+
+  # ------------------------------------------------------------- innovation challenges
+  - id: mit-solve
+    kind: challenge
+    org: MIT Solve
+    org_type: university
+    featured: true
+    name: MIT Solve Global Challenges
+    url: https://solve.mit.edu/
+    summary: Social-innovation challenges open to anyone in the world; no MIT affiliation needed.
+    region: global
+    format: online
+    funding: free
+    prize: Funding pool (varies by challenge)
+    nationality_ok: global
+    window: [2, 3, 4, 5]
+
+  - id: imagine-cup
+    kind: challenge
+    org: Microsoft
+    org_type: big_tech
+    featured: true
+    name: Imagine Cup
+    url: https://imaginecup.microsoft.com/
+    summary: Microsoft's global student startup competition.
+    region: global
+    format: online
+    team_size: 1–4
+    prize: Cash and mentorship
+    nationality_ok: unknown
+    window: [10, 11, 12, 1]
+    notes: Official rules list eligible countries; check Vietnam.
+
+  - id: google-solution-challenge
+    kind: challenge
+    org: Google
+    org_type: big_tech
+    featured: true
+    name: Solution Challenge
+    url: https://developers.google.com/community/gdsc-solution-challenge
+    summary: Build a solution for a UN Sustainable Development Goal with Google technology.
+    region: global
+    format: online
+    team_size: 1–4
+    nationality_ok: unknown
+    window: [1, 2, 3]
+    notes: The program has changed format in recent years; confirm it runs this season.
+
+  - id: ibm-call-for-code
+    kind: challenge
+    org: IBM
+    org_type: big_tech
+    featured: true
+    name: Call for Code
+    url: https://developer.ibm.com/callforcode/
+    summary: Global coding challenge for social impact.
+    region: global
+    format: online
+    nationality_ok: unknown
+    window: [3, 4, 5, 6, 7, 8, 9, 10]
+
+  - id: kaggle-competitions
+    kind: challenge
+    org: Kaggle
+    org_type: big_tech
+    featured: true
+    name: Kaggle competitions
+    url: https://www.kaggle.com/competitions
+    summary: Data-science and ML competitions running all year, solo or in teams.
+    region: global
+    format: online
+    nationality_ok: global
+    window: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    notes: Prize eligibility can exclude some countries per competition.
+
+  # ---------------------------------------------------------------- business & pitch
+  - id: hult-prize
+    kind: business_comp
+    org: Hult Prize
+    org_type: nonprofit
+    featured: true
+    name: Hult Prize
+    url: https://www.hultprize.org/
+    summary: Social-enterprise competition that starts with campus rounds and ends in global finals.
+    region: global
+    format: hybrid
+    team_size: 2–4
+    prize: USD 1M grand prize
+    nationality_ok: global
+    window: [9, 10, 11, 12]
+    notes: Needs a campus program at your university, or the online route.
+
+  - id: mit-100k
+    kind: business_comp
+    org: MIT
+    org_type: university
+    featured: true
+    name: MIT $100K Entrepreneurship Competition
+    url: https://www.mit100k.org/
+    summary: MIT's flagship startup competition.
+    region: north_america
+    enrollment_req: host_university_only
+    nationality_ok: global
+    window: [10, 11, 12, 1, 2, 3, 4]
+
+  - id: harvard-pic
+    kind: business_comp
+    org: Harvard
+    org_type: university
+    featured: true
+    name: President's Innovation Challenge
+    url: https://innovationlabs.harvard.edu/presidents-innovation-challenge
+    summary: Harvard Innovation Labs' annual venture competition.
+    region: north_america
+    enrollment_req: host_university_only
+    nationality_ok: global
+    window: [12, 1, 2, 3]
+
+  # ---------------------------------------------------- big tech: underclassmen & internships
+  - id: microsoft-explore
+    kind: underclassmen
+    org: Microsoft
+    org_type: big_tech
+    featured: true
+    name: Explore Program
+    url: https://careers.microsoft.com/v2/global/en/exploremicrosoft
+    summary: 12-week rotational internship for first- and second-year students.
+    region: north_america
+    class_years: [1, 2]
+    enrollment_req: us_canada_only
+    nationality_ok: global
+    window: [8, 9, 10]
+
+  - id: nsf-reu
+    kind: summer_research
+    org: NSF
+    org_type: government_space
+    featured: true
+    name: Research Experiences for Undergraduates (REU)
+    url: https://www.nsf.gov/crssprgm/reu/
+    summary: Funded US summer research sites in every science field.
+    region: north_america
+    country: USA
+    nationality_ok: us_only
+    window: [11, 12, 1, 2]
+
+  - id: grab-internships
+    kind: internship
+    org: Grab
+    org_type: big_tech
+    featured: true
+    name: Grab student internships (Vietnam)
+    url: https://grab.careers/
+    summary: Engineering and product internships, including Ho Chi Minh City.
+    region: asia
+    country: Vietnam
+    city: Ho Chi Minh City
+    nationality_ok: vn_ok
+    class_years: [2, 3, 4]
+    window: [1, 2, 3, 4, 9, 10]
+    watch_open: ["\\bintern"]
+
+  - id: shopee-internships
+    kind: internship
+    org: Shopee
+    org_type: big_tech
+    featured: true
+    name: Shopee internships (Vietnam)
+    url: https://careers.shopee.vn/
+    summary: Engineering, data and product internships in Vietnam.
+    region: asia
+    country: Vietnam
+    city: Ho Chi Minh City
+    nationality_ok: vn_ok
+    class_years: [2, 3, 4]
+    window: [1, 2, 3, 4, 9, 10]
+    watch_open: ["\\bintern"]
+
+  - id: vng-internships
+    kind: internship
+    org: VNG
+    org_type: local_company
+    featured: true
+    name: VNG internships and fresher programs
+    url: https://career.vng.com.vn/
+    summary: Internships at one of Vietnam's largest tech companies.
+    region: asia
+    country: Vietnam
+    city: Ho Chi Minh City
+    nationality_ok: vn_ok
+    window: [3, 4, 5, 6]
+    watch_open: ["\\bintern", "fresher"]
+
+  - id: fpt-software-internships
+    kind: internship
+    org: FPT Software
+    org_type: local_company
+    name: FPT Software internships
+    url: https://fptsoftware.com/careers
+    summary: Software and AI internships in Hanoi, Da Nang and Ho Chi Minh City.
+    region: asia
+    country: Vietnam
+    nationality_ok: vn_ok
+    window: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    watch_open: ["\\bintern", "fresher"]

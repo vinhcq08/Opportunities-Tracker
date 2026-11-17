@@ -1,0 +1,10 @@
+# Your decisions from the dashboard's "Review" tab.
+# In the dashboard, click "Copy decisions", paste them under `overrides:` here and commit.
+# They win over the automatic rules on every future run.
+#
+# overrides:
+#   devpost-12345:
+#     eligible_for_me: eligible        # eligible | not_eligible | ignore
+#     reason: Rules say open worldwide
+
+overrides: {}

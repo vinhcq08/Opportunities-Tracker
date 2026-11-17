@@ -1,0 +1,4 @@
+# Who the eligibility rules are checked for.
+country: VN        # ISO country code of where you study and hold citizenship
+year: 2            # current year of study (1-4)
+timezone: Asia/Ho_Chi_Minh
