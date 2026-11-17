@@ -20,6 +20,8 @@
 #   funding:         fully_funded | stipend | travel_covered | free | fee_required
 #   window:          months the application window usually covers (estimate until verified)
 #   watch_open / watch_closed: extra regexes for this page's own wording (optional)
+#   manual_check:    true for sites that block bots; status comes from `window` only
+#   tls_fallback:    true for sites with a broken certificate chain (page is re-read without verification)
 
 programs:
 
@@ -60,7 +62,7 @@ programs:
     org_type: university
     featured: true
     name: Summer@EPFL
-    url: https://www.epfl.ch/schools/ic/education/summer-at-epfl/
+    url: https://summer.epfl.ch/
     summary: Research internship in computer and communication sciences.
     region: europe
     country: Switzerland
@@ -151,6 +153,7 @@ programs:
     featured: true
     name: International Space Apps Challenge
     url: https://www.spaceappschallenge.org/
+    tls_fallback: true   # the site sends an incomplete certificate chain
     summary: Global 48-hour hackathon on NASA open data, with local events (often including Hanoi and Ho Chi Minh City).
     region: global
     format: hybrid
@@ -298,6 +301,7 @@ programs:
     featured: true
     name: President's Innovation Challenge
     url: https://innovationlabs.harvard.edu/presidents-innovation-challenge
+    manual_check: true   # the site blocks automated requests (HTTP 403)
     summary: Harvard Innovation Labs' annual venture competition.
     region: north_america
     enrollment_req: host_university_only
@@ -384,7 +388,8 @@ programs:
     org: FPT Software
     org_type: local_company
     name: FPT Software internships
-    url: https://fptsoftware.com/careers
+    url: https://career.fpt-software.com/
+    manual_check: true   # the careers site blocks automated requests (HTTP 403)
     summary: Software and AI internships in Hanoi, Da Nang and Ho Chi Minh City.
     region: asia
     country: Vietnam

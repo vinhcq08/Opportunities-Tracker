@@ -166,6 +166,7 @@
       ${details.length ? `<dl>${details.map(([k, v]) => `<div><dt class="k">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : ""}
       <div class="row">${eligTag(item)}${statusTag(item)}</div>
       ${label(item) === "check" || label(item) === "not_eligible" ? `<p class="reason">${esc((item.elig_reasons || [])[0] || "")}${item.notes ? " — " + esc(item.notes) : ""}</p>` : ""}
+      ${item.manual_check ? `<p class="reason"><strong>Check manually:</strong> this site blocks automatic checks, so open it to see whether applications are open.</p>` : ""}
       <div class="block-foot">
         <div><div class="big">${esc(big.n)}</div><div class="k">${esc(big.l)}</div></div>
         <div class="row">${saveButton(item)}${openLink(item)}</div>

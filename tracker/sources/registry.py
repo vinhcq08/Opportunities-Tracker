@@ -5,13 +5,17 @@ from __future__ import annotations
 import datetime as dt
 from pathlib import Path
 
+import requests
+import urllib3
 import yaml
 
 from ..models import normalize
 from . import http
 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 # Fields in programs.yaml that tune the watcher but are not part of the record.
-WATCH_KEYS = ("watch_open", "watch_closed")
+WATCH_KEYS = ("watch_open", "watch_closed", "tls_fallback")
 
 
 def load(path: Path) -> list[dict]:
@@ -29,10 +33,11 @@ def fetch(entries: list[dict], today: dt.date, *, offline: bool = False) -> list
     items = []
     for entry in entries:
         watch = {k: entry.get(k) or [] for k in WATCH_KEYS}
+        watch["tls_fallback"] = bool(entry.get("tls_fallback"))
         rec = normalize({k: v for k, v in entry.items() if k not in WATCH_KEYS} | {"source": "registry"})
         rec["last_checked"] = None if offline else dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
-        if not offline and rec["url"]:
+        if not offline and rec["url"] and not rec["manual_check"]:
             _watch(rec, watch)
 
         # A passed deadline beats whatever the page says.
@@ -48,6 +53,17 @@ def fetch(entries: list[dict], today: dt.date, *, offline: bool = False) -> list
 def _watch(rec: dict, watch: dict) -> None:
     try:
         resp = http.get(rec["url"], allow_redirects=True)
+    except requests.exceptions.SSLError:
+        if not watch["tls_fallback"]:
+            rec["fetch_error"] = "SSLError"
+            return
+        # Some sites send an incomplete certificate chain that browsers repair but Python does not.
+        # We only read public page text, so for entries marked tls_fallback we retry unverified.
+        try:
+            resp = http.get(rec["url"], allow_redirects=True, verify=False)
+        except Exception as exc:
+            rec["fetch_error"] = f"{type(exc).__name__}"
+            return
     except Exception as exc:  # network errors are recorded, never fatal
         rec["fetch_error"] = f"{type(exc).__name__}"
         return

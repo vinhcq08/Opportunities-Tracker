@@ -133,28 +133,73 @@ def test_devpost_keeps_online_and_vietnam_only():
     assert items["devpost-3"]["deadline"] == "2027-01-12" and items["devpost-3"]["status"] == "upcoming"
 
 
-MLH_SAMPLE = """
-<div class="event" itemscope>
- <div class="event-wrapper"><a class="event-link" href="https://hack.sg/" target="_blank">
-  <h3 class="event-name" itemprop="name">HackSG</h3>
-  <meta itemprop="startDate" content="2027-02-01"><meta itemprop="endDate" content="2027-02-02">
-  <div itemprop="location"><span itemprop="addressLocality">Singapore</span>
-  <span itemprop="addressRegion">SG</span></div></a>
- </div></div></div>
-<div class="event" itemscope>
- <div class="event-wrapper"><a class="event-link" href="https://ny.example/">
-  <h3 class="event-name">NYHacks</h3>
-  <meta itemprop="startDate" content="2027-03-01">
-  <span itemprop="addressLocality">New York</span><span itemprop="addressRegion">NY</span></a>
- </div></div></div>
-"""
+def _mlh_card(name, url, start, end, mode, city, country):
+    return (f'<a href="{url}?utm_source=mlh&amp;utm_content={name.replace(" ", "+")}" target="_blank" '
+            f'class="block rounded-card" itemScope="" itemType="https://schema.org/Event">'
+            f'<meta itemProp="url" content="{url}"/>'
+            f'<meta itemProp="eventAttendanceMode" content="https://schema.org/{mode}EventAttendanceMode"/>'
+            f'<meta itemProp="startDate" content="{start}T23:00:00Z"/><meta itemProp="endDate" content="{end}T20:00:00Z"/>'
+            f'<div itemProp="location" itemScope="" itemType="https://schema.org/Place" style="display:none">'
+            f'<span itemProp="name">{city}</span><div itemProp="address" itemScope="">'
+            f'<meta itemProp="addressLocality" content="{city}"/><meta itemProp="addressCountry" content="{country}"/></div></div>'
+            f'<div class="rounded-card"><h3 class="font-bold">{name}</h3></div></a>')
+
+
+MLH_SAMPLE = "<main>" + "".join([
+    _mlh_card("Hack Western 13", "https://hackwestern.com", "2026-11-20", "2026-11-22", "Offline", "London", "CA"),
+    _mlh_card("HackSG", "https://hack.sg", "2027-02-01", "2027-02-02", "Offline", "Singapore", "SG"),
+    _mlh_card("Global Hack Week", "https://ghw.mlh.io", "2027-01-10", "2027-01-16", "Online", "", ""),
+    _mlh_card("Old Hack", "https://old.example", "2026-09-01", "2026-09-02", "Online", "", ""),
+]) + "</main>"
 
 
 def test_mlh_parses_cards_and_filters_region():
-    items = mlh.parse(MLH_SAMPLE)
-    assert [i["name"] for i in items] == ["HackSG"]
-    assert items[0]["deadline"] == "2027-02-01"
+    items = {i["name"]: i for i in mlh.parse(MLH_SAMPLE, dt.date(2026, 11, 17))}
+    assert set(items) == {"HackSG", "Global Hack Week"}
+    sg = items["HackSG"]
+    assert sg["url"] == "https://hack.sg" and sg["deadline"] == "2027-02-01" and sg["country"] == "SG"
+    assert items["Global Hack Week"]["format"] == "online"
     assert mlh.season(dt.date(2026, 11, 17)) == 2027 and mlh.season(dt.date(2027, 3, 1)) == 2027
+
+
+def test_mlh_falls_back_to_link_name():
+    card = _mlh_card("Name From Link", "https://x.example", "2027-01-01", "2027-01-02", "Online", "", "").replace(
+        '<h3 class="font-bold">Name From Link</h3>', "")
+    assert [i["name"] for i in mlh.parse(card, dt.date(2026, 11, 17))] == ["Name From Link"]
+
+
+def test_registry_manual_check_skips_fetch(tmp_path, monkeypatch):
+    called = []
+    monkeypatch.setattr(registry.http, "get", lambda *a, **k: called.append(a) or (_ for _ in ()).throw(AssertionError))
+    f = tmp_path / "p.yaml"
+    f.write_text("programs:\n  - {id: a, kind: hackathon, name: A, url: 'https://a.example', manual_check: true}\n")
+    [item] = registry.fetch(registry.load(f), dt.date(2026, 11, 17))
+    assert called == [] and item["manual_check"] and item["fetch_error"] is None
+
+
+def test_registry_tls_fallback_retries_unverified(tmp_path, monkeypatch):
+    import requests
+
+    class Resp:
+        status_code = 200
+        text = "<p>Registration is now open</p>"
+
+    calls = []
+
+    def fake_get(url, **kw):
+        calls.append(kw.get("verify", True))
+        if kw.get("verify", True):
+            raise requests.exceptions.SSLError("incomplete chain")
+        return Resp()
+
+    monkeypatch.setattr(registry.http, "get", fake_get)
+    f = tmp_path / "p.yaml"
+    f.write_text("programs:\n  - {id: a, kind: hackathon, name: A, url: 'https://a.example', tls_fallback: true}\n"
+                 "  - {id: b, kind: hackathon, name: B, url: 'https://b.example'}\n")
+    a, b = registry.fetch(registry.load(f), dt.date(2026, 11, 17))
+    assert a["status"] == "open" and a["fetch_error"] is None
+    assert b["fetch_error"] == "SSLError"
+    assert calls == [True, False, True]
 
 
 def test_simplify_keeps_nearby_roles():
