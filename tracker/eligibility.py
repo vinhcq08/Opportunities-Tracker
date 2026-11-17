@@ -12,6 +12,7 @@ from __future__ import annotations
 NOT_ELIGIBLE_ENROLLMENT = {
     "us_canada_only": "Requires enrollment at a US or Canadian university",
     "host_university_only": "Only for students of the host university (or teams with an affiliated member)",
+    "local_only": "Only for students living or studying in the host country",
 }
 
 NATIONALITY_RULES = {
@@ -36,7 +37,9 @@ def assess(item: dict, profile: dict, overrides: dict | None = None) -> tuple[st
     enr = item.get("enrollment_req", "any")
 
     if enr in NOT_ELIGIBLE_ENROLLMENT:
-        return "not_eligible", [NOT_ELIGIBLE_ENROLLMENT[enr]]
+        # Program notes usually say exactly where (e.g. "residing in Singapore"); prefer them.
+        reason = item.get("notes") if enr == "local_only" and item.get("notes") else NOT_ELIGIBLE_ENROLLMENT[enr]
+        return "not_eligible", [reason]
     if nat in NATIONALITY_RULES:
         allowed, why = NATIONALITY_RULES[nat]
         if country != allowed:

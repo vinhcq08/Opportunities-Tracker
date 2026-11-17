@@ -18,6 +18,7 @@
     challenge: { label: "Innovation", bg: "lime" },
     business_comp: { label: "Business", bg: "yellow" },
     underclassmen: { label: "Year 1–2 program", bg: "peri" },
+    insight: { label: "Insight program", bg: "yellow" },
     internship: { label: "Internship", bg: "sand" },
   };
   const REGION_BG = { asia: "coral", europe: "peri", north_america: "lime", middle_east: "yellow", global: "sand" };
@@ -26,7 +27,7 @@
   const FUND_LABEL = { fully_funded: "Fully funded", stipend: "Stipend", travel_covered: "Travel covered", free: "Free to enter", fee_required: "Fee" };
   const COMPETE = ["hackathon", "challenge", "business_comp"];
   const SUMMER = ["summer_research", "summer_school"];
-  const TECH = ["underclassmen", "internship"];
+  const TECH = ["insight", "underclassmen", "internship"];
 
   // ------------------------------------------------------------ persistent personal state
   const store = {
@@ -165,7 +166,7 @@
       </div>
       ${details.length ? `<dl>${details.map(([k, v]) => `<div><dt class="k">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : ""}
       <div class="row">${eligTag(item)}${statusTag(item)}</div>
-      ${label(item) === "check" || label(item) === "not_eligible" ? `<p class="reason">${esc((item.elig_reasons || [])[0] || "")}${item.notes ? " — " + esc(item.notes) : ""}</p>` : ""}
+      ${label(item) === "check" || label(item) === "not_eligible" ? `<p class="reason">${reasonText(item)}</p>` : ""}
       ${item.manual_check ? `<p class="reason"><strong>Check manually:</strong> this site blocks automatic checks, so open it to see whether applications are open.</p>` : ""}
       <div class="block-foot">
         <div><div class="big">${esc(big.n)}</div><div class="k">${esc(big.l)}</div></div>
@@ -180,6 +181,13 @@
     if (!hidden.length) return "";
     return `<details class="hidden-list"><summary class="k">${hidden.length} hidden · not open to you</summary><ul>${hidden
       .map((i) => `<li><strong>${esc(i.name)}</strong> (${esc(i.org)}): ${esc(hiddenReason(i))}</li>`).join("")}</ul></details>`;
+  }
+
+  // The eligibility reason plus the program note, without repeating the note when it is the reason.
+  function reasonText(item) {
+    const reason = (item.elig_reasons || [])[0] || "";
+    const extra = item.notes && item.notes !== reason ? " — " + item.notes : "";
+    return esc(reason + extra);
   }
 
   function empty(text) { return `<div class="empty">${esc(text)}</div>`; }
@@ -324,10 +332,14 @@
   function viewBigTech() {
     const all = items(TECH);
     const vis = all.filter(isVisible).sort(bySoonest);
-    const named = vis.filter((i) => i.source === "registry");
+    const insight = vis.filter((i) => i.kind === "insight");
+    const named = vis.filter((i) => i.source === "registry" && i.kind !== "insight");
     const roles = vis.filter((i) => i.source !== "registry");
     return `
-    <h1 class="h headline">Big tech,<br><em>close to home.</em></h1>
+    <h1 class="h headline">Tech &amp; quant.<br><em>Get in early.</em></h1>
+    <section><h2 class="k" style="margin:0 0 12px">Insight programs · Year 1–2</h2>
+      ${insight.length ? `<div class="grid">${insight.map((i) => block(i)).join("")}</div>` : empty("No insight programs open to you right now")}
+    </section>
     <section><h2 class="k" style="margin:0 0 12px">Programs &amp; career pages</h2>
       ${named.length ? `<div class="grid">${named.map((i) => block(i)).join("")}</div>` : empty("No programs match")}
     </section>
@@ -356,7 +368,7 @@
         <div class="list-body">
           <div class="row"><span class="tag bg-${bgFor(i)}">${esc((KIND[i.kind] || {}).label)}</span><span class="k muted">via ${esc(i.source)} · ${esc(i.org)}</span></div>
           <h2 class="h list-title">${esc(i.name)}</h2>
-          <blockquote>${esc((i.elig_reasons || [])[0] || "")}${i.notes ? " — " + esc(i.notes) : ""}</blockquote>
+          <blockquote>${reasonText(i)}</blockquote>
         </div>
         <div class="list-side">
           <button class="go small dark" data-act="decide" data-id="${esc(i.id)}" data-val="eligible">Eligible</button>

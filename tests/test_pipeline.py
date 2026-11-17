@@ -226,3 +226,9 @@ def test_digest_skips_ineligible_and_noise():
     text = notify.digest(changes)
     assert "Now open: A" in text and "B" not in text and "C" not in text
     assert notify.digest([]) == ""
+
+
+def test_local_only_uses_program_note_as_reason():
+    it = item(nationality_ok="global", enrollment_req="local_only", notes="Requires residing in Singapore.")
+    assert eligibility.assess(it, VN) == ("not_eligible", ["Requires residing in Singapore."])
+    assert eligibility.assess(item(enrollment_req="local_only"), VN)[1] == ["Only for students living or studying in the host country"]

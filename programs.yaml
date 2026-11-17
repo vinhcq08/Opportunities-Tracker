@@ -10,13 +10,13 @@
 #   4. When the page shows this year's date, set deadline: YYYY-MM-DD (23:59 Vietnam time).
 #
 # FIELD VALUES
-#   kind:            underclassmen | internship | summer_research | summer_school |
+#   kind:            underclassmen | insight | internship | summer_research | summer_school |
 #                    hackathon | challenge | business_comp
 #   org_type:        big_tech | government_space | university | nonprofit | local_company | other
 #   region:          asia | europe | north_america | middle_east | global
 #   format:          online | in_person | hybrid
 #   nationality_ok:  global | vn_ok | us_only | eu_only | other_restriction | unknown
-#   enrollment_req:  any | vn_university_ok | us_canada_only | host_university_only
+#   enrollment_req:  any | vn_university_ok | us_canada_only | host_university_only | local_only
 #   funding:         fully_funded | stipend | travel_covered | free | fee_required
 #   window:          months the application window usually covers (estimate until verified)
 #   watch_open / watch_closed: extra regexes for this page's own wording (optional)
@@ -396,3 +396,310 @@ programs:
     nationality_ok: vn_ok
     window: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     watch_open: ["\\bintern", "fresher"]
+
+  # ------------------------------------------- insight programs (quant & big tech, Year 1–2)
+  # Most Asia insight programs are run from Hong Kong or Singapore. Several are limited to
+  # students living or studying there (enrollment_req: local_only); they are kept so you know
+  # about them, and hidden by default.
+
+  - id: jane-street-see-hkg
+    kind: insight
+    org: Jane Street
+    org_type: big_tech
+    featured: true
+    name: Jane Street SEE (Hong Kong)
+    url: https://janestreet.com/apply-see-hkg/
+    summary: Short, fully funded visit to Jane Street Hong Kong (travel, meals and housing covered) for students interested in trading and technology.
+    region: asia
+    country: Hong Kong
+    funding: fully_funded
+    nationality_ok: unknown
+    window: [6, 7, 9, 10]
+    notes: Eligibility (graduation years, which universities) changes every cohort; read the current invitation. Jane Street flies participants in from around the region.
+
+  - id: jane-street-fttp-hkg
+    kind: insight
+    org: Jane Street
+    org_type: big_tech
+    featured: true
+    name: First-year Trading and Technology Program (Hong Kong)
+    url: https://www.janestreet.com/fttp-hkg-email
+    summary: Program in Hong Kong for first-year undergraduates who started university in Aug/Sep 2026.
+    region: asia
+    country: Hong Kong
+    class_years: [1]
+    nationality_ok: unknown
+    deadline: 2027-01-31
+    window: [11, 12, 1]
+    notes: Deadline 31 Jan 2027, 11:59pm HKT (from Jane Street's invitation). Check which universities are eligible.
+
+  - id: jane-street-insight-hkg
+    kind: insight
+    org: Jane Street
+    org_type: big_tech
+    featured: true
+    name: Jane Street INSIGHT (Hong Kong)
+    url: https://janestreet.com/apply-insight-hkg/
+    summary: One-week January program in Hong Kong for students who identify as women, transgender and/or gender-expansive.
+    region: asia
+    country: Hong Kong
+    nationality_ok: unknown
+    window: [9, 10, 11]
+    notes: The January 2027 cohort closed on 8 Nov 2026; the next round usually opens around September. Identity-based eligibility; check the university rules.
+
+  - id: jane-street-portal-sgp
+    kind: insight
+    org: Jane Street
+    org_type: big_tech
+    name: Jane Street Portal (Singapore)
+    url: https://www.janestreet.com/apply-portal-sgp/
+    summary: Fully funded short program in Singapore that fast-tracks internship interviews.
+    region: asia
+    country: Singapore
+    funding: fully_funded
+    enrollment_req: local_only
+    nationality_ok: global
+    window: [4, 5]
+    notes: Only for students currently enrolled at universities in Singapore.
+
+  - id: citadel-discover-singapore
+    kind: insight
+    org: Citadel | Citadel Securities
+    org_type: big_tech
+    featured: true
+    name: Discover Citadel (Singapore)
+    url: https://www.citadelsecurities.com/careers/programs-and-events/discover-citadel-securities/singapore/
+    summary: In-person insight event for first- and second-year students, around end of February.
+    region: asia
+    country: Singapore
+    class_years: [1, 2]
+    enrollment_req: local_only
+    nationality_ok: global
+    window: [12, 1, 2]
+    notes: Requires residing in Singapore (2027 cohort, deadline around early Feb 2027).
+
+  - id: citadel-discover-hong-kong
+    kind: insight
+    org: Citadel | Citadel Securities
+    org_type: big_tech
+    featured: true
+    name: Discover Citadel (Hong Kong)
+    url: https://www.citadelsecurities.com/careers/programs-and-events/discover-citadel-securities/hong-kong/
+    summary: In-person insight event for first- and second-year students, around end of March.
+    region: asia
+    country: Hong Kong
+    class_years: [1, 2]
+    enrollment_req: local_only
+    nationality_ok: global
+    window: [1, 2]
+    notes: Requires attending a university in Hong Kong or mainland China (deadline 14 Feb 2027).
+
+  - id: optiver-futurefocus-singapore
+    kind: insight
+    org: Optiver
+    org_type: big_tech
+    featured: true
+    name: FutureFocus Singapore (Trading and Research)
+    url: https://optiver.com/recruitment-events/singapore-futurefocus/
+    summary: Five-day, all-expenses-paid trading program that leads to internship offers; travel covered for candidates outside Singapore.
+    region: asia
+    country: Singapore
+    funding: fully_funded
+    class_years: [2]
+    nationality_ok: unknown
+    window: [3, 4, 5, 6]
+    notes: For pre-penultimate students (2 years before final year). The Technology track requires Singapore citizenship or PR; the Trading track did not say so. Check the current listing.
+
+  - id: hrt-explore-singapore
+    kind: insight
+    org: Hudson River Trading
+    org_type: big_tech
+    name: Explore HRT (Singapore)
+    url: https://www.hudsonrivertrading.com/careers/
+    summary: Three-day program in Singapore for undergraduates in maths, CS, statistics or physics.
+    region: asia
+    country: Singapore
+    class_years: [2, 3]
+    nationality_ok: unknown
+    window: [3, 4, 5, 6]
+    notes: Search "Explore HRT Singapore" on the careers page. Eligibility by graduation year; university rules not published.
+
+  - id: sig-discovery-hong-kong
+    kind: insight
+    org: SIG
+    org_type: big_tech
+    name: Hong Kong Trading Discovery Program
+    url: https://careers.sig.com/
+    summary: Trading discovery program in Hong Kong for pre-penultimate-year students.
+    region: asia
+    country: Hong Kong
+    class_years: [2]
+    nationality_ok: unknown
+    window: [1, 2, 3]
+    notes: Last seen for April 2026; check whether a 2027 round is announced.
+
+  - id: google-step
+    kind: underclassmen
+    org: Google
+    org_type: big_tech
+    featured: true
+    name: Google STEP internship
+    url: https://buildyourfuture.withgoogle.com/programs/step
+    summary: Internship for first- and second-year CS students.
+    region: global
+    class_years: [1, 2]
+    nationality_ok: other_restriction
+    window: [9, 10, 11]
+    notes: No STEP posting found for summer 2027 as of Oct 2026, and the old page redirects; the program may have ended. Past versions were country-specific (e.g. STEP Japan); none ran in Vietnam.
+
+  # ------------------------------------------------------------ summer sessions (fee-paying)
+  - id: stanford-summer-session
+    kind: summer_school
+    org: Stanford University
+    org_type: university
+    featured: true
+    name: Stanford Summer Session (incl. International Honors Program)
+    url: https://summer.stanford.edu/
+    summary: Take Stanford courses for credit over the summer as a visiting undergraduate. The International Honors Program is aimed at international students.
+    region: north_america
+    country: USA
+    city: Stanford
+    funding: fee_required
+    nationality_ok: global
+    window: [12, 1, 2, 3, 4]
+    notes: Age 18+, English proficiency and a US study visa needed. Tuition is high; ask about the merit grant interest list. Apply early if you need an I-20.
+
+  - id: harvard-summer-school
+    kind: summer_school
+    org: Harvard University
+    org_type: university
+    featured: true
+    name: Harvard Summer School
+    url: https://summer.harvard.edu/
+    summary: Summer courses at Harvard or Harvard-led study abroad programs, open to visiting college students.
+    region: north_america
+    country: USA
+    city: Cambridge
+    funding: fee_required
+    nationality_ok: global
+    window: [12, 1, 2, 3, 4]
+    notes: Study-abroad programs for 2027 open 1 Dec 2026 and close 28 Jan 2027.
+
+  - id: berkeley-summer-sessions
+    kind: summer_school
+    org: UC Berkeley
+    org_type: university
+    featured: true
+    name: Berkeley Summer Sessions
+    url: https://summer.berkeley.edu/
+    summary: Regular Berkeley courses over the summer for visiting students from any university.
+    region: north_america
+    country: USA
+    city: Berkeley
+    funding: fee_required
+    nationality_ok: global
+    window: [2, 3, 4, 5]
+
+  - id: lse-summer-school
+    kind: summer_school
+    org: LSE
+    org_type: university
+    featured: true
+    name: LSE Summer School
+    url: https://www.lse.ac.uk/study-at-lse/summer-schools/summer-school
+    summary: Three-week courses in economics, finance, data and policy in London, with merit scholarships.
+    region: europe
+    country: UK
+    city: London
+    funding: fee_required
+    nationality_ok: global
+    window: [12, 1, 2, 3, 4]
+    notes: Academic Director's Scholarships cover a full course for a few students each year.
+
+  - id: cambridge-isp
+    kind: summer_school
+    org: University of Cambridge
+    org_type: university
+    featured: true
+    name: Cambridge International Summer Programmes
+    url: https://www.ice.cam.ac.uk/intsummer
+    summary: Residential summer programmes at Cambridge for international university students.
+    region: europe
+    country: UK
+    city: Cambridge
+    funding: fee_required
+    nationality_ok: global
+    window: [12, 1, 2, 3, 4, 5]
+
+  # --------------------------------------------------- design & innovation challenges
+  - id: stanford-longevity-design-challenge
+    kind: challenge
+    org: Stanford Center on Longevity
+    org_type: university
+    featured: true
+    name: Stanford Longevity Design Challenge
+    url: https://longevity.stanford.edu/design-challenge/
+    summary: "2026–27 theme: Human-Centered Robotics for Longevity. Teams of 1–5 from any accredited university worldwide; finals at Stanford with travel support."
+    region: global
+    format: hybrid
+    team_size: 1–5
+    prize: USD 10,000 / 5,000 / 2,000 + USD 1,000 per finalist
+    nationality_ok: global
+    deadline: 2026-12-01
+    window: [9, 10, 11]
+    notes: Deadline taken from third-party listings (1–2 Dec 2026, Pacific time); confirm on the official page. Phase I needs only an idea, not a prototype.
+
+  - id: james-dyson-award
+    kind: challenge
+    org: James Dyson Foundation
+    org_type: nonprofit
+    featured: true
+    name: James Dyson Award
+    url: https://www.jamesdysonaward.org/
+    summary: International design-engineering award for students and recent graduates.
+    region: global
+    format: online
+    prize: Up to GBP 30,000
+    nationality_ok: other_restriction
+    window: [3, 4, 5, 6, 7]
+    notes: Runs in about 28 countries and regions; Vietnam was not on recent lists. Check the participating countries each year.
+
+  - id: undergraduate-awards
+    kind: challenge
+    org: The Global Undergraduate Awards
+    org_type: nonprofit
+    featured: true
+    name: The Global Undergraduate Awards
+    url: https://undergraduateawards.com/
+    summary: Submit your best coursework or project in one of 25+ categories; global winners join a summit.
+    region: global
+    format: online
+    nationality_ok: global
+    window: [2, 3, 4, 5, 6]
+
+  - id: openideo-challenges
+    kind: challenge
+    org: OpenIDEO
+    org_type: nonprofit
+    name: OpenIDEO open innovation challenges
+    url: https://www.openideo.com/
+    summary: Global, online design challenges on health, climate and social impact, run with partner foundations.
+    region: global
+    format: online
+    nationality_ok: global
+    window: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    notes: Each challenge has its own rules and sometimes country limits.
+
+  - id: xprize
+    kind: challenge
+    org: XPRIZE Foundation
+    org_type: nonprofit
+    featured: true
+    name: XPRIZE competitions
+    url: https://www.xprize.org/
+    summary: Large global prize competitions; some have student or youth tracks.
+    region: global
+    format: hybrid
+    nationality_ok: unknown
+    window: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    notes: Team requirements and country rules differ per prize.

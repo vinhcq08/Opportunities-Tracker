@@ -6,7 +6,7 @@ import hashlib
 import re
 
 KINDS = {
-    "underclassmen", "internship", "summer_research", "summer_school",
+    "underclassmen", "insight", "internship", "summer_research", "summer_school",
     "hackathon", "challenge", "business_comp",
 }
 
@@ -27,7 +27,7 @@ DEFAULTS = {
     "format": "in_person",        # online|in_person|hybrid
     "class_years": [1, 2, 3, 4],
     "nationality_ok": "unknown",  # global|vn_ok|us_only|eu_only|other_restriction|unknown
-    "enrollment_req": "any",      # any|vn_university_ok|us_canada_only|host_university_only
+    "enrollment_req": "any",      # any|vn_university_ok|us_canada_only|host_university_only|local_only
     "funding": "",                # fully_funded|stipend|travel_covered|free|fee_required|""
     "prize": "",
     "team_size": "",
