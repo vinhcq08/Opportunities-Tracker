@@ -183,7 +183,7 @@ def read_page(client, item: dict, profile: dict, today: dt.date) -> tuple[dict |
 
 
 def run(items: list[dict], previous: dict, profile: dict, today: dt.date,
-        usage: dict | None = None) -> tuple[dict, str, dict]:
+        usage: dict | None = None, enabled: bool = True) -> tuple[dict, str, dict]:
     """Return (proposals by id, one-line report, usage record).
 
     usage = {"date": "YYYY-MM-DD", "usd": spent today, "pages": read today, "months": {"YYYY-MM": usd}}
@@ -197,6 +197,8 @@ def run(items: list[dict], previous: dict, profile: dict, today: dt.date,
     usage.setdefault("months", {})
     if usage.get("date") != today.isoformat():
         usage.update({"date": today.isoformat(), "usd": 0.0, "pages": 0})
+    if not enabled:
+        return proposals, "off (turned off in sources.yaml; it uses the paid Claude API)", usage
     if not os.environ.get("ANTHROPIC_API_KEY"):
         return proposals, "skipped (no ANTHROPIC_API_KEY secret)", usage
     import anthropic

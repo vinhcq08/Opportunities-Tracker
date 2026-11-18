@@ -25,3 +25,8 @@ job_boards:
 kaggle: true
 # Challenge.gov's public API endpoint returned 404 in Nov 2026; most of its prizes are US-only anyway.
 challenge_gov: false
+
+# Claude reading official pages to suggest eligibility and deadlines. It uses the paid Claude API
+# (billed per use, separately from a Claude.ai subscription), so it is turned off. The code stays
+# in tracker/claude_reader.py; set this to true and add an ANTHROPIC_API_KEY secret to use it.
+claude_page_reading: false

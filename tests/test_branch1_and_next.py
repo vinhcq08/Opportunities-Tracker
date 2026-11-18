@@ -316,3 +316,20 @@ def test_registry_verified_deadline_is_confirmed(tmp_path):
                  "  - {id: b, kind: hackathon, name: B, deadline: 2026-12-20}\n")
     a, b = registry.fetch(registry.load(f), TODAY, offline=True)
     assert a["deadline_confirmed"] and not b["deadline_confirmed"]
+
+
+
+def test_page_reading_off_never_calls_claude(monkeypatch):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "present-but-unused")
+    called = []
+    monkeypatch.setattr(claude_reader, "read_page", lambda *a, **k: called.append(1) or ({}, 1.0))
+    item = registry_item()
+    proposals, line, usage = claude_reader.run([item], {}, {}, TODAY, None, enabled=False)
+    assert called == [] and line.startswith("off") and usage["usd"] == 0.0
+
+
+def test_repo_keeps_page_reading_off():
+    import yaml
+    from tracker.run import ROOT
+    assert yaml.safe_load((ROOT / "sources.yaml").read_text())["claude_page_reading"] is False
+    assert "ANTHROPIC_API_KEY" not in (ROOT / ".github/workflows/update.yml").read_text()

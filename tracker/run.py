@@ -97,7 +97,8 @@ def main(argv: list[str] | None = None) -> int:
 
     prev = json.loads(args.out.read_text(encoding="utf-8")) if args.out.exists() else {}
     proposals, report["claude"], claude_usage = claude_reader.run(
-        items, prev.get("proposals", {}), profile, today, prev.get("claude_usage", {}))
+        items, prev.get("proposals", {}), profile, today, prev.get("claude_usage", {}),
+        enabled=bool(load_yaml(ROOT / "sources.yaml").get("claude_page_reading", False)))
     for pid in field_overrides:  # an accepted suggestion is done
         proposals.pop(pid, None)
     for item in items:
