@@ -1,0 +1,1085 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Opportunity Tracker//Deadlines//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Opportunity deadlines
+X-WR-TIMEZONE:Asia/Ho_Chi_Minh
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:devpost-31024@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+SUMMARY:Deadline: Meta VR Start Developer Competition 2026
+DESCRIPTION:Meta. Check rules. \nhttps://start-developer-competition-26.dev
+ post.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://start-developer-competition-26.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Meta VR Start Developer Competition 2026 closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Meta VR Start Developer Competition 2026 closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-26475@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Deadline: Dakar Bitcoin Hack by BTrust
+DESCRIPTION:Dakar Bitcoin Days. Check rules. \nhttps://dakar-bitcoin-hack-2
+ 026.devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracke
+ r/
+URL:https://dakar-bitcoin-hack-2026.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Dakar Bitcoin Hack by BTrust closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Dakar Bitcoin Hack by BTrust closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-30456@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:Deadline: Bridge The Gap Hacks
+DESCRIPTION:Bridge The Gap Hacks. Check rules. \nhttps://sq-hacks.devpost.c
+ om/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://sq-hacks.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Bridge The Gap Hacks closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Bridge The Gap Hacks closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31789@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:Deadline: STEM2Connect AI Hackathon
+DESCRIPTION:STEM2Connect. Check rules. \nhttps://stem2connect-online-hackat
+ hon.devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracke
+ r/
+URL:https://stem2connect-online-hackathon.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:STEM2Connect AI Hackathon closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:STEM2Connect AI Hackathon closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-30657@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:Deadline: Teens Hack Houston Hackathon
+DESCRIPTION:HackClub  ✓⃝. Check rules. \nhttps://tripleh.devpost.com/\n
+ Tracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://tripleh.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Teens Hack Houston Hackathon closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Teens Hack Houston Hackathon closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31549@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Deadline: KUK VIRTUAL HACKATHON
+DESCRIPTION:Kelab UMNO Korea. Check rules. \nhttps://kuk-virtual-hackathon.
+ devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://kuk-virtual-hackathon.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:KUK VIRTUAL HACKATHON closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:KUK VIRTUAL HACKATHON closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31798@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261124
+DTEND;VALUE=DATE:20261125
+SUMMARY:Deadline: Taskforge
+DESCRIPTION:HackathonForEveryone. Check rules. \nhttps://taskforge.devpost.
+ com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://taskforge.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Taskforge closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Taskforge closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31683@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:Deadline: BuildyourOwnWebsite
+DESCRIPTION:Roxten Studios. Check rules. \nhttps://buildyourownwebsite.devp
+ ost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://buildyourownwebsite.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:BuildyourOwnWebsite closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:BuildyourOwnWebsite closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31504@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:Deadline: Code For DFW
+DESCRIPTION:n/a. Check rules. \nhttps://code-for-dfw.devpost.com/\nTracker:
+  https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://code-for-dfw.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Code For DFW closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Code For DFW closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31737@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:Deadline: HackWithAditya
+DESCRIPTION:Aditya University. Check rules. \nhttps://hackwithaditya.devpos
+ t.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://hackwithaditya.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:HackWithAditya closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:HackWithAditya closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31907@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261128
+SUMMARY:Deadline: Build Your First AI App
+DESCRIPTION:Yasir Insights. Check rules. \nhttps://build-your-first-ai-app.
+ devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://build-your-first-ai-app.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Build Your First AI App closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Build Your First AI App closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:epfl-summer@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Deadline: Summer@EPFL
+DESCRIPTION:EPFL. Likely eligible. Research internship in computer and comm
+ unication sciences.\nhttps://summer.epfl.ch/\nTracker: https://vinhcq08.gi
+ thub.io/Opportunities-Tracker/
+URL:https://summer.epfl.ch/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Summer@EPFL closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Summer@EPFL closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31808@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Deadline: #BuildHybridAI 2026
+DESCRIPTION:Google. Check rules. \nhttps://firebasehybridaihackathon.devpos
+ t.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://firebasehybridaihackathon.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:#BuildHybridAI 2026 closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:#BuildHybridAI 2026 closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31733@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Deadline: 305 Veterans Hackathon Edition November 2026 — 305Hacka
+ thons.vercel.app
+DESCRIPTION:GOOGLE DEVELOPER GROUP AT FIU. Check rules. \nhttps://305vetera
+ nsnov2026.devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-
+ Tracker/
+URL:https://305veteransnov2026.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:305 Veterans Hackathon Edition November 2026 — 305Hackathons.
+ vercel.app closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:305 Veterans Hackathon Edition November 2026 — 305Hackathons.
+ vercel.app closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31682@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Deadline: CSC Winter Sparkathon
+DESCRIPTION:The Webb Schools CSC. Check rules. \nhttps://csc-winter-sparkat
+ hon.devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracke
+ r/
+URL:https://csc-winter-sparkathon.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CSC Winter Sparkathon closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:CSC Winter Sparkathon closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31993@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Deadline: IdeaLab Hacks
+DESCRIPTION:IdeaLab. Check rules. \nhttps://idealab-hacks.devpost.com/\nTra
+ cker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://idealab-hacks.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:IdeaLab Hacks closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:IdeaLab Hacks closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31794@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Deadline: Code for Change
+DESCRIPTION:HackathonForEveryone. Check rules. \nhttps://code-for-change-gl
+ obal.devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Track
+ er/
+URL:https://code-for-change-global.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Code for Change closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Code for Change closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:stanford-longevity-design-challenge@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Deadline: Stanford Longevity Design Challenge
+DESCRIPTION:Stanford Center on Longevity. Likely eligible. 2026–27 theme:
+  Human-Centered Robotics for Longevity. Teams of 1–5 from any accredited
+  university worldwide\; finals at Stanford with travel support.\nhttps://l
+ ongevity.stanford.edu/design-challenge/\nTracker: https://vinhcq08.github.
+ io/Opportunities-Tracker/
+URL:https://longevity.stanford.edu/design-challenge/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Stanford Longevity Design Challenge closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Stanford Longevity Design Challenge closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31960@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Deadline: ML Empowerment Build Challenge 4.0 - Prizes and Certifica
+ tes for EVERYONE
+DESCRIPTION:ML Empowerment Foundation. Check rules. \nhttps://ml-build-chal
+ lenge-4.devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tr
+ acker/
+URL:https://ml-build-challenge-4.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ML Empowerment Build Challenge 4.0 - Prizes and Certificates fo
+ r EVERYONE closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ML Empowerment Build Challenge 4.0 - Prizes and Certificates fo
+ r EVERYONE closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-32009@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Deadline: AI for Medicine: A Global Student Hackathon on the Future
+  of Care
+DESCRIPTION:Open Health AI Collective. Check rules. \nhttps://ai-for-medici
+ ne.devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker
+ /
+URL:https://ai-for-medicine.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AI for Medicine: A Global Student Hackathon on the Future of Ca
+ re closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AI for Medicine: A Global Student Hackathon on the Future of Ca
+ re closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31667@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Deadline: Kiroween 2026
+DESCRIPTION:Kiro. Check rules. \nhttps://kiroween.devpost.com/\nTracker: ht
+ tps://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://kiroween.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Kiroween 2026 closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Kiroween 2026 closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31773@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Deadline: LaunchPad Hacks (580k In Prizes!)
+DESCRIPTION:Hack4TodayOrg. Check rules. \nhttps://launchpad-hacks.devpost.c
+ om/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://launchpad-hacks.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:LaunchPad Hacks (580k In Prizes!) closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:LaunchPad Hacks (580k In Prizes!) closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31973@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+SUMMARY:Deadline: Deck the Pixels
+DESCRIPTION:Google. Check rules. \nhttps://deckthepixels.devpost.com/\nTrac
+ ker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://deckthepixels.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Deck the Pixels closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Deck the Pixels closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-32079@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+SUMMARY:Deadline: Learn AR with SPECS
+DESCRIPTION:Devpost. Check rules. \nhttps://learn-specs.devpost.com/\nTrack
+ er: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://learn-specs.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Learn AR with SPECS closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Learn AR with SPECS closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31972@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+SUMMARY:Deadline: SLAY HACKS
+DESCRIPTION:cite & slayy. Check rules. \nhttps://slayy-hacks.devpost.com/\n
+ Tracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://slayy-hacks.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SLAY HACKS closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SLAY HACKS closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31644@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20261209
+SUMMARY:Deadline: Reddit’s Game of the Day Hackathon
+DESCRIPTION:reddit. Check rules. \nhttps://redditgameofday2026.devpost.com/
+ \nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://redditgameofday2026.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reddit’s Game of the Day Hackathon closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reddit’s Game of the Day Hackathon closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31796@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+SUMMARY:Deadline: SafeSpace Hacks - Judges Needed
+DESCRIPTION:SafeSpace. Check rules. \nhttps://safespace-hacks.devpost.com/\
+ nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://safespace-hacks.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SafeSpace Hacks - Judges Needed closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SafeSpace Hacks - Judges Needed closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31994@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:Deadline: AI OpenBuild
+DESCRIPTION:AI OpenBuild. Check rules. \nhttps://ai-openbuild.devpost.com/\
+ nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://ai-openbuild.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AI OpenBuild closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AI OpenBuild closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31797@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:Deadline: Green Shift Hacks
+DESCRIPTION:HackathonForEveryone. Check rules. \nhttps://green-shift-hacks.
+ devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://green-shift-hacks.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Green Shift Hacks closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Green Shift Hacks closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:rss-https-opportunitydesk-org-2026-11-18-healthy-futures-masterc@opport
+ unity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:Deadline: Healthy Futures Mastercard Scholarship 2027
+DESCRIPTION:Opportunity Desk. Check rules. Deadline: December 10\, 2026 App
+ lications are open for the Healthy Futures Mastercard Scholarship 2027. Th
+ e Bertha Centre for Social Innovation and Entrepreneurship and the Faculty
+  of Health Sciences at the University of …\nhttps://opportunitydesk.org/
+ 2026/11/18/healthy-futures-mastercard-scholarship-2027/\nTracker: https://
+ vinhcq08.github.io/Opportunities-Tracker/
+URL:https://opportunitydesk.org/2026/11/18/healthy-futures-mastercard-schol
+ arship-2027/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Healthy Futures Mastercard Scholarship 2027 closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Healthy Futures Mastercard Scholarship 2027 closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-32061@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:Deadline: Peninsula Innovation Hackathon
+DESCRIPTION:bayhacks. Check rules. \nhttps://peninsula-innovation-hackathon
+ .devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://peninsula-innovation-hackathon.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Peninsula Innovation Hackathon closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Peninsula Innovation Hackathon closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31642@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Deadline: AWS MSP AI Hackathon
+DESCRIPTION:AWS. Check rules. \nhttps://aws-agentic-msp.devpost.com/\nTrack
+ er: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://aws-agentic-msp.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AWS MSP AI Hackathon closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AWS MSP AI Hackathon closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-32024@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Deadline: Relate by Neo4j Hackathon
+DESCRIPTION:Neo4j. Check rules. \nhttps://relate.devpost.com/\nTracker: htt
+ ps://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://relate.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Relate by Neo4j Hackathon closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Relate by Neo4j Hackathon closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-32072@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:Deadline: InnovateHER Hackathon: Girls Who Code
+DESCRIPTION:Girls Who Code. Check rules. \nhttps://hackathon-girls-who-code
+ .devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://hackathon-girls-who-code.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:InnovateHER Hackathon: Girls Who Code closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:InnovateHER Hackathon: Girls Who Code closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31083@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:Deadline: QNX Global Hackathon
+DESCRIPTION:QNX. Check rules. \nhttps://qnx.devpost.com/\nTracker: https://
+ vinhcq08.github.io/Opportunities-Tracker/
+URL:https://qnx.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:QNX Global Hackathon closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:QNX Global Hackathon closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-32060@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:Deadline: Silicon Valley Buildathon
+DESCRIPTION:Silicon Hacks Team. Check rules. \nhttps://silicon-valley-build
+ athon.devpost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Trac
+ ker/
+URL:https://silicon-valley-buildathon.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Silicon Valley Buildathon closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Silicon Valley Buildathon closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:eth-ssrf@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261217
+SUMMARY:Deadline: Student Summer Research Fellowship
+DESCRIPTION:ETH Zurich. Likely eligible. Summer research in the Department 
+ of Computer Science for strong undergraduates worldwide.\nhttps://inf.ethz
+ .ch/studies/summer-research-fellowship.html\nTracker: https://vinhcq08.git
+ hub.io/Opportunities-Tracker/
+URL:https://inf.ethz.ch/studies/summer-research-fellowship.html
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Student Summer Research Fellowship closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Student Summer Research Fellowship closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31480@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+SUMMARY:Deadline: AI Agents for Founders Challenge — HETIC 2026
+DESCRIPTION:HETIC. Check rules. \nhttps://ai-agents-founders-hetic-26.devpo
+ st.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://ai-agents-founders-hetic-26.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AI Agents for Founders Challenge — HETIC 2026 closes in 14 da
+ ys
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AI Agents for Founders Challenge — HETIC 2026 closes in 3 day
+ s
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31795@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
+SUMMARY:Deadline: AccessED Hacks
+DESCRIPTION:AccessEDnpo. Check rules. \nhttps://accessed-hacks.devpost.com/
+ \nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://accessed-hacks.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AccessED Hacks closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AccessED Hacks closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-30789@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Deadline: Arbiter Hacks V1
+DESCRIPTION:Arbiter . Check rules. \nhttps://arbiter-hacks-v1.devpost.com/\
+ nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://arbiter-hacks-v1.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Arbiter Hacks V1 closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Arbiter Hacks V1 closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31572@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+SUMMARY:Deadline: Codegeist 2026: Build with context. Ship with confidence.
+DESCRIPTION:Atlassian. Check rules. \nhttps://codegeist2026.devpost.com/\nT
+ racker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://codegeist2026.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Codegeist 2026: Build with context. Ship with confidence. close
+ s in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Codegeist 2026: Build with context. Ship with confidence. close
+ s in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-32017@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261224
+DTEND;VALUE=DATE:20261225
+SUMMARY:Deadline: Inceptrix 3.0
+DESCRIPTION:Tech Council - Jain Univeristy. Check rules. \nhttps://inceptri
+ x-hackathon.devpost.com/\nTracker: https://vinhcq08.github.io/Opportunitie
+ s-Tracker/
+URL:https://inceptrix-hackathon.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Inceptrix 3.0 closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Inceptrix 3.0 closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:utokyo-utrip@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY:Deadline: UTRIP (UTokyo Research Internship Program)
+DESCRIPTION:University of Tokyo. Likely eligible. Summer research internshi
+ p in the Graduate School of Science for students at universities outside J
+ apan.\nhttps://www.s.u-tokyo.ac.jp/en/utrip/\nTracker: https://vinhcq08.gi
+ thub.io/Opportunities-Tracker/
+URL:https://www.s.u-tokyo.ac.jp/en/utrip/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:UTRIP (UTokyo Research Internship Program) closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:UTRIP (UTokyo Research Internship Program) closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-31571@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20270112
+DTEND;VALUE=DATE:20270113
+SUMMARY:Deadline: Cloud9 x JetBrains: Sky's The Limit Hackathon 2026
+DESCRIPTION:Cloud9. Check rules. \nhttps://cloud9.devpost.com/\nTracker: ht
+ tps://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://cloud9.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Cloud9 x JetBrains: Sky's The Limit Hackathon 2026 closes in 14
+  days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Cloud9 x JetBrains: Sky's The Limit Hackathon 2026 closes in 3 
+ days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:devpost-30764@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:Deadline: Syntax Summit
+DESCRIPTION:Student Organization. Check rules. \nhttps://syntax-summit.devp
+ ost.com/\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://syntax-summit.devpost.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Syntax Summit closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Syntax Summit closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cern-summer-student@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20270121
+DTEND;VALUE=DATE:20270122
+SUMMARY:Deadline: Summer Student Programme
+DESCRIPTION:CERN. Check rules. Summer at CERN in physics\, computing or eng
+ ineering. Separate track for non-member-state nationals.\nhttps://careers.
+ cern/summer\nTracker: https://vinhcq08.github.io/Opportunities-Tracker/
+URL:https://careers.cern/summer
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Summer Student Programme closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Summer Student Programme closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:harvard-summer-school@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20270128
+DTEND;VALUE=DATE:20270129
+SUMMARY:Deadline: Harvard Summer School
+DESCRIPTION:Harvard University. Likely eligible. Summer courses at Harvard 
+ or Harvard-led study abroad programs\, open to visiting college students.\
+ nhttps://summer.harvard.edu/\nTracker: https://vinhcq08.github.io/Opportun
+ ities-Tracker/
+URL:https://summer.harvard.edu/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Harvard Summer School closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Harvard Summer School closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jane-street-fttp-hkg@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20270131
+DTEND;VALUE=DATE:20270201
+SUMMARY:Deadline: First-year Trading and Technology Program (Hong Kong)
+DESCRIPTION:Jane Street. Check rules. Program in Hong Kong for first-year u
+ ndergraduates who started university in Aug/Sep 2026.\nhttps://www.janestr
+ eet.com/fttp-hkg-email\nTracker: https://vinhcq08.github.io/Opportunities-
+ Tracker/
+URL:https://www.janestreet.com/fttp-hkg-email
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:First-year Trading and Technology Program (Hong Kong) closes in
+  14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:First-year Trading and Technology Program (Hong Kong) closes in
+  3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:imagine-cup@opportunity-tracker
+DTSTAMP:20261118T115600Z
+DTSTART;VALUE=DATE:20270228
+DTEND;VALUE=DATE:20270301
+SUMMARY:Deadline: Imagine Cup
+DESCRIPTION:Microsoft. Check rules. Microsoft's global student startup comp
+ etition.\nhttps://imaginecup.microsoft.com/\nTracker: https://vinhcq08.git
+ hub.io/Opportunities-Tracker/
+URL:https://imaginecup.microsoft.com/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Imagine Cup closes in 14 days
+TRIGGER:-P14D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Imagine Cup closes in 3 days
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
