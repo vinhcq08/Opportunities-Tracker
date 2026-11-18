@@ -1,19 +1,19 @@
 {
- "generated_at": "2026-11-18T11:59:16+00:00",
+ "generated_at": "2026-11-18T12:56:49+00:00",
  "profile": {
   "country": "VN",
   "year": 2,
   "timezone": "Asia/Ho_Chi_Minh"
  },
  "sources": {
-  "registry": "56 items",
+  "registry": "54 items",
   "kaggle": "skipped (add KAGGLE_USERNAME and KAGGLE_KEY secrets to turn on)",
   "devpost": "40 items",
   "mlh": "0 items",
   "simplify": "1 items",
   "Opportunity Desk": "2 items",
-  "Opportunities Corners": "5 items",
-  "UIT forum (latest)": "15 items",
+  "Opportunities Corners": "2 items",
+  "UIT forum (latest)": "7 items",
   "greenhouse:janestreet": "0 items",
   "greenhouse:optiver": "0 items",
   "greenhouse:imc": "0 items",
@@ -73,188 +73,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:31+00:00"
-  },
-  {
-   "id": "mit-100k",
-   "source": "registry",
-   "kind": "business_comp",
-   "org": "MIT",
-   "org_type": "university",
-   "featured": true,
-   "name": "MIT $100K Entrepreneurship Competition",
-   "url": "https://www.mit100k.org/",
-   "summary": "MIT's flagship startup competition.",
-   "region": "north_america",
-   "country": "",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "global",
-   "enrollment_req": "host_university_only",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [
-    10,
-    11,
-    12,
-    1,
-    2,
-    3,
-    4
-   ],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "",
-   "eligible_for_me": "not_eligible",
-   "elig_reasons": [
-    "Only for students of the host university (or teams with an affiliated member)"
-   ],
-   "page_hash": "55078248754d2342",
-   "fetch_error": null,
-   "first_seen": "2026-11-17T17:09:19+00:00",
-   "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:32+00:00"
-  },
-  {
-   "id": "harvard-pic",
-   "source": "registry",
-   "kind": "business_comp",
-   "org": "Harvard",
-   "org_type": "university",
-   "featured": true,
-   "name": "President's Innovation Challenge",
-   "url": "https://innovationlabs.harvard.edu/presidents-innovation-challenge",
-   "summary": "Harvard Innovation Labs' annual venture competition.",
-   "region": "north_america",
-   "country": "",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "global",
-   "enrollment_req": "host_university_only",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "upcoming",
-   "window": [
-    12,
-    1,
-    2,
-    3
-   ],
-   "deadline": null,
-   "verified": false,
-   "manual_check": true,
-   "notes": "",
-   "eligible_for_me": "not_eligible",
-   "elig_reasons": [
-    "Only for students of the host university (or teams with an affiliated member)"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-17T17:09:19+00:00",
-   "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:32+00:00"
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-hybrid-hcm-cosigma-tuyen-dung-syste",
-   "source": "feed: UIT forum (latest)",
-   "kind": "challenge",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "[Hybrid HCM] Cosigma tuyển dụng System Administrator",
-   "url": "https://forum.uit.edu.vn/t/hybrid-hcm-cosigma-tuyen-dung-system-administrator/165018",
-   "summary": "Role Overview We are seeking a skilled and proactive System Administrator to manage, maintain, and optimize our Linux-based infrastructure and network environments. You will play a key role in ensuring system reliability…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Eligibility text found: …ve mindset with a continuous improvement approach Languages Vietnamese: Full proficiency. English: good knowledge, both in writing… Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-khmt-kham-pha-agentic-ai-he-thong-p",
-   "source": "feed: UIT forum (latest)",
-   "kind": "challenge",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "[KHMT] Khám phá AGENTIC AI, hệ thống phân tán và mạng nano trong cơ thể người cùng giáo sư đến từ Đức!",
-   "url": "https://forum.uit.edu.vn/t/khmt-kham-pha-agentic-ai-he-thong-phan-tan-va-mang-nano-trong-co-the-nguoi-cung-giao-su-den-tu-duc/165079",
-   "summary": "Nguồn: https://www.facebook.com/share/p/1Drzz94Fas/ Bạn muốn tìm hiểu cách AI tác tử (Agentic AI) vận hành trong các hệ thống phân tán? Bạn có tò mò về những “mạng lưới siêu nhỏ” có khả năng hoạt động ngay bên trong cơ t…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-18T12:57:06+00:00"
   },
   {
    "id": "ibm-call-for-code",
@@ -305,49 +124,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:31+00:00"
-  },
-  {
-   "id": "rss-https-opportunitiescorners-com-hzdr-summer-student-program-2",
-   "source": "feed: Opportunities Corners",
-   "kind": "challenge",
-   "org": "Opportunities Corners",
-   "org_type": "other",
-   "featured": false,
-   "name": "HZDR Summer Student Program 2027 in Germany (Fully Funded)",
-   "url": "https://opportunitiescorners.com/hzdr-summer-student-program-2027/",
-   "summary": "Another Summer Program in Europe is now open for applications! Applications are now being accepted for the HZDR Summer Student Program 2027 in Germany, which welcomes international students from all around the world. The…",
-   "region": "global",
-   "country": "",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Eligibility text found: …HZDR Summer Student Program 2027 in Germany, which welcomes international students from all around the world. The HZDR Summer Program will tak… Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-18T12:57:05+00:00"
   },
   {
    "id": "imagine-cup",
@@ -394,7 +171,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:30+00:00"
+   "last_checked": "2026-11-18T12:57:04+00:00"
   },
   {
    "id": "james-dyson-award",
@@ -442,7 +219,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:43+00:00"
+   "last_checked": "2026-11-18T12:57:21+00:00"
   },
   {
    "id": "kaggle-competitions",
@@ -497,49 +274,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:31+00:00"
-  },
-  {
-   "id": "rss-https-opportunitiescorners-com-leadership-and-peace-summit-m",
-   "source": "feed: Opportunities Corners",
-   "kind": "challenge",
-   "org": "Opportunities Corners",
-   "org_type": "other",
-   "featured": false,
-   "name": "Leadership and Peace Summit Morocco 2027 (Fully Funded)",
-   "url": "https://opportunitiescorners.com/leadership-and-peace-summit-morocco/",
-   "summary": "Applications are open for the Leadership & Peace Summit Morocco 2027, an international summit bringing together emerging leaders, young professionals, students, changemakers, and peace advocates from around the world. Or…",
-   "region": "global",
-   "country": "",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-18T12:57:06+00:00"
   },
   {
    "id": "mit-solve",
@@ -586,7 +321,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:29+00:00"
+   "last_checked": "2026-11-18T12:57:03+00:00"
   },
   {
    "id": "openideo-challenges",
@@ -641,7 +376,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:45+00:00"
+   "last_checked": "2026-11-18T12:57:22+00:00"
   },
   {
    "id": "google-solution-challenge",
@@ -687,7 +422,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:30+00:00"
+   "last_checked": "2026-11-18T12:57:05+00:00"
   },
   {
    "id": "stanford-longevity-design-challenge",
@@ -733,7 +468,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:43+00:00"
+   "last_checked": "2026-11-18T12:57:21+00:00"
   },
   {
    "id": "undergraduate-awards",
@@ -781,49 +516,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:43+00:00"
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-thu-moi-sinh-vien-hoc-vien-tham-du-",
-   "source": "feed: UIT forum (latest)",
-   "kind": "challenge",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "Thư mời sinh viên/học viên tham dự WorldQuant Office Tour 2026 Program",
-   "url": "https://forum.uit.edu.vn/t/thu-moi-sinh-vien-hoc-vien-tham-du-worldquant-office-tour-2026-program/165048",
-   "summary": "Link đăng ký: [Register] WorldQuant Office Tour 2026 - HCMC Survey Chào các bạn sinh viên/học viên! Nhằm đẩy mạnh sự hợp tác giữa WorldQuant và UIT, đồng thời mang đến cho sinh viên/học viên những thông tin hữu ích, trải…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Eligibility text found: …7:00 thứ Tư, ngày 25 tháng 11 năm 2026 Địa điểm: WorldQuant Vietnam Investment Software – Tầng 17, Tháp 2, Saigon Centre, [Số 6… Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-18T12:57:21+00:00"
   },
   {
    "id": "xprize",
@@ -878,7 +571,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:45+00:00"
+   "last_checked": "2026-11-18T12:57:22+00:00"
   },
   {
    "id": "icpc-asia-vietnam",
@@ -925,7 +618,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:53+00:00"
+   "last_checked": "2026-11-18T12:57:30+00:00"
   },
   {
    "id": "vnoi-olympiad",
@@ -972,49 +665,7 @@
    "fetch_error": "HTTP 403",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:53+00:00"
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-uit-english-contest-2026-future-rea",
-   "source": "feed: UIT forum (latest)",
-   "kind": "contest",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "🌟 UIT English Contest 2026 – Future-Ready Humans: AI Gets Smarter. We Get Better",
-   "url": "https://forum.uit.edu.vn/t/uit-english-contest-2026-future-ready-humans-ai-gets-smarter-we-get-better/165016",
-   "summary": "UIT ENGLISH CONTEST 2026 - VÒNG LOẠI TRỰC TUYẾN ĐANG DIỄN RA! THÔNG TIN CUỘC THI - Đăng ký: 01/11 – 18/11/2026 - Vòng loại trực tuyến: 09/11 – 19/11/2026 - Link đăng ký: https://link.uit.edu.vn/UITEnglishContest2026 - Đố…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-18T12:57:30+00:00"
   },
   {
    "id": "devpost-31808",
@@ -1051,7 +702,7 @@
    "deadline": "2026-11-30",
    "verified": false,
    "manual_check": false,
-   "notes": "3103 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "3118 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1189,7 +840,7 @@
    "deadline": "2026-12-18",
    "verified": false,
    "manual_check": false,
-   "notes": "469 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "470 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1373,7 +1024,7 @@
    "deadline": "2026-12-11",
    "verified": false,
    "manual_check": false,
-   "notes": "412 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "428 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1465,7 +1116,7 @@
    "deadline": "2026-11-27",
    "verified": false,
    "manual_check": false,
-   "notes": "643 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "644 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1557,7 +1208,7 @@
    "deadline": "2027-01-12",
    "verified": false,
    "manual_check": false,
-   "notes": "191 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "200 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1603,7 +1254,7 @@
    "deadline": "2026-12-01",
    "verified": false,
    "manual_check": false,
-   "notes": "159 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "160 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1695,7 +1346,7 @@
    "deadline": "2026-12-22",
    "verified": false,
    "manual_check": false,
-   "notes": "4120 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "4132 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1741,7 +1392,7 @@
    "deadline": "2026-11-30",
    "verified": false,
    "manual_check": false,
-   "notes": "232 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "233 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1787,7 +1438,7 @@
    "deadline": "2026-11-20",
    "verified": false,
    "manual_check": false,
-   "notes": "318 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "320 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1833,7 +1484,7 @@
    "deadline": "2026-12-07",
    "verified": false,
    "manual_check": false,
-   "notes": "1063 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "1069 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1932,7 +1583,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:29+00:00"
+   "last_checked": "2026-11-18T12:57:03+00:00"
   },
   {
    "id": "devpost-31737",
@@ -1969,7 +1620,7 @@
    "deadline": "2026-11-25",
    "verified": false,
    "manual_check": false,
-   "notes": "226 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "227 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2162,7 +1813,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:22+00:00"
+   "last_checked": "2026-11-18T12:56:56+00:00"
   },
   {
    "id": "devpost-31667",
@@ -2199,7 +1850,7 @@
    "deadline": "2026-12-04",
    "verified": false,
    "manual_check": false,
-   "notes": "16242 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "16261 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2245,7 +1896,7 @@
    "deadline": "2026-11-22",
    "verified": false,
    "manual_check": false,
-   "notes": "56 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "57 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2290,7 +1941,7 @@
    "deadline": "2026-12-04",
    "verified": false,
    "manual_check": false,
-   "notes": "624 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "625 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2336,7 +1987,7 @@
    "deadline": "2026-12-07",
    "verified": false,
    "manual_check": false,
-   "notes": "309 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "310 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2382,7 +2033,7 @@
    "deadline": "2026-11-18",
    "verified": false,
    "manual_check": false,
-   "notes": "7000 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "7015 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2519,7 +2170,7 @@
    "deadline": "2026-12-15",
    "verified": false,
    "manual_check": false,
-   "notes": "1928 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "1935 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2564,7 +2215,7 @@
    "deadline": "2026-12-08",
    "verified": false,
    "manual_check": false,
-   "notes": "1675 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "1681 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2610,7 +2261,7 @@
    "deadline": "2026-12-11",
    "verified": false,
    "manual_check": false,
-   "notes": "517 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "519 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2656,7 +2307,7 @@
    "deadline": "2026-12-09",
    "verified": false,
    "manual_check": false,
-   "notes": "494 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "495 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2702,7 +2353,7 @@
    "deadline": "2026-12-15",
    "verified": false,
    "manual_check": false,
-   "notes": "175 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "176 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2981,11 +2632,11 @@
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
-   "page_hash": "32e4d65be9e97397",
+   "page_hash": "e7581c4e23d00c5b",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:29+00:00"
+   "last_changed": "2026-11-18T12:56:49+00:00",
+   "last_checked": "2026-11-18T12:57:03+00:00"
   },
   {
    "id": "citadel-discover-hong-kong",
@@ -3028,7 +2679,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:39+00:00"
+   "last_checked": "2026-11-18T12:57:15+00:00"
   },
   {
    "id": "citadel-discover-singapore",
@@ -3072,7 +2723,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:39+00:00"
+   "last_checked": "2026-11-18T12:57:15+00:00"
   },
   {
    "id": "hrt-explore-singapore",
@@ -3117,7 +2768,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:40+00:00"
+   "last_checked": "2026-11-18T12:57:16+00:00"
   },
   {
    "id": "jane-street-fttp-hkg",
@@ -3160,7 +2811,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:39+00:00"
+   "last_checked": "2026-11-18T12:57:15+00:00"
   },
   {
    "id": "optiver-futurefocus-singapore",
@@ -3204,7 +2855,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:39+00:00"
+   "last_checked": "2026-11-18T12:57:15+00:00"
   },
   {
    "id": "sig-discovery-hong-kong",
@@ -3247,7 +2898,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:40+00:00"
+   "last_checked": "2026-11-18T12:57:16+00:00"
   },
   {
    "id": "jane-street-insight-hkg",
@@ -3293,7 +2944,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:39+00:00"
+   "last_checked": "2026-11-18T12:57:15+00:00"
   },
   {
    "id": "jane-street-portal-sgp",
@@ -3338,7 +2989,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:39+00:00"
+   "last_checked": "2026-11-18T12:57:15+00:00"
   },
   {
    "id": "jane-street-see-hkg",
@@ -3385,7 +3036,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:39+00:00"
+   "last_checked": "2026-11-18T12:57:15+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-6-month-internship-with-allowance-a",
@@ -3902,7 +3553,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:39+00:00"
+   "last_checked": "2026-11-18T12:57:15+00:00"
   },
   {
    "id": "grab-internships",
@@ -3950,7 +3601,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:34+00:00"
+   "last_checked": "2026-11-18T12:57:09+00:00"
   },
   {
    "id": "greenhouse-stripe-8186367",
@@ -4210,7 +3861,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:35+00:00"
+   "last_checked": "2026-11-18T12:57:10+00:00"
   },
   {
    "id": "greenhouse-coinbase-8175873",
@@ -4467,7 +4118,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:36+00:00"
+   "last_checked": "2026-11-18T12:57:11+00:00"
   },
   {
    "id": "gsoc",
@@ -4513,7 +4164,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:45+00:00"
+   "last_checked": "2026-11-18T12:57:22+00:00"
   },
   {
    "id": "lfx-mentorship",
@@ -4560,7 +4211,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:46+00:00"
+   "last_checked": "2026-11-18T12:57:23+00:00"
   },
   {
    "id": "mlh-fellowship",
@@ -4611,7 +4262,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:47+00:00"
+   "last_checked": "2026-11-18T12:57:24+00:00"
   },
   {
    "id": "outreachy",
@@ -4657,7 +4308,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:45+00:00"
+   "last_checked": "2026-11-18T12:57:22+00:00"
   },
   {
    "id": "asean-undergraduate-scholarship",
@@ -4706,7 +4357,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:50+00:00"
+   "last_checked": "2026-11-18T12:57:28+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-chuong-trinh-hoc-bong-amcham-nam-20",
@@ -4740,48 +4391,6 @@
    "verified": false,
    "manual_check": false,
    "notes": "Eligibility text found: …vòng đơn, và nộp đơn online tại địa chỉ: https://acs.amchamvietnam.com/ Vòng kiểm tra năng lực (9/12/2026 – 14/12/2026) Thí si… Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "rss-https-opportunitiescorners-com-erasmus-mundus-emle-scholarsh",
-   "source": "feed: Opportunities Corners",
-   "kind": "scholarship",
-   "org": "Opportunities Corners",
-   "org_type": "other",
-   "featured": false,
-   "name": "Erasmus Mundus EMLE Scholarship 2027/29 (Fully Funded)",
-   "url": "https://opportunitiescorners.com/erasmus-mundus-emle-scholarship-2027/",
-   "summary": "The Erasmus Mundus EMLE Scholarship 2027 is one of the most popular Master’s Degree Programs offered by the Erasmus Commission. EMLE Stands for the European Master in Law and Economics, a One-Year Master’s degree scholar…",
-   "region": "global",
-   "country": "",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -4838,7 +4447,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:50+00:00"
+   "last_checked": "2026-11-18T12:57:27+00:00"
   },
   {
    "id": "gks-scholarship",
@@ -4885,7 +4494,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:47+00:00"
+   "last_checked": "2026-11-18T12:57:24+00:00"
   },
   {
    "id": "rss-https-opportunitydesk-org-2026-11-18-healthy-futures-masterc",
@@ -4916,48 +4525,6 @@
    "status": "open",
    "window": [],
    "deadline": "2026-12-10",
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-hoc-bong-gems-university-nam-hoc-20",
-   "source": "feed: UIT forum (latest)",
-   "kind": "scholarship",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "Học bổng GEMS-University năm học 2026-2027",
-   "url": "https://forum.uit.edu.vn/t/hoc-bong-gems-university-nam-hoc-2026-2027/165104",
-   "summary": "THÔNG BÁO TUYỂN SINH HỌC BỔNG PACIFIC LINKS FOUNDATION DÀNH CHO NỮ SINH VIÊN KHỐI NGÀNH STEM 2026 - 2027 Chào các bạn sinh viên, Pacific Links Foundation phối hợp với UIT thông báo tuyển sinh chương trình học bổng dành c…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
    "verified": false,
    "manual_check": false,
    "notes": "No eligibility text found in the post. Read the official page before deciding.",
@@ -5011,48 +4578,6 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-ktx-dhqg-hoc-bong-chap-canh-uoc-mo-",
-   "source": "feed: UIT forum (latest)",
-   "kind": "scholarship",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "KTX ĐHQG_Học bổng “Chắp cánh ước mơ” năm học 2026 - 2027",
-   "url": "https://forum.uit.edu.vn/t/ktx-dhqg_hoc-bong-chap-canh-uoc-mo-nam-hoc-2026-2027/165015",
-   "summary": "Thực hiện Quyết định số 400/QĐ-KTX&ĐTĐH ngày 08 tháng 8 năm 2025 của Giám đốc Trung tâm Quản lý Ký túc xá và Khu đô thị ĐHQG-HCM về Ban hành Quy định về chính sách hỗ trợ sinh viên nội trú tại Ký túc xá ĐHQG-HCM; Triển k…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:59:16+00:00",
-   "last_changed": "2026-11-18T11:59:16+00:00",
    "last_checked": null
   },
   {
@@ -5141,7 +4666,7 @@
    "fetch_error": "HTTP 403",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:47+00:00"
+   "last_checked": "2026-11-18T12:57:24+00:00"
   },
   {
    "id": "amgen-scholars",
@@ -5187,7 +4712,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:22+00:00"
+   "last_checked": "2026-11-18T12:56:55+00:00"
   },
   {
    "id": "mitacs-globalink",
@@ -5234,91 +4759,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:16+00:00"
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-lam-research-taiwan-to-chuc-phong-v",
-   "source": "feed: UIT forum (latest)",
-   "kind": "summer_research",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "Lam Research Taiwan tổ chức phỏng vấn tuyển dụng tại Việt Nam - 12/2026",
-   "url": "https://forum.uit.edu.vn/t/lam-research-taiwan-to-chuc-phong-van-tuyen-dung-tai-viet-nam-12-2026/165112",
-   "summary": "LAM RESEARCH TAIWAN TỔ CHỨC PHỎNG VẤN TUYỂN DỤNG TẠI VIỆT NAM - 12/2026 - Bạn là sinh viên Kỹ thuật mới tốt nghiệp hoặc kỹ sư có kinh nghiệm ngành Cơ khí, Điện - Điện tử và các ngành liên quan, muốn phát triển trong ngàn…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "rss-https-opportunitiescorners-com-oist-internship-in-japan-fall",
-   "source": "feed: Opportunities Corners",
-   "kind": "summer_research",
-   "org": "Opportunities Corners",
-   "org_type": "other",
-   "featured": false,
-   "name": "OIST Internship in Japan (Fully Funded) (Fall 2027)",
-   "url": "https://opportunitiescorners.com/oist-internship-in-japan-fall-2027/",
-   "summary": "Applications are now open for the OIST Internship in Japan for the Fall 2027 intake. The Okinawa Institute of Science and Technology (OIST) offers a fully funded internship for international students from all over the wo…",
-   "region": "global",
-   "country": "",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Eligibility text found: …and Technology (OIST) offers a fully funded internship for international students from all over the world. The internship duration ranges fro… Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-18T12:56:49+00:00"
   },
   {
    "id": "oist-internship",
@@ -5373,7 +4814,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:17+00:00"
+   "last_checked": "2026-11-18T12:56:50+00:00"
   },
   {
    "id": "nsf-reu",
@@ -5420,7 +4861,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:33+00:00"
+   "last_checked": "2026-11-18T12:57:09+00:00"
   },
   {
    "id": "eth-ssrf",
@@ -5466,7 +4907,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:16+00:00"
+   "last_checked": "2026-11-18T12:56:49+00:00"
   },
   {
    "id": "cern-summer-student",
@@ -5511,7 +4952,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:19+00:00"
+   "last_checked": "2026-11-18T12:56:53+00:00"
   },
   {
    "id": "epfl-summer",
@@ -5557,7 +4998,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:17+00:00"
+   "last_checked": "2026-11-18T12:56:50+00:00"
   },
   {
    "id": "utokyo-utrip",
@@ -5603,7 +5044,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:20+00:00"
+   "last_checked": "2026-11-18T12:56:54+00:00"
   },
   {
    "id": "kaust-vsrp",
@@ -5658,7 +5099,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:18+00:00"
+   "last_checked": "2026-11-18T12:56:51+00:00"
   },
   {
    "id": "berkeley-summer-sessions",
@@ -5705,7 +5146,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:41+00:00"
+   "last_checked": "2026-11-18T12:57:17+00:00"
   },
   {
    "id": "cambridge-isp",
@@ -5754,7 +5195,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:42+00:00"
+   "last_checked": "2026-11-18T12:57:19+00:00"
   },
   {
    "id": "harvard-summer-school",
@@ -5802,7 +5243,49 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:41+00:00"
+   "last_checked": "2026-11-18T12:57:17+00:00"
+  },
+  {
+   "id": "rss-https-opportunitiescorners-com-hzdr-summer-student-program-2",
+   "source": "feed: Opportunities Corners",
+   "kind": "summer_school",
+   "org": "Opportunities Corners",
+   "org_type": "other",
+   "featured": false,
+   "name": "HZDR Summer Student Program 2027 in Germany (Fully Funded)",
+   "url": "https://opportunitiescorners.com/hzdr-summer-student-program-2027/",
+   "summary": "Another Summer Program in Europe is now open for applications! Applications are now being accepted for the HZDR Summer Student Program 2027 in Germany, which welcomes international students from all around the world. The…",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Eligibility text found: …HZDR Summer Student Program 2027 in Germany, which welcomes international students from all around the world. The HZDR Summer Program will tak… Read the official page before deciding.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-18T11:56:00+00:00",
+   "last_changed": "2026-11-18T11:56:00+00:00",
+   "last_checked": null
   },
   {
    "id": "lse-summer-school",
@@ -5850,7 +5333,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:41+00:00"
+   "last_checked": "2026-11-18T12:57:17+00:00"
   },
   {
    "id": "stanford-summer-session",
@@ -5898,7 +5381,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:40+00:00"
+   "last_checked": "2026-11-18T12:57:17+00:00"
   },
   {
    "id": "rss-https-opportunitiescorners-com-summer-programs-in-europe-in-",
@@ -5987,7 +5470,7 @@
    "fetch_error": "TooManyRedirects",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:59:53+00:00"
+   "last_checked": "2026-11-18T12:57:30+00:00"
   },
   {
    "id": "microsoft-explore",
@@ -6031,7 +5514,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:59:32+00:00"
+   "last_checked": "2026-11-18T12:57:07+00:00"
   },
   {
    "id": "google-step",
@@ -6075,10 +5558,109 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:59:40+00:00"
+   "last_checked": "2026-11-18T12:57:17+00:00"
   }
  ],
  "changes": [
+  {
+   "type": "page_updated",
+   "id": "treehacks",
+   "name": "TreeHacks",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-forum-uit-edu-vn-t-hybrid-hcm-cosigma-tuyen-dung-syste",
+   "name": "[Hybrid HCM] Cosigma tuyển dụng System Administrator",
+   "kind": "challenge",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-forum-uit-edu-vn-t-khmt-kham-pha-agentic-ai-he-thong-p",
+   "name": "[KHMT] Khám phá AGENTIC AI, hệ thống phân tán và mạng nano trong cơ thể người cùng giáo sư đến từ Đức!",
+   "kind": "challenge",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-opportunitiescorners-com-leadership-and-peace-summit-m",
+   "name": "Leadership and Peace Summit Morocco 2027 (Fully Funded)",
+   "kind": "challenge",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-forum-uit-edu-vn-t-thu-moi-sinh-vien-hoc-vien-tham-du-",
+   "name": "Thư mời sinh viên/học viên tham dự WorldQuant Office Tour 2026 Program",
+   "kind": "challenge",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-forum-uit-edu-vn-t-uit-english-contest-2026-future-rea",
+   "name": "🌟 UIT English Contest 2026 – Future-Ready Humans: AI Gets Smarter. We Get Better",
+   "kind": "contest",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-opportunitiescorners-com-erasmus-mundus-emle-scholarsh",
+   "name": "Erasmus Mundus EMLE Scholarship 2027/29 (Fully Funded)",
+   "kind": "scholarship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-forum-uit-edu-vn-t-hoc-bong-gems-university-nam-hoc-20",
+   "name": "Học bổng GEMS-University năm học 2026-2027",
+   "kind": "scholarship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-forum-uit-edu-vn-t-ktx-dhqg-hoc-bong-chap-canh-uoc-mo-",
+   "name": "KTX ĐHQG_Học bổng “Chắp cánh ước mơ” năm học 2026 - 2027",
+   "kind": "scholarship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-forum-uit-edu-vn-t-lam-research-taiwan-to-chuc-phong-v",
+   "name": "Lam Research Taiwan tổ chức phỏng vấn tuyển dụng tại Việt Nam - 12/2026",
+   "kind": "summer_research",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-opportunitiescorners-com-oist-internship-in-japan-fall",
+   "name": "OIST Internship in Japan (Fully Funded) (Fall 2027)",
+   "kind": "summer_research",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T12:56:49+00:00"
+  },
   {
    "type": "eligibility",
    "id": "rss-https-forum-uit-edu-vn-t-6-month-internship-with-allowance-a",
@@ -7329,105 +6911,6 @@
    "eligible_for_me": "check",
    "detail": "",
    "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-26475",
-   "name": "Dakar Bitcoin Hack by BTrust",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31789",
-   "name": "STEM2Connect AI Hackathon",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-30657",
-   "name": "Teens Hack Houston Hackathon",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-30456",
-   "name": "Bridge The Gap Hacks",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31549",
-   "name": "KUK VIRTUAL HACKATHON",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31798",
-   "name": "Taskforge",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31737",
-   "name": "HackWithAditya",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31683",
-   "name": "BuildyourOwnWebsite",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31504",
-   "name": "Code For DFW",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31907",
-   "name": "Build Your First AI App",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31682",
-   "name": "CSC Winter Sparkathon",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
   }
  ],
  "proposals": {},
@@ -7436,35 +6919,35 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
-   "last_count": 56
+   "last_ok": "2026-11-18T12:56:49+00:00",
+   "last_count": 54
   },
   "devpost": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 40
   },
   "mlh": {
    "fail_runs": 0,
-   "zero_runs": 2,
+   "zero_runs": 3,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 0
   },
   "simplify": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 1
   },
   "kaggle": {
    "fail_runs": 0,
-   "zero_runs": 1,
+   "zero_runs": 2,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 0
   },
   "challenge.gov": {
@@ -7478,7 +6961,7 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 2
   },
   "Opportunities for Youth": {
@@ -7492,15 +6975,15 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
-   "last_count": 5
+   "last_ok": "2026-11-18T12:56:49+00:00",
+   "last_count": 2
   },
   "UIT forum (latest)": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
-   "last_count": 15
+   "last_ok": "2026-11-18T12:56:49+00:00",
+   "last_count": 7
   },
   "VNOI news": {
    "fail_runs": 1,
@@ -7511,44 +6994,44 @@
   },
   "greenhouse:janestreet": {
    "fail_runs": 0,
-   "zero_runs": 2,
+   "zero_runs": 3,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 0
   },
   "greenhouse:optiver": {
    "fail_runs": 0,
-   "zero_runs": 2,
+   "zero_runs": 3,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 0
   },
   "greenhouse:imc": {
    "fail_runs": 0,
-   "zero_runs": 2,
+   "zero_runs": 3,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 0
   },
   "greenhouse:stripe": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 3
   },
   "greenhouse:databricks": {
    "fail_runs": 0,
-   "zero_runs": 2,
+   "zero_runs": 3,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 0
   },
   "greenhouse:coinbase": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 1
   },
   "greenhouse:airwallex": {
@@ -7562,28 +7045,28 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 2
   },
   "greenhouse:jumptrading": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 6
   },
   "greenhouse:towerresearchcapital": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 3
   },
   "lever:binance": {
    "fail_runs": 0,
-   "zero_runs": 2,
+   "zero_runs": 3,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 0
   },
   "lever:shopback": {
@@ -7595,9 +7078,9 @@
   },
   "lever:ninjavan": {
    "fail_runs": 0,
-   "zero_runs": 2,
+   "zero_runs": 3,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_ok": "2026-11-18T12:56:49+00:00",
    "last_count": 0
   }
  },
