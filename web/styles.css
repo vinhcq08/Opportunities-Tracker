@@ -10,7 +10,25 @@
   --yellow: #FFC23D;
   --peri: #B9C6FF;
   --sand: #E7E4DC;
-  --white: #FFFFFF;
+  --white: #FFFFFF;        /* paper: cards, inputs, tags */
+  --accent-fill: #2B3BFF;  /* blue used as a background (cover, hovers) */
+  color-scheme: light;
+}
+/* Dark theme: follows the device unless you pick Light; "Dark" forces it. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #121316; --ink: #F2F0EA; --muted: #ACA9A0; --rule: #3A3A40; --accent: #8C97FF; --white: #1C1D22;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #121316; --ink: #F2F0EA; --muted: #ACA9A0; --rule: #3A3A40; --accent: #8C97FF; --white: #1C1D22;
+  color-scheme: dark;
+}
+/* Colour blocks keep dark ink in both themes, so text on lime, coral, yellow and blue-grey stays readable. */
+.bg-lime, .bg-coral, .bg-yellow, .bg-peri, .bg-sand, .due,
+.tag.check, .tag.open, .tag.closed, .tag.not_eligible, .tag.ignore {
+  --ink: #0A0A0A; --muted: #3D3D3D; --white: #FFFFFF; --rule: rgba(10, 10, 10, .2); color: #0A0A0A;
 }
 
 * { box-sizing: border-box; }
@@ -49,6 +67,15 @@ button { font: inherit; }
 .nav a[aria-current="page"] { border-bottom-color: var(--accent); color: var(--accent); }
 .nav .short { display: none; }
 
+/* ---- search, theme, install, offline */
+.search input { width: 240px; min-height: 40px; border: 2px solid var(--ink); border-radius: 999px; padding: 0 16px;
+  background: var(--white); color: var(--ink); font: 14px Inter, sans-serif; }
+.search input::placeholder { color: var(--muted); }
+.go.icon { min-width: 40px; padding: 0; }
+.go.icon svg { display: block; }
+.offline { background: var(--yellow); color: #0A0A0A; font: 800 13px Archivo, sans-serif; text-align: center; padding: 8px 16px; }
+mark.hit { background: var(--yellow); color: #0A0A0A; padding: 0 2px; border-radius: 2px; }
+
 main.wrap { padding-top: 28px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 26px; }
 
 /* ---- controls */
@@ -57,10 +84,10 @@ main.wrap { padding-top: 28px; padding-bottom: 72px; display: flex; flex-directi
   font: 800 14px Archivo, sans-serif; text-decoration: none; cursor: pointer; white-space: nowrap; }
 .go:hover { background: var(--ink); color: var(--white); }
 .go[aria-pressed="true"], .go.dark { background: var(--ink); color: var(--white); }
-.go.dark:hover, .go[aria-pressed="true"]:hover { background: var(--accent); border-color: var(--accent); color: var(--white); }
+.go.dark:hover, .go[aria-pressed="true"]:hover { background: var(--accent-fill); border-color: var(--accent-fill); color: #FFFFFF; }
 .go.small { min-height: 36px; padding: 0 14px; font-size: 13px; }
-.go.on-dark { border-color: var(--white); color: var(--white); }
-.go.on-dark.fill { background: var(--white); color: var(--ink); }
+.go.on-dark { border-color: #FFFFFF; color: #FFFFFF; }
+.go.on-dark.fill { background: #FFFFFF; color: #0A0A0A; }
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .spacer { flex: 1; }
 
@@ -82,9 +109,9 @@ main.wrap { padding-top: 28px; padding-bottom: 72px; display: flex; flex-directi
 .stat-n { font: 900 44px/1 Archivo, sans-serif; }
 
 /* ---- cover & blocks */
-.cover { background: var(--accent); color: var(--white); border-radius: 4px; padding: 28px;
+.cover { background: var(--accent-fill); color: #FFFFFF; border-radius: 4px; padding: 28px;
   display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; min-height: 300px; }
-.cover a:not(.go) { color: var(--white); }
+.cover a:not(.go) { color: #FFFFFF; }
 .cover-main { flex: 1 1 300px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
 .cover-title { font-size: clamp(32px, 4.5vw, 48px); line-height: .95; }
 .cover-big { text-align: right; display: flex; flex-direction: column; justify-content: flex-end; }
@@ -263,6 +290,9 @@ footer { border-top: 3px solid var(--ink); padding: 16px 0 40px; font-size: 13px
   .wrap { padding: 0 16px; }
   .brand { font-size: 19px; }
   .mast-right .k { display: none; }
+  .mast-right { width: 100%; }
+  .search { flex: 1 1 auto; order: 3; width: 100%; }
+  .search input { width: 100%; }
   .nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--ground); border-top: 2px solid var(--ink);
     border-bottom: 0; flex-wrap: nowrap; justify-content: space-around; column-gap: 0; padding-bottom: env(safe-area-inset-bottom); }
   .nav a { font-size: 10px; letter-spacing: 0; white-space: nowrap; padding: 14px 2px; border-bottom: 0; border-top: 4px solid transparent; }

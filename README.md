@@ -41,6 +41,11 @@ The site is at `https://<user>.github.io/Opportunities-Tracker/`.
 
 ## Everyday use
 
+- **Search:** the box in the header searches every program (name, organisation, country, theme). Press `/` to jump to it.
+- **Dark mode:** follows your device; the ◐ button switches between Auto, Dark and Light.
+- **Use it like an app:** on Android/Chrome tap **Install app**; on iPhone, Safari → Share → **Add to Home Screen**. It opens full-screen and works offline with the data from your last visit.
+- **Share:** each program page has a **Share** button (your phone's share menu, or copies the link).
+
 - **Verify a program:** open its page, set `nationality_ok`, `enrollment_req`, `class_years` and `deadline` in `programs.yaml`, then set `verified: true`.
 - **Add a program:** copy an entry in `programs.yaml`. The header comments list every field.
 - **Review tab:** accept Claude's suggestions and decide unclear items, click **Copy for overrides.yaml**, paste it into `overrides.yaml` (replacing its contents) and commit.

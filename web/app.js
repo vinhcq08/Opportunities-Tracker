@@ -52,6 +52,7 @@
     verified: store.get("verified", {}),  // id -> { nationality_ok, enrollment_req, class_years, deadline, at } checked by you
     allHackathons: store.get("allHackathons", false),  // include non-featured Devpost hackathons in Review
     items: [],  // the data's items with your local verifications laid over them
+    query: "",  // the search box
     ui: { summerFunded: false, summerRegion: "all", competeType: "all", featuredOnly: true, onlineOnly: false, inVietnam: false },
     limits: {},   // list key -> how many items are shown ("Show more")
     groupOpen: {},  // Review group -> open/closed
@@ -493,6 +494,37 @@
     ${hiddenList(all)}`;
   }
 
+  // ------------------------------------------------------------ search
+  function haystack(i) {
+    return [i.name, i.org, i.country, i.city, i.summary, (i.themes || []).join(" "), (KIND[i.kind] || {}).label,
+      REGION_LABEL[i.region], i.funding ? FUND_LABEL[i.funding] : "", i.format === "online" ? "online" : ""].join(" ").toLowerCase();
+  }
+  function searchResults(q) {
+    const words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!words.length) return [];
+    const ql = q.toLowerCase();
+    return items().filter((i) => { const h = haystack(i); return words.every((w) => h.includes(w)); })
+      .map((i) => {
+        const n = i.name.toLowerCase();
+        const score = (n.startsWith(ql) ? 4 : 0) + (n.includes(ql) ? 3 : 0) + (i.org.toLowerCase().includes(ql) ? 2 : 0) + (i.featured ? 1 : 0);
+        return { i, score };
+      })
+      .sort((a, b) => b.score - a.score || bySoonest(a.i, b.i)).map((r) => r.i);
+  }
+  function viewSearch() {
+    const q = state.query.trim();
+    if (!q) return `<h1 class="h headline">Search.</h1>${empty("Type in the search box: a program, organisation, country or theme (for example “Japan”, “hackathon”, “fully funded”).")}`;
+    const all = searchResults(q);
+    const vis = all.filter(isVisible);
+    return `
+    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:16px">
+      <h1 class="h headline" style="font-size:clamp(36px,6vw,80px)">${pad(vis.length)} for<br><em>“${esc(q)}”</em></h1>
+      ${vis.length ? layoutSwitch() : ""}
+    </div>
+    ${vis.length ? collection(vis, "search:" + q) : empty(all.length ? "Nothing open to you matches. See the hidden results below." : "Nothing matches. Try fewer or different words.")}
+    ${hiddenList(all)}`;
+  }
+
   // ------------------------------------------------------------ program page
   function viewProgram(id) {
     const item = state.items.find((i) => i.id === id);
@@ -527,7 +559,7 @@
       </div>
       <div class="prog-side">
         <div style="text-align:right"><div class="prog-big">${esc(big.n)}</div><div class="k">${esc(big.l)}</div></div>
-        <div class="row" style="justify-content:flex-end">${saveButton(item)}${calLink(item)}<a class="go small dark" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener">Official page ↗</a></div>
+        <div class="row" style="justify-content:flex-end">${saveButton(item)}${calLink(item)}<button class="go small" data-act="share" data-id="${esc(item.id)}">Share</button><a class="go small dark" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener">Official page ↗</a></div>
       </div>
     </div>
     <section class="prog-elig bg-${label(item) === "check" ? "yellow" : label(item) === "not_eligible" ? "sand" : "white"}">
@@ -823,7 +855,7 @@
       </section>`).join("")}</div></div>` : empty("Save something from another tab to start your season")}`;
   }
 
-  const VIEWS = { overview: viewOverview, summer: viewSummer, compete: viewCompete, bigtech: viewBigTech, review: viewReview, tracker: viewTracker, p: viewProgram };
+  const VIEWS = { overview: viewOverview, summer: viewSummer, compete: viewCompete, bigtech: viewBigTech, review: viewReview, tracker: viewTracker, p: viewProgram, search: viewSearch };
 
   // ------------------------------------------------------------ rendering & routing
   function route() {
@@ -870,6 +902,7 @@
     const { act, id } = el.dataset;
     if (act === "save") { state.tracker[id] = { stage: "saved", note: "", at: new Date().toISOString() }; saveTracker(); toast("Saved to your tracker"); }
     else if (act === "backup") { backup(); return; }
+    else if (act === "share") { share(id); return; }
     else if (act === "hackathons") { state.allHackathons = !state.allHackathons; store.set("allHackathons", state.allHackathons); }
     else if (act === "unverify") { delete state.verified[id]; store.set("verified", state.verified); rebuild(); toast("Verification removed"); }
     else if (act === "unsave") { delete state.tracker[id]; saveTracker(); toast("Removed from your tracker"); }
@@ -949,6 +982,80 @@
     if (d.classList && d.classList.contains("rgroup")) state.groupOpen[d.dataset.group] = d.open;
   }, true);
 
+  // ---- search box (header, every tab)
+  const qInput = document.getElementById("q");
+  let qTimer = null;
+  qInput.addEventListener("input", () => {
+    clearTimeout(qTimer);
+    qTimer = setTimeout(() => {
+      state.query = qInput.value;
+      if (route().name !== "search") location.hash = "#search"; else { state.limits = {}; render(false); }
+    }, 150);
+  });
+  document.getElementById("search-form").addEventListener("submit", (ev) => {
+    ev.preventDefault(); state.query = qInput.value; qInput.blur();
+    if (route().name !== "search") location.hash = "#search"; else render(false);
+  });
+  qInput.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape") { qInput.value = ""; state.query = ""; if (route().name === "search") render(false); }
+  });
+  document.addEventListener("keydown", (ev) => {
+    const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement && document.activeElement.tagName);
+    if (ev.key === "/" && !typing && !ev.metaKey && !ev.ctrlKey) { ev.preventDefault(); qInput.focus(); }
+  });
+
+  // ---- theme: auto (device) → dark → light
+  const ICON = (body) => `<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">${body}</svg>`;
+  const THEMES = {
+    auto: [ICON('<circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"></path>'), "Theme: follows your device"],
+    dark: [ICON('<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" fill="currentColor"></path>'), "Theme: dark"],
+    light: [ICON('<circle cx="12" cy="12" r="4.2" fill="currentColor"></circle><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"></path>'), "Theme: light"],
+  };
+  function applyTheme(t) {
+    if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
+    const b = document.getElementById("theme-toggle");
+    b.innerHTML = THEMES[t][0]; b.setAttribute("aria-label", THEMES[t][1] + ". Tap to change"); b.title = THEMES[t][1];
+  }
+  let theme = store.get("theme", "auto");
+  if (!THEMES[theme]) theme = "auto";
+  applyTheme(theme);
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    theme = { auto: "dark", dark: "light", light: "auto" }[theme];
+    store.set("theme", theme); applyTheme(theme); toast(THEMES[theme][1]);
+  });
+
+  // ---- share a program (phone share sheet, else copy the link)
+  function share(id) {
+    const item = state.items.find((i) => i.id === id);
+    if (!item) return;
+    const url = location.href.split("#")[0] + "#p/" + encodeURIComponent(id);
+    const text = `${item.name} (${item.org})`;
+    if (navigator.share) { navigator.share({ title: item.name, text, url }).catch(() => {}); return; }
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject())
+      .then(() => toast("Link copied"), () => toast("Copy this link: " + url));
+  }
+
+  // ---- install as an app, offline support
+  if ("serviceWorker" in navigator && location.protocol !== "file:") {
+    window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
+  }
+  let installPrompt = null;
+  const installBtn = document.getElementById("install");
+  window.addEventListener("beforeinstallprompt", (ev) => { ev.preventDefault(); installPrompt = ev; installBtn.hidden = false; });
+  installBtn.addEventListener("click", () => {
+    if (!installPrompt) return;
+    installPrompt.prompt();
+    installPrompt.userChoice.finally(() => { installPrompt = null; installBtn.hidden = true; });
+  });
+  window.addEventListener("appinstalled", () => { installBtn.hidden = true; toast("Installed. Find it on your home screen."); });
+  const standalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+  const iosHint = /iphone|ipad|ipod/i.test(navigator.userAgent) && !standalone
+    ? `<p class="muted" style="font-size:13px">Use it like an app: in Safari tap <strong>Share</strong> → <strong>Add to Home Screen</strong>.</p>` : "";
+  function updateOnline() { document.getElementById("offline").hidden = navigator.onLine !== false; }
+  window.addEventListener("online", updateOnline);
+  window.addEventListener("offline", updateOnline);
+  updateOnline();
+
   function ago(iso) {
     const mins = Math.round((Date.now() - Date.parse(iso)) / 60000);
     if (isNaN(mins)) return "unknown";
@@ -967,10 +1074,10 @@
       document.getElementById("issue").textContent = `${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()} · Updated ${ago(data.generated_at)}`;
       const problems = data.source_problems || [];
       const srcs = Object.entries(data.sources || {});
-      document.getElementById("footer").innerHTML = `${problems.length ? `<p class="k" style="background:var(--yellow);padding:8px 12px;border-radius:4px">Source trouble: ${esc(problems.join(" · "))}</p>` : ""}
+      document.getElementById("footer").innerHTML = `${problems.length ? `<p class="k" style="background:var(--yellow);color:#0A0A0A;padding:8px 12px;border-radius:4px">Source trouble: ${esc(problems.join(" · "))}</p>` : ""}
         <details><summary class="k" style="cursor:pointer;min-height:28px">${srcs.length} sources · ${srcs.filter(([, v]) => String(v).startsWith("FAILED")).length} failed this run</summary>
         <ul style="columns:2 240px;font-size:13px;padding-left:18px">${srcs.map(([k, v]) => `<li>${esc(k)}: ${esc(v)}</li>`).join("")}</ul></details>
-        <p class="muted">Always confirm dates and eligibility on the official page. Deadlines are shown in Vietnam time (UTC+7). Labels: <strong>Eligible</strong> = verified, <strong>Likely</strong> = rules look open but unverified, <strong>Check rules</strong> = unclear.</p>`;
+        ${iosHint}<p class="muted">Always confirm dates and eligibility on the official page. Deadlines are shown in Vietnam time (UTC+7). Labels: <strong>Eligible</strong> = verified, <strong>Likely</strong> = rules look open but unverified, <strong>Check rules</strong> = unclear.</p>`;
       render(false);
     })
     .catch((err) => {
