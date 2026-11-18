@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T11:56:00+00:00",
+ "generated_at": "2026-11-18T11:59:16+00:00",
  "profile": {
   "country": "VN",
   "year": 2,
@@ -7,28 +7,23 @@
  },
  "sources": {
   "registry": "56 items",
+  "kaggle": "skipped (add KAGGLE_USERNAME and KAGGLE_KEY secrets to turn on)",
   "devpost": "40 items",
   "mlh": "0 items",
   "simplify": "1 items",
-  "kaggle": "FAILED: RuntimeError: no KAGGLE_USERNAME/KAGGLE_KEY secrets",
-  "challenge.gov": "FAILED: HTTPError: 404 Client Error: Not Found for url: https://www.challenge.gov/api/challenges/?status=active",
   "Opportunity Desk": "2 items",
-  "Opportunities for Youth": "FAILED: HTTPError",
   "Opportunities Corners": "5 items",
   "UIT forum (latest)": "15 items",
-  "VNOI news": "FAILED: HTTPError",
   "greenhouse:janestreet": "0 items",
   "greenhouse:optiver": "0 items",
   "greenhouse:imc": "0 items",
-  "greenhouse:stripe": "4 items",
+  "greenhouse:stripe": "3 items",
   "greenhouse:databricks": "0 items",
-  "greenhouse:coinbase": "2 items",
-  "greenhouse:airwallex": "FAILED: HTTPError",
-  "greenhouse:wehrtyou": "4 items",
+  "greenhouse:coinbase": "1 items",
+  "greenhouse:wehrtyou": "2 items",
   "greenhouse:jumptrading": "6 items",
-  "greenhouse:towerresearchcapital": "5 items",
+  "greenhouse:towerresearchcapital": "3 items",
   "lever:binance": "0 items",
-  "lever:shopback": "FAILED: HTTPError",
   "lever:ninjavan": "0 items",
   "claude": "skipped (no ANTHROPIC_API_KEY secret)"
  },
@@ -78,7 +73,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:16+00:00"
+   "last_checked": "2026-11-18T11:59:31+00:00"
   },
   {
    "id": "mit-100k",
@@ -128,7 +123,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:17+00:00"
+   "last_checked": "2026-11-18T11:59:32+00:00"
   },
   {
    "id": "harvard-pic",
@@ -175,7 +170,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:17+00:00"
+   "last_checked": "2026-11-18T11:59:32+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-hybrid-hcm-cosigma-tuyen-dung-syste",
@@ -310,7 +305,49 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:16+00:00"
+   "last_checked": "2026-11-18T11:59:31+00:00"
+  },
+  {
+   "id": "rss-https-opportunitiescorners-com-hzdr-summer-student-program-2",
+   "source": "feed: Opportunities Corners",
+   "kind": "challenge",
+   "org": "Opportunities Corners",
+   "org_type": "other",
+   "featured": false,
+   "name": "HZDR Summer Student Program 2027 in Germany (Fully Funded)",
+   "url": "https://opportunitiescorners.com/hzdr-summer-student-program-2027/",
+   "summary": "Another Summer Program in Europe is now open for applications! Applications are now being accepted for the HZDR Summer Student Program 2027 in Germany, which welcomes international students from all around the world. The…",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Eligibility text found: …HZDR Summer Student Program 2027 in Germany, which welcomes international students from all around the world. The HZDR Summer Program will tak… Read the official page before deciding.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-18T11:56:00+00:00",
+   "last_changed": "2026-11-18T11:56:00+00:00",
+   "last_checked": null
   },
   {
    "id": "imagine-cup",
@@ -357,7 +394,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:15+00:00"
+   "last_checked": "2026-11-18T11:59:30+00:00"
   },
   {
    "id": "james-dyson-award",
@@ -405,7 +442,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:28+00:00"
+   "last_checked": "2026-11-18T11:59:43+00:00"
   },
   {
    "id": "kaggle-competitions",
@@ -460,7 +497,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:16+00:00"
+   "last_checked": "2026-11-18T11:59:31+00:00"
   },
   {
    "id": "rss-https-opportunitiescorners-com-leadership-and-peace-summit-m",
@@ -549,7 +586,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:15+00:00"
+   "last_checked": "2026-11-18T11:59:29+00:00"
   },
   {
    "id": "openideo-challenges",
@@ -604,7 +641,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:31+00:00"
+   "last_checked": "2026-11-18T11:59:45+00:00"
   },
   {
    "id": "google-solution-challenge",
@@ -650,7 +687,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:15+00:00"
+   "last_checked": "2026-11-18T11:59:30+00:00"
   },
   {
    "id": "stanford-longevity-design-challenge",
@@ -696,7 +733,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:28+00:00"
+   "last_checked": "2026-11-18T11:59:43+00:00"
   },
   {
    "id": "undergraduate-awards",
@@ -744,7 +781,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:28+00:00"
+   "last_checked": "2026-11-18T11:59:43+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-thu-moi-sinh-vien-hoc-vien-tham-du-",
@@ -841,49 +878,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:31+00:00"
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-tan-my-hcm-techlab-tuyen-dung-pente",
-   "source": "feed: UIT forum (latest)",
-   "kind": "contest",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "[Tân Mỹ - HCM] Techlab tuyển dụng Pentest Intern",
-   "url": "https://forum.uit.edu.vn/t/tan-my-hcm-techlab-tuyen-dung-pentest-intern/165096",
-   "summary": "PENTEST INTERN Mô tả công việc: Nghiên cứu chuyên sâu và được đào tạo về kỹ năng pentest cho ứng dụng web/mobile. Có cơ hội tham gia thực hiện các dự án thực tế Yêu cầu: Là sinh viên năm 3 trở lên Có tư duy, kỹ năng lập…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-18T11:59:45+00:00"
   },
   {
    "id": "icpc-asia-vietnam",
@@ -930,7 +925,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:40+00:00"
+   "last_checked": "2026-11-18T11:59:53+00:00"
   },
   {
    "id": "vnoi-olympiad",
@@ -977,7 +972,7 @@
    "fetch_error": "HTTP 403",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:40+00:00"
+   "last_checked": "2026-11-18T11:59:53+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-uit-english-contest-2026-future-rea",
@@ -1562,7 +1557,7 @@
    "deadline": "2027-01-12",
    "verified": false,
    "manual_check": false,
-   "notes": "189 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "191 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1937,7 +1932,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:14+00:00"
+   "last_checked": "2026-11-18T11:59:29+00:00"
   },
   {
    "id": "devpost-31737",
@@ -2167,7 +2162,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:08+00:00"
+   "last_checked": "2026-11-18T11:59:22+00:00"
   },
   {
    "id": "devpost-31667",
@@ -2204,7 +2199,7 @@
    "deadline": "2026-12-04",
    "verified": false,
    "manual_check": false,
-   "notes": "16240 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "16242 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2387,7 +2382,7 @@
    "deadline": "2026-11-18",
    "verified": false,
    "manual_check": false,
-   "notes": "6996 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "7000 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2569,7 +2564,7 @@
    "deadline": "2026-12-08",
    "verified": false,
    "manual_check": false,
-   "notes": "1674 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "1675 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2799,7 +2794,7 @@
    "deadline": "2026-11-21",
    "verified": false,
    "manual_check": false,
-   "notes": "617 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "618 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2990,7 +2985,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:14+00:00"
+   "last_checked": "2026-11-18T11:59:29+00:00"
   },
   {
    "id": "citadel-discover-hong-kong",
@@ -3033,7 +3028,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:24+00:00"
+   "last_checked": "2026-11-18T11:59:39+00:00"
   },
   {
    "id": "citadel-discover-singapore",
@@ -3077,7 +3072,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:24+00:00"
+   "last_checked": "2026-11-18T11:59:39+00:00"
   },
   {
    "id": "hrt-explore-singapore",
@@ -3122,7 +3117,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:25+00:00"
+   "last_checked": "2026-11-18T11:59:40+00:00"
   },
   {
    "id": "jane-street-fttp-hkg",
@@ -3165,7 +3160,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:24+00:00"
+   "last_checked": "2026-11-18T11:59:39+00:00"
   },
   {
    "id": "optiver-futurefocus-singapore",
@@ -3209,7 +3204,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:24+00:00"
+   "last_checked": "2026-11-18T11:59:39+00:00"
   },
   {
    "id": "sig-discovery-hong-kong",
@@ -3252,7 +3247,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:25+00:00"
+   "last_checked": "2026-11-18T11:59:40+00:00"
   },
   {
    "id": "jane-street-insight-hkg",
@@ -3298,7 +3293,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:24+00:00"
+   "last_checked": "2026-11-18T11:59:39+00:00"
   },
   {
    "id": "jane-street-portal-sgp",
@@ -3343,7 +3338,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:24+00:00"
+   "last_checked": "2026-11-18T11:59:39+00:00"
   },
   {
    "id": "jane-street-see-hkg",
@@ -3390,13 +3385,139 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:24+00:00"
+   "last_checked": "2026-11-18T11:59:39+00:00"
+  },
+  {
+   "id": "rss-https-forum-uit-edu-vn-t-6-month-internship-with-allowance-a",
+   "source": "feed: UIT forum (latest)",
+   "kind": "internship",
+   "org": "UIT forum (latest)",
+   "org_type": "other",
+   "featured": false,
+   "name": "***6-month Internship with allowance at Rosenxt VN (AI Engineer Intern)***",
+   "url": "https://forum.uit.edu.vn/t/6-month-internship-with-allowance-at-rosenxt-vn-ai-engineer-intern/165108",
+   "summary": "About Rosenxt Rosenxt is a forward-thinking technology group — we are visionary architects of progress with decades of engineering excellence. As a privately owned global partner with more than 740 employees, we look far…",
+   "region": "asia",
+   "country": "Vietnam",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "vn_ok",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Internship posted on a Vietnamese university board.",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-18T11:56:00+00:00",
+   "last_changed": "2026-11-18T11:59:16+00:00",
+   "last_checked": null
+  },
+  {
+   "id": "rss-https-forum-uit-edu-vn-t-bosch-hcp-internship-preventive-mai",
+   "source": "feed: UIT forum (latest)",
+   "kind": "internship",
+   "org": "UIT forum (latest)",
+   "org_type": "other",
+   "featured": false,
+   "name": "[Bosch HcP – Internship] Preventive Maintenance Planning Intern (Data Analysis Focus)",
+   "url": "https://forum.uit.edu.vn/t/bosch-hcp-internship-preventive-maintenance-planning-intern-data-analysis-focus/165068",
+   "summary": "Are you a 3rd or 4th-year student looking to gain hands-on experience in Data Processing & Reporting within a global working environment? Bosch Vietnam is looking for an enthusiastic Preventive Maintenance Planning Inter…",
+   "region": "asia",
+   "country": "Vietnam",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "vn_ok",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Internship posted on a Vietnamese university board.",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-18T11:56:00+00:00",
+   "last_changed": "2026-11-18T11:59:16+00:00",
+   "last_checked": null
+  },
+  {
+   "id": "rss-https-forum-uit-edu-vn-t-tan-my-hcm-techlab-tuyen-dung-pente",
+   "source": "feed: UIT forum (latest)",
+   "kind": "internship",
+   "org": "UIT forum (latest)",
+   "org_type": "other",
+   "featured": false,
+   "name": "[Tân Mỹ - HCM] Techlab tuyển dụng Pentest Intern",
+   "url": "https://forum.uit.edu.vn/t/tan-my-hcm-techlab-tuyen-dung-pentest-intern/165096",
+   "summary": "PENTEST INTERN Mô tả công việc: Nghiên cứu chuyên sâu và được đào tạo về kỹ năng pentest cho ứng dụng web/mobile. Có cơ hội tham gia thực hiện các dự án thực tế Yêu cầu: Là sinh viên năm 3 trở lên Có tư duy, kỹ năng lập…",
+   "region": "asia",
+   "country": "Vietnam",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "vn_ok",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Internship posted on a Vietnamese university board.",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-18T11:56:00+00:00",
+   "last_changed": "2026-11-18T11:59:16+00:00",
+   "last_checked": null
   },
   {
    "id": "greenhouse-wehrtyou-7964062",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Wehrtyou",
+   "org": "Hudson River Trading",
    "org_type": "big_tech",
    "featured": false,
    "name": "Algorithm Development (Quant Research & Trading) Internship – Summer 2027",
@@ -3435,52 +3556,10 @@
    "last_checked": null
   },
   {
-   "id": "greenhouse-wehrtyou-8059837",
-   "source": "greenhouse",
-   "kind": "internship",
-   "org": "Wehrtyou",
-   "org_type": "big_tech",
-   "featured": false,
-   "name": "Algorithm Development (Quant Research & Trading) PhD Internship – Summer 2027",
-   "url": "https://www.hudsonrivertrading.com/careers/job/?gh_jid=8059837",
-   "summary": "",
-   "region": "asia",
-   "country": "Singapore",
-   "city": "London, United Kingdom; New York, NY, United States; Singapore",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "open",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Posted 2026-10-30. Outside Vietnam: check whether the role sponsors a work or training pass.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
    "id": "greenhouse-jumptrading-8027938",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Jumptrading",
+   "org": "Jump Trading",
    "org_type": "big_tech",
    "featured": false,
    "name": "Campus AI/ML Researcher (Intern)",
@@ -3522,7 +3601,7 @@
    "id": "greenhouse-jumptrading-8027946",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Jumptrading",
+   "org": "Jump Trading",
    "org_type": "big_tech",
    "featured": false,
    "name": "Campus C++ Software Engineer (Intern)",
@@ -3564,7 +3643,7 @@
    "id": "greenhouse-jumptrading-8027955",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Jumptrading",
+   "org": "Jump Trading",
    "org_type": "big_tech",
    "featured": false,
    "name": "Campus Python Software Engineer (Intern)",
@@ -3606,7 +3685,7 @@
    "id": "greenhouse-jumptrading-8027939",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Jumptrading",
+   "org": "Jump Trading",
    "org_type": "big_tech",
    "featured": false,
    "name": "Campus Quantitative Researcher (Intern)",
@@ -3648,7 +3727,7 @@
    "id": "greenhouse-jumptrading-8027941",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Jumptrading",
+   "org": "Jump Trading",
    "org_type": "big_tech",
    "featured": false,
    "name": "Campus Quantitative Trader (Intern)",
@@ -3687,52 +3766,10 @@
    "last_checked": null
   },
   {
-   "id": "greenhouse-wehrtyou-7843354",
-   "source": "greenhouse",
-   "kind": "internship",
-   "org": "Wehrtyou",
-   "org_type": "big_tech",
-   "featured": false,
-   "name": "Campus Recruiter",
-   "url": "https://www.hudsonrivertrading.com/careers/job/?gh_jid=7843354",
-   "summary": "",
-   "region": "asia",
-   "country": "Singapore",
-   "city": "Singapore",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "open",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Posted 2026-10-30. Outside Vietnam: check whether the role sponsors a work or training pass.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
    "id": "greenhouse-jumptrading-8027952",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Jumptrading",
+   "org": "Jump Trading",
    "org_type": "big_tech",
    "featured": false,
    "name": "Campus Systems Engineer (Intern)",
@@ -3865,7 +3902,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:24+00:00"
+   "last_checked": "2026-11-18T11:59:39+00:00"
   },
   {
    "id": "grab-internships",
@@ -3913,7 +3950,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:18+00:00"
+   "last_checked": "2026-11-18T11:59:34+00:00"
   },
   {
    "id": "greenhouse-stripe-8186367",
@@ -3958,18 +3995,18 @@
    "last_checked": null
   },
   {
-   "id": "greenhouse-coinbase-8382331",
-   "source": "greenhouse",
+   "id": "rss-https-forum-uit-edu-vn-t-netnam-sgn-thuc-tap-sinh-ho-tro-ky-",
+   "source": "feed: UIT forum (latest)",
    "kind": "internship",
-   "org": "Coinbase",
-   "org_type": "big_tech",
+   "org": "UIT forum (latest)",
+   "org_type": "other",
    "featured": false,
-   "name": "Product Manager I - International",
-   "url": "https://www.coinbase.com/careers/positions/8382331?gh_jid=8382331",
-   "summary": "",
+   "name": "NetNam SGN - Thực Tập Sinh Hỗ Trợ Kỹ Thuật",
+   "url": "https://forum.uit.edu.vn/t/netnam-sgn-thuc-tap-sinh-ho-tro-ky-thuat/165099",
+   "summary": "Trách nhiệm chính • Hỗ trợ set up sự kiện • Standby xuyên suốt sự kiện (timeline, xử lý sự cố level 1) o Kiểm tra hoạt động thiết bị (ON/OFF) o Kiểm tra kết nối giữa các thiết bị (cáp kết nối, ping) • Thu hồi vật tư triể…",
    "region": "asia",
-   "country": "Singapore",
-   "city": "Remote - Singapore",
+   "country": "Vietnam",
+   "city": "",
    "format": "in_person",
    "class_years": [
     1,
@@ -3977,33 +4014,33 @@
     3,
     4
    ],
-   "nationality_ok": "unknown",
+   "nationality_ok": "vn_ok",
    "enrollment_req": "any",
    "funding": "",
    "prize": "",
    "team_size": "",
    "themes": [],
-   "status": "open",
+   "status": "unknown",
    "window": [],
    "deadline": null,
    "verified": false,
    "manual_check": false,
-   "notes": "Posted 2026-11-13. Outside Vietnam: check whether the role sponsors a work or training pass.",
-   "eligible_for_me": "check",
+   "notes": "Internship posted on a Vietnamese university board.",
+   "eligible_for_me": "likely",
    "elig_reasons": [
-    "Eligibility text not confirmed yet"
+    "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
+   "last_changed": "2026-11-18T11:59:16+00:00",
    "last_checked": null
   },
   {
    "id": "greenhouse-towerresearchcapital-8138524",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Towerresearchcapital",
+   "org": "Tower Research Capital",
    "org_type": "big_tech",
    "featured": false,
    "name": "Quantitative Developer Intern",
@@ -4089,53 +4126,11 @@
    "id": "greenhouse-towerresearchcapital-8168750",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Towerresearchcapital",
+   "org": "Tower Research Capital",
    "org_type": "big_tech",
    "featured": false,
    "name": "Quantitative Researcher Intern, Bachelor's or Master's",
    "url": "https://www.tower-research.com/open-positions/?gh_jid=8168750",
-   "summary": "",
-   "region": "asia",
-   "country": "Singapore",
-   "city": "Singapore, Hong Kong, Shanghai, Sydney",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "open",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Posted 2026-09-14. Outside Vietnam: check whether the role sponsors a work or training pass.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "greenhouse-towerresearchcapital-8168634",
-   "source": "greenhouse",
-   "kind": "internship",
-   "org": "Towerresearchcapital",
-   "org_type": "big_tech",
-   "featured": false,
-   "name": "Quantitative Researcher Intern, PhD or Postdoc",
-   "url": "https://www.tower-research.com/open-positions/?gh_jid=8168634",
    "summary": "",
    "region": "asia",
    "country": "Singapore",
@@ -4215,7 +4210,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:19+00:00"
+   "last_checked": "2026-11-18T11:59:35+00:00"
   },
   {
    "id": "greenhouse-coinbase-8175873",
@@ -4263,7 +4258,7 @@
    "id": "greenhouse-towerresearchcapital-8299894",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Towerresearchcapital",
+   "org": "Tower Research Capital",
    "org_type": "big_tech",
    "featured": false,
    "name": "Software Engineer, C++ - 6 Month Internship Opportunity",
@@ -4272,48 +4267,6 @@
    "region": "asia",
    "country": "Singapore",
    "city": "Singapore",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "open",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Posted 2026-10-30. Outside Vietnam: check whether the role sponsors a work or training pass.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "greenhouse-towerresearchcapital-8245433",
-   "source": "greenhouse",
-   "kind": "internship",
-   "org": "Towerresearchcapital",
-   "org_type": "big_tech",
-   "featured": false,
-   "name": "Software Engineer, C++ - Graduate Opportunity",
-   "url": "https://www.tower-research.com/open-positions/?gh_jid=8245433",
-   "summary": "",
-   "region": "asia",
-   "country": "Singapore",
-   "city": "Hong Kong, Singapore",
    "format": "in_person",
    "class_years": [
     1,
@@ -4386,52 +4339,10 @@
    "last_checked": null
   },
   {
-   "id": "greenhouse-stripe-8160776",
-   "source": "greenhouse",
-   "kind": "internship",
-   "org": "Stripe",
-   "org_type": "big_tech",
-   "featured": false,
-   "name": "Software Engineer, New Grad",
-   "url": "https://stripe.com/jobs/search?gh_jid=8160776",
-   "summary": "",
-   "region": "asia",
-   "country": "Singapore",
-   "city": "Singapore",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "open",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Posted 2026-10-29. Outside Vietnam: check whether the role sponsors a work or training pass.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
    "id": "greenhouse-wehrtyou-8052083",
    "source": "greenhouse",
    "kind": "internship",
-   "org": "Wehrtyou",
+   "org": "Hudson River Trading",
    "org_type": "big_tech",
    "featured": false,
    "name": "Software Engineering Internship (C++ or Python) – Summer 2027",
@@ -4467,6 +4378,48 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
+   "last_checked": null
+  },
+  {
+   "id": "rss-https-forum-uit-edu-vn-t-thuc-tap-sinh-trien-khai-phan-mem-w",
+   "source": "feed: UIT forum (latest)",
+   "kind": "internship",
+   "org": "UIT forum (latest)",
+   "org_type": "other",
+   "featured": false,
+   "name": "Thực tập sinh Triển khai phần mềm - Website (có lương)",
+   "url": "https://forum.uit.edu.vn/t/thuc-tap-sinh-trien-khai-phan-mem-website-co-luong/165040",
+   "summary": "Mô tả công việc Chủ động liên hệ khách hàng Doanh Nghiệp thông qua các kênh online, data công ty và các nguồn khai thác khác. Tham gia vào quy trình tư vấn – kinh doanh các giải pháp website, phần mềm và digital marketin…",
+   "region": "asia",
+   "country": "Vietnam",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "vn_ok",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "Internship posted on a Vietnamese university board.",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-18T11:56:00+00:00",
+   "last_changed": "2026-11-18T11:59:16+00:00",
    "last_checked": null
   },
   {
@@ -4514,7 +4467,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:20+00:00"
+   "last_checked": "2026-11-18T11:59:36+00:00"
   },
   {
    "id": "gsoc",
@@ -4560,7 +4513,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:31+00:00"
+   "last_checked": "2026-11-18T11:59:45+00:00"
   },
   {
    "id": "lfx-mentorship",
@@ -4607,7 +4560,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:31+00:00"
+   "last_checked": "2026-11-18T11:59:46+00:00"
   },
   {
    "id": "mlh-fellowship",
@@ -4658,7 +4611,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:33+00:00"
+   "last_checked": "2026-11-18T11:59:47+00:00"
   },
   {
    "id": "outreachy",
@@ -4704,7 +4657,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:31+00:00"
+   "last_checked": "2026-11-18T11:59:45+00:00"
   },
   {
    "id": "asean-undergraduate-scholarship",
@@ -4753,7 +4706,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:38+00:00"
+   "last_checked": "2026-11-18T11:59:50+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-chuong-trinh-hoc-bong-amcham-nam-20",
@@ -4787,48 +4740,6 @@
    "verified": false,
    "manual_check": false,
    "notes": "Eligibility text found: …vòng đơn, và nộp đơn online tại địa chỉ: https://acs.amchamvietnam.com/ Vòng kiểm tra năng lực (9/12/2026 – 14/12/2026) Thí si… Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-danh-sach-sinh-vien-nhan-hoc-bong-u",
-   "source": "feed: UIT forum (latest)",
-   "kind": "scholarship",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "Danh sách sinh viên nhận học bổng UIT Global tháng 10/2026",
-   "url": "https://forum.uit.edu.vn/t/danh-sach-sinh-vien-nhan-hoc-bong-uit-global-thang-10-2026/165102",
-   "summary": "Phòng CTSV thông báo kết quả xét học bổng UIT Global tháng 10 năm 2026 Danh sách bao gồm các sinh viên có chứng chỉ được xác nhận từ 01/10/2026 -31/10/2026 Sinh viên lưu ý kiểm tra và phản hồi sai sót và cập nhật tài kho…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -4927,7 +4838,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:36+00:00"
+   "last_checked": "2026-11-18T11:59:50+00:00"
   },
   {
    "id": "gks-scholarship",
@@ -4974,7 +4885,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:33+00:00"
+   "last_checked": "2026-11-18T11:59:47+00:00"
   },
   {
    "id": "rss-https-opportunitydesk-org-2026-11-18-healthy-futures-masterc",
@@ -5103,6 +5014,48 @@
    "last_checked": null
   },
   {
+   "id": "rss-https-forum-uit-edu-vn-t-ktx-dhqg-hoc-bong-chap-canh-uoc-mo-",
+   "source": "feed: UIT forum (latest)",
+   "kind": "scholarship",
+   "org": "UIT forum (latest)",
+   "org_type": "other",
+   "featured": false,
+   "name": "KTX ĐHQG_Học bổng “Chắp cánh ước mơ” năm học 2026 - 2027",
+   "url": "https://forum.uit.edu.vn/t/ktx-dhqg_hoc-bong-chap-canh-uoc-mo-nam-hoc-2026-2027/165015",
+   "summary": "Thực hiện Quyết định số 400/QĐ-KTX&ĐTĐH ngày 08 tháng 8 năm 2025 của Giám đốc Trung tâm Quản lý Ký túc xá và Khu đô thị ĐHQG-HCM về Ban hành Quy định về chính sách hỗ trợ sinh viên nội trú tại Ký túc xá ĐHQG-HCM; Triển k…",
+   "region": "asia",
+   "country": "Vietnam",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "notes": "No eligibility text found in the post. Read the official page before deciding.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-18T11:59:16+00:00",
+   "last_changed": "2026-11-18T11:59:16+00:00",
+   "last_checked": null
+  },
+  {
    "id": "rss-https-forum-uit-edu-vn-t-marvell-vietnam-excellence-scholars",
    "source": "feed: UIT forum (latest)",
    "kind": "scholarship",
@@ -5188,91 +5141,7 @@
    "fetch_error": "HTTP 403",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:33+00:00"
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-6-month-internship-with-allowance-a",
-   "source": "feed: UIT forum (latest)",
-   "kind": "summer_research",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "***6-month Internship with allowance at Rosenxt VN (AI Engineer Intern)***",
-   "url": "https://forum.uit.edu.vn/t/6-month-internship-with-allowance-at-rosenxt-vn-ai-engineer-intern/165108",
-   "summary": "About Rosenxt Rosenxt is a forward-thinking technology group — we are visionary architects of progress with decades of engineering excellence. As a privately owned global partner with more than 740 employees, we look far…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Eligibility text found: …e: Attractive How to apply Send you CV to email address: hr-vietnam@rosen-nxt.com Company website: We are Rosenxt. A forward-th… Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-bosch-hcp-internship-preventive-mai",
-   "source": "feed: UIT forum (latest)",
-   "kind": "summer_research",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "[Bosch HcP – Internship] Preventive Maintenance Planning Intern (Data Analysis Focus)",
-   "url": "https://forum.uit.edu.vn/t/bosch-hcp-internship-preventive-maintenance-planning-intern-data-analysis-focus/165068",
-   "summary": "Are you a 3rd or 4th-year student looking to gain hands-on experience in Data Processing & Reporting within a global working environment? Bosch Vietnam is looking for an enthusiastic Preventive Maintenance Planning Inter…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Eligibility text found: …sing & Reporting within a global working environment? Bosch Vietnam is looking for an enthusiastic Preventive Maintenance Plann… Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-18T11:59:47+00:00"
   },
   {
    "id": "amgen-scholars",
@@ -5318,7 +5187,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:07+00:00"
+   "last_checked": "2026-11-18T11:59:22+00:00"
   },
   {
    "id": "mitacs-globalink",
@@ -5365,7 +5234,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:00+00:00"
+   "last_checked": "2026-11-18T11:59:16+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-lam-research-taiwan-to-chuc-phong-v",
@@ -5377,48 +5246,6 @@
    "name": "Lam Research Taiwan tổ chức phỏng vấn tuyển dụng tại Việt Nam - 12/2026",
    "url": "https://forum.uit.edu.vn/t/lam-research-taiwan-to-chuc-phong-van-tuyen-dung-tai-viet-nam-12-2026/165112",
    "summary": "LAM RESEARCH TAIWAN TỔ CHỨC PHỎNG VẤN TUYỂN DỤNG TẠI VIỆT NAM - 12/2026 - Bạn là sinh viên Kỹ thuật mới tốt nghiệp hoặc kỹ sư có kinh nghiệm ngành Cơ khí, Điện - Điện tử và các ngành liên quan, muốn phát triển trong ngàn…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-netnam-sgn-thuc-tap-sinh-ho-tro-ky-",
-   "source": "feed: UIT forum (latest)",
-   "kind": "summer_research",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "NetNam SGN - Thực Tập Sinh Hỗ Trợ Kỹ Thuật",
-   "url": "https://forum.uit.edu.vn/t/netnam-sgn-thuc-tap-sinh-ho-tro-ky-thuat/165099",
-   "summary": "Trách nhiệm chính • Hỗ trợ set up sự kiện • Standby xuyên suốt sự kiện (timeline, xử lý sự cố level 1) o Kiểm tra hoạt động thiết bị (ON/OFF) o Kiểm tra kết nối giữa các thiết bị (cáp kết nối, ping) • Thu hồi vật tư triể…",
    "region": "asia",
    "country": "Vietnam",
    "city": "",
@@ -5546,7 +5373,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:01+00:00"
+   "last_checked": "2026-11-18T11:59:17+00:00"
   },
   {
    "id": "nsf-reu",
@@ -5593,7 +5420,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:18+00:00"
+   "last_checked": "2026-11-18T11:59:33+00:00"
   },
   {
    "id": "eth-ssrf",
@@ -5639,7 +5466,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:00+00:00"
+   "last_checked": "2026-11-18T11:59:16+00:00"
   },
   {
    "id": "cern-summer-student",
@@ -5684,7 +5511,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:04+00:00"
+   "last_checked": "2026-11-18T11:59:19+00:00"
   },
   {
    "id": "epfl-summer",
@@ -5730,49 +5557,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:01+00:00"
-  },
-  {
-   "id": "rss-https-forum-uit-edu-vn-t-thuc-tap-sinh-trien-khai-phan-mem-w",
-   "source": "feed: UIT forum (latest)",
-   "kind": "summer_research",
-   "org": "UIT forum (latest)",
-   "org_type": "other",
-   "featured": false,
-   "name": "Thực tập sinh Triển khai phần mềm - Website (có lương)",
-   "url": "https://forum.uit.edu.vn/t/thuc-tap-sinh-trien-khai-phan-mem-website-co-luong/165040",
-   "summary": "Mô tả công việc Chủ động liên hệ khách hàng Doanh Nghiệp thông qua các kênh online, data công ty và các nguồn khai thác khác. Tham gia vào quy trình tư vấn – kinh doanh các giải pháp website, phần mềm và digital marketin…",
-   "region": "asia",
-   "country": "Vietnam",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-18T11:59:17+00:00"
   },
   {
    "id": "utokyo-utrip",
@@ -5818,7 +5603,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:06+00:00"
+   "last_checked": "2026-11-18T11:59:20+00:00"
   },
   {
    "id": "kaust-vsrp",
@@ -5873,7 +5658,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:02+00:00"
+   "last_checked": "2026-11-18T11:59:18+00:00"
   },
   {
    "id": "berkeley-summer-sessions",
@@ -5920,7 +5705,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:25+00:00"
+   "last_checked": "2026-11-18T11:59:41+00:00"
   },
   {
    "id": "cambridge-isp",
@@ -5969,7 +5754,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:26+00:00"
+   "last_checked": "2026-11-18T11:59:42+00:00"
   },
   {
    "id": "harvard-summer-school",
@@ -6017,49 +5802,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:25+00:00"
-  },
-  {
-   "id": "rss-https-opportunitiescorners-com-hzdr-summer-student-program-2",
-   "source": "feed: Opportunities Corners",
-   "kind": "summer_school",
-   "org": "Opportunities Corners",
-   "org_type": "other",
-   "featured": false,
-   "name": "HZDR Summer Student Program 2027 in Germany (Fully Funded)",
-   "url": "https://opportunitiescorners.com/hzdr-summer-student-program-2027/",
-   "summary": "Another Summer Program in Europe is now open for applications! Applications are now being accepted for the HZDR Summer Student Program 2027 in Germany, which welcomes international students from all around the world. The…",
-   "region": "global",
-   "country": "",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "notes": "Eligibility text found: …HZDR Summer Student Program 2027 in Germany, which welcomes international students from all around the world. The HZDR Summer Program will tak… Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-18T11:56:00+00:00",
-   "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-18T11:59:41+00:00"
   },
   {
    "id": "lse-summer-school",
@@ -6107,7 +5850,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:26+00:00"
+   "last_checked": "2026-11-18T11:59:41+00:00"
   },
   {
    "id": "stanford-summer-session",
@@ -6155,7 +5898,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:25+00:00"
+   "last_checked": "2026-11-18T11:59:40+00:00"
   },
   {
    "id": "rss-https-opportunitiescorners-com-summer-programs-in-europe-in-",
@@ -6244,7 +5987,7 @@
    "fetch_error": "TooManyRedirects",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T11:56:40+00:00"
+   "last_checked": "2026-11-18T11:59:53+00:00"
   },
   {
    "id": "microsoft-explore",
@@ -6288,7 +6031,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T11:56:17+00:00"
+   "last_checked": "2026-11-18T11:59:32+00:00"
   },
   {
    "id": "google-step",
@@ -6332,10 +6075,127 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T11:56:25+00:00"
+   "last_checked": "2026-11-18T11:59:40+00:00"
   }
  ],
  "changes": [
+  {
+   "type": "eligibility",
+   "id": "rss-https-forum-uit-edu-vn-t-6-month-internship-with-allowance-a",
+   "name": "***6-month Internship with allowance at Rosenxt VN (AI Engineer Intern)***",
+   "kind": "internship",
+   "eligible_for_me": "likely",
+   "detail": "check → likely",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "eligibility",
+   "id": "rss-https-forum-uit-edu-vn-t-netnam-sgn-thuc-tap-sinh-ho-tro-ky-",
+   "name": "NetNam SGN - Thực Tập Sinh Hỗ Trợ Kỹ Thuật",
+   "kind": "internship",
+   "eligible_for_me": "likely",
+   "detail": "check → likely",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "eligibility",
+   "id": "rss-https-forum-uit-edu-vn-t-tan-my-hcm-techlab-tuyen-dung-pente",
+   "name": "[Tân Mỹ - HCM] Techlab tuyển dụng Pentest Intern",
+   "kind": "internship",
+   "eligible_for_me": "likely",
+   "detail": "check → likely",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "eligibility",
+   "id": "rss-https-forum-uit-edu-vn-t-bosch-hcp-internship-preventive-mai",
+   "name": "[Bosch HcP – Internship] Preventive Maintenance Planning Intern (Data Analysis Focus)",
+   "kind": "internship",
+   "eligible_for_me": "likely",
+   "detail": "check → likely",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "eligibility",
+   "id": "rss-https-forum-uit-edu-vn-t-thuc-tap-sinh-trien-khai-phan-mem-w",
+   "name": "Thực tập sinh Triển khai phần mềm - Website (có lương)",
+   "kind": "internship",
+   "eligible_for_me": "likely",
+   "detail": "check → likely",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "new",
+   "id": "rss-https-forum-uit-edu-vn-t-ktx-dhqg-hoc-bong-chap-canh-uoc-mo-",
+   "name": "KTX ĐHQG_Học bổng “Chắp cánh ước mơ” năm học 2026 - 2027",
+   "kind": "scholarship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "greenhouse-wehrtyou-8059837",
+   "name": "Algorithm Development (Quant Research & Trading) PhD Internship – Summer 2027",
+   "kind": "internship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "greenhouse-wehrtyou-7843354",
+   "name": "Campus Recruiter",
+   "kind": "internship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "greenhouse-coinbase-8382331",
+   "name": "Product Manager I - International",
+   "kind": "internship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "greenhouse-towerresearchcapital-8168634",
+   "name": "Quantitative Researcher Intern, PhD or Postdoc",
+   "kind": "internship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "greenhouse-towerresearchcapital-8245433",
+   "name": "Software Engineer, C++ - Graduate Opportunity",
+   "kind": "internship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "greenhouse-stripe-8160776",
+   "name": "Software Engineer, New Grad",
+   "kind": "internship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-forum-uit-edu-vn-t-danh-sach-sinh-vien-nhan-hoc-bong-u",
+   "name": "Danh sách sinh viên nhận học bổng UIT Global tháng 10/2026",
+   "kind": "scholarship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T11:59:16+00:00"
+  },
   {
    "type": "deadline",
    "id": "eth-ssrf",
@@ -7568,123 +7428,6 @@
    "eligible_for_me": "check",
    "detail": "",
    "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31993",
-   "name": "IdeaLab Hacks",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31794",
-   "name": "Code for Change",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31960",
-   "name": "ML Empowerment Build Challenge 4.0 - Prizes and Certificates for EVERYONE",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31773",
-   "name": "LaunchPad Hacks (580k In Prizes!)",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-32009",
-   "name": "AI for Medicine: A Global Student Hackathon on the Future of Care",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-32079",
-   "name": "Learn AR with SPECS",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31972",
-   "name": "SLAY HACKS",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31644",
-   "name": "Reddit’s Game of the Day Hackathon",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31796",
-   "name": "SafeSpace Hacks - Judges Needed",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31797",
-   "name": "Green Shift Hacks",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-31994",
-   "name": "AI OpenBuild",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-32061",
-   "name": "Peninsula Innovation Hackathon",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "devpost-32024",
-   "name": "Relate by Neo4j Hackathon",
-   "kind": "hackathon",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
   }
  ],
  "proposals": {},
@@ -7693,36 +7436,36 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 56
   },
   "devpost": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 40
   },
   "mlh": {
    "fail_runs": 0,
-   "zero_runs": 1,
+   "zero_runs": 2,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 0
   },
   "simplify": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 1
   },
   "kaggle": {
-   "fail_runs": 1,
-   "zero_runs": 0,
+   "fail_runs": 0,
+   "zero_runs": 1,
    "ever_nonzero": false,
-   "last_ok": null,
-   "last_error": "FAILED: RuntimeError: no KAGGLE_USERNAME/KAGGLE_KEY secrets"
+   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_count": 0
   },
   "challenge.gov": {
    "fail_runs": 1,
@@ -7735,7 +7478,7 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 2
   },
   "Opportunities for Youth": {
@@ -7749,14 +7492,14 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 5
   },
   "UIT forum (latest)": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 15
   },
   "VNOI news": {
@@ -7768,45 +7511,45 @@
   },
   "greenhouse:janestreet": {
    "fail_runs": 0,
-   "zero_runs": 1,
+   "zero_runs": 2,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 0
   },
   "greenhouse:optiver": {
    "fail_runs": 0,
-   "zero_runs": 1,
+   "zero_runs": 2,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 0
   },
   "greenhouse:imc": {
    "fail_runs": 0,
-   "zero_runs": 1,
+   "zero_runs": 2,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 0
   },
   "greenhouse:stripe": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
-   "last_count": 4
+   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_count": 3
   },
   "greenhouse:databricks": {
    "fail_runs": 0,
-   "zero_runs": 1,
+   "zero_runs": 2,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 0
   },
   "greenhouse:coinbase": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
-   "last_count": 2
+   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_count": 1
   },
   "greenhouse:airwallex": {
    "fail_runs": 1,
@@ -7819,28 +7562,28 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
-   "last_count": 4
+   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_count": 2
   },
   "greenhouse:jumptrading": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 6
   },
   "greenhouse:towerresearchcapital": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T11:56:00+00:00",
-   "last_count": 5
+   "last_ok": "2026-11-18T11:59:16+00:00",
+   "last_count": 3
   },
   "lever:binance": {
    "fail_runs": 0,
-   "zero_runs": 1,
+   "zero_runs": 2,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 0
   },
   "lever:shopback": {
@@ -7852,9 +7595,9 @@
   },
   "lever:ninjavan": {
    "fail_runs": 0,
-   "zero_runs": 1,
+   "zero_runs": 2,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T11:56:00+00:00",
+   "last_ok": "2026-11-18T11:59:16+00:00",
    "last_count": 0
   }
  },
