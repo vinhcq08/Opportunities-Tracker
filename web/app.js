@@ -504,10 +504,7 @@
       <h2 class="k" style="margin:0 0 4px">Details</h2>
       <dl class="facts">${facts.map(([k, v]) => `<div><dt class="k muted">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
     </section>
-    <section>
-      <div class="section-head"><h2 class="h section-title">Field notes</h2><span class="k muted">Tips from people who went</span></div>
-      ${empty("No field notes yet. Tips from past participants will appear here.")}
-    </section>`;
+`;
   }
 
   // ------------------------------------------------------------ review
