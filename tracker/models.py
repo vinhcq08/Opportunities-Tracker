@@ -37,11 +37,13 @@ DEFAULTS = {
     "deadline": None,             # YYYY-MM-DD, interpreted as 23:59 Vietnam time
     "verified": False,            # True once a human checked eligibility on the official page
     "manual_check": False,        # True for sites that block automatic checks; status is never scraped
+    "deadline_confirmed": False,  # True when the date comes from the official source or a human verified it
     "notes": "",
     # Filled by the pipeline:
     "eligible_for_me": "check",   # eligible|likely|check|not_eligible
     "elig_reasons": [],
     "page_hash": None,
+    "elig_hash": None,            # fingerprint of only the eligibility/deadline sentences on the page
     "fetch_error": None,
     "first_seen": None,
     "last_changed": None,

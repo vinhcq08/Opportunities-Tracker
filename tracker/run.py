@@ -89,10 +89,15 @@ def main(argv: list[str] | None = None) -> int:
         for key, value in (field_overrides.get(item["id"]) or {}).items():
             if key in item and not key.startswith("_"):
                 item[key] = value
+        if item.get("deadline") is not None:
+            item["deadline"] = str(item["deadline"])  # YAML may parse dates; keep them as text
+        if item.get("verified") and item.get("deadline"):
+            item["deadline_confirmed"] = True
     items = eligibility.apply(items, profile, overrides)
 
     prev = json.loads(args.out.read_text(encoding="utf-8")) if args.out.exists() else {}
-    proposals, report["claude"] = claude_reader.run(items, prev.get("proposals", {}), profile, today)
+    proposals, report["claude"], claude_usage = claude_reader.run(
+        items, prev.get("proposals", {}), profile, today, prev.get("claude_usage", {}))
     for pid in field_overrides:  # an accepted suggestion is done
         proposals.pop(pid, None)
     for item in items:
@@ -102,7 +107,7 @@ def main(argv: list[str] | None = None) -> int:
         old = {p["id"]: p for p in prev.get("items", [])}
         for item in items:
             if item["id"] in old:
-                for key in ("status", "page_hash", "fetch_error", "last_checked"):
+                for key in ("status", "page_hash", "elig_hash", "fetch_error", "last_checked"):
                     if item[key] in (None, "unknown") and old[item["id"]].get(key):
                         item[key] = old[item["id"]][key]
     stamp = now.isoformat(timespec="seconds")
@@ -130,6 +135,7 @@ def main(argv: list[str] | None = None) -> int:
         "items": sorted(items, key=lambda i: (i["kind"], i["name"].lower())),
         "changes": diffing.merge_history(prev.get("changes", []), changes),
         "proposals": proposals,
+        "claude_usage": claude_usage,
         "health": source_health,
         "source_problems": health.problems(source_health),
     }

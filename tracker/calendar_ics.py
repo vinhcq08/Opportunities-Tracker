@@ -52,7 +52,7 @@ def build(items: list[dict], today: dt.date, now: dt.datetime, site_url: str = "
             f"DTSTAMP:{stamp}",
             f"DTSTART;VALUE=DATE:{day.strftime('%Y%m%d')}",
             f"DTEND;VALUE=DATE:{(day + dt.timedelta(days=1)).strftime('%Y%m%d')}",
-            f"SUMMARY:{_esc('Deadline: ' + item['name'])}",
+            f"SUMMARY:{_esc(('Deadline: ' if item.get('deadline_confirmed') else 'Deadline (unconfirmed): ') + item['name'])}",
             f"DESCRIPTION:{_esc(desc)}",
             f"URL:{item.get('url', '')}",
             "TRANSP:TRANSPARENT",

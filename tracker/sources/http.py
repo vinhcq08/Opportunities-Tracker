@@ -57,6 +57,18 @@ def text_hash(text: str) -> str:
     return hashlib.sha256(stable.encode()).hexdigest()[:16]
 
 
+RELEVANT_SENTENCE = re.compile(
+    r"eligib|nationalit|citizen|resident|open to|who can apply|undergrad|bachelor|student|year of study|"
+    r"deadline|apply by|applications? (?:open|close)|due|closes|until|enrol|enroll|university", re.I)
+
+
+def relevant_hash(text: str) -> str:
+    """Fingerprint of only the sentences about eligibility and dates, so cosmetic page changes do not count."""
+    sentences = re.split(r"(?<=[.!?])\s+|\n+", text)
+    keep = " ".join(s for s in sentences if RELEVANT_SENTENCE.search(s))
+    return hashlib.sha256(_SPACE.sub(" ", keep.lower()).strip().encode()).hexdigest()[:16]
+
+
 OPEN_PATTERNS = [
     r"applications? (?:are|is) (?:now )?open",
     r"now accepting applications",

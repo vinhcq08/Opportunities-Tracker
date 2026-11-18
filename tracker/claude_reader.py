@@ -2,8 +2,9 @@
 
 Runs only when ANTHROPIC_API_KEY is set. Costs stay bounded:
 - only curated programs that are not verified yet,
-- only pages whose text changed since the last proposal (or that have none),
-- at most MAX_PAGES pages per run, and page text capped at MAX_CHARS.
+- only pages whose eligibility or deadline sentences changed since the last proposal (or that have none),
+- at most MAX_PAGES pages per run, page text capped at MAX_CHARS,
+- and a daily dollar budget (CLAUDE_DAILY_BUDGET_USD, default 1.00), counted from each call's real token usage.
 
 Proposals are suggestions. Nothing changes until you accept one in the dashboard's Review tab
 and paste the result into overrides.yaml.
@@ -20,6 +21,37 @@ MODEL = os.environ.get("CLAUDE_MODEL", "claude-opus-5-5")
 EFFORT = os.environ.get("CLAUDE_EFFORT", "medium")
 MAX_PAGES = int(os.environ.get("CLAUDE_MAX_PAGES", "8"))
 MAX_CHARS = 60_000
+DAILY_BUDGET_USD = float(os.environ.get("CLAUDE_DAILY_BUDGET_USD", "1.00"))
+OUTPUT_ALLOWANCE = 4000  # max_tokens per call; used for the worst-case estimate
+
+# USD per million tokens (input, output), from Anthropic's published prices (cached Nov 2026).
+# Unknown models are charged at the highest listed price so the budget errs on the safe side.
+PRICES = {
+    "claude-opus-5-5": (4.00, 20.00),
+    "claude-sonnet-5-5": (2.00, 10.00),
+    "claude-haiku-5-5": (0.10, 0.50),
+}
+FALLBACK_PRICE = (10.00, 50.00)
+
+
+def price(model: str) -> tuple[float, float]:
+    return PRICES.get(model, FALLBACK_PRICE)
+
+
+def estimate_cost(page_chars: int, model: str = MODEL) -> float:
+    """Worst-case cost of one page: about 3.5 characters per token, plus the prompt, plus a full reply."""
+    pin, pout = price(model)
+    return (page_chars / 3.5 + 1500) * pin / 1e6 + OUTPUT_ALLOWANCE * pout / 1e6
+
+
+def actual_cost(response, model: str = MODEL) -> float:
+    usage = getattr(response, "usage", None)
+    if usage is None:
+        return estimate_cost(MAX_CHARS, model)
+    pin, pout = price(model)
+    tokens_in = (getattr(usage, "input_tokens", 0) or 0) + (getattr(usage, "cache_creation_input_tokens", 0) or 0) \
+        + (getattr(usage, "cache_read_input_tokens", 0) or 0)
+    return tokens_in * pin / 1e6 + (getattr(usage, "output_tokens", 0) or 0) * pout / 1e6
 
 FIELDS_TO_COMPARE = ("nationality_ok", "enrollment_req", "class_years", "deadline", "funding")
 
@@ -72,10 +104,16 @@ def needs_reading(item: dict, previous: dict | None) -> bool:
         return False
     if not item.get("_page_text"):
         return False
-    return previous is None or previous.get("page_hash") != item.get("page_hash")
+    if previous is None:
+        return True
+    # Only a change in the eligibility/deadline sentences is worth paying for; fall back to the whole page.
+    if item.get("elig_hash") and previous.get("elig_hash"):
+        return previous["elig_hash"] != item["elig_hash"]
+    return previous.get("page_hash") != item.get("page_hash")
 
 
-def read_page(client, item: dict, profile: dict, today: dt.date) -> dict | None:
+def read_page(client, item: dict, profile: dict, today: dt.date) -> tuple[dict | None, float]:
+    """Return (proposal or None, cost in USD of the call)."""
     import anthropic  # imported here so the scraper runs without the package when the feature is off
 
     text = item["_page_text"]
@@ -97,20 +135,21 @@ def read_page(client, item: dict, profile: dict, today: dt.date) -> dict | None:
         )
     except anthropic.APIStatusError as exc:
         print(f"claude: {item['id']}: API error {exc.status_code}")
-        return None
+        return None, 0.0
     except anthropic.APIConnectionError:
         print(f"claude: {item['id']}: connection error")
-        return None
+        return None, 0.0
 
+    cost = actual_cost(response, getattr(response, "model", MODEL) or MODEL)
     if response.stop_reason == "refusal":
         print(f"claude: {item['id']}: declined")
-        return None
+        return None, cost
     raw = next((b.text for b in response.content if b.type == "text"), "")
     try:
         data = json.loads(raw)
     except json.JSONDecodeError:
         print(f"claude: {item['id']}: unreadable output")
-        return None
+        return None, cost
 
     # Keep only what the page really says: a value whose quote is not in the page is dropped.
     norm_page = _norm(page)
@@ -137,28 +176,48 @@ def read_page(client, item: dict, profile: dict, today: dt.date) -> dict | None:
         proposal.pop("funding")
 
     proposal["changes"] = {f: proposal[f] for f in FIELDS_TO_COMPARE if f in proposal and proposal[f] != item.get(f)}
-    proposal.update({"page_hash": item.get("page_hash"), "page_truncated": truncated, "model": response.model,
+    proposal.update({"page_hash": item.get("page_hash"), "elig_hash": item.get("elig_hash"), "page_truncated": truncated,
+                     "model": response.model, "cost_usd": round(cost, 4),
                      "at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), "name": item["name"]})
-    return proposal
+    return proposal, cost
 
 
-def run(items: list[dict], previous: dict, profile: dict, today: dt.date) -> tuple[dict, str]:
-    """Return (proposals by id, one-line report)."""
+def run(items: list[dict], previous: dict, profile: dict, today: dt.date,
+        usage: dict | None = None) -> tuple[dict, str, dict]:
+    """Return (proposals by id, one-line report, usage record).
+
+    usage = {"date": "YYYY-MM-DD", "usd": spent today, "pages": read today, "months": {"YYYY-MM": usd}}
+    """
     proposals = dict(previous)
     current = {i["id"] for i in items}
     for pid in list(proposals):  # forget programs that left the list
         if pid not in current:
             proposals.pop(pid)
+    usage = dict(usage or {})
+    usage.setdefault("months", {})
+    if usage.get("date") != today.isoformat():
+        usage.update({"date": today.isoformat(), "usd": 0.0, "pages": 0})
     if not os.environ.get("ANTHROPIC_API_KEY"):
-        return proposals, "skipped (no ANTHROPIC_API_KEY secret)"
+        return proposals, "skipped (no ANTHROPIC_API_KEY secret)", usage
     import anthropic
 
     client = anthropic.Anthropic()
     todo = [i for i in items if needs_reading(i, proposals.get(i["id"]))][:MAX_PAGES]
-    done = 0
+    done, stopped = 0, False
+    month = today.strftime("%Y-%m")
     for item in todo:
-        result = read_page(client, item, profile, today)
+        worst = estimate_cost(min(len(item["_page_text"]), MAX_CHARS))
+        if usage["usd"] + worst > DAILY_BUDGET_USD:
+            stopped = True
+            break
+        result, cost = read_page(client, item, profile, today)
+        usage["usd"] = round(usage["usd"] + cost, 4)
+        usage["pages"] += 1
+        usage["months"][month] = round(usage["months"].get(month, 0.0) + cost, 4)
         if result is not None:
             proposals[item["id"]] = result
             done += 1
-    return proposals, f"{done} of {len(todo)} pages read"
+    line = f"{done} of {len(todo)} pages read · ${usage['usd']:.2f} of ${DAILY_BUDGET_USD:.2f} today"
+    if stopped:
+        line += " · daily budget reached, the rest waits for tomorrow"
+    return proposals, line, usage

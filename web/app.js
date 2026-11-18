@@ -49,6 +49,9 @@
     tracker: store.get("tracker", {}),      // id -> { stage, note, at }
     decisions: store.get("decisions", {}),  // id -> eligible | not_eligible | ignore
     suggestions: store.get("suggestions", {}),  // id -> accept | dismiss (Claude's proposals)
+    verified: store.get("verified", {}),  // id -> { nationality_ok, enrollment_req, class_years, deadline, at } checked by you
+    allHackathons: store.get("allHackathons", false),  // include non-featured Devpost hackathons in Review
+    items: [],  // the data's items with your local verifications laid over them
     ui: { summerFunded: false, summerRegion: "all", competeType: "all", featuredOnly: true, onlineOnly: false, inVietnam: false },
     limits: {},   // list key -> how many items are shown ("Show more")
     groupOpen: {},  // Review group -> open/closed
@@ -84,8 +87,32 @@
     return null;
   }
 
+  // Your local verification of a curated program, laid over the published data.
+  function rebuild() {
+    state.items = state.data.items.map((i) => {
+      const v = state.verified[i.id];
+      if (!v) return i;
+      return Object.assign({}, i, {
+        nationality_ok: v.nationality_ok, enrollment_req: v.enrollment_req, class_years: v.class_years,
+        deadline: v.deadline || null, deadline_confirmed: !!v.deadline, verified: true, verified_local: true,
+      });
+    });
+  }
+
+  // The same rules as tracker/eligibility.py, for programs you verified on this device.
+  function localLabel(item) {
+    if (["us_canada_only", "host_university_only", "local_only"].includes(item.enrollment_req)) return "not_eligible";
+    if (["us_only", "eu_only"].includes(item.nationality_ok)) return "not_eligible";
+    if (["other_restriction", "unknown"].includes(item.nationality_ok) || item.enrollment_req === "unknown") return "check";
+    const y = state.data && state.data.profile && state.data.profile.year;
+    if (y && item.class_years && item.class_years.length && !item.class_years.includes(y)) return "check";
+    return "eligible";
+  }
+
   function label(item) {
-    return state.decisions[item.id] || item.eligible_for_me;
+    if (state.decisions[item.id]) return state.decisions[item.id];
+    if (item.verified_local) return localLabel(item);
+    return item.eligible_for_me;
   }
 
   function profileYear() {
@@ -112,7 +139,7 @@
   }
 
   function items(kinds) {
-    return state.data.items.filter((i) => !kinds || kinds.includes(i.kind));
+    return state.items.filter((i) => !kinds || kinds.includes(i.kind));
   }
 
   function bySoonest(a, b) {
@@ -125,7 +152,7 @@
 
   function bigNumber(item) {
     const d = daysLeft(item);
-    if (d != null && d >= 0) return { n: pad(d), l: d === 1 ? "Day left" : "Days left" };
+    if (d != null && d >= 0) return { n: pad(d), l: (d === 1 ? "Day left" : "Days left") + (item.deadline_confirmed ? "" : " · unconfirmed") };
     if (item.status === "open") return { n: "OPEN", l: "Now" };
     if (item.status === "closed") return { n: "SHUT", l: "Closed" };
     if (item.window && item.window.length === 12) return { n: "∞", l: "Rolling" };
@@ -166,7 +193,7 @@
     const start = new Date(item.deadline + "T00:00:00Z"), end = new Date(start.getTime() + DAY);
     const q = new URLSearchParams({
       action: "TEMPLATE",
-      text: "Deadline: " + item.name,
+      text: (item.deadline_confirmed ? "Deadline: " : "Deadline (unconfirmed): ") + item.name,
       dates: ymd(start) + "/" + ymd(end),
       details: `${item.org}. ${ELIG_LABEL[label(item)] || ""}\n${item.url}`,
     });
@@ -188,7 +215,7 @@
       const start = new Date(i.deadline + "T00:00:00Z"), end = new Date(start.getTime() + DAY);
       out.push("BEGIN:VEVENT", `UID:${i.id}@opportunity-tracker-saved`, `DTSTAMP:${stamp}`,
         `DTSTART;VALUE=DATE:${ymd(start)}`, `DTEND;VALUE=DATE:${ymd(end)}`,
-        `SUMMARY:${esc2("Deadline: " + i.name)}`, `DESCRIPTION:${esc2(i.url)}`, `URL:${i.url}`);
+        `SUMMARY:${esc2((i.deadline_confirmed ? "Deadline: " : "Deadline (unconfirmed): ") + i.name)}`, `DESCRIPTION:${esc2(i.url)}`, `URL:${i.url}`);
       [14, 3].forEach((n) => out.push("BEGIN:VALARM", "ACTION:DISPLAY", `DESCRIPTION:${esc2(i.name + " closes in " + n + " days")}`, `TRIGGER:-P${n}D`, "END:VALARM"));
       out.push("END:VEVENT");
     });
@@ -272,6 +299,7 @@
 
   // The eligibility reason plus the program note, without repeating the note when it is the reason.
   function reasonText(item) {
+    if (item.verified_local) return esc("Verified by you on this device. Copy your decisions into overrides.yaml to keep it everywhere.");
     const reason = (item.elig_reasons || [])[0] || "";
     const extra = item.notes && item.notes !== reason ? " — " + item.notes : "";
     return esc(reason + extra);
@@ -296,8 +324,12 @@
   }
 
   // ------------------------------------------------------------ views
+  // Non-featured Devpost hackathons are many and mostly small; keep them out of the Overview and Review
+  // unless you switch them on in Review. They always stay listed in Compete.
+  function isNoise(i) { return !state.allHackathons && i.source === "devpost" && !i.featured; }
+
   function viewOverview() {
-    const vis = items().filter(isVisible);
+    const vis = items().filter(isVisible).filter((i) => !isNoise(i));
     const weekAgo = Date.now() - 7 * DAY;
     const recent = state.data.changes.filter((c) => (c.type === "new" || c.type === "opened") && Date.parse(c.at) >= weekAgo);
     const visIds = new Set(vis.map((i) => i.id));
@@ -308,7 +340,7 @@
     const coverItem = vis.filter((i) => { const d = daysLeft(i); return d != null && d >= 0; }).sort(bySoonest)[0]
       || vis.filter((i) => i.status === "open" && i.featured)[0] || vis.filter((i) => i.featured)[0];
     const soon = vis.filter((i) => { const d = daysLeft(i); return d != null && d >= 0; }).sort(bySoonest).slice(0, 5);
-    const byId = Object.fromEntries(state.data.items.map((i) => [i.id, i]));
+    const byId = Object.fromEntries(state.items.map((i) => [i.id, i]));
     const fresh = freshIds.slice(0, 8).map((id) => byId[id]);
     const tl = vis.filter((i) => i.featured && i.window && i.window.length && i.window.length < 12).slice(0, 14);
     const nowM = thisMonth();
@@ -330,7 +362,8 @@
       ${coverItem ? cover(coverItem, daysLeft(coverItem) != null ? "Cover story · Closes first" : "Cover story") : empty("Nothing to feature yet")}
       <aside class="due" aria-labelledby="due-h">
         <h2 class="k" id="due-h" style="margin:0 0 6px">Closing soon</h2>
-        ${soon.length ? soon.map((i) => `<a class="due-row" href="${progHref(i)}"><span>${esc(i.name)}</span><span>${pad(daysLeft(i))}d</span></a>`).join("")
+        ${soon.length ? soon.map((i) => `<a class="due-row" href="${progHref(i)}"><span>${esc(i.name)}</span><span${i.deadline_confirmed ? "" : ' title="Date not confirmed on the official page"'}>${pad(daysLeft(i))}d${i.deadline_confirmed ? "" : "?"}</span></a>`).join("")
+          + (soon.some((i) => !i.deadline_confirmed) ? `<p style="font-size:12px;margin:8px 0 0">? = date from public listings, not yet confirmed on the official page</p>` : "")
           : `<p class="k" style="border-top:2px solid #0A0A0A;padding-top:10px">No dated deadlines yet. Add them in programs.yaml as you verify.</p>`}
         ${subscribeLinks()}
       </aside>
@@ -462,7 +495,7 @@
 
   // ------------------------------------------------------------ program page
   function viewProgram(id) {
-    const item = state.data.items.find((i) => i.id === id);
+    const item = state.items.find((i) => i.id === id);
     if (!item) return `<a class="k" href="#overview">← Overview</a>${empty("This program is no longer listed. It may have closed or been removed from a feed.")}`;
     const big = bigNumber(item);
     const kind = KIND[item.kind] || { label: item.kind };
@@ -471,7 +504,7 @@
     const openProposal = proposal && proposal.changes && Object.keys(proposal.changes).length && !state.suggestions[item.id];
     const d = daysLeft(item);
     const facts = [
-      ["Deadline", item.deadline ? `${item.deadline} · 23:59 Vietnam time${d != null && d >= 0 ? ` · ${d} days left` : ""}` : "Not set yet"],
+      ["Deadline", item.deadline ? `${item.deadline} · 23:59 Vietnam time${d != null && d >= 0 ? ` · ${d} days left` : ""}${item.deadline_confirmed ? "" : " · unconfirmed: from public listings, check the official page"}` : "Not set yet"],
       ["Usual window", item.window && item.window.length ? (item.window.length === 12 ? "All year (rolling)" : item.window.map((m) => MONTHS[m - 1]).join(", ") + " (estimate)") : ""],
       ["Status", item.status && item.status !== "unknown" ? item.status : ""],
       ["Funding", item.funding ? FUND_LABEL[item.funding] || item.funding : ""],
@@ -510,11 +543,57 @@
       <ul style="margin:0;padding-left:18px">${Object.keys(proposal.changes).map((k) => `<li style="margin:6px 0"><strong>${esc(FIELD_LABEL[k] || k)}:</strong> ${esc(fmtVal(item[k]))} → <strong>${esc(fmtVal(proposal.changes[k]))}</strong>${proposal.quotes && proposal.quotes[k] ? `<blockquote style="margin-top:4px">“${esc(proposal.quotes[k])}”</blockquote>` : ""}</li>`).join("")}</ul>
       <div class="seg" role="group" aria-label="Decide suggestion" style="margin-top:12px"><button data-act="suggest" data-id="${esc(item.id)}" data-val="accept">Accept</button><button data-act="suggest" data-id="${esc(item.id)}" data-val="dismiss">Dismiss</button></div>
     </section>` : ""}
+    ${verifyBox(item)}
     <section>
       <h2 class="k" style="margin:0 0 4px">Details</h2>
       <dl class="facts">${facts.map(([k, v]) => `<div><dt class="k muted">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
     </section>
 `;
+  }
+
+  // ------------------------------------------------------------ verification
+  const NAT_OPTS = [["global", "Open to all nationalities"], ["vn_ok", "Vietnam explicitly included"], ["other_restriction", "Limited country list"],
+    ["us_only", "US citizens/residents only"], ["eu_only", "EU/EEA only"], ["unknown", "The page doesn't say"]];
+  const ENR_OPTS = [["any", "Students at any university"], ["vn_university_ok", "Students at Vietnamese universities"],
+    ["local_only", "Only students living or studying in the host country"], ["us_canada_only", "Only US/Canadian universities"],
+    ["host_university_only", "Only the host university's own students"], ["unknown", "The page doesn't say"]];
+
+  function verifyBox(item) {
+    if (item.source !== "registry") return "";
+    const v = state.verified[item.id];
+    if (item.verified && !item.verified_local) {
+      return `<section class="prog-elig bg-white"><h2 class="k" style="margin:0">Verified</h2><p style="margin:6px 0 0">Checked against the official page and saved in the tracker's data.</p></section>`;
+    }
+    if (v) {
+      return `<section class="prog-elig bg-lime">
+        <h2 class="k" style="margin:0 0 6px">Verified by you · ${esc((v.at || "").slice(0, 10))}</h2>
+        <p style="margin:0">Saved on this device. Copy your decisions from the Review tab into <code>overrides.yaml</code> to keep it everywhere.</p>
+        <div class="row" style="margin-top:12px"><a class="go small dark" href="#review">Go to my decisions</a><button class="go small" data-act="unverify" data-id="${esc(item.id)}">Undo</button></div>
+      </section>`;
+    }
+    const sel = (name, opts, cur) => `<select class="field" name="${name}" id="v-${name}">${opts.map(([val, txt]) =>
+      `<option value="${val}"${val === cur ? " selected" : ""}>${esc(txt)}</option>`).join("")}</select>`;
+    const years = item.class_years && item.class_years.length ? item.class_years : [1, 2, 3, 4];
+    return `<section class="prog-elig bg-white" id="verify">
+      <h2 class="k" style="margin:0 0 6px">Verify this program · about 10 minutes</h2>
+      <p style="margin:0 0 14px">Open the <a href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener">official page ↗</a>, check each answer against it, then save. Verified programs can show <strong>Eligible</strong>, and their deadlines count as confirmed.</p>
+      <form class="verify" data-id="${esc(item.id)}">
+        <div class="vgrid">
+          <label for="v-nationality_ok"><span class="k">Nationality</span>${sel("nationality_ok", NAT_OPTS, item.nationality_ok)}</label>
+          <label for="v-enrollment_req"><span class="k">Who can apply</span>${sel("enrollment_req", ENR_OPTS, item.enrollment_req)}</label>
+          <label for="v-deadline"><span class="k">Deadline (leave empty if none or rolling)</span><input class="field" type="date" name="deadline" id="v-deadline" value="${esc(item.deadline || "")}"></label>
+        </div>
+        <fieldset class="vyears"><legend class="k">Years of study allowed</legend>
+          ${[1, 2, 3, 4].map((y) => `<label class="vcheck"><input type="checkbox" name="years" value="${y}"${years.includes(y) ? " checked" : ""}> Year ${y}</label>`).join("")}
+        </fieldset>
+        <button type="submit" class="go dark">Mark as verified</button>
+      </form>
+    </section>`;
+  }
+
+  function sprintList() {
+    return state.items.filter((i) => i.source === "registry" && !i.verified && i.featured && !["not_eligible", "ignore"].includes(label(i)))
+      .sort(bySoonest).slice(0, 15);
   }
 
   // ------------------------------------------------------------ review
@@ -523,6 +602,8 @@
 
   function yamlScalar(v) {
     if (Array.isArray(v)) return "[" + v.join(", ") + "]";
+    if (typeof v === "boolean") return String(v);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(String(v))) return JSON.stringify(String(v));  // keep dates as text
     return /^[\w.-]+$/.test(String(v)) ? String(v) : JSON.stringify(String(v));
   }
 
@@ -532,19 +613,31 @@
     const accepted = Object.entries(state.suggestions).filter(([id, d]) => d === "accept" && proposals[id]);
     let out = "";
     if (decided.length) out += "overrides:\n" + decided.map(([id, d]) => `  ${id}:\n    eligible_for_me: ${d}\n    reason: Decided in the review queue`).join("\n") + "\n";
-    if (accepted.length) out += (out ? "\n" : "") + "fields:\n" + accepted.map(([id]) => {
-      const ch = proposals[id].changes || {};
-      return `  ${id}:\n` + Object.keys(ch).map((k) => `    ${k}: ${yamlScalar(ch[k])}`).join("\n") + "\n    verified: true";
-    }).join("\n") + "\n";
+    // Accepted suggestions and your own verifications both become field overrides; your verification wins.
+    const fields = {};
+    accepted.forEach(([id]) => { fields[id] = Object.assign({}, proposals[id].changes || {}, { verified: true }); });
+    Object.entries(state.verified).forEach(([id, v]) => {
+      fields[id] = Object.assign(fields[id] || {}, {
+        nationality_ok: v.nationality_ok, enrollment_req: v.enrollment_req, class_years: v.class_years,
+        deadline: v.deadline || null, deadline_confirmed: !!v.deadline, verified: true,
+      });
+    });
+    const ids = Object.keys(fields);
+    if (ids.length) out += (out ? "\n" : "") + "fields:\n" + ids.map((id) => `  ${id}:\n` + Object.entries(fields[id])
+      .filter(([, val]) => val !== null && val !== undefined).map(([k, val]) => `    ${k}: ${yamlScalar(val)}`).join("\n")).join("\n") + "\n";
     return out;
   }
 
   const JOB_SOURCES = ["greenhouse", "lever", "simplify"];
   function reviewQueue() {
-    return items().filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id] && !JOB_SOURCES.includes(i.source));
+    return items().filter((i) => label(i) === "check" && !state.decisions[i.id] && !JOB_SOURCES.includes(i.source)
+      && (state.allHackathons || i.source !== "devpost" || i.featured));
+  }
+  function hiddenHackathons() {
+    return items().filter((i) => i.source === "devpost" && !i.featured && label(i) === "check" && !state.decisions[i.id]).length;
   }
   function pendingProposals() {
-    const byId = Object.fromEntries(state.data.items.map((i) => [i.id, i]));
+    const byId = Object.fromEntries(state.items.map((i) => [i.id, i]));
     return Object.entries(state.data.proposals || {})
       .filter(([id, p]) => byId[id] && p.changes && Object.keys(p.changes).length && !state.suggestions[id])
       .map(([id, p]) => ({ item: byId[id], p }));
@@ -581,10 +674,20 @@
   function viewReview() {
     const queue = reviewQueue();
     const pending = pendingProposals();
-    const nDecisions = Object.keys(state.decisions).length + Object.values(state.suggestions).filter((d) => d === "accept").length;
+    const nDecisions = Object.keys(state.decisions).length + Object.values(state.suggestions).filter((d) => d === "accept").length
+      + Object.keys(state.verified).length;
     const yaml = exportYaml();
     const sections = [];
     let n = 1;
+    const sprint = sprintList();
+    if (sprint.length) {
+      sections.push(group("sprint", n++, "Verification sprint", "Featured programs nobody has checked yet, closest deadline first", sprint.length,
+        sprint.map((i) => `<div class="rrow">
+          <div class="rrow-body"><a class="rrow-name" href="${progHref(i)}">${esc(i.name)}</a>
+            <div class="rrow-meta">${esc(ELIG_LABEL[label(i)] || label(i))} · ${i.deadline ? esc(i.deadline) + (i.deadline_confirmed ? "" : " (unconfirmed)") : "no deadline set"}</div></div>
+          ${extDot(i, "inline")}<a class="go small dark" href="${progHref(i)}">Verify →</a>
+        </div>`), "", true));
+    }
     if (pending.length) {
       const high = pending.filter(({ p }) => p.confidence === "high").length;
       sections.push(group("claude", n++, "Claude's suggestions", "Read from official pages · quotes checked against the page", pending.length,
@@ -614,6 +717,9 @@
       <div class="row" style="gap:22px"><div><div class="stat-n">${pad(total)}</div><div class="k muted">To review</div></div><div><div class="stat-n">${pad(sections.length)}</div><div class="k muted">Groups</div></div></div>
     </div>
     <p style="margin:0;max-width:640px">Grouped by where items came from. Decisions apply on this device right away; copy them into <code>overrides.yaml</code> to keep them everywhere.</p>
+    ${hiddenHackathons() || state.allHackathons ? `<div class="row"><button class="go small" data-act="hackathons">${state.allHackathons
+      ? "Hide non-featured online hackathons" : `Also review ${hiddenHackathons()} non-featured online hackathons`}</button>
+      <span class="k muted">${state.allHackathons ? "" : "They stay listed in Compete"}</span></div>` : ""}
     ${sections.length ? sections.join("") : empty("Nothing to review. Nice.")}
     ${yaml ? `
     <section>
@@ -624,8 +730,64 @@
     </section>` : ""}`;
   }
 
+  // ------------------------------------------------------------ backup / restore
+  function hasPersonalData() {
+    return [state.tracker, state.decisions, state.suggestions, state.verified].some((o) => Object.keys(o).length);
+  }
+  function backupBox() {
+    const last = store.get("lastBackup", null);
+    const days = last ? Math.floor((Date.now() - Date.parse(last)) / DAY) : null;
+    const stale = hasPersonalData() && (days == null || days >= 14);
+    return `<section class="backup ${stale ? "bg-yellow" : ""}" aria-labelledby="bk-h">
+      <div style="flex:999 1 320px">
+        <h2 class="k" id="bk-h" style="margin:0 0 4px">Your data lives only in this browser</h2>
+        <p style="margin:0;font-size:14px">Saved programs, notes, decisions and verifications are kept on this device. Clearing browser data deletes them. ${last ? `Last backup: ${days === 0 ? "today" : days + " day" + (days === 1 ? "" : "s") + " ago"}.` : "No backup yet."}</p>
+      </div>
+      <div class="row">
+        <button class="go small dark" data-act="backup">Back up my data</button>
+        <label class="go small" for="restore-file" style="cursor:pointer">Restore from backup</label>
+        <input type="file" id="restore-file" accept="application/json,.json" class="sr">
+      </div>
+    </section>`;
+  }
+  function downloadFile(name, text, type) {
+    const url = URL.createObjectURL(new Blob([text], { type }));
+    const a = document.createElement("a"); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  }
+  function backup() {
+    const data = { app: "opportunity-tracker", version: 1, exported_at: new Date().toISOString(),
+      tracker: state.tracker, decisions: state.decisions, suggestions: state.suggestions, verified: state.verified,
+      prefs: { layout: state.layout, eligibleOnly: state.eligibleOnly, year: state.year, allHackathons: state.allHackathons } };
+    downloadFile(`opportunity-tracker-backup-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(data, null, 1), "application/json");
+    store.set("lastBackup", data.exported_at);
+    toast("Backup downloaded");
+  }
+  const isObj = (o) => o && typeof o === "object" && !Array.isArray(o);
+  function restore(file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      let data;
+      try { data = JSON.parse(reader.result); } catch (e) { toast("That file is not a backup from this app"); return; }
+      if (!isObj(data) || data.app !== "opportunity-tracker" || !["tracker", "decisions", "suggestions", "verified"].every((k) => data[k] === undefined || isObj(data[k]))) {
+        toast("That file is not a backup from this app"); return;
+      }
+      const when = (data.exported_at || "").slice(0, 10) || "an unknown date";
+      if (hasPersonalData() && !window.confirm(`Replace the saved data on this device with the backup from ${when}?`)) return;
+      state.tracker = data.tracker || {}; state.decisions = data.decisions || {};
+      state.suggestions = data.suggestions || {}; state.verified = data.verified || {};
+      const p = isObj(data.prefs) ? data.prefs : {};
+      if (p.layout === "cards" || p.layout === "list") state.layout = p.layout;
+      if (typeof p.eligibleOnly === "boolean") state.eligibleOnly = p.eligibleOnly;
+      if (typeof p.allHackathons === "boolean") state.allHackathons = p.allHackathons;
+      ["tracker", "decisions", "suggestions", "verified", "layout", "eligibleOnly", "allHackathons"].forEach((k) => store.set(k, state[k]));
+      rebuild(); render(true); toast("Restored backup from " + when);
+    };
+    reader.readAsText(file);
+  }
+
   function viewTracker() {
-    const byId = Object.fromEntries(state.data.items.map((i) => [i.id, i]));
+    const byId = Object.fromEntries(state.items.map((i) => [i.id, i]));
     const entries = Object.entries(state.tracker);
     const cols = STAGES.map((s) => ({ ...s, cards: entries.filter(([, t]) => t.stage === s.id) }));
     return `
@@ -637,6 +799,7 @@
           ? `<button class="go small dark" data-act="ics" style="align-self:flex-start">Download my deadlines (.ics)</button>` : ""}
       </div>
     </div>
+    ${backupBox()}
     ${entries.length ? `<div class="scroll-x"><div class="board">${cols.map((c, ci) => `
       <section class="col" aria-label="${esc(c.label)}">
         <div class="col-head"><h2 class="k" style="margin:0;font-size:13px">${esc(c.label)}</h2><span class="col-n">${pad(c.cards.length)}</span></div>
@@ -677,7 +840,7 @@
     const y = window.scrollY;
     document.getElementById("view").innerHTML = VIEWS[name](focus);
     let section = name;
-    if (name === "p") { const it = state.data.items.find((i) => i.id === focus); section = it ? sectionOf(it) : ""; }
+    if (name === "p") { const it = state.items.find((i) => i.id === focus); section = it ? sectionOf(it) : ""; }
     document.querySelectorAll(".nav a").forEach((a) => {
       if (a.getAttribute("href") === "#" + section) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
@@ -706,6 +869,9 @@
     if (!el || el.tagName === "INPUT") return;
     const { act, id } = el.dataset;
     if (act === "save") { state.tracker[id] = { stage: "saved", note: "", at: new Date().toISOString() }; saveTracker(); toast("Saved to your tracker"); }
+    else if (act === "backup") { backup(); return; }
+    else if (act === "hackathons") { state.allHackathons = !state.allHackathons; store.set("allHackathons", state.allHackathons); }
+    else if (act === "unverify") { delete state.verified[id]; store.set("verified", state.verified); rebuild(); toast("Verification removed"); }
     else if (act === "unsave") { delete state.tracker[id]; saveTracker(); toast("Removed from your tracker"); }
     else if (act === "more") { const k = el.dataset.key; state.limits[k] = (state.limits[k] || Number(el.dataset.step || PAGE)) + Number(el.dataset.step || PAGE); }
     else if (act === "layout") { state.layout = el.dataset.val; store.set("layout", state.layout); }
@@ -726,7 +892,7 @@
     }
     else if (act === "decide") { state.decisions[id] = el.dataset.val; store.set("decisions", state.decisions); toast("Decision saved"); }
     else if (act === "ics") {
-      const byId = Object.fromEntries(state.data.items.map((i) => [i.id, i]));
+      const byId = Object.fromEntries(state.items.map((i) => [i.id, i]));
       const list = Object.keys(state.tracker).map((k) => byId[k]).filter((i) => i && daysLeft(i) != null && daysLeft(i) >= 0);
       const url = URL.createObjectURL(new Blob([icsFor(list)], { type: "text/calendar" }));
       const a = document.createElement("a"); a.href = url; a.download = "my-deadlines.ics"; document.body.appendChild(a); a.click(); a.remove();
@@ -734,7 +900,11 @@
       toast(list.length + " deadline" + (list.length === 1 ? "" : "s") + " downloaded");
       return;
     }
-    else if (act === "undo-all") { state.decisions = {}; state.suggestions = {}; store.set("decisions", {}); store.set("suggestions", {}); }
+    else if (act === "undo-all") {
+      if (Object.keys(state.verified).length && !window.confirm("Also remove your verifications on this device?")) return;
+      state.decisions = {}; state.suggestions = {}; state.verified = {};
+      ["decisions", "suggestions", "verified"].forEach((k) => store.set(k, {})); rebuild();
+    }
     else if (act === "suggest") { state.suggestions[id] = el.dataset.val; store.set("suggestions", state.suggestions); toast(el.dataset.val === "accept" ? "Accepted" : "Dismissed"); }
     else if (act === "copy") {
       const text = document.querySelector("textarea.export").value;
@@ -749,8 +919,23 @@
     render(true);
   });
 
+  document.addEventListener("submit", (ev) => {
+    const form = ev.target;
+    if (!form.classList || !form.classList.contains("verify")) return;
+    ev.preventDefault();
+    const f = new FormData(form);
+    const deadline = String(f.get("deadline") || "");
+    state.verified[form.dataset.id] = {
+      nationality_ok: String(f.get("nationality_ok")), enrollment_req: String(f.get("enrollment_req")),
+      class_years: f.getAll("years").map(Number).sort(), deadline: /^\d{4}-\d{2}-\d{2}$/.test(deadline) ? deadline : "",
+      at: new Date().toISOString(),
+    };
+    store.set("verified", state.verified); rebuild(); toast("Marked as verified on this device"); render(true);
+  });
+
   document.addEventListener("change", (ev) => {
     const el = ev.target;
+    if (el.id === "restore-file" && el.files && el.files[0]) { restore(el.files[0]); el.value = ""; return; }
     if (el.dataset && el.dataset.act === "note" && state.tracker[el.dataset.id]) { state.tracker[el.dataset.id].note = el.value; saveTracker(); }
   });
 
@@ -777,6 +962,7 @@
     .then((data) => {
       data.changes = data.changes || [];
       state.data = data;
+      rebuild();
       const d = nowICT();
       document.getElementById("issue").textContent = `${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()} · Updated ${ago(data.generated_at)}`;
       const problems = data.source_problems || [];

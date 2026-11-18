@@ -57,3 +57,11 @@ python -m tracker.run            # full run (needs network)
 python -m tracker.run --offline  # registry only, no network
 python -m http.server -d web 8000
 ```
+
+## Keeping things safe
+
+- **Your personal data** (saved programs, notes, decisions, verifications) lives only in your browser. Use **Tracker → Back up my data** regularly; **Restore from backup** brings it back on any device or after clearing the browser.
+- **Verification:** open a program page, check the official page, and use **Verify this program**. Then copy your decisions from the Review tab into `overrides.yaml`. Only verified programs can show "Eligible", and only their deadlines count as confirmed; other dates show "unconfirmed" in the app and the calendar.
+- **Claude spending** is capped per day by `CLAUDE_DAILY_BUDGET_USD` (default `1.00`), counted from each call's real token usage. Pages are only reread when their eligibility or deadline sentences change. Spending per day and month is saved in `web/data/opportunities.json` under `claude_usage`.
+- **The schedule:** GitHub turns off scheduled workflows after 60 days without repository activity. Every run commits fresh data, which counts as activity, so this only happens if updates keep failing for two months (GitHub emails you about failed runs). Scheduled runs are best-effort: GitHub may delay or skip a slot when busy, so data can occasionally be up to 12 hours old.
+

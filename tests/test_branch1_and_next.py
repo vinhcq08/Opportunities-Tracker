@@ -101,7 +101,8 @@ class FakeClient:
     def _create(self, **kw):
         self.calls.append(kw)
         block = types.SimpleNamespace(type="text", text=json.dumps(self.payload))
-        return types.SimpleNamespace(content=[block], stop_reason=self.stop, model=kw["model"])
+        usage = types.SimpleNamespace(input_tokens=20_000, output_tokens=2_000)
+        return types.SimpleNamespace(content=[block], stop_reason=self.stop, model=kw["model"], usage=usage)
 
 
 PAGE = "Summer research fellowship. Students of all nationalities can apply. The application deadline is 16 December 2026."
@@ -125,8 +126,9 @@ def registry_item(**over):
 
 def test_reader_keeps_grounded_values_and_lists_changes():
     client = FakeClient(payload())
-    p = claude_reader.read_page(client, registry_item(), {"country": "VN", "year": 2}, TODAY)
+    p, cost = claude_reader.read_page(client, registry_item(), {"country": "VN", "year": 2}, TODAY)
     assert p["changes"] == {"nationality_ok": "global", "deadline": "2026-12-16"}
+    assert cost == 20_000 * 4 / 1e6 + 2_000 * 20 / 1e6  # $0.12 at Claude Opus 5.5 prices
     assert p["quotes"]["deadline"].startswith("The application deadline")
     kw = client.calls[0]
     assert kw["model"] == "claude-opus-5-5" and kw["output_config"]["format"]["type"] == "json_schema"
@@ -136,12 +138,13 @@ def test_reader_keeps_grounded_values_and_lists_changes():
 def test_reader_drops_invented_quotes_and_past_deadlines():
     client = FakeClient(payload(nationality_quote="Open to everyone on Earth.", deadline="2026-01-01",
                                 deadline_quote="The application deadline is 16 December 2026."))
-    p = claude_reader.read_page(client, registry_item(), {"country": "VN", "year": 2}, TODAY)
+    p, _ = claude_reader.read_page(client, registry_item(), {"country": "VN", "year": 2}, TODAY)
     assert "nationality_ok" not in p and "deadline" not in p and p["changes"] == {}
 
 
 def test_reader_handles_refusal():
-    assert claude_reader.read_page(FakeClient(payload(), stop="refusal"), registry_item(), {}, TODAY) is None
+    proposal, cost = claude_reader.read_page(FakeClient(payload(), stop="refusal"), registry_item(), {}, TODAY)
+    assert proposal is None and cost > 0  # a declined request is still billed
 
 
 def test_reader_only_reads_changed_unverified_pages(monkeypatch):
@@ -151,8 +154,8 @@ def test_reader_only_reads_changed_unverified_pages(monkeypatch):
     assert not claude_reader.needs_reading(item, {"page_hash": "h1"})
     assert claude_reader.needs_reading(item, {"page_hash": "old"})
     assert not claude_reader.needs_reading(registry_item(verified=True), None)
-    proposals, line = claude_reader.run([item], {"gone": {}}, {}, TODAY)
-    assert "skipped" in line and proposals == {}
+    proposals, line, usage = claude_reader.run([item], {"gone": {}}, {}, TODAY)
+    assert "skipped" in line and proposals == {} and usage["date"] == TODAY.isoformat()
 
 
 # ---------------------------------------------------------------- health + alerts
@@ -257,3 +260,59 @@ def test_duplicate_needs_org_and_a_name_word():
     assert aggregators.duplicate_of("OIST Research Internship 2027", CURATED) == "oist-internship"
     assert aggregators.duplicate_of("ETH Zurich Student Summer Research Fellowship 2027", CURATED) == "eth-ssrf"
     assert aggregators.duplicate_of("Google Women Techmakers Scholarship", CURATED) is None
+
+
+
+def test_reader_rereads_only_when_eligibility_text_changes():
+    item = registry_item(elig_hash="e1", page_hash="p2")
+    assert not claude_reader.needs_reading(item, {"page_hash": "p1", "elig_hash": "e1"})  # banner changed only
+    assert claude_reader.needs_reading(item, {"page_hash": "p1", "elig_hash": "e0"})
+
+
+def test_relevant_hash_ignores_cosmetic_changes():
+    from tracker.sources import http as h
+    a = "Welcome! Our new logo is great. The application deadline is 1 Dec 2026. Students of all nationalities can apply."
+    b = "Hello there! Read our latest news. The application deadline is 1 Dec 2026. Students of all nationalities can apply."
+    c = a.replace("1 Dec", "15 Dec")
+    assert h.relevant_hash(a) == h.relevant_hash(b) and h.relevant_hash(a) != h.relevant_hash(c)
+
+
+def test_daily_budget_stops_reading(monkeypatch):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test")
+    monkeypatch.setattr(claude_reader, "DAILY_BUDGET_USD", 0.30)
+    calls = []
+
+    def fake_read(client, item, profile, today):
+        calls.append(item["id"])
+        return {"changes": {}}, 0.12
+
+    monkeypatch.setattr(claude_reader, "read_page", fake_read)
+    import anthropic
+    monkeypatch.setattr(anthropic, "Anthropic", lambda: object())
+    items = [registry_item(id=f"p{n}", page_hash=f"h{n}") for n in range(5)]
+    for it in items:
+        it["_page_text"] = "x" * 2000
+    proposals, line, usage = claude_reader.run(items, {}, {}, TODAY, {"date": TODAY.isoformat(), "usd": 0.0, "pages": 0})
+    assert len(calls) == 2 and "daily budget reached" in line   # 2 × $0.12 + a third would pass $0.30
+    assert usage["usd"] == 0.24 and usage["months"]["2026-11"] == 0.24
+    # A new day starts a fresh budget.
+    _, _, usage2 = claude_reader.run([], {}, {}, TODAY + dt.timedelta(days=1), usage)
+    assert usage2["usd"] == 0.0 and usage2["months"]["2026-11"] == 0.24
+
+
+def test_calendar_marks_unconfirmed_deadlines():
+    a = normalize({"id": "a", "name": "A", "org": "X", "kind": "challenge", "deadline": "2026-12-01", "deadline_confirmed": True})
+    b = normalize({"id": "b", "name": "B", "org": "X", "kind": "challenge", "deadline": "2026-12-02"})
+    for it in (a, b):
+        it["eligible_for_me"] = "likely"
+    ics = calendar_ics.build([a, b], TODAY, dt.datetime(2026, 11, 18, tzinfo=dt.timezone.utc))
+    assert "SUMMARY:Deadline: A" in ics and "SUMMARY:Deadline (unconfirmed): B" in ics
+
+
+def test_registry_verified_deadline_is_confirmed(tmp_path):
+    from tracker.sources import registry
+    f = tmp_path / "p.yaml"
+    f.write_text("programs:\n  - {id: a, kind: hackathon, name: A, deadline: 2026-12-20, verified: true}\n"
+                 "  - {id: b, kind: hackathon, name: B, deadline: 2026-12-20}\n")
+    a, b = registry.fetch(registry.load(f), TODAY, offline=True)
+    assert a["deadline_confirmed"] and not b["deadline_confirmed"]

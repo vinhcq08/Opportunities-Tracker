@@ -85,6 +85,7 @@ def parse(markup: str, today: dt.date | None = None) -> list[dict]:
             "region": "asia" if country in ASIA_COUNTRIES else "global",
             "status": "upcoming",
             "deadline": start or None,
+            "deadline_confirmed": True,  # MLH's own listing (event start date)
             "nationality_ok": "unknown",
             "notes": f"Event runs {start} to {end}. Check the event's own rules.",
         }))

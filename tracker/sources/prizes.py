@@ -52,6 +52,7 @@ def parse_kaggle(comps: list[dict]) -> list[dict]:
             "prize": str(c.get("reward") or ""),
             "status": "open",
             "deadline": deadline,
+            "deadline_confirmed": True,  # Kaggle's own listing
             "nationality_ok": "global",
             "notes": "Prize eligibility can exclude some countries; check the competition rules.",
         }))

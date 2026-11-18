@@ -55,6 +55,7 @@ def parse(hackathons: list[dict]) -> list[dict]:
             "region": "global" if online else "asia",
             "status": "open" if h.get("open_state") == "open" else "upcoming",
             "deadline": _end_date(h.get("submission_period_dates", "")),
+            "deadline_confirmed": True,  # Devpost's own listing
             "prize": http.page_text(h.get("prize_amount") or ""),
             "themes": [t.get("name", "") for t in h.get("themes") or []][:4],
             "nationality_ok": "unknown",

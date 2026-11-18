@@ -37,6 +37,8 @@ def fetch(entries: list[dict], today: dt.date, *, offline: bool = False) -> list
         rec = normalize({k: v for k, v in entry.items() if k not in WATCH_KEYS} | {"source": "registry"})
         rec["last_checked"] = None if offline else dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
+        if rec["verified"] and rec["deadline"]:
+            rec["deadline_confirmed"] = True
         if not offline and rec["url"] and not rec["manual_check"]:
             _watch(rec, watch)
 
@@ -72,6 +74,7 @@ def _watch(rec: dict, watch: dict) -> None:
         return
     text = http.page_text(resp.text)
     rec["page_hash"] = http.text_hash(text)
+    rec["elig_hash"] = http.relevant_hash(text)
     rec["_page_text"] = text  # read by claude_reader; never written to the published data
     found = http.detect_status(text, watch["watch_open"], watch["watch_closed"])
     if found != "unknown":
