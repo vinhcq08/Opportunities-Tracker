@@ -25,7 +25,11 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      # Check out the branch's newest commit, not the one that triggered the run: a run that waited
+      # behind another must start from that run's data, or its push is rejected.
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
 
       - uses: actions/setup-python@v5
         with:
@@ -55,10 +59,15 @@ jobs:
           git add web/data
           if git diff --cached --quiet; then
             echo "No data changes"
-          else
-            git commit -m "Update opportunities data"
-            git push
+            exit 0
           fi
+          git commit -m "Update opportunities data"
+          # If something was pushed meanwhile, replay this run's data on top (this run's data wins).
+          for attempt in 1 2 3; do
+            git push && exit 0
+            git pull --rebase -X theirs origin "$GITHUB_REF_NAME"
+          done
+          git push
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
