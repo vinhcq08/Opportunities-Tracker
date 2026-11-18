@@ -10,7 +10,14 @@ from . import http
 
 VIETNAM = re.compile(r"vietnam|viet nam|ho chi minh|hcmc|saigon|hanoi|ha noi|da nang", re.I)
 NEARBY = re.compile(r"vietnam|viet nam|ho chi minh|hcmc|saigon|hanoi|ha noi|da nang|singapore|remote.{0,12}(apac|asia)", re.I)
-STUDENT_ROLE = re.compile(r"\bintern|internship|graduate|campus|student|new grad|fresher|trainee|apprentice|insight|discovery", re.I)
+STUDENT_ROLE = re.compile(r"\bintern(ship)?s?\b|\btrainee|\bapprentice|\binsight\b|\bdiscovery\b", re.I)
+GRAD_ONLY = re.compile(r"\b(phd|postdoc|post-doc)\b", re.I)
+NAMES = {"wehrtyou": "Hudson River Trading", "towerresearchcapital": "Tower Research Capital", "jumptrading": "Jump Trading",
+         "janestreet": "Jane Street", "imc": "IMC Trading"}
+
+
+def _company(token: str) -> str:
+    return NAMES.get(token, token.replace("-", " ").title())
 
 GREENHOUSE = "https://boards-api.greenhouse.io/v1/boards/{token}/jobs"
 LEVER = "https://api.lever.co/v0/postings/{slug}?mode=json"
@@ -65,9 +72,9 @@ def parse_greenhouse(data: dict, token: str) -> list[dict]:
     for job in data.get("jobs", []):
         loc = ((job.get("location") or {}).get("name") or "")
         title = job.get("title") or ""
-        if NEARBY.search(loc) and STUDENT_ROLE.search(title):
+        if NEARBY.search(loc) and STUDENT_ROLE.search(title) and not GRAD_ONLY.search(title):
             posted = (job.get("updated_at") or "")[:10] or None
-            out.append(_record(token.replace("-", " ").title(), f"greenhouse-{token}", job.get("id"), title,
+            out.append(_record(_company(token), f"greenhouse-{token}", job.get("id"), title,
                                job.get("absolute_url", ""), loc, posted))
     return out
 
@@ -80,10 +87,10 @@ def parse_lever(data: list, slug_: str) -> list[dict]:
         all_locs = " ".join([loc] + (cats.get("allLocations") or []))
         title = job.get("text") or ""
         commitment = cats.get("commitment") or ""
-        if NEARBY.search(all_locs) and (STUDENT_ROLE.search(title) or STUDENT_ROLE.search(commitment)):
+        if NEARBY.search(all_locs) and (STUDENT_ROLE.search(title) or STUDENT_ROLE.search(commitment)) and not GRAD_ONLY.search(title):
             ms = job.get("createdAt")
             posted = dt.datetime.fromtimestamp(ms / 1000, dt.timezone.utc).date().isoformat() if ms else None
             near = ", ".join(x for x in [loc] + (cats.get("allLocations") or []) if NEARBY.search(x)) or loc
-            out.append(_record(slug_.replace("-", " ").title(), f"lever-{slug_}", job.get("id"), title,
+            out.append(_record(_company(slug_), f"lever-{slug_}", job.get("id"), title,
                                job.get("hostedUrl", ""), near, posted))
     return out

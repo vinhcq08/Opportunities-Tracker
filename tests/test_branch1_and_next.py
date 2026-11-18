@@ -189,3 +189,20 @@ def test_send_posts_to_telegram_without_leaking_token(monkeypatch):
     assert notify.send("**Hello**") == ["telegram"]
     assert posts[0][1] == {"chat_id": "42", "text": "Hello", "disable_web_page_preview": True}
     assert notify.send("") == []
+
+
+def test_job_filter_rejects_international_recruiter_and_phd_roles():
+    data = {"jobs": [{"id": n, "title": t, "absolute_url": "u", "location": {"name": "Singapore"}} for n, t in enumerate([
+        "Product Manager I - International", "Campus Recruiter", "Quant Researcher Intern, PhD or Postdoc",
+        "Software Engineer, New Grad", "Software Engineer Intern"])]}
+    items = ats.parse_greenhouse(data, "wehrtyou")
+    assert [i["name"] for i in items] == ["Software Engineer Intern"] and items[0]["org"] == "Hudson River Trading"
+
+
+def test_vietnamese_board_internships_and_noise():
+    rss = """<rss><channel>
+    <item><title>[Bosch] Data Engineer Intern</title><link>https://f/1</link><pubDate>Mon, 16 Nov 2026 10:00:00 +0000</pubDate><description>Sinh viên năm 3</description></item>
+    <item><title>Danh sách sinh viên nhận học bổng tháng 10</title><link>https://f/2</link><pubDate>Mon, 16 Nov 2026 10:00:00 +0000</pubDate><description>học bổng</description></item>
+    </channel></rss>"""
+    items = aggregators.parse(rss, {"name": "UIT", "url": "x", "vietnamese": True}, TODAY)
+    assert len(items) == 1 and items[0]["kind"] == "internship" and items[0]["nationality_ok"] == "vn_ok"

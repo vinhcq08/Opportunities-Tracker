@@ -38,7 +38,10 @@ def collect(today: dt.date, offline: bool) -> tuple[list[dict], dict[str, str]]:
     config = load_yaml(ROOT / "sources.yaml")
     single = [("devpost", devpost.fetch), ("mlh", lambda: mlh.fetch(today)), ("simplify", simplify.fetch)]
     if config.get("kaggle"):
-        single.append(("kaggle", prizes.fetch_kaggle))
+        if os.environ.get("KAGGLE_USERNAME") and os.environ.get("KAGGLE_KEY"):
+            single.append(("kaggle", prizes.fetch_kaggle))
+        else:
+            report["kaggle"] = "skipped (add KAGGLE_USERNAME and KAGGLE_KEY secrets to turn on)"
     if config.get("challenge_gov"):
         single.append(("challenge.gov", prizes.fetch_challenge_gov))
     for name, fn in single:

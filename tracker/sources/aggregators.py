@@ -25,6 +25,9 @@ OPEN_TEXT = re.compile(
     r"all nationalities|international students|vietnam\w*)", re.I)
 DEADLINE = re.compile(r"deadline[:\s–-]*(?:is\s*)?([A-Z][a-z]+ \d{1,2},? \d{4}|\d{1,2} [A-Z][a-z]+,? \d{4})", re.I)
 
+NOISE = re.compile(r"^\s*(danh sách|kết quả|thông báo kết quả|results?\b|winners?\b)", re.I)
+INTERNSHIP = re.compile(r"\bintern(ship)?s?\b|thực tập", re.I)
+
 KIND_RULES = [
     (re.compile(r"hackathon", re.I), "hackathon"),
     (re.compile(r"olympiad|contest|cuộc thi", re.I), "contest"),
@@ -117,7 +120,14 @@ def parse(xml: bytes | str, feed: dict, today: dt.date) -> list[dict]:
             continue
         if not feed.get("vietnamese") and not STUDENT.search(text):
             continue
-        kind = next((k for rx, k in KIND_RULES if rx.search(text)), "challenge")
+        if NOISE.search(e["title"]):
+            continue
+        local_job = bool(feed.get("vietnamese") and INTERNSHIP.search(e["title"]))
+        if local_job:
+            kind = "internship"
+        else:
+            kind = next((k for rx, k in KIND_RULES if rx.search(e["title"])) or
+                        (k for rx, k in KIND_RULES if rx.search(text)), "challenge")
         deadline = _deadline(text)
         if deadline and deadline < today.isoformat():
             continue
@@ -138,9 +148,11 @@ def parse(xml: bytes | str, feed: dict, today: dt.date) -> list[dict]:
             "country": "Vietnam" if feed.get("vietnamese") else "",
             "status": "open" if deadline else "unknown",
             "deadline": deadline,
-            "nationality_ok": "unknown",
-            "notes": (f"Eligibility text found: {snippet}" if snippet else "No eligibility text found in the post.")
-                     + " Read the official page before deciding.",
+            # A Vietnamese job board post for an internship in Vietnam is open to students here by nature.
+            "nationality_ok": "vn_ok" if local_job else "unknown",
+            "notes": ("Internship posted on a Vietnamese university board." if local_job else
+                      (f"Eligibility text found: {snippet}" if snippet else "No eligibility text found in the post.")
+                      + " Read the official page before deciding."),
         }))
         if len(items) >= PER_FEED_LIMIT:
             break

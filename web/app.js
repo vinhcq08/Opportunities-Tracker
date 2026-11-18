@@ -423,7 +423,8 @@
   }
 
   function viewReview() {
-    const queue = items().filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id]);
+    const JOB_SOURCES = ["greenhouse", "lever", "simplify"];
+    const queue = items().filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id] && !JOB_SOURCES.includes(i.source));
     const byId = Object.fromEntries(state.data.items.map((i) => [i.id, i]));
     const proposals = state.data.proposals || {};
     const pending = Object.entries(proposals).filter(([id, p]) => byId[id] && p.changes && Object.keys(p.changes).length && !state.suggestions[id]);
@@ -535,7 +536,7 @@
       if (a.getAttribute("href") === "#" + name) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
     const props = state.data.proposals || {};
-    const reviewCount = state.data.items.filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id]).length
+    const reviewCount = state.data.items.filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id] && !["greenhouse", "lever", "simplify"].includes(i.source)).length
       + Object.entries(props).filter(([id, p]) => p.changes && Object.keys(p.changes).length && !state.suggestions[id]).length;
     document.querySelector('.nav a[href="#review"] .count').textContent = reviewCount ? ` (${reviewCount})` : "";
     const toggle = document.getElementById("elig-toggle");
