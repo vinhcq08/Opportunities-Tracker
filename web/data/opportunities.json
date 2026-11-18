@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T15:36:47+00:00",
+ "generated_at": "2026-11-18T16:30:58+00:00",
  "profile": {
   "country": "VN",
   "year": 2,
@@ -64,16 +64,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Needs a campus program at your university, or the online route.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "e07d7376d2005dc3",
+   "elig_hash": "a57743bd945e584e",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:37:06+00:00"
+   "last_checked": "2026-11-18T16:31:37+00:00"
   },
   {
    "id": "ibm-call-for-code",
@@ -115,16 +117,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": "69d3e42fa7f44c6b",
+   "elig_hash": "c3384d48d8de69d2",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T14:24:08+00:00",
-   "last_checked": "2026-11-18T15:37:05+00:00"
+   "last_checked": "2026-11-18T16:31:36+00:00"
   },
   {
    "id": "imagine-cup",
@@ -162,16 +166,18 @@
    "deadline": "2027-02-28",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "2027 edition is now a startup competition: your startup must be incorporated, and founders need not be students. Applications close 28 Feb 2027 (official FAQ).",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": "7e920da30353ff8c",
+   "elig_hash": "4eb692cb85eb9ad9",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:04+00:00"
+   "last_checked": "2026-11-18T16:31:34+00:00"
   },
   {
    "id": "james-dyson-award",
@@ -210,16 +216,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": true,
+   "deadline_confirmed": false,
    "notes": "Runs in about 28 countries and regions; Vietnam was not on recent lists. Check the participating countries each year.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Runs in about 28 countries and regions; Vietnam was not on recent lists. Check the participating countries each year."
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:20+00:00"
+   "last_checked": "2026-11-18T16:31:51+00:00"
   },
   {
    "id": "kaggle-competitions",
@@ -265,16 +273,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Prize eligibility can exclude some countries per competition.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "c740f3d0545ec432",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:37:06+00:00"
+   "last_checked": "2026-11-18T16:31:37+00:00"
   },
   {
    "id": "mit-solve",
@@ -312,16 +322,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "e90bf40e3e6a026b",
+   "elig_hash": "03e7f62fe8e4e485",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:37:03+00:00"
+   "last_checked": "2026-11-18T16:31:34+00:00"
   },
   {
    "id": "openideo-challenges",
@@ -367,16 +379,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Each challenge has its own rules and sometimes country limits.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "8e35393085eb697c",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:21+00:00"
+   "last_checked": "2026-11-18T16:31:52+00:00"
   },
   {
    "id": "google-solution-challenge",
@@ -413,16 +427,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "The program has changed format in recent years; confirm it runs this season.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": "33b38c4776698f9d",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:37:05+00:00"
+   "last_checked": "2026-11-18T16:31:36+00:00"
   },
   {
    "id": "stanford-longevity-design-challenge",
@@ -459,16 +475,18 @@
    "deadline": "2026-12-01",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Deadline taken from third-party listings (1–2 Dec 2026, Pacific time); confirm on the official page. Phase I needs only an idea, not a prototype.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "650ecd8c0e61f3ea",
+   "elig_hash": "285c7abf3bb43d15",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:20+00:00"
+   "last_checked": "2026-11-18T16:31:51+00:00"
   },
   {
    "id": "undergraduate-awards",
@@ -507,16 +525,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "843080d9b269c627",
+   "elig_hash": "33409c04ff3b6a6d",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T14:24:08+00:00",
-   "last_checked": "2026-11-18T15:37:20+00:00"
+   "last_checked": "2026-11-18T16:31:51+00:00"
   },
   {
    "id": "xprize",
@@ -562,16 +582,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Team requirements and country rules differ per prize.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": "41c4e1aac3c0f814",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:22+00:00"
+   "last_checked": "2026-11-18T16:31:52+00:00"
   },
   {
    "id": "icpc-asia-vietnam",
@@ -609,16 +631,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Register as a team through your university's coach; regionals usually run late in the year.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "a13fb1eff25d9ead",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:31+00:00"
+   "last_checked": "2026-11-18T16:31:59+00:00"
   },
   {
    "id": "vnoi-olympiad",
@@ -656,16 +680,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": "HTTP 403",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:31+00:00"
+   "last_checked": "2026-11-18T16:32:00+00:00"
   },
   {
    "id": "devpost-31808",
@@ -702,12 +728,14 @@
    "deadline": "2026-11-30",
    "verified": false,
    "manual_check": false,
-   "notes": "3154 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "3173 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -748,12 +776,14 @@
    "deadline": "2026-11-30",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "54 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -794,12 +824,14 @@
    "deadline": "2026-12-20",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "297 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -840,12 +872,14 @@
    "deadline": "2026-12-18",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "471 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -886,12 +920,14 @@
    "deadline": "2026-12-04",
    "verified": false,
    "manual_check": false,
-   "notes": "182 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "183 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -932,12 +968,14 @@
    "deadline": "2026-12-10",
    "verified": false,
    "manual_check": false,
-   "notes": "175 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "176 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -978,12 +1016,14 @@
    "deadline": "2026-12-21",
    "verified": false,
    "manual_check": false,
-   "notes": "1233 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "1234 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1024,12 +1064,14 @@
    "deadline": "2026-12-11",
    "verified": false,
    "manual_check": false,
-   "notes": "433 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "436 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1070,12 +1112,14 @@
    "deadline": "2026-11-21",
    "verified": false,
    "manual_check": false,
-   "notes": "105 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "108 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1116,12 +1160,14 @@
    "deadline": "2026-11-27",
    "verified": false,
    "manual_check": false,
-   "notes": "645 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "646 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1162,12 +1208,14 @@
    "deadline": "2026-11-25",
    "verified": false,
    "manual_check": false,
-   "notes": "125 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "127 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1208,12 +1256,14 @@
    "deadline": "2027-01-12",
    "verified": false,
    "manual_check": false,
-   "notes": "245 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "263 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T00:56:47+00:00",
    "last_changed": "2026-11-18T00:56:47+00:00",
@@ -1254,12 +1304,14 @@
    "deadline": "2026-12-01",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "161 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1300,12 +1352,14 @@
    "deadline": "2026-11-25",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "34 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1346,12 +1400,14 @@
    "deadline": "2026-12-22",
    "verified": false,
    "manual_check": false,
-   "notes": "4156 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "4162 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1392,12 +1448,14 @@
    "deadline": "2026-11-30",
    "verified": false,
    "manual_check": false,
-   "notes": "233 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "234 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1438,12 +1496,14 @@
    "deadline": "2026-11-20",
    "verified": false,
    "manual_check": false,
-   "notes": "325 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "327 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1484,12 +1544,14 @@
    "deadline": "2026-12-07",
    "verified": false,
    "manual_check": false,
-   "notes": "1079 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "1088 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1529,12 +1591,14 @@
    "deadline": "2026-12-10",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "248 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1574,16 +1638,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "In person in the USA; check whether international students are admitted and whether travel is covered.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": "72befea84518701d",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:37:02+00:00"
+   "last_checked": "2026-11-18T16:31:13+00:00"
   },
   {
    "id": "devpost-31737",
@@ -1620,12 +1686,14 @@
    "deadline": "2026-11-25",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "228 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1666,12 +1734,14 @@
    "deadline": "2026-11-30",
    "verified": false,
    "manual_check": false,
-   "notes": "82 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "83 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1712,12 +1782,14 @@
    "deadline": "2026-12-24",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "63 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1758,12 +1830,14 @@
    "deadline": "2026-12-13",
    "verified": false,
    "manual_check": false,
-   "notes": "37 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "38 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1804,16 +1878,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "dd2ea47624ee47e1",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T14:24:08+00:00",
-   "last_checked": "2026-11-18T15:36:55+00:00"
+   "last_checked": "2026-11-18T16:31:06+00:00"
   },
   {
    "id": "devpost-31667",
@@ -1850,12 +1926,14 @@
    "deadline": "2026-12-04",
    "verified": false,
    "manual_check": false,
-   "notes": "16313 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "16333 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1896,12 +1974,14 @@
    "deadline": "2026-11-22",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "58 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1941,12 +2021,14 @@
    "deadline": "2026-12-04",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "626 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -1987,12 +2069,14 @@
    "deadline": "2026-12-07",
    "verified": false,
    "manual_check": false,
-   "notes": "317 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "319 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2033,12 +2117,14 @@
    "deadline": "2026-11-18",
    "verified": false,
    "manual_check": false,
-   "notes": "7083 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "7115 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2079,12 +2165,14 @@
    "deadline": "2026-12-02",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "191 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2125,12 +2213,14 @@
    "deadline": "2026-11-24",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "102 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T15:36:47+00:00",
    "last_changed": "2026-11-18T15:36:47+00:00",
@@ -2171,12 +2261,14 @@
    "deadline": "2026-12-15",
    "verified": false,
    "manual_check": false,
-   "notes": "1943 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "1949 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2216,12 +2308,14 @@
    "deadline": "2026-12-08",
    "verified": false,
    "manual_check": false,
-   "notes": "1695 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "1705 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2262,12 +2356,14 @@
    "deadline": "2026-12-11",
    "verified": false,
    "manual_check": false,
-   "notes": "526 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "530 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2308,12 +2404,14 @@
    "deadline": "2026-12-09",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "495 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2354,12 +2452,14 @@
    "deadline": "2026-12-15",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "176 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2400,12 +2500,14 @@
    "deadline": "2026-12-07",
    "verified": false,
    "manual_check": false,
-   "notes": "364 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "368 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2446,12 +2548,14 @@
    "deadline": "2026-11-21",
    "verified": false,
    "manual_check": false,
-   "notes": "620 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "621 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2492,12 +2596,14 @@
    "deadline": "2027-01-14",
    "verified": false,
    "manual_check": false,
-   "notes": "448 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "449 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2537,12 +2643,14 @@
    "deadline": "2026-11-24",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": true,
    "notes": "238 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2583,12 +2691,14 @@
    "deadline": "2026-11-21",
    "verified": false,
    "manual_check": false,
-   "notes": "170 registered on Devpost. Check the official rules for country restrictions.",
+   "deadline_confirmed": true,
+   "notes": "171 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -2628,16 +2738,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
-   "page_hash": "ac6c30df18e7fd93",
+   "page_hash": "0692df4eced929c7",
+   "elig_hash": "82ba26b6c0729d33",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
-   "last_changed": "2026-11-18T14:11:01+00:00",
-   "last_checked": "2026-11-18T15:37:03+00:00"
+   "last_changed": "2026-11-18T16:30:58+00:00",
+   "last_checked": "2026-11-18T16:31:33+00:00"
   },
   {
    "id": "citadel-discover-hong-kong",
@@ -2671,16 +2783,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": true,
+   "deadline_confirmed": false,
    "notes": "Requires attending a university in Hong Kong or mainland China (deadline 14 Feb 2027).",
    "eligible_for_me": "not_eligible",
    "elig_reasons": [
     "Requires attending a university in Hong Kong or mainland China (deadline 14 Feb 2027)."
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:13+00:00"
+   "last_checked": "2026-11-18T16:31:45+00:00"
   },
   {
    "id": "citadel-discover-singapore",
@@ -2715,16 +2829,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": true,
+   "deadline_confirmed": false,
    "notes": "Requires residing in Singapore (2027 cohort, deadline around early Feb 2027).",
    "eligible_for_me": "not_eligible",
    "elig_reasons": [
     "Requires residing in Singapore (2027 cohort, deadline around early Feb 2027)."
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:13+00:00"
+   "last_checked": "2026-11-18T16:31:45+00:00"
   },
   {
    "id": "hrt-explore-singapore",
@@ -2760,16 +2876,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": true,
+   "deadline_confirmed": false,
    "notes": "Search \"Explore HRT Singapore\" on the careers page. Eligibility by graduation year; university rules not published.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:15+00:00"
+   "last_checked": "2026-11-18T16:31:46+00:00"
   },
   {
    "id": "jane-street-fttp-hkg",
@@ -2803,16 +2921,18 @@
    "deadline": "2027-01-31",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Deadline 31 Jan 2027, 11:59pm HKT (from Jane Street's invitation). Check which universities are eligible.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Listed for years 1, you are in year 2"
    ],
    "page_hash": "8bb177c3472980ca",
+   "elig_hash": "308f07b76fc241a0",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:13+00:00"
+   "last_checked": "2026-11-18T16:31:45+00:00"
   },
   {
    "id": "optiver-futurefocus-singapore",
@@ -2847,16 +2967,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "For pre-penultimate students (2 years before final year). The Technology track requires Singapore citizenship or PR; the Trading track did not say so. Check the current listing.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": "ebc852145922ddd6",
+   "elig_hash": "279038bfe33166d4",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:13+00:00"
+   "last_checked": "2026-11-18T16:31:45+00:00"
   },
   {
    "id": "sig-discovery-hong-kong",
@@ -2890,16 +3012,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Last seen for April 2026; check whether a 2027 round is announced.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": "5efdd1fbcb579f0f",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:15+00:00"
+   "last_checked": "2026-11-18T16:31:46+00:00"
   },
   {
    "id": "jane-street-insight-hkg",
@@ -2936,16 +3060,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "The January 2027 cohort closed on 8 Nov 2026; the next round usually opens around September. Identity-based eligibility; check the university rules.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": "44e0491265f0c5a2",
+   "elig_hash": "277214d192503741",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:13+00:00"
+   "last_checked": "2026-11-18T16:31:45+00:00"
   },
   {
    "id": "jane-street-portal-sgp",
@@ -2981,16 +3107,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Only for students currently enrolled at universities in Singapore.",
    "eligible_for_me": "not_eligible",
    "elig_reasons": [
     "Only for students currently enrolled at universities in Singapore."
    ],
    "page_hash": "6d6a7622ad51819b",
+   "elig_hash": "a7ef2f9caabf6584",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:13+00:00"
+   "last_checked": "2026-11-18T16:31:45+00:00"
   },
   {
    "id": "jane-street-see-hkg",
@@ -3028,16 +3156,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Eligibility (graduation years, which universities) changes every cohort; read the current invitation. Jane Street flies participants in from around the region.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": "d60d62532ea1f352",
+   "elig_hash": "6b7b7d6de8b77289",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:12+00:00"
+   "last_checked": "2026-11-18T16:31:43+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-6-month-internship-with-allowance-a",
@@ -3070,12 +3200,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Internship posted on a Vietnamese university board.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:59:16+00:00",
@@ -3112,12 +3244,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Internship posted on a Vietnamese university board.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:59:16+00:00",
@@ -3154,12 +3288,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Internship posted on a Vietnamese university board.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:59:16+00:00",
@@ -3196,12 +3332,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-11-11. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3238,12 +3376,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-08-28. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3280,12 +3420,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-09-03. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3322,12 +3464,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-09-03. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3364,12 +3508,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-08-18. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3406,12 +3552,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-08-18. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3448,12 +3596,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-08-18. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3490,12 +3640,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-10-29. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3545,16 +3697,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": true,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:37:12+00:00"
+   "last_checked": "2026-11-18T16:31:43+00:00"
   },
   {
    "id": "grab-internships",
@@ -3593,16 +3747,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "6fba3a85def175f0",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:08+00:00"
+   "last_checked": "2026-11-18T16:31:40+00:00"
   },
   {
    "id": "greenhouse-stripe-8186367",
@@ -3635,12 +3791,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-10-29. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3677,12 +3835,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Internship posted on a Vietnamese university board.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:59:16+00:00",
@@ -3719,12 +3879,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-08-18. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3763,12 +3925,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-10-19",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
@@ -3805,12 +3969,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-09-14. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3853,16 +4019,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "ed752564ef710ce9",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:37:09+00:00"
+   "last_checked": "2026-11-18T16:31:41+00:00"
   },
   {
    "id": "greenhouse-coinbase-8175873",
@@ -3895,12 +4063,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-11-13. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3937,12 +4107,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-10-30. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -3979,12 +4151,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-10-29. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -4021,12 +4195,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Posted 2026-11-11. Outside Vietnam: check whether the role sponsors a work or training pass.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -4063,12 +4239,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Internship posted on a Vietnamese university board.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:59:16+00:00",
@@ -4110,16 +4288,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "013bb3da842b26c0",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:37:10+00:00"
+   "last_checked": "2026-11-18T16:31:42+00:00"
   },
   {
    "id": "gsoc",
@@ -4156,16 +4336,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "18+ at registration. Contributor applications have run mid-March to early April; organizations are announced in February, so start talking to them early.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "f894250f90388466",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:22+00:00"
+   "last_checked": "2026-11-18T16:31:53+00:00"
   },
   {
    "id": "lfx-mentorship",
@@ -4203,16 +4385,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "18+ by the start date; apply to up to 3 projects per term. Spring projects appear around mid-January, then summer (Jun–Aug) and fall (Sep–Nov) terms.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "c91541875584c3ba",
+   "elig_hash": "c3b3d9fda7f7b6cc",
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:22+00:00"
+   "last_checked": "2026-11-18T16:31:54+00:00"
   },
   {
    "id": "mlh-fellowship",
@@ -4254,16 +4438,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Requires having joined at least one MLH hackathon or Global Hack Week. Not open in every country; check yours on the eligibility page. The stipend is need-based and not guaranteed.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Requires having joined at least one MLH hackathon or Global Hack Week. Not open in every country; check yours on the eligibility page. The stipend is need-based and not guaranteed."
    ],
    "page_hash": "1833cd1f6e32b069",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:23+00:00"
+   "last_checked": "2026-11-18T16:31:55+00:00"
   },
   {
    "id": "outreachy",
@@ -4300,16 +4486,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Students at Northern Hemisphere universities (Vietnam included) can only join the May–August cohort, whose initial applications usually open in January–February. Eligibility also depends on the underrepresentation essays.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "33082fbf27ae7a15",
+   "elig_hash": "69f42cbc7141973c",
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:22+00:00"
+   "last_checked": "2026-11-18T16:31:53+00:00"
   },
   {
    "id": "asean-undergraduate-scholarship",
@@ -4349,16 +4537,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "For starting a new degree; mostly relevant if you are considering transferring or for younger friends and siblings.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "34b4ac9715a7c64a",
+   "elig_hash": "e3c60a91f573d81a",
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:27+00:00"
+   "last_checked": "2026-11-18T16:31:58+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-chuong-trinh-hoc-bong-amcham-nam-20",
@@ -4391,12 +4581,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Eligibility text found: …vòng đơn, và nộp đơn online tại địa chỉ: https://acs.amchamvietnam.com/ Vòng kiểm tra năng lực (9/12/2026 – 14/12/2026) Thí si… Read the official page before deciding.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -4439,16 +4631,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Only possible if your university has an Erasmus+ partner agreement; ask your international office which partners and deadlines exist.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "2f170aec1ca3e3fd",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:27+00:00"
+   "last_checked": "2026-11-18T16:31:57+00:00"
   },
   {
    "id": "gks-scholarship",
@@ -4486,16 +4680,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Undergraduate (GKS-U) applications usually open around September; the graduate track around February. Vietnam has a small embassy-track quota.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "08cd28703696234a",
+   "elig_hash": "80226e94aa2ae0ac",
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:24+00:00"
+   "last_checked": "2026-11-18T16:31:55+00:00"
   },
   {
    "id": "rss-https-opportunitydesk-org-2026-11-18-healthy-futures-masterc",
@@ -4528,12 +4724,14 @@
    "deadline": "2026-12-10",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "No eligibility text found in the post. Read the official page before deciding.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -4570,12 +4768,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "No eligibility text found in the post. Read the official page before deciding.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -4612,12 +4812,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Eligibility text found: …Marvell Vietnam Excellence Scholarship 2027 Are you a Vietnamese engineerin… Read the official page before deciding.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -4658,16 +4860,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "The Research Student track needs a finished bachelor's degree; the Undergraduate track starts a new degree. Good to plan for after graduation.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": "HTTP 403",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:24+00:00"
+   "last_checked": "2026-11-18T16:31:55+00:00"
   },
   {
    "id": "amgen-scholars",
@@ -4704,16 +4908,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Each site has its own eligibility; check the Asia and Europe sites.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": "069dec1746bcaa50",
+   "elig_hash": "de14c84f3d9f8a9c",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:36:55+00:00"
+   "last_checked": "2026-11-18T16:31:05+00:00"
   },
   {
    "id": "mitacs-globalink",
@@ -4751,16 +4957,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Vietnam has been a partner country; confirm it is on this year's list.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "23f51564263094db",
+   "elig_hash": "845f98ead997fe5f",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:36:47+00:00"
+   "last_checked": "2026-11-18T16:30:58+00:00"
   },
   {
    "id": "oist-internship",
@@ -4806,16 +5014,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "ed6d417bbf933c95",
+   "elig_hash": "7bde42258c4a3cad",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:36:49+00:00"
+   "last_checked": "2026-11-18T16:31:00+00:00"
   },
   {
    "id": "nsf-reu",
@@ -4853,16 +5063,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "not_eligible",
    "elig_reasons": [
     "US citizens or permanent residents only"
    ],
    "page_hash": "85227677e1051ce6",
+   "elig_hash": "70979c193dab9fda",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:37:08+00:00"
+   "last_checked": "2026-11-18T16:31:39+00:00"
   },
   {
    "id": "eth-ssrf",
@@ -4899,16 +5111,18 @@
    "deadline": "2026-12-16",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "2027 call: deadline 16 Dec 2026, 13:00 CET, applied through SiROP; results by end of February. Dates from public listings; confirm on the official page.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "f0db2626bd80f19d",
+   "elig_hash": "08342ba646d3bf8c",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:36:48+00:00"
+   "last_checked": "2026-11-18T16:30:58+00:00"
   },
   {
    "id": "cern-summer-student",
@@ -4944,16 +5158,18 @@
    "deadline": "2027-01-21",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "2027 call open to Member and Non-Member State applicants; deadline 21 Jan 2027, 23:59 Geneva time (from job listings). Check that Vietnam is on the non-member list.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "2027 call open to Member and Non-Member State applicants; deadline 21 Jan 2027, 23:59 Geneva time (from job listings). Check that Vietnam is on the non-member list."
    ],
    "page_hash": "080f41ce4d832436",
+   "elig_hash": "7bda5647fa44b3c5",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:36:52+00:00"
+   "last_checked": "2026-11-18T16:31:02+00:00"
   },
   {
    "id": "epfl-summer",
@@ -4990,16 +5206,18 @@
    "deadline": "2026-11-29",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "2027 deadline listed as 29 Nov 2026 by several sites; EPFL had not posted it itself. Confirm on summer.epfl.ch.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "8f38e72510534857",
+   "elig_hash": "25602f9256fb18e5",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:36:48+00:00"
+   "last_checked": "2026-11-18T16:30:59+00:00"
   },
   {
    "id": "utokyo-utrip",
@@ -5036,16 +5254,18 @@
    "deadline": "2026-12-25",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Most listings give 25 Dec 2026, 17:00 JST (one says 7 Jan 2027); recommendation form due by the same date. Program runs 23 Jun–3 Aug 2027.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "6bc3450f67d41623",
+   "elig_hash": "6ec9abbc56b302a3",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:36:54+00:00"
+   "last_checked": "2026-11-18T16:31:04+00:00"
   },
   {
    "id": "kaust-vsrp",
@@ -5091,16 +5311,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "bc63a1f9d68791f4",
+   "elig_hash": "410ec2e24256f5d6",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:36:49+00:00"
+   "last_checked": "2026-11-18T16:31:00+00:00"
   },
   {
    "id": "berkeley-summer-sessions",
@@ -5138,16 +5360,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "a533a2f0e6978c0a",
+   "elig_hash": "c6ed2eb481a0a4c3",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:16+00:00"
+   "last_checked": "2026-11-18T16:31:48+00:00"
   },
   {
    "id": "cambridge-isp",
@@ -5187,16 +5411,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "2dfa40cc191b0398",
+   "elig_hash": "e28fb0f03f681879",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:18+00:00"
+   "last_checked": "2026-11-18T16:31:49+00:00"
   },
   {
    "id": "harvard-summer-school",
@@ -5235,16 +5461,18 @@
    "deadline": "2027-01-28",
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Study-abroad programs for 2027 open 1 Dec 2026 and close 28 Jan 2027.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "6c747011d637c29a",
+   "elig_hash": "ecb2dc6be995df37",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T14:11:01+00:00",
-   "last_checked": "2026-11-18T15:37:16+00:00"
+   "last_checked": "2026-11-18T16:31:48+00:00"
   },
   {
    "id": "rss-https-opportunitiescorners-com-hzdr-summer-student-program-2",
@@ -5277,12 +5505,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Eligibility text found: …HZDR Summer Student Program 2027 in Germany, which welcomes international students from all around the world. The HZDR Summer Program will tak… Read the official page before deciding.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -5325,16 +5555,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Academic Director's Scholarships cover a full course for a few students each year.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "c777819edb4d1e94",
+   "elig_hash": "28dd70cd0774012a",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:16+00:00"
+   "last_checked": "2026-11-18T16:31:48+00:00"
   },
   {
    "id": "stanford-summer-session",
@@ -5373,16 +5605,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "Age 18+, English proficiency and a US study visa needed. Tuition is high; ask about the merit grant interest list. Apply early if you need an I-20.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "0926afca912e8b21",
+   "elig_hash": "78b92ec5ffe3929a",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:15+00:00"
+   "last_checked": "2026-11-18T16:31:47+00:00"
   },
   {
    "id": "rss-https-opportunitiescorners-com-summer-programs-in-europe-in-",
@@ -5415,12 +5649,14 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "No eligibility text found in the post. Read the official page before deciding.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
@@ -5462,16 +5698,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "For women and non-binary students. The 2026 deadline was 25 Sep 2026; the 2027 call usually opens mid-year. Needs a US visa.",
    "eligible_for_me": "likely",
    "elig_reasons": [
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": null,
+   "elig_hash": null,
    "fetch_error": "TooManyRedirects",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T15:37:31+00:00"
+   "last_checked": "2026-11-18T16:32:00+00:00"
   },
   {
    "id": "microsoft-explore",
@@ -5506,16 +5744,18 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "",
    "eligible_for_me": "not_eligible",
    "elig_reasons": [
     "Requires enrollment at a US or Canadian university"
    ],
    "page_hash": "0ba6ceadea86196f",
+   "elig_hash": "2cd820be54bae3ea",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T15:37:06+00:00"
+   "last_checked": "2026-11-18T16:31:37+00:00"
   },
   {
    "id": "google-step",
@@ -5550,19 +5790,30 @@
    "deadline": null,
    "verified": false,
    "manual_check": false,
+   "deadline_confirmed": false,
    "notes": "No STEP posting found for summer 2027 as of Oct 2026, and the old page redirects; the program may have ended. Past versions were country-specific (e.g. STEP Japan); none ran in Vietnam.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "No STEP posting found for summer 2027 as of Oct 2026, and the old page redirects; the program may have ended. Past versions were country-specific (e.g. STEP Japan); none ran in Vietnam."
    ],
    "page_hash": "329399d41ad246e0",
+   "elig_hash": "e3b0c44298fc1c14",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T15:37:15+00:00"
+   "last_checked": "2026-11-18T16:31:47+00:00"
   }
  ],
  "changes": [
+  {
+   "type": "page_updated",
+   "id": "treehacks",
+   "name": "TreeHacks",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-18T16:30:58+00:00"
+  },
   {
    "type": "new",
    "id": "devpost-31775",
@@ -6903,52 +7154,49 @@
    "eligible_for_me": "not_eligible",
    "detail": "",
    "at": "2026-11-17T17:09:19+00:00"
-  },
-  {
-   "type": "new",
-   "id": "grab-internships",
-   "name": "Grab student internships (Vietnam)",
-   "kind": "internship",
-   "eligible_for_me": "likely",
-   "detail": "",
-   "at": "2026-11-17T17:09:19+00:00"
   }
  ],
  "proposals": {},
+ "claude_usage": {
+  "months": {},
+  "date": "2026-11-18",
+  "usd": 0.0,
+  "pages": 0
+ },
  "health": {
   "registry": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 54
   },
   "devpost": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 40
   },
   "mlh": {
    "fail_runs": 0,
-   "zero_runs": 7,
+   "zero_runs": 8,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 0
   },
   "simplify": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 1
   },
   "kaggle": {
    "fail_runs": 0,
-   "zero_runs": 6,
+   "zero_runs": 7,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 0
   },
   "challenge.gov": {
@@ -6962,7 +7210,7 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 2
   },
   "Opportunities for Youth": {
@@ -6976,14 +7224,14 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 2
   },
   "UIT forum (latest)": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 7
   },
   "VNOI news": {
@@ -6995,44 +7243,44 @@
   },
   "greenhouse:janestreet": {
    "fail_runs": 0,
-   "zero_runs": 7,
+   "zero_runs": 8,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 0
   },
   "greenhouse:optiver": {
    "fail_runs": 0,
-   "zero_runs": 7,
+   "zero_runs": 8,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 0
   },
   "greenhouse:imc": {
    "fail_runs": 0,
-   "zero_runs": 7,
+   "zero_runs": 8,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 0
   },
   "greenhouse:stripe": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 3
   },
   "greenhouse:databricks": {
    "fail_runs": 0,
-   "zero_runs": 7,
+   "zero_runs": 8,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 0
   },
   "greenhouse:coinbase": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 1
   },
   "greenhouse:airwallex": {
@@ -7046,28 +7294,28 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 2
   },
   "greenhouse:jumptrading": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 6
   },
   "greenhouse:towerresearchcapital": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 3
   },
   "lever:binance": {
    "fail_runs": 0,
-   "zero_runs": 7,
+   "zero_runs": 8,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 0
   },
   "lever:shopback": {
@@ -7079,9 +7327,9 @@
   },
   "lever:ninjavan": {
    "fail_runs": 0,
-   "zero_runs": 7,
+   "zero_runs": 8,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T15:36:47+00:00",
+   "last_ok": "2026-11-18T16:30:58+00:00",
    "last_count": 0
   }
  },
