@@ -81,6 +81,8 @@ def test_discord_payload_is_safe_and_within_limits():
     payload = weekly.to_discord(weekly.build(items, [], [], NOW, "https://site.example/"))
     assert payload["allowed_mentions"] == {"parse": []}
     assert len(payload["embeds"]) <= 10
+    # Embeds sharing a url are merged by Discord, which hid every section but the first.
+    assert len(payload["embeds"]) > 1 and not any("url" in e for e in payload["embeds"])
     assert sum(len(e["title"]) + len(e["description"]) for e in payload["embeds"]) <= 6000
     assert all(len(e["description"]) <= 4096 for e in payload["embeds"])
     text = "\n".join(e["description"] for e in payload["embeds"])

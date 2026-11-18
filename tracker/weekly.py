@@ -225,10 +225,8 @@ def to_discord(digest: dict) -> dict:
         while len(desc) > DESC_LIMIT and section["lines"]:
             section = {**section, "lines": section["lines"][:-1], "more": "…more on the tracker"}
             desc = _section_text(section, _discord_line)
-        embed = {"title": section["title"], "description": desc, "color": COLORS[section["key"]]}
-        if site:
-            embed["url"] = site
-        embeds.append(embed)
+        # No "url" on the embeds: Discord merges embeds that share a url into one and shows only the first.
+        embeds.append({"title": section["title"], "description": desc, "color": COLORS[section["key"]]})
     # Keep the whole message under Discord's limit by shortening the longest section.
     while sum(len(e["title"]) + len(e["description"]) for e in embeds) > TOTAL_LIMIT:
         longest = max(embeds, key=lambda e: len(e["description"]))
