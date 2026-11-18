@@ -205,7 +205,13 @@
     return `<button class="save-dot" data-act="${saved ? "unsave" : "save"}" data-id="${esc(item.id)}" aria-pressed="${saved}" aria-label="${saved ? "Remove from" : "Save to"} tracker: ${esc(item.name)}" title="${saved ? "Saved" : "Save"}">${BOOKMARK}</button>`;
   }
 
-  // A slim card: the whole card opens the program page; only Save sits on top of it.
+  // Small "↗" link straight to the official page, next to Save.
+  function extDot(item, cls) {
+    if (!/^https?:\/\//i.test(item.url || "")) return "";
+    return `<a class="ext-dot ${cls || ""}" href="${esc(item.url)}" target="_blank" rel="noopener" aria-label="Official page: ${esc(item.name)} (opens a new tab)" title="Official page">↗</a>`;
+  }
+
+  // A slim card: the whole card opens the program page; Save and the official-page link sit on top of it.
   function block(item, mode) {
     const big = bigNumber(item);
     const kind = KIND[item.kind] || { label: item.kind };
@@ -216,9 +222,9 @@
         <span class="k">${esc(kind.label)}${where(item) ? " · " + esc(where(item)) : ""}</span>
         <span class="slim-title">${esc(item.name)}</span>
         <span class="row">${eligTag(item)}${fund ? `<span class="tag">${esc(fund)}</span>` : ""}${item.manual_check ? `<span class="tag">Check manually</span>` : ""}</span>
-        <span class="slim-foot"><span><span class="big">${esc(big.n)}</span><span class="k">${esc(big.l)}</span></span><span class="k muted">${esc(item.org)}</span></span>
+        <span class="slim-foot"><span><span class="big">${esc(big.n)}</span><span class="k">${esc(big.l)}</span></span></span>
       </a>
-      ${saveDot(item)}
+      <div class="card-acts">${extDot(item)}${saveDot(item)}</div>
     </div>`;
   }
 
@@ -226,11 +232,13 @@
   function line(item) {
     const big = bigNumber(item);
     const meta = [(KIND[item.kind] || {}).label, where(item), item.funding ? FUND_LABEL[item.funding] : ""].filter(Boolean).join(" · ");
-    return `<a class="lrow" href="${progHref(item)}" id="item-${esc(item.id)}">
-      <span class="dot dot-${esc(label(item))}" title="${esc(ELIG_LABEL[label(item)] || "")}"></span>
-      <span class="lrow-body"><span class="lrow-name">${esc(item.name)}</span><span class="lrow-meta">${esc(meta)}</span></span>
-      <span class="lrow-big"><span>${esc(big.n)}</span><span class="k muted">${esc(big.l)}</span></span>
-    </a>`;
+    return `<div class="lrow" id="item-${esc(item.id)}">
+      <a class="lrow-main" href="${progHref(item)}">
+        <span class="dot dot-${esc(label(item))}" title="${esc(ELIG_LABEL[label(item)] || "")}"></span>
+        <span class="lrow-body"><span class="lrow-name">${esc(item.name)}</span><span class="lrow-meta">${esc(meta)}</span></span>
+        <span class="lrow-big"><span>${esc(big.n)}</span><span class="k muted">${esc(big.l)}</span></span>
+      </a>${extDot(item, "inline")}
+    </div>`;
   }
 
   // Cards or lines, PAGE at a time, with a "Show more" button.
@@ -281,7 +289,7 @@
           <h2 class="h cover-title"><a href="${progHref(item)}" style="text-decoration:none">${esc(item.name)}</a></h2>
           <p>${esc(item.org)}${where(item) ? " · " + esc(where(item)) : ""}${item.summary ? ". " + esc(item.summary) : ""}</p>
         </div>
-        <div class="row"><a class="go small on-dark fill" href="${progHref(item)}">View program</a>${saveButton(item, "on-dark")}</div>
+        <div class="row"><a class="go small on-dark fill" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener">Official page ↗</a><a class="go small on-dark" href="${progHref(item)}">Details</a>${saveButton(item, "on-dark")}</div>
       </div>
       <div class="cover-big"><span class="n">${esc(big.n)}</span><span class="k">${esc(big.l)}</span></div>
     </article>`;
@@ -337,7 +345,7 @@
             <h3 class="h list-title"><a href="${progHref(i)}" style="text-decoration:none">${esc(i.name)}</a></h3>
             <span class="muted" style="font-size:14px">${esc(where(i))}</span>
           </div>
-          <div class="list-side">${eligTag(i)}${statusTag(i)}${saveDot(i)}</div>
+          <div class="list-side">${eligTag(i)}${statusTag(i)}${extDot(i, "inline")}${saveDot(i)}</div>
         </article>`).join("") : empty("Nothing new in the last 7 days")}
     </section>
     <section>
@@ -440,10 +448,12 @@
     <section>
       <div class="section-head"><h2 class="h section-title">Open roles near you</h2><span class="k muted">Vietnam &amp; Singapore · from job feeds</span></div>
       ${roles.length ? `<div class="lines">${roles.slice(0, rolesLimit).map((i) => `
-        <a class="lrow" href="${progHref(i)}" id="item-${esc(i.id)}">
-          <span class="dot dot-${esc(label(i))}" title="${esc(ELIG_LABEL[label(i)] || "")}"></span>
-          <span class="lrow-body"><span class="lrow-name">${esc(i.org)} · ${esc(i.name)}</span><span class="lrow-meta">${esc(i.city || i.country)} · ${esc(ELIG_LABEL[label(i)] || "")}</span></span>
-        </a>`).join("")}</div>
+        <div class="lrow" id="item-${esc(i.id)}">
+          <a class="lrow-main" href="${progHref(i)}">
+            <span class="dot dot-${esc(label(i))}" title="${esc(ELIG_LABEL[label(i)] || "")}"></span>
+            <span class="lrow-body"><span class="lrow-name">${esc(i.org)} · ${esc(i.name)}</span><span class="lrow-meta">${esc(i.city || i.country)} · ${esc(ELIG_LABEL[label(i)] || "")}</span></span>
+          </a>${extDot(i, "inline")}
+        </div>`).join("")}</div>
         ${roles.length > rolesLimit ? `<div class="more"><button class="go dark" data-act="more" data-key="roles">Show ${Math.min(PAGE, roles.length - rolesLimit)} more</button><span class="k muted">Showing ${rolesLimit} of ${roles.length}</span></div>` : ""}`
         : empty("No open roles in the feeds right now")}
     </section>
@@ -550,6 +560,7 @@
   function decideRow(i) {
     return `<div class="rrow">
       <div class="rrow-body"><a class="rrow-name" href="${progHref(i)}">${esc(i.name)}</a><div class="rrow-meta">${esc((KIND[i.kind] || {}).label || i.kind)} · ${esc(i.org)} · ${reasonText(i)}</div></div>
+      ${extDot(i, "inline")}
       <div class="seg" role="group" aria-label="Decide ${esc(i.name)}">
         <button data-act="decide" data-id="${esc(i.id)}" data-val="eligible">Eligible</button><button data-act="decide" data-id="${esc(i.id)}" data-val="not_eligible">Not eligible</button><button data-act="decide" data-id="${esc(i.id)}" data-val="ignore">Ignore</button>
       </div>

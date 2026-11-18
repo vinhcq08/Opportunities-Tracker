@@ -178,20 +178,24 @@ footer { border-top: 3px solid var(--ink); padding: 16px 0 40px; font-size: 13px
   border-radius: 4px; text-decoration: none; color: var(--ink); border: 1px solid transparent; }
 .slim.bg-white { border-color: var(--rule); }
 .slim:hover { outline: 3px solid var(--ink); outline-offset: 2px; color: var(--ink); }
-.slim-title { font: 900 22px/1 Archivo, sans-serif; text-transform: uppercase; letter-spacing: -.02em; padding-right: 44px; overflow-wrap: anywhere; }
+.slim-title { font: 900 22px/1 Archivo, sans-serif; text-transform: uppercase; letter-spacing: -.02em; overflow-wrap: anywhere; }
+.slim-foot { min-height: 44px; padding-right: 96px; }
 .slim-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 10px;
   border-top: 2px solid var(--ink); padding-top: 8px; }
 .slim-foot .big { display: block; font-size: 28px; }
-.save-dot { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 999px; border: 2px solid var(--ink);
-  background: var(--white); color: var(--ink); display: grid; place-items: center; cursor: pointer; padding: 0; }
+.card-acts { position: absolute; bottom: 14px; right: 14px; display: flex; gap: 6px; }
+.save-dot, .ext-dot { width: 40px; height: 40px; box-sizing: border-box; border-radius: 999px; border: 2px solid var(--ink);
+  background: var(--white); color: var(--ink); display: grid; place-items: center; cursor: pointer; padding: 0; flex: none;
+  font: 900 18px/1 Archivo, sans-serif; text-decoration: none; }
+.ext-dot:hover { background: var(--ink); color: var(--white); }
 .save-dot[aria-pressed="true"] { background: var(--ink); color: var(--white); }
 .list-side .save-dot { position: static; }
 
 /* ---- compact list lines */
 .lines { border-bottom: 1px solid var(--ink); }
-.lrow { display: flex; align-items: center; gap: 12px; min-height: 58px; padding: 8px 0; border-top: 1px solid var(--ink);
-  text-decoration: none; color: var(--ink); }
-.lrow:hover { background: rgba(43, 59, 255, .06); color: var(--ink); }
+.lrow { display: flex; align-items: center; gap: 10px; min-height: 58px; border-top: 1px solid var(--ink); }
+.lrow-main { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 8px 0; text-decoration: none; color: var(--ink); }
+.lrow-main:hover { background: rgba(43, 59, 255, .06); color: var(--ink); }
 .lrow-body { flex: 1; min-width: 0; }
 .lrow-name { display: block; font: 800 15px Archivo, sans-serif; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .lrow-meta { display: block; font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
