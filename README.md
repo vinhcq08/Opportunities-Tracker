@@ -2,7 +2,7 @@
 
 A self-updating dashboard of **summer programs, hackathons, innovation challenges, business competitions and big-tech programs that students in Vietnam can actually enter**.
 
-Every 6 hours a GitHub Action checks the sources, works out eligibility, records what changed, sends a Discord digest, and redeploys the dashboard to GitHub Pages.
+Every 6 hours a GitHub Action checks the sources, works out eligibility, records what changed, and redeploys the dashboard to GitHub Pages. Once a week it sends a digest to Discord (and Telegram, if set up).
 
 ## How it works
 
@@ -15,7 +15,7 @@ Every 6 hours a GitHub Action checks the sources, works out eligibility, records
 | Kaggle, Challenge.gov | Competitions and prize challenges | `sources.yaml` |
 | SimplifyJobs | Internship feed, Vietnam/Singapore roles | `tracker/sources/simplify.py` |
 
-Every run also writes `data/deadlines.ics`, a calendar you can subscribe to from the Overview tab, and checks each source's health so a broken feed raises an alert.
+Every run also writes `data/deadlines.ics`, a calendar you can subscribe to from the Overview tab, and checks each source's health, so a broken feed shows up in the site footer and in the weekly digest.
 
 Each item gets an eligibility label for the profile in `profile.yaml`:
 
@@ -31,8 +31,8 @@ Each item gets an eligibility label for the profile in `profile.yaml`:
 
    | Secret | Turns on |
    |---|---|
-   | `DISCORD_WEBHOOK_URL` | Digest in a Discord channel (*channel → Edit → Integrations → Webhooks*) |
-   | `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` | Digest on Telegram: create a bot with @BotFather, message it once, then read your chat id from `https://api.telegram.org/bot<token>/getUpdates` |
+   | `DISCORD_WEBHOOK_URL` | Weekly digest in a Discord channel (*channel → Edit Channel → Integrations → Webhooks → New Webhook → Copy Webhook URL*) |
+   | `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` | Weekly digest on Telegram: create a bot with @BotFather, message it once, then read your chat id from `https://api.telegram.org/bot<token>/getUpdates` |
    | `KAGGLE_USERNAME` + `KAGGLE_KEY` | Live Kaggle competitions (*kaggle.com → Settings → API → Create New Token*) |
 
 3. **Run it the first time:** go to *Actions → Update opportunities → Run workflow*. After that it runs every 6 hours.
@@ -45,6 +45,7 @@ The site is at `https://<user>.github.io/Opportunities-Tracker/`.
 - **Dark mode:** follows your device; the ◐ button switches between Auto, Dark and Light.
 - **Use it like an app:** on Android/Chrome tap **Install app**; on iPhone, Safari → Share → **Add to Home Screen**. It opens full-screen and works offline with the data from your last visit.
 - **Share:** each program page has a **Share** button (your phone's share menu, or copies the link).
+- **Weekly digest:** every Monday from 07:00 Vietnam time (the first run after it, since GitHub's schedule runs late at busy times): what closes in the next 14 days, what's new, what opened or got a deadline, and any source that needs fixing. Each week is sent once; a missed Monday goes out with the next run. To test your channel, go to *Actions → Update opportunities → Run workflow*, tick **Send the weekly digest now**, and run it. To also get a message after every run with changes, set `notifications: every_run: true` in `sources.yaml`.
 
 - **Verify a program:** open its page, set `nationality_ok`, `enrollment_req`, `class_years` and `deadline` in `programs.yaml`, then set `verified: true`.
 - **Add a program:** copy an entry in `programs.yaml`. The header comments list every field.

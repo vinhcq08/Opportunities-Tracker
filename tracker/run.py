@@ -3,6 +3,9 @@
     python -m tracker.run              # full run (network)
     python -m tracker.run --offline    # registry only, no network (for local design work)
     python -m tracker.run --dry-run    # print counts, write nothing, send nothing
+    python -m tracker.run --offline --dry-run --preview-weekly   # also print this week's digest
+
+Set FORCE_WEEKLY=1 to send the weekly digest now, whatever the day (the workflow's "send weekly digest now" box).
 """
 
 from __future__ import annotations
@@ -17,7 +20,7 @@ from pathlib import Path
 import yaml
 
 from . import diff as diffing
-from . import calendar_ics, claude_reader, eligibility, health, notify
+from . import calendar_ics, claude_reader, eligibility, health, notify, weekly
 from .sources import aggregators, ats, devpost, mlh, prizes, registry, simplify
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -68,12 +71,16 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--preview-weekly", action="store_true", help="print this week's digest")
     ap.add_argument("--out", type=Path, default=ROOT / "web" / "data" / "opportunities.json")
     args = ap.parse_args(argv)
 
     now = dt.datetime.now(dt.timezone.utc)
     today = now.astimezone(ICT).date()
     profile = load_yaml(ROOT / "profile.yaml")
+    settings = load_yaml(ROOT / "sources.yaml")
+    alerts_cfg = settings.get("notifications") or {}
+    site_url = os.environ.get("SITE_URL", "")
     override_file = load_yaml(ROOT / "overrides.yaml")
     overrides = override_file.get("overrides") or {}
     field_overrides = override_file.get("fields") or {}
@@ -98,7 +105,7 @@ def main(argv: list[str] | None = None) -> int:
     prev = json.loads(args.out.read_text(encoding="utf-8")) if args.out.exists() else {}
     proposals, report["claude"], claude_usage = claude_reader.run(
         items, prev.get("proposals", {}), profile, today, prev.get("claude_usage", {}),
-        enabled=bool(load_yaml(ROOT / "sources.yaml").get("claude_page_reading", False)))
+        enabled=bool(settings.get("claude_page_reading", False)))
     for pid in field_overrides:  # an accepted suggestion is done
         proposals.pop(pid, None)
     for item in items:
@@ -122,39 +129,64 @@ def main(argv: list[str] | None = None) -> int:
     print("eligibility", counts)
     print(f"changes    {len(changes)}")
 
+    if args.preview_weekly:
+        history = diffing.merge_history(prev.get("changes", []), changes)
+        print("\n" + weekly.to_text(weekly.build(items, history, prev.get("source_problems", []), now, site_url)))
     if args.dry_run:
         return 0
 
     source_health, health_alerts = health.update(prev.get("health", {}), report, stamp)
     for line in health_alerts:
         print(f"health     {line}")
+    history = diffing.merge_history(prev.get("changes", []), changes)
+    problems = health.problems(source_health)
+
+    # Weekly digest: Monday morning in Vietnam (or the first run after), once per week.
+    weekly_state = dict(prev.get("weekly") or {})
+    force = os.environ.get("FORCE_WEEKLY", "").lower() in ("1", "true")
+    if alerts_cfg.get("weekly_digest", True) and (force or weekly.is_due(now, weekly_state)):
+        digest = weekly.build(items, history, problems, now, site_url)
+        print("\n" + weekly.to_text(digest) + "\n")
+        if not notify.configured():
+            print("weekly digest ready, but no channel is set up (add the DISCORD_WEBHOOK_URL secret); "
+                  "it will go out on the first run after you do")
+        else:
+            sent, errors = notify.send_weekly(digest)
+            if errors:
+                print(f"weekly digest not fully sent: {'; '.join(errors)}", file=sys.stderr)
+            if sent:  # a week counts as done once any channel has it; failures retry on the next run
+                weekly_state = {"week": weekly.week_key(now.astimezone(ICT).date()), "sent_at": stamp, "channels": sent}
+                print("weekly digest sent to", ", ".join(sent))
 
     out = {
         "generated_at": stamp,
         "profile": profile,
         "sources": report,
         "items": sorted(items, key=lambda i: (i["kind"], i["name"].lower())),
-        "changes": diffing.merge_history(prev.get("changes", []), changes),
+        "changes": history,
         "proposals": proposals,
         "claude_usage": claude_usage,
         "health": source_health,
-        "source_problems": health.problems(source_health),
+        "source_problems": problems,
+        "weekly": weekly_state,
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    ics = calendar_ics.build(items, today, now, os.environ.get("SITE_URL", ""))
+    ics = calendar_ics.build(items, today, now, site_url)
     (args.out.parent / "deadlines.ics").write_text(ics, encoding="utf-8", newline="")
 
-    text = notify.digest(changes, os.environ.get("SITE_URL", "")) if prev else ""  # no digest on the very first run
-    extra = notify.health_digest(health_alerts)
-    message = "\n\n".join(t for t in (text, extra) if t)
-    if message:
-        print(message)
-        try:
-            sent = notify.send(message)
-            print("sent to", ", ".join(sent) if sent else "no channel (none configured)")
-        except Exception as exc:
-            print(f"digest not fully sent: {exc}", file=sys.stderr)
+    # A message after every run with changes; off unless notifications.every_run is true in sources.yaml.
+    if alerts_cfg.get("every_run", False):
+        text = notify.digest(changes, site_url) if prev else ""  # no digest on the very first run
+        extra = notify.health_digest(health_alerts)
+        message = "\n\n".join(t for t in (text, extra) if t)
+        if message:
+            print(message)
+            try:
+                sent = notify.send(message)
+                print("sent to", ", ".join(sent) if sent else "no channel (none configured)")
+            except Exception as exc:
+                print(f"digest not fully sent: {exc}", file=sys.stderr)
     return 0
 
 

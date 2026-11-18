@@ -1076,7 +1076,8 @@
       const srcs = Object.entries(data.sources || {});
       document.getElementById("footer").innerHTML = `${problems.length ? `<p class="k" style="background:var(--yellow);color:#0A0A0A;padding:8px 12px;border-radius:4px">Source trouble: ${esc(problems.join(" · "))}</p>` : ""}
         <details><summary class="k" style="cursor:pointer;min-height:28px">${srcs.length} sources · ${srcs.filter(([, v]) => String(v).startsWith("FAILED")).length} failed this run</summary>
-        <ul style="columns:2 240px;font-size:13px;padding-left:18px">${srcs.map(([k, v]) => `<li>${esc(k)}: ${esc(v)}</li>`).join("")}</ul></details>
+        <ul style="columns:2 240px;font-size:13px;padding-left:18px">${srcs.map(([k, v]) => `<li>${esc(k)}: ${esc(v)}</li>`).join("")}
+        <li>weekly digest: ${data.weekly && data.weekly.sent_at ? `sent ${esc(ago(data.weekly.sent_at))} (${esc((data.weekly.channels || []).join(", "))})` : "not sent yet"}</li></ul></details>
         ${iosHint}<p class="muted">Always confirm dates and eligibility on the official page. Deadlines are shown in Vietnam time (UTC+7). Labels: <strong>Eligible</strong> = verified, <strong>Likely</strong> = rules look open but unverified, <strong>Check rules</strong> = unclear.</p>`;
       render(false);
     })

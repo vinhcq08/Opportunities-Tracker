@@ -30,3 +30,8 @@ challenge_gov: false
 # (billed per use, separately from a Claude.ai subscription), so it is turned off. The code stays
 # in tracker/claude_reader.py; set this to true and add an ANTHROPIC_API_KEY secret to use it.
 claude_page_reading: false
+
+# Messages to Discord (DISCORD_WEBHOOK_URL secret) and Telegram (TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID), if set up.
+notifications:
+  weekly_digest: true   # one summary each Monday from 07:00 Vietnam time: closing in 14 days, new, opened, source problems
+  every_run: false      # true also sends a short message after every run that finds changes, plus source alerts right away

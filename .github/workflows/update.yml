@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "17 */6 * * *"   # every 6 hours
   workflow_dispatch:
+    inputs:
+      send_weekly_now:
+        description: "Send the weekly digest now (to test your Discord channel)"
+        type: boolean
+        default: false
   push:
     branches: [main]
 
@@ -39,6 +44,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          FORCE_WEEKLY: ${{ github.event.inputs.send_weekly_now == 'true' && '1' || '' }}
           SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: python -m tracker.run
 
