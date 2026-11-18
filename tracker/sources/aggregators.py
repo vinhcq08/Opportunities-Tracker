@@ -18,7 +18,9 @@ RELEVANT = re.compile(
     r"summer|research|intern|hackathon|competition|challenge|contest|olympiad|fellowship|scholarship|"
     r"exchange|bootcamp|award|mentorship|thực tập|học bổng|cuộc thi|hackathon|giải thưởng", re.I)
 STUDENT = re.compile(r"undergrad|student|university|college|youth|bachelor|sinh viên|đại học", re.I)
-GRAD_ONLY = re.compile(r"\b(phd|ph\.d|doctoral|postdoc|post-doc|master'?s|mba|llm)\b", re.I)
+GRAD_ONLY = re.compile(r"\b(phd|ph\.d|doctoral|postdoc|post-doc|master'?s?|mba|llm|postgraduate|"
+                       r"erasmus mundus|joint master|graduate program(?:me)?|thạc sĩ|tiến sĩ|cao học)\b", re.I)
+UNDERGRAD = re.compile(r"undergrad|bachelor|cử nhân|sinh viên năm", re.I)
 OPEN_TEXT = re.compile(
     r"(open to (?:students |applicants )?(?:from )?(?:all|any) (?:nationalit\w+|countries)|"
     r"(?:students|applicants) (?:from )?(?:all over the world|worldwide|around the world)|"
@@ -27,12 +29,24 @@ DEADLINE = re.compile(r"deadline[:\s–-]*(?:is\s*)?([A-Z][a-z]+ \d{1,2},? \d{4}
 
 NOISE = re.compile(r"^\s*(danh sách|kết quả|thông báo kết quả|results?\b|winners?\b)", re.I)
 INTERNSHIP = re.compile(r"\bintern(ship)?s?\b|thực tập", re.I)
+# Full-time jobs and recruitment drives (kept only when they are internships).
+JOB = re.compile(r"tuyển dụng|\btuyển\b|recruit|hiring|vacanc|full[- ]time|phỏng vấn|job opening|career fair|ngày hội việc làm", re.I)
+# Talks, seminars and gatherings rather than programs to apply to.
+EVENT = re.compile(r"seminar|webinar|workshop|\btalk\b|lecture|hội thảo|tọa đàm|chia sẻ|khám phá|office tour|"
+                   r"\bsummit\b|conference|\bforum\b|meetup|open day|ngày hội", re.I)
+# Limited to the students of one university (or its dormitory).
+ONE_UNIVERSITY = re.compile(
+    r"\bUIT\b|\bKTX\b|ký túc xá|\bĐHQG\b|sinh viên (?:của )?trường|sinh viên (?:đang học tại|thuộc)|"
+    r"thư mời sinh viên|(?:only|exclusively) (?:for|open to) (?:current )?students (?:of|at|from) (?:the )?[A-Z]|"
+    r"must be (?:currently )?enrolled at (?:the )?[A-Z][\w ]*Universit|students of [A-Z][\w ]*University only", re.I)
+STOP = {"the", "and", "for", "program", "programme", "2026", "2027", "2028", "fully", "funded", "in", "of", "at", "a",
+        "summer", "internship", "internships", "scholarship", "scholarships", "fellowship", "student", "students"}
 
 KIND_RULES = [
     (re.compile(r"hackathon", re.I), "hackathon"),
     (re.compile(r"olympiad|contest|cuộc thi", re.I), "contest"),
     (re.compile(r"scholarship|fellowship|học bổng", re.I), "scholarship"),
-    (re.compile(r"summer school|summer program|summer course", re.I), "summer_school"),
+    (re.compile(r"summer (?:\w+ )?(?:school|program|programme|course|camp)", re.I), "summer_school"),
     (re.compile(r"research|internship|thực tập", re.I), "summer_research"),
     (re.compile(r"competition|challenge|award|prize", re.I), "challenge"),
 ]
@@ -40,13 +54,42 @@ KIND_RULES = [
 _ATOM = "{http://www.w3.org/2005/Atom}"
 
 
-def fetch(feeds: list[dict], today: dt.date) -> tuple[list[dict], dict[str, str]]:
+def _tokens(text: str) -> set[str]:
+    return {t for t in re.findall(r"[a-z0-9@]+", text.lower()) if len(t) > 2 and t not in STOP}
+
+
+PROGRAM_WORD = re.compile(r"intern|fellowship|scholarship|summer|research|hackathon|challenge|award|prize|competition|olympiad", re.I)
+
+
+def _program_words(text: str) -> set[str]:
+    return {m.group(0).lower() for m in PROGRAM_WORD.finditer(text)}
+
+
+def duplicate_of(title: str, curated: list[dict]) -> str | None:
+    """The curated program a feed post is about, if any.
+
+    The organisation's name must appear in the title, plus either a distinctive word from the program's
+    name or the same kind of program word ("OIST Internship" vs "OIST Research Internship").
+    """
+    words = _tokens(title)
+    kinds = _program_words(title)
+    for c in curated:
+        org = _tokens(c.get("org", ""))
+        if not org or not org <= words:
+            continue
+        name = c.get("name", "")
+        if (_tokens(name) - org) & words or kinds & _program_words(name):
+            return c["id"]
+    return None
+
+
+def fetch(feeds: list[dict], today: dt.date, curated: list[dict] | None = None) -> tuple[list[dict], dict[str, str]]:
     items, report = [], {}
     for feed in feeds:
         try:
             resp = http.get(feed["url"], retries=1)
             resp.raise_for_status()
-            got = parse(resp.content[:MAX_BYTES], feed, today)
+            got = parse(resp.content[:MAX_BYTES], feed, today, curated or [])
             items.extend(got)
             report[feed["name"]] = f"{len(got)} items"
         except Exception as exc:
@@ -102,7 +145,7 @@ def _deadline(text: str) -> str | None:
     return None
 
 
-def parse(xml: bytes | str, feed: dict, today: dt.date) -> list[dict]:
+def parse(xml: bytes | str, feed: dict, today: dt.date, curated: list[dict] | None = None) -> list[dict]:
     root = ET.fromstring(xml)
     items = []
     for e in _entries(root):
@@ -115,19 +158,25 @@ def parse(xml: bytes | str, feed: dict, today: dt.date) -> list[dict]:
         text = f"{e['title']} {body}"
         if not RELEVANT.search(text):
             continue
+        title = e["title"]
         # Skip graduate-only calls unless they also mention undergraduates.
-        if GRAD_ONLY.search(e["title"]) and not re.search(r"undergrad|bachelor", text, re.I):
+        if GRAD_ONLY.search(title) and not UNDERGRAD.search(text):
             continue
         if not feed.get("vietnamese") and not STUDENT.search(text):
             continue
-        if NOISE.search(e["title"]):
+        is_internship = bool(INTERNSHIP.search(title))
+        if NOISE.search(title) or EVENT.search(title) or (JOB.search(title) and not is_internship):
             continue
-        local_job = bool(feed.get("vietnamese") and INTERNSHIP.search(e["title"]))
+        if ONE_UNIVERSITY.search(text):
+            continue
+        if curated and duplicate_of(title, curated):
+            continue
+        local_job = bool(feed.get("vietnamese") and is_internship)
         if local_job:
             kind = "internship"
         else:
-            kind = next((k for rx, k in KIND_RULES if rx.search(e["title"])) or
-                        (k for rx, k in KIND_RULES if rx.search(text)), "challenge")
+            kind = (next((k for rx, k in KIND_RULES if rx.search(title)), None)
+                    or next((k for rx, k in KIND_RULES if rx.search(text)), "challenge"))
         deadline = _deadline(text)
         if deadline and deadline < today.isoformat():
             continue

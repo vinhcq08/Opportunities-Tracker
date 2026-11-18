@@ -206,3 +206,54 @@ def test_vietnamese_board_internships_and_noise():
     </channel></rss>"""
     items = aggregators.parse(rss, {"name": "UIT", "url": "x", "vietnamese": True}, TODAY)
     assert len(items) == 1 and items[0]["kind"] == "internship" and items[0]["nationality_ok"] == "vn_ok"
+
+
+def _rss(entries):
+    items = "".join(f"<item><title>{t}</title><link>https://f/{n}</link><pubDate>Mon, 16 Nov 2026 10:00:00 +0000</pubDate>"
+                    f"<description>{b}</description></item>" for n, (t, b) in enumerate(entries))
+    return f"<rss><channel>{items}</channel></rss>"
+
+
+CURATED = [{"id": "oist-internship", "org": "OIST", "name": "OIST Research Internship"},
+           {"id": "google-step", "org": "Google", "name": "Google STEP internship"},
+           {"id": "eth-ssrf", "org": "ETH Zurich", "name": "Student Summer Research Fellowship"}]
+
+
+def test_live_titles_are_filtered_as_agreed():
+    global_feed = [
+        ("HZDR Summer Student Program 2027 in Germany (Fully Funded)", "Undergraduate students from all countries."),
+        ("Leadership and Peace Summit Morocco 2027 (Fully Funded)", "Youth summit for university students."),
+        ("Erasmus Mundus EMLE Scholarship 2027/29 (Fully Funded)", "Joint master's programme for university graduates."),
+        ("OIST Internship in Japan (Fully Funded) (Fall 2027)", "Research internship for university students."),
+        ("iDAC Foundation Summer Fellowship 2027 ($6,000 stipend)", "For undergraduate students."),
+        ("Google Women Techmakers Scholarship 2027", "University students worldwide."),
+    ]
+    kept = {i["name"]: i for i in aggregators.parse(_rss(global_feed), {"name": "G", "url": "x"}, TODAY, CURATED)}
+    assert set(kept) == {"HZDR Summer Student Program 2027 in Germany (Fully Funded)",
+                         "iDAC Foundation Summer Fellowship 2027 ($6,000 stipend)",
+                         "Google Women Techmakers Scholarship 2027"}
+    assert kept["HZDR Summer Student Program 2027 in Germany (Fully Funded)"]["kind"] == "summer_school"
+
+    uit = [
+        ("Thư mời sinh viên/học viên tham dự WorldQuant Office Tour 2026 Program", "Thư mời sinh viên UIT"),
+        ("[Hybrid HCM] Cosigma tuyển dụng System Administrator", "Kinh nghiệm 2 năm"),
+        ("[KHMT] Khám phá AGENTIC AI, hệ thống phân tán và mạng nano", "Buổi hội thảo cùng giáo sư"),
+        ("🌟 UIT English Contest 2026 – Future-Ready Humans", "Cuộc thi dành cho sinh viên UIT"),
+        ("KTX ĐHQG_Học bổng “Chắp cánh ước mơ” năm học 2026 - 2027", "Dành cho sinh viên ở ký túc xá"),
+        ("Lam Research Taiwan tổ chức phỏng vấn tuyển dụng tại Việt Nam - 12/2026", "Kỹ sư"),
+        ("Marvell Vietnam Excellence Scholarship 2027", "Học bổng cho sinh viên ngành kỹ thuật"),
+        ("Chương trình Học bổng AmCham năm 2026", "Học bổng cho sinh viên đại học"),
+        ("[Tân Mỹ - HCM] Techlab tuyển dụng Pentest Intern", "Thực tập"),
+    ]
+    kept = {i["name"]: i for i in aggregators.parse(_rss(uit), {"name": "UIT", "url": "x", "vietnamese": True}, TODAY, CURATED)}
+    assert set(kept) == {"Marvell Vietnam Excellence Scholarship 2027", "Chương trình Học bổng AmCham năm 2026",
+                         "[Tân Mỹ - HCM] Techlab tuyển dụng Pentest Intern"}
+    assert kept["[Tân Mỹ - HCM] Techlab tuyển dụng Pentest Intern"]["kind"] == "internship"
+
+
+def test_duplicate_needs_org_and_a_name_word():
+    assert aggregators.duplicate_of("OIST Internship in Japan (Fall 2027)", CURATED) == "oist-internship"
+    assert aggregators.duplicate_of("OIST campus news", CURATED) is None
+    assert aggregators.duplicate_of("OIST Research Internship 2027", CURATED) == "oist-internship"
+    assert aggregators.duplicate_of("ETH Zurich Student Summer Research Fellowship 2027", CURATED) == "eth-ssrf"
+    assert aggregators.duplicate_of("Google Women Techmakers Scholarship", CURATED) is None

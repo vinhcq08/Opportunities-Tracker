@@ -16,7 +16,8 @@
 #   region:          asia | europe | north_america | middle_east | global
 #   format:          online | in_person | hybrid
 #   nationality_ok:  global | vn_ok | us_only | eu_only | other_restriction | unknown
-#   enrollment_req:  any | vn_university_ok | us_canada_only | host_university_only | local_only
+#   enrollment_req:  any | vn_university_ok | us_canada_only | local_only
+#   (Programs only for one university's own students are left out of this list on purpose.)
 #   funding:         fully_funded | stipend | travel_covered | free | fee_required
 #   window:          months the application window usually covers (estimate until verified)
 #   watch_open / watch_closed: extra regexes for this page's own wording (optional)
@@ -273,6 +274,7 @@ programs:
     notes: Prize eligibility can exclude some countries per competition.
 
   # ---------------------------------------------------------------- business & pitch
+  # MIT $100K and Harvard's President's Innovation Challenge were removed: own students only.
   - id: hult-prize
     kind: business_comp
     org: Hult Prize
@@ -289,32 +291,7 @@ programs:
     window: [9, 10, 11, 12]
     notes: Needs a campus program at your university, or the online route.
 
-  - id: mit-100k
-    kind: business_comp
-    org: MIT
-    org_type: university
-    featured: true
-    name: MIT $100K Entrepreneurship Competition
-    url: https://www.mit100k.org/
-    summary: MIT's flagship startup competition.
-    region: north_america
-    enrollment_req: host_university_only
-    nationality_ok: global
-    window: [10, 11, 12, 1, 2, 3, 4]
 
-  - id: harvard-pic
-    kind: business_comp
-    org: Harvard
-    org_type: university
-    featured: true
-    name: President's Innovation Challenge
-    url: https://innovationlabs.harvard.edu/presidents-innovation-challenge
-    manual_check: true   # the site blocks automated requests (HTTP 403)
-    summary: Harvard Innovation Labs' annual venture competition.
-    region: north_america
-    enrollment_req: host_university_only
-    nationality_ok: global
-    window: [12, 1, 2, 3]
 
   # ---------------------------------------------------- big tech: underclassmen & internships
   - id: microsoft-explore

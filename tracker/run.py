@@ -53,7 +53,8 @@ def collect(today: dt.date, offline: bool) -> tuple[list[dict], dict[str, str]]:
             report[name] = f"FAILED: {type(exc).__name__}: {exc}"[:200]
 
     # Multi-feed sources report each feed or board on its own line.
-    for fetcher, arg in ((aggregators.fetch, (config.get("feeds") or [], today)), (ats.fetch, (config.get("job_boards") or {},))):
+    curated = [i for i in items if i["source"] == "registry"]
+    for fetcher, arg in ((aggregators.fetch, (config.get("feeds") or [], today, curated)), (ats.fetch, (config.get("job_boards") or {},))):
         try:
             got, sub = fetcher(*arg)
             items.extend(got)
