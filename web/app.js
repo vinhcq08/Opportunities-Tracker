@@ -50,7 +50,16 @@
     decisions: store.get("decisions", {}),  // id -> eligible | not_eligible | ignore
     suggestions: store.get("suggestions", {}),  // id -> accept | dismiss (Claude's proposals)
     ui: { summerFunded: false, summerRegion: "all", competeType: "all", featuredOnly: true, onlineOnly: false, inVietnam: false },
+    limits: {},   // list key -> how many items are shown ("Show more")
+    groupOpen: {},  // Review group -> open/closed
+    layout: store.get("layout", null),  // "cards" | "list"; default depends on screen width
   };
+  const PAGE = 12;
+  const REVIEW_PAGE = 10;
+  function layout() {
+    if (state.layout) return state.layout;
+    return window.matchMedia && window.matchMedia("(max-width: 640px)").matches ? "list" : "cards";
+  }
 
   // ------------------------------------------------------------ helpers
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -187,35 +196,62 @@
     return out.join("\r\n") + "\r\n";
   }
 
-  function openLink(item, cls) {
-    return `<a class="go small ${cls || "dark"}" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener">Open ↗</a>`;
+  // ------------------------------------------------------------ shared blocks
+  const progHref = (item) => "#p/" + encodeURIComponent(item.id);
+  const BOOKMARK = '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 3h12v18l-6-4-6 4z"></path></svg>';
+
+  function saveDot(item) {
+    const saved = !!state.tracker[item.id];
+    return `<button class="save-dot" data-act="${saved ? "unsave" : "save"}" data-id="${esc(item.id)}" aria-pressed="${saved}" aria-label="${saved ? "Remove from" : "Save to"} tracker: ${esc(item.name)}" title="${saved ? "Saved" : "Save"}">${BOOKMARK}</button>`;
   }
 
-  // ------------------------------------------------------------ shared blocks
+  // A slim card: the whole card opens the program page; only Save sits on top of it.
   function block(item, mode) {
     const big = bigNumber(item);
     const kind = KIND[item.kind] || { label: item.kind };
-    const topRight = item.funding ? FUND_LABEL[item.funding] || item.funding : (item.prize || "");
-    const details = [];
-    if (item.team_size) details.push(["Team", item.team_size]);
-    if (item.prize && item.funding) details.push(["Prize", item.prize]);
+    const fund = item.funding ? FUND_LABEL[item.funding] || item.funding : "";
     return `
-    <article class="block bg-${bgFor(item, mode)}" id="item-${esc(item.id)}">
-      <div class="block-top"><span class="k">${esc(mode === "region" ? REGION_LABEL[item.region] || "" : kind.label)}</span><span class="k">${esc(topRight)}</span></div>
-      <div>
-        <h3 class="h block-title">${esc(item.name)}</h3>
-        <p>${esc(item.org)}${where(item) ? " · " + esc(where(item)) : ""}</p>
-        ${item.summary ? `<p>${esc(item.summary)}</p>` : ""}
-      </div>
-      ${details.length ? `<dl>${details.map(([k, v]) => `<div><dt class="k">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : ""}
-      <div class="row">${eligTag(item)}${statusTag(item)}</div>
-      ${label(item) === "check" || label(item) === "not_eligible" ? `<p class="reason">${reasonText(item)}</p>` : ""}
-      ${item.manual_check ? `<p class="reason"><strong>Check manually:</strong> this site blocks automatic checks, so open it to see whether applications are open.</p>` : ""}
-      <div class="block-foot">
-        <div><div class="big">${esc(big.n)}</div><div class="k">${esc(big.l)}</div></div>
-        <div class="row">${saveButton(item)}${calLink(item)}${openLink(item)}</div>
-      </div>
-    </article>`;
+    <div class="slim-wrap" id="item-${esc(item.id)}">
+      <a class="slim bg-${bgFor(item, mode)}" href="${progHref(item)}">
+        <span class="k">${esc(kind.label)}${where(item) ? " · " + esc(where(item)) : ""}</span>
+        <span class="slim-title">${esc(item.name)}</span>
+        <span class="row">${eligTag(item)}${fund ? `<span class="tag">${esc(fund)}</span>` : ""}${item.manual_check ? `<span class="tag">Check manually</span>` : ""}</span>
+        <span class="slim-foot"><span><span class="big">${esc(big.n)}</span><span class="k">${esc(big.l)}</span></span><span class="k muted">${esc(item.org)}</span></span>
+      </a>
+      ${saveDot(item)}
+    </div>`;
+  }
+
+  // One line per program, for the compact list view.
+  function line(item) {
+    const big = bigNumber(item);
+    const meta = [(KIND[item.kind] || {}).label, where(item), item.funding ? FUND_LABEL[item.funding] : ""].filter(Boolean).join(" · ");
+    return `<a class="lrow" href="${progHref(item)}" id="item-${esc(item.id)}">
+      <span class="dot dot-${esc(label(item))}" title="${esc(ELIG_LABEL[label(item)] || "")}"></span>
+      <span class="lrow-body"><span class="lrow-name">${esc(item.name)}</span><span class="lrow-meta">${esc(meta)}</span></span>
+      <span class="lrow-big"><span>${esc(big.n)}</span><span class="k muted">${esc(big.l)}</span></span>
+    </a>`;
+  }
+
+  // Cards or lines, PAGE at a time, with a "Show more" button.
+  function collection(list, key, mode) {
+    if (!list.length) return "";
+    const limit = state.limits[key] || PAGE;
+    const shown = list.slice(0, limit);
+    const body = layout() === "list"
+      ? `<div class="lines">${shown.map(line).join("")}</div>`
+      : `<div class="grid">${shown.map((i) => block(i, mode)).join("")}</div>`;
+    const more = list.length > limit
+      ? `<div class="more"><button class="go dark" data-act="more" data-key="${esc(key)}">Show ${Math.min(PAGE, list.length - limit)} more</button><span class="k muted">Showing ${limit} of ${list.length}</span></div>`
+      : "";
+    return body + more;
+  }
+
+  function layoutSwitch() {
+    const l = layout();
+    return `<div class="row" role="group" aria-label="View">
+      <button class="go small" data-act="layout" data-val="cards" aria-pressed="${l === "cards"}">Cards</button>
+      <button class="go small" data-act="layout" data-val="list" aria-pressed="${l === "list"}">List</button></div>`;
   }
 
   function hiddenList(list) {
@@ -223,7 +259,7 @@
     const hidden = list.filter((i) => !isVisible(i) && label(i) !== "ignore");
     if (!hidden.length) return "";
     return `<details class="hidden-list"><summary class="k">${hidden.length} hidden · not open to you</summary><ul>${hidden
-      .map((i) => `<li><strong>${esc(i.name)}</strong> (${esc(i.org)}): ${esc(hiddenReason(i))}</li>`).join("")}</ul></details>`;
+      .map((i) => `<li><a href="${progHref(i)}"><strong>${esc(i.name)}</strong></a> (${esc(i.org)}): ${esc(hiddenReason(i))}</li>`).join("")}</ul></details>`;
   }
 
   // The eligibility reason plus the program note, without repeating the note when it is the reason.
@@ -242,10 +278,10 @@
       <div class="cover-main">
         <div class="row"><span class="k">${esc(kicker)}</span>${label(item) !== "eligible" ? `<span class="tag" style="background:transparent;border-color:#fff;color:#fff">${esc(ELIG_LABEL[label(item)])}</span>` : ""}</div>
         <div>
-          <h2 class="h cover-title">${esc(item.name)}</h2>
+          <h2 class="h cover-title"><a href="${progHref(item)}" style="text-decoration:none">${esc(item.name)}</a></h2>
           <p>${esc(item.org)}${where(item) ? " · " + esc(where(item)) : ""}${item.summary ? ". " + esc(item.summary) : ""}</p>
         </div>
-        <div class="row">${openLink(item, "on-dark fill")}${saveButton(item, "on-dark")}${calLink(item, "on-dark")}</div>
+        <div class="row"><a class="go small on-dark fill" href="${progHref(item)}">View program</a>${saveButton(item, "on-dark")}</div>
       </div>
       <div class="cover-big"><span class="n">${esc(big.n)}</span><span class="k">${esc(big.l)}</span></div>
     </article>`;
@@ -286,7 +322,7 @@
       ${coverItem ? cover(coverItem, daysLeft(coverItem) != null ? "Cover story · Closes first" : "Cover story") : empty("Nothing to feature yet")}
       <aside class="due" aria-labelledby="due-h">
         <h2 class="k" id="due-h" style="margin:0 0 6px">Closing soon</h2>
-        ${soon.length ? soon.map((i) => `<a class="due-row" href="#${sectionOf(i)}/${esc(i.id)}"><span>${esc(i.name)}</span><span>${pad(daysLeft(i))}d</span></a>`).join("")
+        ${soon.length ? soon.map((i) => `<a class="due-row" href="${progHref(i)}"><span>${esc(i.name)}</span><span>${pad(daysLeft(i))}d</span></a>`).join("")
           : `<p class="k" style="border-top:2px solid #0A0A0A;padding-top:10px">No dated deadlines yet. Add them in programs.yaml as you verify.</p>`}
         ${subscribeLinks()}
       </aside>
@@ -298,17 +334,17 @@
           <span class="idx">${pad(n + 1)}</span>
           <div class="list-body">
             <div class="row"><span class="tag bg-${bgFor(i)}">${esc((KIND[i.kind] || {}).label || i.kind)}</span><span class="k muted">${esc(i.org)}</span></div>
-            <h3 class="h list-title">${esc(i.name)}</h3>
+            <h3 class="h list-title"><a href="${progHref(i)}" style="text-decoration:none">${esc(i.name)}</a></h3>
             <span class="muted" style="font-size:14px">${esc(where(i))}</span>
           </div>
-          <div class="list-side">${eligTag(i)}${statusTag(i)}${saveButton(i)}${calLink(i)}${openLink(i)}</div>
+          <div class="list-side">${eligTag(i)}${statusTag(i)}${saveDot(i)}</div>
         </article>`).join("") : empty("Nothing new in the last 7 days")}
     </section>
     <section>
       <div class="section-head"><h2 class="h section-title">The season ahead</h2><span class="k muted">Typical application windows · estimated</span></div>
       <div class="scroll-x" style="margin-top:12px"><div class="timeline">
         <div class="tl-row head"><span></span>${SEASON.map((m) => `<span class="k ${m === nowM ? "tl-now" : "muted"}">${MONTHS[m - 1]}</span>`).join("")}</div>
-        ${tl.map((i) => `<div class="tl-row"><a class="tl-name" href="#${sectionOf(i)}/${esc(i.id)}">${esc(i.name)}</a>${SEASON.map((m) =>
+        ${tl.map((i) => `<div class="tl-row"><a class="tl-name" href="${progHref(i)}">${esc(i.name)}</a>${SEASON.map((m) =>
           `<span class="tl-cell ${i.window.includes(m) ? "bg-" + bgFor(i) : ""} ${m === nowM ? "now-col" : ""}" ${i.window.includes(m) ? `title="${esc(MONTHS[m - 1])}"` : ""}></span>`).join("")}</div>`).join("")}
       </div></div>
       <p class="k" style="color:var(--accent);margin:10px 0 0">Blue line = this month</p>
@@ -333,7 +369,10 @@
     const [first, ...rest] = list;
     const regions = ["all", "asia", "europe", "north_america", "middle_east"];
     return `
-    <h1 class="h headline">Fully funded.<br><em>Open to you.</em></h1>
+    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:16px">
+      <h1 class="h headline">Fully funded.<br><em>Open to you.</em></h1>
+      ${layoutSwitch()}
+    </div>
     <div class="row">
       <span class="k" style="margin-right:6px">Filter</span>
       <button class="go small" data-act="ui" data-key="summerFunded" aria-pressed="${state.ui.summerFunded}">Fully funded only</button>
@@ -346,7 +385,7 @@
       <div><div class="stat-n">${pad(countries)}</div><div class="k muted">Countries</div></div>
     </div>
     ${first ? cover(first, daysLeft(first) != null ? "Featured · Closes first" : "Featured") : empty("No programs match these filters")}
-    <div class="grid">${rest.map((i) => block(i, "region")).join("")}</div>
+    ${collection(rest, "summer", "region")}
     ${hiddenList(all)}`;
   }
 
@@ -361,15 +400,18 @@
     list.sort(bySoonest);
     const types = [["all", "All"], ["hackathon", "Hackathons"], ["challenge", "Innovation"], ["business_comp", "Business"], ["contest", "Contests"]];
     return `
-    <h1 class="h headline">Build. Pitch.<br><em>Win.</em></h1>
+    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:16px">
+      <h1 class="h headline">Build. Pitch.<br><em>Win.</em></h1>
+      ${layoutSwitch()}
+    </div>
     <div class="types" role="group" aria-label="Type">${types.map(([v, l]) => `<button data-act="ui" data-key="competeType" data-val="${v}" aria-pressed="${u.competeType === v}">${l}</button>`).join("")}</div>
     <div class="row">
       <button class="go small" data-act="ui" data-key="featuredOnly" aria-pressed="${u.featuredOnly}">Featured hosts</button>
       <button class="go small" data-act="ui" data-key="onlineOnly" aria-pressed="${u.onlineOnly}">Online</button>
       <button class="go small" data-act="ui" data-key="inVietnam" aria-pressed="${u.inVietnam}">In Vietnam</button>
-      <span class="spacer"></span><span class="k muted">${list.length} shown</span>
+      <span class="spacer"></span><span class="k muted">${list.length} programs</span>
     </div>
-    ${list.length ? `<div class="grid">${list.map((i) => block(i)).join("")}</div>` : empty("Nothing matches. Try turning off “Featured hosts”.")}
+    ${list.length ? collection(list, "compete:" + u.competeType) : empty("Nothing matches. Try turning off “Featured hosts”.")}
     ${hiddenList(all)}`;
   }
 
@@ -380,27 +422,95 @@
     const oss = vis.filter((i) => i.kind === "open_source");
     const named = vis.filter((i) => i.source === "registry" && i.kind !== "insight" && i.kind !== "open_source");
     const roles = vis.filter((i) => i.source !== "registry");
+    const rolesLimit = state.limits.roles || PAGE;
     return `
-    <h1 class="h headline">Tech &amp; quant.<br><em>Get in early.</em></h1>
+    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:16px">
+      <h1 class="h headline">Tech &amp; quant.<br><em>Get in early.</em></h1>
+      ${layoutSwitch()}
+    </div>
     <section><h2 class="k" style="margin:0 0 12px">Insight programs · Year 1–2</h2>
-      ${insight.length ? `<div class="grid">${insight.map((i) => block(i)).join("")}</div>` : empty("No insight programs open to you right now")}
+      ${collection(insight, "insight") || empty("No insight programs open to you right now")}
     </section>
     <section><h2 class="k" style="margin:0 0 12px">Open source &amp; remote · paid, from anywhere</h2>
-      ${oss.length ? `<div class="grid">${oss.map((i) => block(i)).join("")}</div>` : empty("No open-source programs right now")}
+      ${collection(oss, "oss") || empty("No open-source programs right now")}
     </section>
     <section><h2 class="k" style="margin:0 0 12px">Programs &amp; career pages</h2>
-      ${named.length ? `<div class="grid">${named.map((i) => block(i)).join("")}</div>` : empty("No programs match")}
+      ${collection(named, "named") || empty("No programs match")}
     </section>
     <section>
       <div class="section-head"><h2 class="h section-title">Open roles near you</h2><span class="k muted">Vietnam &amp; Singapore · from job feeds</span></div>
-      ${roles.length ? `<div class="scroll-x"><table>
-        <thead><tr><th class="k" scope="col">Company</th><th class="k" scope="col">Role</th><th class="k" scope="col">City</th><th class="k" scope="col">Eligibility</th><th scope="col"><span class="sr">Actions</span></th></tr></thead>
-        <tbody>${roles.map((i) => `<tr><td class="co">${esc(i.org)}</td><td>${esc(i.name)}</td><td>${esc(i.city || i.country)}</td><td>${eligTag(i)}</td><td style="text-align:right;white-space:nowrap">${saveButton(i)} ${openLink(i)}</td></tr>`).join("")}</tbody>
-      </table></div>` : empty("No open roles in the feeds right now")}
+      ${roles.length ? `<div class="lines">${roles.slice(0, rolesLimit).map((i) => `
+        <a class="lrow" href="${progHref(i)}" id="item-${esc(i.id)}">
+          <span class="dot dot-${esc(label(i))}" title="${esc(ELIG_LABEL[label(i)] || "")}"></span>
+          <span class="lrow-body"><span class="lrow-name">${esc(i.org)} · ${esc(i.name)}</span><span class="lrow-meta">${esc(i.city || i.country)} · ${esc(ELIG_LABEL[label(i)] || "")}</span></span>
+        </a>`).join("")}</div>
+        ${roles.length > rolesLimit ? `<div class="more"><button class="go dark" data-act="more" data-key="roles">Show ${Math.min(PAGE, roles.length - rolesLimit)} more</button><span class="k muted">Showing ${rolesLimit} of ${roles.length}</span></div>` : ""}`
+        : empty("No open roles in the feeds right now")}
     </section>
     ${hiddenList(all)}`;
   }
 
+  // ------------------------------------------------------------ program page
+  function viewProgram(id) {
+    const item = state.data.items.find((i) => i.id === id);
+    if (!item) return `<a class="k" href="#overview">← Overview</a>${empty("This program is no longer listed. It may have closed or been removed from a feed.")}`;
+    const big = bigNumber(item);
+    const kind = KIND[item.kind] || { label: item.kind };
+    const back = { summer: "Summer & study", compete: "Compete", bigtech: "Tech & quant" }[sectionOf(item)];
+    const proposal = (state.data.proposals || {})[item.id];
+    const openProposal = proposal && proposal.changes && Object.keys(proposal.changes).length && !state.suggestions[item.id];
+    const d = daysLeft(item);
+    const facts = [
+      ["Deadline", item.deadline ? `${item.deadline} · 23:59 Vietnam time${d != null && d >= 0 ? ` · ${d} days left` : ""}` : "Not set yet"],
+      ["Usual window", item.window && item.window.length ? (item.window.length === 12 ? "All year (rolling)" : item.window.map((m) => MONTHS[m - 1]).join(", ") + " (estimate)") : ""],
+      ["Status", item.status && item.status !== "unknown" ? item.status : ""],
+      ["Funding", item.funding ? FUND_LABEL[item.funding] || item.funding : ""],
+      ["Prize", item.prize],
+      ["Team", item.team_size],
+      ["Format", item.format ? item.format.replace("_", " ") : ""],
+      ["Where", where(item)],
+      ["Years of study", item.class_years && item.class_years.length && item.class_years.length < 4 ? item.class_years.join(", ") : ""],
+      ["Source", item.source],
+      ["Last checked", item.last_checked ? item.last_checked.slice(0, 10) : ""],
+    ].filter(([, v]) => v);
+    return `
+    <a class="k" href="#${sectionOf(item)}" style="text-decoration:none">← ${esc(back)}</a>
+    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:20px">
+      <div style="flex:999 1 520px;min-width:0">
+        <div class="row" style="margin-bottom:12px"><span class="tag bg-${bgFor(item)}">${esc(kind.label)}</span>${eligTag(item)}${statusTag(item)}${item.funding ? `<span class="tag">${esc(FUND_LABEL[item.funding] || item.funding)}</span>` : ""}</div>
+        <h1 class="h prog-title">${esc(item.name)}</h1>
+        <p style="margin:12px 0 0;font-size:17px">${esc(item.org)}${where(item) ? " · " + esc(where(item)) : ""}</p>
+        ${item.summary ? `<p style="margin:8px 0 0;max-width:640px">${esc(item.summary)}</p>` : ""}
+      </div>
+      <div class="prog-side">
+        <div style="text-align:right"><div class="prog-big">${esc(big.n)}</div><div class="k">${esc(big.l)}</div></div>
+        <div class="row" style="justify-content:flex-end">${saveButton(item)}${calLink(item)}<a class="go small dark" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener">Official page ↗</a></div>
+      </div>
+    </div>
+    <section class="prog-elig bg-${label(item) === "check" ? "yellow" : label(item) === "not_eligible" ? "sand" : "white"}">
+      <h2 class="k" style="margin:0 0 6px">Can you enter?</h2>
+      <div style="font:900 26px/1.05 Archivo,sans-serif;text-transform:uppercase">${esc(ELIG_LABEL[label(item)] || label(item))}</div>
+      <p style="margin:8px 0 0">${reasonText(item)}</p>
+      ${item.manual_check ? `<p style="margin:8px 0 0"><strong>Check manually:</strong> this site blocks automatic checks, so open it to see whether applications are open.</p>` : ""}
+      ${label(item) === "check" && !state.decisions[item.id] ? `<div class="seg" role="group" aria-label="Decide" style="margin-top:12px">
+        <button data-act="decide" data-id="${esc(item.id)}" data-val="eligible">Eligible</button><button data-act="decide" data-id="${esc(item.id)}" data-val="not_eligible">Not eligible</button><button data-act="decide" data-id="${esc(item.id)}" data-val="ignore">Ignore</button></div>` : ""}
+    </section>
+    ${openProposal ? `<section class="prog-elig bg-peri">
+      <h2 class="k" style="margin:0 0 6px">Claude's suggestion · confidence ${esc(proposal.confidence)}</h2>
+      <ul style="margin:0;padding-left:18px">${Object.keys(proposal.changes).map((k) => `<li style="margin:6px 0"><strong>${esc(FIELD_LABEL[k] || k)}:</strong> ${esc(fmtVal(item[k]))} → <strong>${esc(fmtVal(proposal.changes[k]))}</strong>${proposal.quotes && proposal.quotes[k] ? `<blockquote style="margin-top:4px">“${esc(proposal.quotes[k])}”</blockquote>` : ""}</li>`).join("")}</ul>
+      <div class="seg" role="group" aria-label="Decide suggestion" style="margin-top:12px"><button data-act="suggest" data-id="${esc(item.id)}" data-val="accept">Accept</button><button data-act="suggest" data-id="${esc(item.id)}" data-val="dismiss">Dismiss</button></div>
+    </section>` : ""}
+    <section>
+      <h2 class="k" style="margin:0 0 4px">Details</h2>
+      <dl class="facts">${facts.map(([k, v]) => `<div><dt class="k muted">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+    </section>
+    <section>
+      <div class="section-head"><h2 class="h section-title">Field notes</h2><span class="k muted">Tips from people who went</span></div>
+      ${empty("No field notes yet. Tips from past participants will appear here.")}
+    </section>`;
+  }
+
+  // ------------------------------------------------------------ review
   const FIELD_LABEL = { nationality_ok: "Nationality", enrollment_req: "Who can apply", class_years: "Years of study", deadline: "Deadline", funding: "Funding" };
   const fmtVal = (v) => Array.isArray(v) ? (v.length ? v.join(", ") : "—") : (v == null || v === "" ? "—" : String(v).replace(/_/g, " "));
 
@@ -422,59 +532,81 @@
     return out;
   }
 
-  function viewReview() {
-    const JOB_SOURCES = ["greenhouse", "lever", "simplify"];
-    const queue = items().filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id] && !JOB_SOURCES.includes(i.source));
+  const JOB_SOURCES = ["greenhouse", "lever", "simplify"];
+  function reviewQueue() {
+    return items().filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id] && !JOB_SOURCES.includes(i.source));
+  }
+  function pendingProposals() {
     const byId = Object.fromEntries(state.data.items.map((i) => [i.id, i]));
-    const proposals = state.data.proposals || {};
-    const pending = Object.entries(proposals).filter(([id, p]) => byId[id] && p.changes && Object.keys(p.changes).length && !state.suggestions[id]);
+    return Object.entries(state.data.proposals || {})
+      .filter(([id, p]) => byId[id] && p.changes && Object.keys(p.changes).length && !state.suggestions[id])
+      .map(([id, p]) => ({ item: byId[id], p }));
+  }
+  const GROUPS = [
+    { key: "feeds", title: "Scholarships & programs", sub: "From opportunity sites and student forums", test: (i) => i.source.startsWith("feed") },
+    { key: "hackathons", title: "Online hackathons", sub: "From Devpost and MLH · rules differ per event", test: (i) => i.source === "devpost" || i.source === "mlh",
+      bulk: { label: "Ignore all but featured", val: "ignore-unfeatured" } },
+    { key: "curated", title: "Curated programs with unclear rules", sub: "From the tracker's own list", test: (i) => i.source === "registry" },
+    { key: "other", title: "Other sources", sub: "", test: () => true },
+  ];
+
+  function decideRow(i) {
+    return `<div class="rrow">
+      <div class="rrow-body"><a class="rrow-name" href="${progHref(i)}">${esc(i.name)}</a><div class="rrow-meta">${esc((KIND[i.kind] || {}).label || i.kind)} · ${esc(i.org)} · ${reasonText(i)}</div></div>
+      <div class="seg" role="group" aria-label="Decide ${esc(i.name)}">
+        <button data-act="decide" data-id="${esc(i.id)}" data-val="eligible">Eligible</button><button data-act="decide" data-id="${esc(i.id)}" data-val="not_eligible">Not eligible</button><button data-act="decide" data-id="${esc(i.id)}" data-val="ignore">Ignore</button>
+      </div>
+    </div>`;
+  }
+
+  function group(key, n, title, sub, count, rows, bulkHtml, defaultOpen) {
+    const open = state.groupOpen[key] !== undefined ? state.groupOpen[key] : defaultOpen;
+    const limit = state.limits["review:" + key] || REVIEW_PAGE;
+    return `<details class="rgroup" data-group="${esc(key)}" ${open ? "open" : ""}>
+      <summary><span class="idx">${pad(n)}</span><span class="rgroup-title"><span class="h">${esc(title)}</span><span>${esc(sub)}</span></span><span class="k">${count} item${count === 1 ? "" : "s"}</span><span class="chev" aria-hidden="true">›</span></summary>
+      ${bulkHtml ? `<div class="row" style="padding:0 0 10px">${bulkHtml}</div>` : ""}
+      ${rows.slice(0, limit).join("")}
+      ${rows.length > limit ? `<div class="more"><button class="go small dark" data-act="more" data-key="review:${esc(key)}" data-step="${REVIEW_PAGE}">Show ${Math.min(REVIEW_PAGE, rows.length - limit)} more</button><span class="k muted">Showing ${limit} of ${rows.length}</span></div>` : ""}
+    </details>`;
+  }
+
+  function viewReview() {
+    const queue = reviewQueue();
+    const pending = pendingProposals();
     const nDecisions = Object.keys(state.decisions).length + Object.values(state.suggestions).filter((d) => d === "accept").length;
     const yaml = exportYaml();
+    const sections = [];
+    let n = 1;
+    if (pending.length) {
+      const high = pending.filter(({ p }) => p.confidence === "high").length;
+      sections.push(group("claude", n++, "Claude's suggestions", "Read from official pages · quotes checked against the page", pending.length,
+        pending.map(({ item, p }) => `<div class="rrow">
+          <div class="rrow-body"><a class="rrow-name" href="${progHref(item)}">${esc(item.name)}</a>
+            <div class="rrow-meta">${Object.keys(p.changes).map((k) => `${esc(FIELD_LABEL[k] || k)}: ${esc(fmtVal(item[k]))} → <strong>${esc(fmtVal(p.changes[k]))}</strong>${p.quotes && p.quotes[k] ? ` <em>“${esc(p.quotes[k])}”</em>` : ""}`).join(" · ")} · confidence ${esc(p.confidence)}</div></div>
+          <div class="seg" role="group" aria-label="Decide suggestion for ${esc(item.name)}"><button data-act="suggest" data-id="${esc(item.id)}" data-val="accept">Accept</button><button data-act="suggest" data-id="${esc(item.id)}" data-val="dismiss">Dismiss</button></div>
+        </div>`),
+        high ? `<button class="go small dark" data-act="bulk" data-val="accept-high">Accept all high-confidence (${high})</button>` : "", true));
+    }
+    const left = queue.slice();
+    GROUPS.forEach((g) => {
+      const mine = left.filter(g.test);
+      mine.forEach((i) => left.splice(left.indexOf(i), 1));
+      if (!mine.length) return;
+      let bulk = "";
+      if (g.bulk) {
+        const k = mine.filter((i) => !i.featured).length;
+        if (k) bulk = `<button class="go small" data-act="bulk" data-val="${g.bulk.val}" data-group="${g.key}">${esc(g.bulk.label)} (${k})</button>`;
+      }
+      sections.push(group(g.key, n++, g.title, g.sub, mine.length, mine.map(decideRow), bulk, g.key === "feeds"));
+    });
+    const total = queue.length + pending.length;
     return `
     <div class="row" style="justify-content:space-between;align-items:flex-end;gap:16px">
       <h1 class="h headline">You decide.</h1>
-      <p style="max-width:420px;margin:0">Two kinds of checks: suggestions Claude made by reading official pages, and items whose rules were unclear. Your choices apply on this device right away.</p>
+      <div class="row" style="gap:22px"><div><div class="stat-n">${pad(total)}</div><div class="k muted">To review</div></div><div><div class="stat-n">${pad(sections.length)}</div><div class="k muted">Groups</div></div></div>
     </div>
-    <section>
-      <div class="section-head"><h2 class="h section-title">Claude's suggestions (${pending.length})</h2><span class="k muted">Read from official pages · quotes checked against the page</span></div>
-      ${pending.length ? pending.map(([id, p], n) => {
-        const it = byId[id];
-        return `<article class="list-item">
-          <span class="idx">${pad(n + 1)}</span>
-          <div class="list-body">
-            <div class="row"><span class="tag bg-${bgFor(it)}">${esc((KIND[it.kind] || {}).label)}</span><span class="k muted">${esc(it.org)} · confidence ${esc(p.confidence)}${p.page_truncated ? " · long page, first part read" : ""}</span></div>
-            <h3 class="h list-title">${esc(it.name)}</h3>
-            ${p.summary ? `<p style="margin:0;font-size:14px">${esc(p.summary)}</p>` : ""}
-            <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">${Object.keys(p.changes).map((k) => `
-              <li style="margin:6px 0"><strong>${esc(FIELD_LABEL[k] || k)}:</strong> ${esc(fmtVal(it[k]))} → <strong>${esc(fmtVal(p.changes[k]))}</strong>
-                ${p.quotes && p.quotes[k] ? `<blockquote style="margin-top:4px">“${esc(p.quotes[k])}”</blockquote>` : ""}</li>`).join("")}</ul>
-          </div>
-          <div class="list-side">
-            <button class="go small dark" data-act="suggest" data-id="${esc(id)}" data-val="accept">Accept</button>
-            <button class="go small" data-act="suggest" data-id="${esc(id)}" data-val="dismiss">Dismiss</button>
-            <a class="go small" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener">Official page ↗</a>
-          </div>
-        </article>`;
-      }).join("") : empty(Object.keys(proposals).length ? "No open suggestions" : "No suggestions yet. Add an ANTHROPIC_API_KEY secret to turn on page reading.")}
-    </section>
-    <section>
-      <div class="section-head"><h2 class="h section-title">Unclear rules (${queue.length})</h2><span class="k muted">Decide whether you can enter</span></div>
-      ${queue.length ? queue.map((i, n) => `
-      <article class="list-item">
-        <span class="idx">${pad(n + 1)}</span>
-        <div class="list-body">
-          <div class="row"><span class="tag bg-${bgFor(i)}">${esc((KIND[i.kind] || {}).label)}</span><span class="k muted">via ${esc(i.source)} · ${esc(i.org)}</span></div>
-          <h3 class="h list-title">${esc(i.name)}</h3>
-          <blockquote>${reasonText(i)}</blockquote>
-        </div>
-        <div class="list-side">
-          <button class="go small dark" data-act="decide" data-id="${esc(i.id)}" data-val="eligible">Eligible</button>
-          <button class="go small" data-act="decide" data-id="${esc(i.id)}" data-val="not_eligible">Not eligible</button>
-          <button class="go small" data-act="decide" data-id="${esc(i.id)}" data-val="ignore">Ignore</button>
-          <a class="go small" href="${esc(safeUrl(i.url))}" target="_blank" rel="noopener">Official page ↗</a>
-        </div>
-      </article>`).join("") : empty("Queue is empty. Nice.")}
-    </section>
+    <p style="margin:0;max-width:640px">Grouped by where items came from. Decisions apply on this device right away; copy them into <code>overrides.yaml</code> to keep them everywhere.</p>
+    ${sections.length ? sections.join("") : empty("Nothing to review. Nice.")}
     ${yaml ? `
     <section>
       <div class="section-head"><h2 class="h section-title">Your decisions (${nDecisions})</h2>
@@ -512,7 +644,7 @@
             <div class="row">
               ${ci > 0 ? `<button class="go small" data-act="move" data-id="${esc(id)}" data-dir="-1" aria-label="Move back">←</button>` : ""}
               ${ci < STAGES.length - 1 ? `<button class="go small dark" data-act="move" data-id="${esc(id)}" data-dir="1" aria-label="Move forward">→</button>` : ""}
-              <a class="go small" href="${esc(safeUrl(i.url))}" target="_blank" rel="noopener">Open ↗</a>
+              <a class="go small" href="${progHref(i)}">Details</a>
               <button class="go small" data-act="remove" data-id="${esc(id)}">Remove</button>
             </div>
           </article>`;
@@ -520,31 +652,35 @@
       </section>`).join("")}</div></div>` : empty("Save something from another tab to start your season")}`;
   }
 
-  const VIEWS = { overview: viewOverview, summer: viewSummer, compete: viewCompete, bigtech: viewBigTech, review: viewReview, tracker: viewTracker };
+  const VIEWS = { overview: viewOverview, summer: viewSummer, compete: viewCompete, bigtech: viewBigTech, review: viewReview, tracker: viewTracker, p: viewProgram };
 
   // ------------------------------------------------------------ rendering & routing
   function route() {
-    const [name, focus] = (location.hash.replace(/^#/, "") || "overview").split("/");
+    const raw = location.hash.replace(/^#/, "") || "overview";
+    const cut = raw.indexOf("/");
+    const name = cut < 0 ? raw : raw.slice(0, cut);
+    let focus = cut < 0 ? "" : raw.slice(cut + 1);
+    try { focus = decodeURIComponent(focus); } catch (e) { /* keep raw */ }
     return { name: VIEWS[name] ? name : "overview", focus };
   }
 
   function render(keepScroll) {
     const { name, focus } = route();
     const y = window.scrollY;
-    document.getElementById("view").innerHTML = VIEWS[name]();
+    document.getElementById("view").innerHTML = VIEWS[name](focus);
+    let section = name;
+    if (name === "p") { const it = state.data.items.find((i) => i.id === focus); section = it ? sectionOf(it) : ""; }
     document.querySelectorAll(".nav a").forEach((a) => {
-      if (a.getAttribute("href") === "#" + name) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+      if (a.getAttribute("href") === "#" + section) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
-    const props = state.data.proposals || {};
-    const reviewCount = state.data.items.filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id] && !["greenhouse", "lever", "simplify"].includes(i.source)).length
-      + Object.entries(props).filter(([id, p]) => p.changes && Object.keys(p.changes).length && !state.suggestions[id]).length;
+    const reviewCount = reviewQueue().length + pendingProposals().length;
     document.querySelector('.nav a[href="#review"] .count').textContent = reviewCount ? ` (${reviewCount})` : "";
     const toggle = document.getElementById("elig-toggle");
     toggle.setAttribute("aria-pressed", String(state.eligibleOnly));
     toggle.classList.toggle("dark", state.eligibleOnly);
     toggle.textContent = state.eligibleOnly ? "Eligible for me · VN" : "Showing everything";
     if (keepScroll) window.scrollTo(0, y);
-    else if (focus) { const el = document.getElementById("item-" + focus); if (el) el.scrollIntoView({ block: "center" }); }
+    else if (focus && name !== "p") { const el = document.getElementById("item-" + focus); if (el) el.scrollIntoView({ block: "center" }); }
     else window.scrollTo(0, 0);
   }
 
@@ -562,6 +698,19 @@
     if (!el || el.tagName === "INPUT") return;
     const { act, id } = el.dataset;
     if (act === "save") { state.tracker[id] = { stage: "saved", note: "", at: new Date().toISOString() }; saveTracker(); toast("Saved to your tracker"); }
+    else if (act === "unsave") { delete state.tracker[id]; saveTracker(); toast("Removed from your tracker"); }
+    else if (act === "more") { const k = el.dataset.key; state.limits[k] = (state.limits[k] || Number(el.dataset.step || PAGE)) + Number(el.dataset.step || PAGE); }
+    else if (act === "layout") { state.layout = el.dataset.val; store.set("layout", state.layout); }
+    else if (act === "bulk") {
+      if (el.dataset.val === "accept-high") {
+        pendingProposals().filter(({ p }) => p.confidence === "high").forEach(({ item }) => { state.suggestions[item.id] = "accept"; });
+        store.set("suggestions", state.suggestions); toast("Accepted high-confidence suggestions");
+      } else if (el.dataset.val === "ignore-unfeatured") {
+        const g = GROUPS.find((x) => x.key === el.dataset.group);
+        const n = reviewQueue().filter((i) => g.test(i) && !i.featured).map((i) => { state.decisions[i.id] = "ignore"; return i; }).length;
+        store.set("decisions", state.decisions); toast(n + " ignored");
+      }
+    }
     else if (act === "remove") { delete state.tracker[id]; saveTracker(); }
     else if (act === "move") {
       const t = state.tracker[id]; const idx = STAGES.findIndex((s) => s.id === t.stage) + Number(el.dataset.dir);
@@ -600,7 +749,12 @@
   document.getElementById("elig-toggle").addEventListener("click", () => {
     state.eligibleOnly = !state.eligibleOnly; store.set("eligibleOnly", state.eligibleOnly); render(true);
   });
-  window.addEventListener("hashchange", () => render(false));
+  window.addEventListener("hashchange", () => { state.limits = {}; render(false); });
+  // Remember which Review groups are open across re-renders.
+  document.addEventListener("toggle", (ev) => {
+    const d = ev.target;
+    if (d.classList && d.classList.contains("rgroup")) state.groupOpen[d.dataset.group] = d.open;
+  }, true);
 
   function ago(iso) {
     const mins = Math.round((Date.now() - Date.parse(iso)) / 60000);
