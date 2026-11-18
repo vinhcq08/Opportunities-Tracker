@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T16:30:58+00:00",
+ "generated_at": "2026-11-18T16:38:59+00:00",
  "profile": {
   "country": "VN",
   "year": 2,
@@ -25,7 +25,7 @@
   "greenhouse:towerresearchcapital": "3 items",
   "lever:binance": "0 items",
   "lever:ninjavan": "0 items",
-  "claude": "skipped (no ANTHROPIC_API_KEY secret)"
+  "claude": "off (turned off in sources.yaml; it uses the paid Claude API)"
  },
  "items": [
   {
@@ -75,7 +75,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:37+00:00"
+   "last_checked": "2026-11-18T16:39:18+00:00"
   },
   {
    "id": "ibm-call-for-code",
@@ -128,7 +128,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T14:24:08+00:00",
-   "last_checked": "2026-11-18T16:31:36+00:00"
+   "last_checked": "2026-11-18T16:39:17+00:00"
   },
   {
    "id": "imagine-cup",
@@ -177,7 +177,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:34+00:00"
+   "last_checked": "2026-11-18T16:39:16+00:00"
   },
   {
    "id": "james-dyson-award",
@@ -227,7 +227,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:51+00:00"
+   "last_checked": "2026-11-18T16:39:33+00:00"
   },
   {
    "id": "kaggle-competitions",
@@ -284,7 +284,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:37+00:00"
+   "last_checked": "2026-11-18T16:39:18+00:00"
   },
   {
    "id": "mit-solve",
@@ -333,7 +333,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:34+00:00"
+   "last_checked": "2026-11-18T16:39:15+00:00"
   },
   {
    "id": "openideo-challenges",
@@ -390,7 +390,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:52+00:00"
+   "last_checked": "2026-11-18T16:39:36+00:00"
   },
   {
    "id": "google-solution-challenge",
@@ -438,7 +438,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:36+00:00"
+   "last_checked": "2026-11-18T16:39:17+00:00"
   },
   {
    "id": "stanford-longevity-design-challenge",
@@ -486,7 +486,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:51+00:00"
+   "last_checked": "2026-11-18T16:39:33+00:00"
   },
   {
    "id": "undergraduate-awards",
@@ -536,7 +536,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T14:24:08+00:00",
-   "last_checked": "2026-11-18T16:31:51+00:00"
+   "last_checked": "2026-11-18T16:39:33+00:00"
   },
   {
    "id": "xprize",
@@ -593,7 +593,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:52+00:00"
+   "last_checked": "2026-11-18T16:39:36+00:00"
   },
   {
    "id": "icpc-asia-vietnam",
@@ -642,7 +642,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:59+00:00"
+   "last_checked": "2026-11-18T16:39:43+00:00"
   },
   {
    "id": "vnoi-olympiad",
@@ -691,7 +691,7 @@
    "fetch_error": "HTTP 403",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:32:00+00:00"
+   "last_checked": "2026-11-18T16:39:43+00:00"
   },
   {
    "id": "devpost-31808",
@@ -729,7 +729,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "3173 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "3176 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1401,7 +1401,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "4162 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "4163 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1545,7 +1545,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "1088 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "1089 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1649,7 +1649,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:13+00:00"
+   "last_checked": "2026-11-18T16:39:14+00:00"
   },
   {
    "id": "devpost-31737",
@@ -1889,7 +1889,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T14:24:08+00:00",
-   "last_checked": "2026-11-18T16:31:06+00:00"
+   "last_checked": "2026-11-18T16:39:07+00:00"
   },
   {
    "id": "devpost-31667",
@@ -1927,7 +1927,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "16333 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "16338 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2118,7 +2118,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "7115 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "7117 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2262,7 +2262,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "1949 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "1950 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2749,7 +2749,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T16:30:58+00:00",
-   "last_checked": "2026-11-18T16:31:33+00:00"
+   "last_checked": "2026-11-18T16:39:15+00:00"
   },
   {
    "id": "citadel-discover-hong-kong",
@@ -2794,7 +2794,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:45+00:00"
+   "last_checked": "2026-11-18T16:39:26+00:00"
   },
   {
    "id": "citadel-discover-singapore",
@@ -2840,7 +2840,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:45+00:00"
+   "last_checked": "2026-11-18T16:39:26+00:00"
   },
   {
    "id": "hrt-explore-singapore",
@@ -2887,7 +2887,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:46+00:00"
+   "last_checked": "2026-11-18T16:39:28+00:00"
   },
   {
    "id": "jane-street-fttp-hkg",
@@ -2932,7 +2932,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:45+00:00"
+   "last_checked": "2026-11-18T16:39:26+00:00"
   },
   {
    "id": "optiver-futurefocus-singapore",
@@ -2978,7 +2978,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:45+00:00"
+   "last_checked": "2026-11-18T16:39:26+00:00"
   },
   {
    "id": "sig-discovery-hong-kong",
@@ -3023,7 +3023,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:46+00:00"
+   "last_checked": "2026-11-18T16:39:28+00:00"
   },
   {
    "id": "jane-street-insight-hkg",
@@ -3071,7 +3071,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:45+00:00"
+   "last_checked": "2026-11-18T16:39:26+00:00"
   },
   {
    "id": "jane-street-portal-sgp",
@@ -3118,7 +3118,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:45+00:00"
+   "last_checked": "2026-11-18T16:39:26+00:00"
   },
   {
    "id": "jane-street-see-hkg",
@@ -3167,7 +3167,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:43+00:00"
+   "last_checked": "2026-11-18T16:39:25+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-6-month-internship-with-allowance-a",
@@ -3708,7 +3708,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:43+00:00"
+   "last_checked": "2026-11-18T16:39:25+00:00"
   },
   {
    "id": "grab-internships",
@@ -3758,7 +3758,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:40+00:00"
+   "last_checked": "2026-11-18T16:39:21+00:00"
   },
   {
    "id": "greenhouse-stripe-8186367",
@@ -4030,7 +4030,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:41+00:00"
+   "last_checked": "2026-11-18T16:39:22+00:00"
   },
   {
    "id": "greenhouse-coinbase-8175873",
@@ -4299,7 +4299,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:42+00:00"
+   "last_checked": "2026-11-18T16:39:23+00:00"
   },
   {
    "id": "gsoc",
@@ -4347,7 +4347,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:53+00:00"
+   "last_checked": "2026-11-18T16:39:37+00:00"
   },
   {
    "id": "lfx-mentorship",
@@ -4396,7 +4396,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:54+00:00"
+   "last_checked": "2026-11-18T16:39:37+00:00"
   },
   {
    "id": "mlh-fellowship",
@@ -4449,7 +4449,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:55+00:00"
+   "last_checked": "2026-11-18T16:39:38+00:00"
   },
   {
    "id": "outreachy",
@@ -4497,7 +4497,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:53+00:00"
+   "last_checked": "2026-11-18T16:39:37+00:00"
   },
   {
    "id": "asean-undergraduate-scholarship",
@@ -4548,7 +4548,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:58+00:00"
+   "last_checked": "2026-11-18T16:39:42+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-chuong-trinh-hoc-bong-amcham-nam-20",
@@ -4642,7 +4642,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:57+00:00"
+   "last_checked": "2026-11-18T16:39:41+00:00"
   },
   {
    "id": "gks-scholarship",
@@ -4691,7 +4691,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:55+00:00"
+   "last_checked": "2026-11-18T16:39:39+00:00"
   },
   {
    "id": "rss-https-opportunitydesk-org-2026-11-18-healthy-futures-masterc",
@@ -4871,7 +4871,7 @@
    "fetch_error": "HTTP 403",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:55+00:00"
+   "last_checked": "2026-11-18T16:39:39+00:00"
   },
   {
    "id": "amgen-scholars",
@@ -4919,7 +4919,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:05+00:00"
+   "last_checked": "2026-11-18T16:39:06+00:00"
   },
   {
    "id": "mitacs-globalink",
@@ -4968,7 +4968,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:30:58+00:00"
+   "last_checked": "2026-11-18T16:38:59+00:00"
   },
   {
    "id": "oist-internship",
@@ -5025,7 +5025,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:00+00:00"
+   "last_checked": "2026-11-18T16:39:01+00:00"
   },
   {
    "id": "nsf-reu",
@@ -5074,7 +5074,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:39+00:00"
+   "last_checked": "2026-11-18T16:39:20+00:00"
   },
   {
    "id": "eth-ssrf",
@@ -5122,7 +5122,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:30:58+00:00"
+   "last_checked": "2026-11-18T16:38:59+00:00"
   },
   {
    "id": "cern-summer-student",
@@ -5169,7 +5169,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:02+00:00"
+   "last_checked": "2026-11-18T16:39:03+00:00"
   },
   {
    "id": "epfl-summer",
@@ -5217,7 +5217,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:30:59+00:00"
+   "last_checked": "2026-11-18T16:39:00+00:00"
   },
   {
    "id": "utokyo-utrip",
@@ -5265,7 +5265,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:04+00:00"
+   "last_checked": "2026-11-18T16:39:05+00:00"
   },
   {
    "id": "kaust-vsrp",
@@ -5322,7 +5322,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:00+00:00"
+   "last_checked": "2026-11-18T16:39:01+00:00"
   },
   {
    "id": "berkeley-summer-sessions",
@@ -5371,7 +5371,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:48+00:00"
+   "last_checked": "2026-11-18T16:39:29+00:00"
   },
   {
    "id": "cambridge-isp",
@@ -5422,7 +5422,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:49+00:00"
+   "last_checked": "2026-11-18T16:39:31+00:00"
   },
   {
    "id": "harvard-summer-school",
@@ -5472,7 +5472,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T14:11:01+00:00",
-   "last_checked": "2026-11-18T16:31:48+00:00"
+   "last_checked": "2026-11-18T16:39:29+00:00"
   },
   {
    "id": "rss-https-opportunitiescorners-com-hzdr-summer-student-program-2",
@@ -5566,7 +5566,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:48+00:00"
+   "last_checked": "2026-11-18T16:39:29+00:00"
   },
   {
    "id": "stanford-summer-session",
@@ -5616,7 +5616,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:31:47+00:00"
+   "last_checked": "2026-11-18T16:39:29+00:00"
   },
   {
    "id": "rss-https-opportunitiescorners-com-summer-programs-in-europe-in-",
@@ -5709,7 +5709,7 @@
    "fetch_error": "TooManyRedirects",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-18T16:32:00+00:00"
+   "last_checked": "2026-11-18T16:39:44+00:00"
   },
   {
    "id": "microsoft-explore",
@@ -5755,7 +5755,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-18T16:31:37+00:00"
+   "last_checked": "2026-11-18T16:39:18+00:00"
   },
   {
    "id": "google-step",
@@ -5801,7 +5801,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-18T16:31:47+00:00"
+   "last_checked": "2026-11-18T16:39:29+00:00"
   }
  ],
  "changes": [
@@ -7168,35 +7168,35 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 54
   },
   "devpost": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 40
   },
   "mlh": {
    "fail_runs": 0,
-   "zero_runs": 8,
+   "zero_runs": 9,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 0
   },
   "simplify": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 1
   },
   "kaggle": {
    "fail_runs": 0,
-   "zero_runs": 7,
+   "zero_runs": 8,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 0
   },
   "challenge.gov": {
@@ -7210,7 +7210,7 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 2
   },
   "Opportunities for Youth": {
@@ -7224,14 +7224,14 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 2
   },
   "UIT forum (latest)": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 7
   },
   "VNOI news": {
@@ -7243,44 +7243,44 @@
   },
   "greenhouse:janestreet": {
    "fail_runs": 0,
-   "zero_runs": 8,
+   "zero_runs": 9,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 0
   },
   "greenhouse:optiver": {
    "fail_runs": 0,
-   "zero_runs": 8,
+   "zero_runs": 9,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 0
   },
   "greenhouse:imc": {
    "fail_runs": 0,
-   "zero_runs": 8,
+   "zero_runs": 9,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 0
   },
   "greenhouse:stripe": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 3
   },
   "greenhouse:databricks": {
    "fail_runs": 0,
-   "zero_runs": 8,
+   "zero_runs": 9,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 0
   },
   "greenhouse:coinbase": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 1
   },
   "greenhouse:airwallex": {
@@ -7294,28 +7294,28 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 2
   },
   "greenhouse:jumptrading": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 6
   },
   "greenhouse:towerresearchcapital": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 3
   },
   "lever:binance": {
    "fail_runs": 0,
-   "zero_runs": 8,
+   "zero_runs": 9,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 0
   },
   "lever:shopback": {
@@ -7327,9 +7327,9 @@
   },
   "lever:ninjavan": {
    "fail_runs": 0,
-   "zero_runs": 8,
+   "zero_runs": 9,
    "ever_nonzero": false,
-   "last_ok": "2026-11-18T16:30:58+00:00",
+   "last_ok": "2026-11-18T16:38:59+00:00",
    "last_count": 0
   }
  },
