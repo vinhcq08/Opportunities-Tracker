@@ -1,0 +1,30 @@
+# Automatic feeds besides the curated programs.yaml.
+# Every feed and board is reported separately in the run log and on the dashboard footer,
+# so one that breaks shows up without stopping the others.
+
+# Opportunity sites (RSS/Atom). Items go to the Review queue as "check rules";
+# they never become "Eligible" without your decision.
+feeds:
+  - name: Opportunity Desk
+    url: https://opportunitydesk.org/feed/
+  - name: Opportunities for Youth
+    url: https://opportunitiesforyouth.org/feed/
+  - name: Opportunities Corners
+    url: https://opportunitiescorners.com/feed/
+  # Vietnamese sources
+  - name: UIT forum (latest)
+    url: https://forum.uit.edu.vn/latest.rss
+    vietnamese: true
+  - name: VNOI news
+    url: https://vnoi.info/feed/
+    vietnamese: true
+
+# Company job boards, filtered to internships located in Vietnam, Singapore or remote APAC.
+# greenhouse: the board token in boards.greenhouse.io/<token>; lever: the slug in jobs.lever.co/<slug>.
+job_boards:
+  greenhouse: [janestreet, optiver, imc, stripe, databricks, coinbase, airwallex, wehrtyou, jumptrading, towerresearchcapital]
+  lever: [binance, shopback, ninjavan]
+
+# Kaggle needs KAGGLE_USERNAME and KAGGLE_KEY repository secrets (free account → Settings → API).
+kaggle: true
+challenge_gov: true

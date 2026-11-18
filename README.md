@@ -8,10 +8,14 @@ Every 6 hours a GitHub Action checks the sources, works out eligibility, records
 
 | Source | What | File |
 |---|---|---|
-| Curated registry | Named programs (NASA, MIT, ETH, OIST, Mitacs, Hult Prize, Grab, VNG…). Each official page is watched for "applications open/closed". | `programs.yaml`, `tracker/sources/registry.py` |
-| Devpost | Open and upcoming hackathons, kept to online or Asia-based ones | `tracker/sources/devpost.py` |
-| MLH | Season events, online or in Asia (best effort) | `tracker/sources/mlh.py` |
-| SimplifyJobs | Internship feed, kept to roles in Vietnam/Singapore | `tracker/sources/simplify.py` |
+| Curated list | Named programs: summer research, scholarships, insight programs, open-source programs, contests, competitions. Each official page is watched for "applications open/closed". | `programs.yaml` |
+| Opportunity sites | RSS from global and Vietnamese opportunity sites; items go to the Review tab | `sources.yaml` → `feeds` |
+| Job boards | Greenhouse and Lever boards, internships in Vietnam/Singapore only | `sources.yaml` → `job_boards` |
+| Devpost, MLH | Hackathons, online or in Asia | `tracker/sources/` |
+| Kaggle, Challenge.gov | Competitions and prize challenges | `sources.yaml` |
+| SimplifyJobs | Internship feed, Vietnam/Singapore roles | `tracker/sources/simplify.py` |
+
+Every run also writes `data/deadlines.ics`, a calendar you can subscribe to from the Overview tab, and checks each source's health so a broken feed raises an alert.
 
 Each item gets an eligibility label for the profile in `profile.yaml`:
 
@@ -23,7 +27,15 @@ Each item gets an eligibility label for the profile in `profile.yaml`:
 ## Setup (once)
 
 1. **Turn on Pages:** go to *Settings → Pages → Build and deployment → Source* and choose **GitHub Actions**.
-2. **Optional: add a Discord digest.** Create a webhook (*Discord channel → Edit → Integrations → Webhooks*). Add it as a repository secret named `DISCORD_WEBHOOK_URL` (*Settings → Secrets and variables → Actions*).
+2. **Optional extras** go in *Settings → Secrets and variables → Actions → New repository secret*. Each one switches a feature on:
+
+   | Secret | Turns on |
+   |---|---|
+   | `DISCORD_WEBHOOK_URL` | Digest in a Discord channel (*channel → Edit → Integrations → Webhooks*) |
+   | `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` | Digest on Telegram: create a bot with @BotFather, message it once, then read your chat id from `https://api.telegram.org/bot<token>/getUpdates` |
+   | `ANTHROPIC_API_KEY` | Claude reads official pages of unverified programs and suggests eligibility and deadlines with quotes (up to 8 changed pages per run) |
+   | `KAGGLE_USERNAME` + `KAGGLE_KEY` | Live Kaggle competitions (*kaggle.com → Settings → API → Create New Token*) |
+
 3. **Run it the first time:** go to *Actions → Update opportunities → Run workflow*. After that it runs every 6 hours.
 
 The site is at `https://<user>.github.io/Opportunities-Tracker/`.
@@ -32,7 +44,8 @@ The site is at `https://<user>.github.io/Opportunities-Tracker/`.
 
 - **Verify a program:** open its page, set `nationality_ok`, `enrollment_req`, `class_years` and `deadline` in `programs.yaml`, then set `verified: true`.
 - **Add a program:** copy an entry in `programs.yaml`. The header comments list every field.
-- **Review queue:** decide items in the dashboard's Review tab, click **Copy for overrides.yaml**, paste the result into `overrides.yaml` and commit.
+- **Review tab:** accept Claude's suggestions and decide unclear items, click **Copy for overrides.yaml**, paste it into `overrides.yaml` (replacing its contents) and commit.
+- **Calendar:** on the Overview tab, click *Subscribe in Google Calendar*; each dated card also has a **+ Calendar** button.
 - **Tracker:** saved items and notes live in your browser (localStorage) on each device.
 
 ## Run locally

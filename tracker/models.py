@@ -6,8 +6,8 @@ import hashlib
 import re
 
 KINDS = {
-    "underclassmen", "insight", "internship", "summer_research", "summer_school",
-    "hackathon", "challenge", "business_comp",
+    "underclassmen", "insight", "internship", "open_source", "summer_research", "summer_school",
+    "scholarship", "travel_grant", "hackathon", "challenge", "business_comp", "contest",
 }
 
 # Every record carries all of these keys; sources fill what they know.

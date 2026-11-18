@@ -72,6 +72,7 @@ def _watch(rec: dict, watch: dict) -> None:
         return
     text = http.page_text(resp.text)
     rec["page_hash"] = http.text_hash(text)
+    rec["_page_text"] = text  # read by claude_reader; never written to the published data
     found = http.detect_status(text, watch["watch_open"], watch["watch_closed"])
     if found != "unknown":
         rec["status"] = found

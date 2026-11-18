@@ -19,15 +19,19 @@
     business_comp: { label: "Business", bg: "yellow" },
     underclassmen: { label: "Year 1–2 program", bg: "peri" },
     insight: { label: "Insight program", bg: "yellow" },
+    open_source: { label: "Open source", bg: "lime" },
+    scholarship: { label: "Scholarship", bg: "lime" },
+    travel_grant: { label: "Travel grant", bg: "coral" },
+    contest: { label: "Contest", bg: "peri" },
     internship: { label: "Internship", bg: "sand" },
   };
   const REGION_BG = { asia: "coral", europe: "peri", north_america: "lime", middle_east: "yellow", global: "sand" };
   const REGION_LABEL = { asia: "Asia", europe: "Europe", north_america: "North America", middle_east: "Middle East", global: "Global" };
   const ELIG_LABEL = { eligible: "VN ✓ Eligible", likely: "Likely", check: "Check rules", not_eligible: "Not eligible", ignore: "Ignored" };
   const FUND_LABEL = { fully_funded: "Fully funded", stipend: "Stipend", travel_covered: "Travel covered", free: "Free to enter", fee_required: "Fee" };
-  const COMPETE = ["hackathon", "challenge", "business_comp"];
-  const SUMMER = ["summer_research", "summer_school"];
-  const TECH = ["insight", "underclassmen", "internship"];
+  const COMPETE = ["hackathon", "challenge", "business_comp", "contest"];
+  const SUMMER = ["summer_research", "summer_school", "scholarship", "travel_grant"];
+  const TECH = ["insight", "open_source", "underclassmen", "internship"];
 
   // ------------------------------------------------------------ persistent personal state
   const store = {
@@ -44,6 +48,7 @@
     year: store.get("year", "profile"),
     tracker: store.get("tracker", {}),      // id -> { stage, note, at }
     decisions: store.get("decisions", {}),  // id -> eligible | not_eligible | ignore
+    suggestions: store.get("suggestions", {}),  // id -> accept | dismiss (Claude's proposals)
     ui: { summerFunded: false, summerRegion: "all", competeType: "all", featuredOnly: true, onlineOnly: false, inVietnam: false },
   };
 
@@ -144,6 +149,44 @@
     if (t) return `<a class="go small ${extraClass || ""}" href="#tracker">${esc(STAGES.find((s) => s.id === t.stage).label)}</a>`;
     return `<button class="go small ${extraClass || ""}" data-act="save" data-id="${esc(item.id)}">Save</button>`;
   }
+  // ---- calendar
+  const ymd = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");
+  function calLink(item, cls) {
+    const d = daysLeft(item);
+    if (d == null || d < 0) return "";
+    const start = new Date(item.deadline + "T00:00:00Z"), end = new Date(start.getTime() + DAY);
+    const q = new URLSearchParams({
+      action: "TEMPLATE",
+      text: "Deadline: " + item.name,
+      dates: ymd(start) + "/" + ymd(end),
+      details: `${item.org}. ${ELIG_LABEL[label(item)] || ""}\n${item.url}`,
+    });
+    return `<a class="go small ${cls || ""}" href="https://calendar.google.com/calendar/render?${esc(q.toString())}" target="_blank" rel="noopener" title="Add this deadline to Google Calendar">+ Calendar</a>`;
+  }
+  function feedUrl() { return new URL("data/deadlines.ics", location.href).href; }
+  function subscribeLinks() {
+    const webcal = feedUrl().replace(/^https?:/, "webcal:");
+    return `<div class="row" style="margin-top:12px">
+      <a class="go small dark" href="https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcal)}" target="_blank" rel="noopener">Subscribe in Google Calendar</a>
+      <a class="go small" href="${esc(webcal)}">Apple / Outlook</a></div>
+      <p style="font-size:12px;margin:8px 0 0">All deadlines you can enter, updated every 6 hours. Google shows its own default reminders for subscribed calendars; Apple and Outlook use the 14- and 3-day reminders.</p>`;
+  }
+  function icsFor(list) {
+    const esc2 = (t) => String(t || "").replace(/[\\;,]/g, (c) => "\\" + c).replace(/\n/g, "\\n");
+    const stamp = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z";
+    const out = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Opportunity Tracker//Saved//EN"];
+    list.forEach((i) => {
+      const start = new Date(i.deadline + "T00:00:00Z"), end = new Date(start.getTime() + DAY);
+      out.push("BEGIN:VEVENT", `UID:${i.id}@opportunity-tracker-saved`, `DTSTAMP:${stamp}`,
+        `DTSTART;VALUE=DATE:${ymd(start)}`, `DTEND;VALUE=DATE:${ymd(end)}`,
+        `SUMMARY:${esc2("Deadline: " + i.name)}`, `DESCRIPTION:${esc2(i.url)}`, `URL:${i.url}`);
+      [14, 3].forEach((n) => out.push("BEGIN:VALARM", "ACTION:DISPLAY", `DESCRIPTION:${esc2(i.name + " closes in " + n + " days")}`, `TRIGGER:-P${n}D`, "END:VALARM"));
+      out.push("END:VEVENT");
+    });
+    out.push("END:VCALENDAR");
+    return out.join("\r\n") + "\r\n";
+  }
+
   function openLink(item, cls) {
     return `<a class="go small ${cls || "dark"}" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener">Open ↗</a>`;
   }
@@ -170,7 +213,7 @@
       ${item.manual_check ? `<p class="reason"><strong>Check manually:</strong> this site blocks automatic checks, so open it to see whether applications are open.</p>` : ""}
       <div class="block-foot">
         <div><div class="big">${esc(big.n)}</div><div class="k">${esc(big.l)}</div></div>
-        <div class="row">${saveButton(item)}${openLink(item)}</div>
+        <div class="row">${saveButton(item)}${calLink(item)}${openLink(item)}</div>
       </div>
     </article>`;
   }
@@ -202,7 +245,7 @@
           <h2 class="h cover-title">${esc(item.name)}</h2>
           <p>${esc(item.org)}${where(item) ? " · " + esc(where(item)) : ""}${item.summary ? ". " + esc(item.summary) : ""}</p>
         </div>
-        <div class="row">${openLink(item, "on-dark fill")}${saveButton(item, "on-dark")}</div>
+        <div class="row">${openLink(item, "on-dark fill")}${saveButton(item, "on-dark")}${calLink(item, "on-dark")}</div>
       </div>
       <div class="cover-big"><span class="n">${esc(big.n)}</span><span class="k">${esc(big.l)}</span></div>
     </article>`;
@@ -245,6 +288,7 @@
         <h2 class="k" id="due-h" style="margin:0 0 6px">Closing soon</h2>
         ${soon.length ? soon.map((i) => `<a class="due-row" href="#${sectionOf(i)}/${esc(i.id)}"><span>${esc(i.name)}</span><span>${pad(daysLeft(i))}d</span></a>`).join("")
           : `<p class="k" style="border-top:2px solid #0A0A0A;padding-top:10px">No dated deadlines yet. Add them in programs.yaml as you verify.</p>`}
+        ${subscribeLinks()}
       </aside>
     </div>
     <section aria-labelledby="new-h">
@@ -257,7 +301,7 @@
             <h3 class="h list-title">${esc(i.name)}</h3>
             <span class="muted" style="font-size:14px">${esc(where(i))}</span>
           </div>
-          <div class="list-side">${eligTag(i)}${statusTag(i)}${saveButton(i)}${openLink(i)}</div>
+          <div class="list-side">${eligTag(i)}${statusTag(i)}${saveButton(i)}${calLink(i)}${openLink(i)}</div>
         </article>`).join("") : empty("Nothing new in the last 7 days")}
     </section>
     <section>
@@ -315,7 +359,7 @@
     if (u.onlineOnly) list = list.filter((i) => i.format === "online" || i.format === "hybrid");
     if (u.inVietnam) list = list.filter((i) => /viet|hanoi|ho chi minh|da nang/i.test(`${i.country} ${i.city} ${i.summary}`));
     list.sort(bySoonest);
-    const types = [["all", "All"], ["hackathon", "Hackathons"], ["challenge", "Innovation"], ["business_comp", "Business"]];
+    const types = [["all", "All"], ["hackathon", "Hackathons"], ["challenge", "Innovation"], ["business_comp", "Business"], ["contest", "Contests"]];
     return `
     <h1 class="h headline">Build. Pitch.<br><em>Win.</em></h1>
     <div class="types" role="group" aria-label="Type">${types.map(([v, l]) => `<button data-act="ui" data-key="competeType" data-val="${v}" aria-pressed="${u.competeType === v}">${l}</button>`).join("")}</div>
@@ -333,12 +377,16 @@
     const all = items(TECH);
     const vis = all.filter(isVisible).sort(bySoonest);
     const insight = vis.filter((i) => i.kind === "insight");
-    const named = vis.filter((i) => i.source === "registry" && i.kind !== "insight");
+    const oss = vis.filter((i) => i.kind === "open_source");
+    const named = vis.filter((i) => i.source === "registry" && i.kind !== "insight" && i.kind !== "open_source");
     const roles = vis.filter((i) => i.source !== "registry");
     return `
     <h1 class="h headline">Tech &amp; quant.<br><em>Get in early.</em></h1>
     <section><h2 class="k" style="margin:0 0 12px">Insight programs · Year 1–2</h2>
       ${insight.length ? `<div class="grid">${insight.map((i) => block(i)).join("")}</div>` : empty("No insight programs open to you right now")}
+    </section>
+    <section><h2 class="k" style="margin:0 0 12px">Open source &amp; remote · paid, from anywhere</h2>
+      ${oss.length ? `<div class="grid">${oss.map((i) => block(i)).join("")}</div>` : empty("No open-source programs right now")}
     </section>
     <section><h2 class="k" style="margin:0 0 12px">Programs &amp; career pages</h2>
       ${named.length ? `<div class="grid">${named.map((i) => block(i)).join("")}</div>` : empty("No programs match")}
@@ -353,21 +401,69 @@
     ${hiddenList(all)}`;
   }
 
+  const FIELD_LABEL = { nationality_ok: "Nationality", enrollment_req: "Who can apply", class_years: "Years of study", deadline: "Deadline", funding: "Funding" };
+  const fmtVal = (v) => Array.isArray(v) ? (v.length ? v.join(", ") : "—") : (v == null || v === "" ? "—" : String(v).replace(/_/g, " "));
+
+  function yamlScalar(v) {
+    if (Array.isArray(v)) return "[" + v.join(", ") + "]";
+    return /^[\w.-]+$/.test(String(v)) ? String(v) : JSON.stringify(String(v));
+  }
+
+  function exportYaml() {
+    const decided = Object.entries(state.decisions);
+    const proposals = (state.data && state.data.proposals) || {};
+    const accepted = Object.entries(state.suggestions).filter(([id, d]) => d === "accept" && proposals[id]);
+    let out = "";
+    if (decided.length) out += "overrides:\n" + decided.map(([id, d]) => `  ${id}:\n    eligible_for_me: ${d}\n    reason: Decided in the review queue`).join("\n") + "\n";
+    if (accepted.length) out += (out ? "\n" : "") + "fields:\n" + accepted.map(([id]) => {
+      const ch = proposals[id].changes || {};
+      return `  ${id}:\n` + Object.keys(ch).map((k) => `    ${k}: ${yamlScalar(ch[k])}`).join("\n") + "\n    verified: true";
+    }).join("\n") + "\n";
+    return out;
+  }
+
   function viewReview() {
     const queue = items().filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id]);
-    const decided = Object.entries(state.decisions);
-    const yaml = decided.length ? "overrides:\n" + decided.map(([id, d]) => `  ${id}:\n    eligible_for_me: ${d}\n    reason: Decided in the review queue`).join("\n") : "";
+    const byId = Object.fromEntries(state.data.items.map((i) => [i.id, i]));
+    const proposals = state.data.proposals || {};
+    const pending = Object.entries(proposals).filter(([id, p]) => byId[id] && p.changes && Object.keys(p.changes).length && !state.suggestions[id]);
+    const nDecisions = Object.keys(state.decisions).length + Object.values(state.suggestions).filter((d) => d === "accept").length;
+    const yaml = exportYaml();
     return `
     <div class="row" style="justify-content:space-between;align-items:flex-end;gap:16px">
       <h1 class="h headline">You decide.</h1>
-      <p style="max-width:420px;margin:0">These say “check rules”: the rules could not tell whether students in Vietnam can enter. Read the official page, then decide. Decisions apply on this device right away.</p>
+      <p style="max-width:420px;margin:0">Two kinds of checks: suggestions Claude made by reading official pages, and items whose rules were unclear. Your choices apply on this device right away.</p>
     </div>
-    <div>${queue.length ? queue.map((i, n) => `
+    <section>
+      <div class="section-head"><h2 class="h section-title">Claude's suggestions (${pending.length})</h2><span class="k muted">Read from official pages · quotes checked against the page</span></div>
+      ${pending.length ? pending.map(([id, p], n) => {
+        const it = byId[id];
+        return `<article class="list-item">
+          <span class="idx">${pad(n + 1)}</span>
+          <div class="list-body">
+            <div class="row"><span class="tag bg-${bgFor(it)}">${esc((KIND[it.kind] || {}).label)}</span><span class="k muted">${esc(it.org)} · confidence ${esc(p.confidence)}${p.page_truncated ? " · long page, first part read" : ""}</span></div>
+            <h3 class="h list-title">${esc(it.name)}</h3>
+            ${p.summary ? `<p style="margin:0;font-size:14px">${esc(p.summary)}</p>` : ""}
+            <ul style="margin:6px 0 0;padding-left:18px;font-size:15px">${Object.keys(p.changes).map((k) => `
+              <li style="margin:6px 0"><strong>${esc(FIELD_LABEL[k] || k)}:</strong> ${esc(fmtVal(it[k]))} → <strong>${esc(fmtVal(p.changes[k]))}</strong>
+                ${p.quotes && p.quotes[k] ? `<blockquote style="margin-top:4px">“${esc(p.quotes[k])}”</blockquote>` : ""}</li>`).join("")}</ul>
+          </div>
+          <div class="list-side">
+            <button class="go small dark" data-act="suggest" data-id="${esc(id)}" data-val="accept">Accept</button>
+            <button class="go small" data-act="suggest" data-id="${esc(id)}" data-val="dismiss">Dismiss</button>
+            <a class="go small" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener">Official page ↗</a>
+          </div>
+        </article>`;
+      }).join("") : empty(Object.keys(proposals).length ? "No open suggestions" : "No suggestions yet. Add an ANTHROPIC_API_KEY secret to turn on page reading.")}
+    </section>
+    <section>
+      <div class="section-head"><h2 class="h section-title">Unclear rules (${queue.length})</h2><span class="k muted">Decide whether you can enter</span></div>
+      ${queue.length ? queue.map((i, n) => `
       <article class="list-item">
         <span class="idx">${pad(n + 1)}</span>
         <div class="list-body">
           <div class="row"><span class="tag bg-${bgFor(i)}">${esc((KIND[i.kind] || {}).label)}</span><span class="k muted">via ${esc(i.source)} · ${esc(i.org)}</span></div>
-          <h2 class="h list-title">${esc(i.name)}</h2>
+          <h3 class="h list-title">${esc(i.name)}</h3>
           <blockquote>${reasonText(i)}</blockquote>
         </div>
         <div class="list-side">
@@ -376,12 +472,13 @@
           <button class="go small" data-act="decide" data-id="${esc(i.id)}" data-val="ignore">Ignore</button>
           <a class="go small" href="${esc(safeUrl(i.url))}" target="_blank" rel="noopener">Official page ↗</a>
         </div>
-      </article>`).join("") : empty("Queue is empty. Nice.")}</div>
-    ${decided.length ? `
+      </article>`).join("") : empty("Queue is empty. Nice.")}
+    </section>
+    ${yaml ? `
     <section>
-      <div class="section-head"><h2 class="h section-title">Your decisions (${decided.length})</h2>
+      <div class="section-head"><h2 class="h section-title">Your decisions (${nDecisions})</h2>
         <div class="row"><button class="go small dark" data-act="copy">Copy for overrides.yaml</button><button class="go small" data-act="undo-all">Undo all</button></div></div>
-      <p class="muted" style="font-size:14px">Paste into <code>overrides.yaml</code> in the repo and commit, so the digest and other devices use them too.</p>
+      <p class="muted" style="font-size:14px">Paste into <code>overrides.yaml</code> in the repo (replacing its contents) and commit, so the digest, the calendar and your other devices use them too.</p>
       <textarea class="export" readonly aria-label="Decisions as YAML">${esc(yaml)}</textarea>
     </section>` : ""}`;
   }
@@ -393,7 +490,11 @@
     return `
     <div class="row" style="justify-content:space-between;align-items:flex-end;gap:16px">
       <h1 class="h headline">Your season.</h1>
-      <p style="max-width:380px;margin:0">${entries.length} saved on this device. Use the arrows to move a card along.</p>
+      <div style="max-width:420px;display:flex;flex-direction:column;gap:10px">
+        <p style="margin:0">${entries.length} saved on this device. Use the arrows to move a card along.</p>
+        ${entries.some(([id]) => byId[id] && daysLeft(byId[id]) != null && daysLeft(byId[id]) >= 0)
+          ? `<button class="go small dark" data-act="ics" style="align-self:flex-start">Download my deadlines (.ics)</button>` : ""}
+      </div>
     </div>
     ${entries.length ? `<div class="scroll-x"><div class="board">${cols.map((c, ci) => `
       <section class="col" aria-label="${esc(c.label)}">
@@ -433,8 +534,10 @@
     document.querySelectorAll(".nav a").forEach((a) => {
       if (a.getAttribute("href") === "#" + name) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
-    const reviewCount = state.data.items.filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id]).length;
-    document.querySelector('.nav a[href="#review"]').textContent = `Review (${reviewCount})`;
+    const props = state.data.proposals || {};
+    const reviewCount = state.data.items.filter((i) => i.eligible_for_me === "check" && !state.decisions[i.id]).length
+      + Object.entries(props).filter(([id, p]) => p.changes && Object.keys(p.changes).length && !state.suggestions[id]).length;
+    document.querySelector('.nav a[href="#review"] .count').textContent = reviewCount ? ` (${reviewCount})` : "";
     const toggle = document.getElementById("elig-toggle");
     toggle.setAttribute("aria-pressed", String(state.eligibleOnly));
     toggle.classList.toggle("dark", state.eligibleOnly);
@@ -464,7 +567,17 @@
       t.stage = STAGES[Math.max(0, Math.min(STAGES.length - 1, idx))].id; t.at = new Date().toISOString(); saveTracker();
     }
     else if (act === "decide") { state.decisions[id] = el.dataset.val; store.set("decisions", state.decisions); toast("Decision saved"); }
-    else if (act === "undo-all") { state.decisions = {}; store.set("decisions", {}); }
+    else if (act === "ics") {
+      const byId = Object.fromEntries(state.data.items.map((i) => [i.id, i]));
+      const list = Object.keys(state.tracker).map((k) => byId[k]).filter((i) => i && daysLeft(i) != null && daysLeft(i) >= 0);
+      const url = URL.createObjectURL(new Blob([icsFor(list)], { type: "text/calendar" }));
+      const a = document.createElement("a"); a.href = url; a.download = "my-deadlines.ics"; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+      toast(list.length + " deadline" + (list.length === 1 ? "" : "s") + " downloaded");
+      return;
+    }
+    else if (act === "undo-all") { state.decisions = {}; state.suggestions = {}; store.set("decisions", {}); store.set("suggestions", {}); }
+    else if (act === "suggest") { state.suggestions[id] = el.dataset.val; store.set("suggestions", state.suggestions); toast(el.dataset.val === "accept" ? "Accepted" : "Dismissed"); }
     else if (act === "copy") {
       const text = document.querySelector("textarea.export").value;
       (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(() => toast("Copied"), () => { document.querySelector("textarea.export").select(); toast("Press Ctrl+C to copy"); });
@@ -503,7 +616,11 @@
       state.data = data;
       const d = nowICT();
       document.getElementById("issue").textContent = `${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()} · Updated ${ago(data.generated_at)}`;
-      document.getElementById("footer").innerHTML = `<p class="k">Sources: ${Object.entries(data.sources || {}).map(([k, v]) => `${esc(k)} ${esc(v)}`).join(" · ")}</p>
+      const problems = data.source_problems || [];
+      const srcs = Object.entries(data.sources || {});
+      document.getElementById("footer").innerHTML = `${problems.length ? `<p class="k" style="background:var(--yellow);padding:8px 12px;border-radius:4px">Source trouble: ${esc(problems.join(" · "))}</p>` : ""}
+        <details><summary class="k" style="cursor:pointer;min-height:28px">${srcs.length} sources · ${srcs.filter(([, v]) => String(v).startsWith("FAILED")).length} failed this run</summary>
+        <ul style="columns:2 240px;font-size:13px;padding-left:18px">${srcs.map(([k, v]) => `<li>${esc(k)}: ${esc(v)}</li>`).join("")}</ul></details>
         <p class="muted">Always confirm dates and eligibility on the official page. Deadlines are shown in Vietnam time (UTC+7). Labels: <strong>Eligible</strong> = verified, <strong>Likely</strong> = rules look open but unverified, <strong>Check rules</strong> = unclear.</p>`;
       render(false);
     })

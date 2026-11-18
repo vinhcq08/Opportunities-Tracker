@@ -17,8 +17,8 @@ from pathlib import Path
 import yaml
 
 from . import diff as diffing
-from . import eligibility, notify
-from .sources import devpost, mlh, registry, simplify
+from . import calendar_ics, claude_reader, eligibility, health, notify
+from .sources import aggregators, ats, devpost, mlh, prizes, registry, simplify
 
 ROOT = Path(__file__).resolve().parent.parent
 ICT = dt.timezone(dt.timedelta(hours=7))
@@ -35,13 +35,28 @@ def collect(today: dt.date, offline: bool) -> tuple[list[dict], dict[str, str]]:
     if offline:
         return items, report
 
-    for name, fn in (("devpost", devpost.fetch), ("mlh", lambda: mlh.fetch(today)), ("simplify", simplify.fetch)):
+    config = load_yaml(ROOT / "sources.yaml")
+    single = [("devpost", devpost.fetch), ("mlh", lambda: mlh.fetch(today)), ("simplify", simplify.fetch)]
+    if config.get("kaggle"):
+        single.append(("kaggle", prizes.fetch_kaggle))
+    if config.get("challenge_gov"):
+        single.append(("challenge.gov", prizes.fetch_challenge_gov))
+    for name, fn in single:
         try:
             got = fn()
             items.extend(got)
             report[name] = f"{len(got)} items"
         except Exception as exc:  # one broken source must not stop the run
             report[name] = f"FAILED: {type(exc).__name__}: {exc}"[:200]
+
+    # Multi-feed sources report each feed or board on its own line.
+    for fetcher, arg in ((aggregators.fetch, (config.get("feeds") or [], today)), (ats.fetch, (config.get("job_boards") or {},))):
+        try:
+            got, sub = fetcher(*arg)
+            items.extend(got)
+            report.update(sub)
+        except Exception as exc:
+            report[fetcher.__module__.rsplit(".", 1)[-1]] = f"FAILED: {type(exc).__name__}"
     return items, report
 
 
@@ -55,16 +70,29 @@ def main(argv: list[str] | None = None) -> int:
     now = dt.datetime.now(dt.timezone.utc)
     today = now.astimezone(ICT).date()
     profile = load_yaml(ROOT / "profile.yaml")
-    overrides = load_yaml(ROOT / "overrides.yaml").get("overrides", {})
+    override_file = load_yaml(ROOT / "overrides.yaml")
+    overrides = override_file.get("overrides") or {}
+    field_overrides = override_file.get("fields") or {}
 
     items, report = collect(today, args.offline)
     # Drop duplicates (the same event can come from two sources); first source wins.
     unique: dict[str, dict] = {}
     for item in items:
         unique.setdefault(item["id"], item)
-    items = eligibility.apply(list(unique.values()), profile, overrides)
+    items = list(unique.values())
+    # Accepted suggestions (from the Review tab) overwrite fields of the curated entries.
+    for item in items:
+        for key, value in (field_overrides.get(item["id"]) or {}).items():
+            if key in item and not key.startswith("_"):
+                item[key] = value
+    items = eligibility.apply(items, profile, overrides)
 
     prev = json.loads(args.out.read_text(encoding="utf-8")) if args.out.exists() else {}
+    proposals, report["claude"] = claude_reader.run(items, prev.get("proposals", {}), profile, today)
+    for pid in field_overrides:  # an accepted suggestion is done
+        proposals.pop(pid, None)
+    for item in items:
+        item.pop("_page_text", None)
     if args.offline:
         # Offline runs keep what the last online run learned from the pages.
         old = {p["id"]: p for p in prev.get("items", [])}
@@ -87,23 +115,35 @@ def main(argv: list[str] | None = None) -> int:
     if args.dry_run:
         return 0
 
+    source_health, health_alerts = health.update(prev.get("health", {}), report, stamp)
+    for line in health_alerts:
+        print(f"health     {line}")
+
     out = {
         "generated_at": stamp,
         "profile": profile,
         "sources": report,
         "items": sorted(items, key=lambda i: (i["kind"], i["name"].lower())),
         "changes": diffing.merge_history(prev.get("changes", []), changes),
+        "proposals": proposals,
+        "health": source_health,
+        "source_problems": health.problems(source_health),
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    ics = calendar_ics.build(items, today, now, os.environ.get("SITE_URL", ""))
+    (args.out.parent / "deadlines.ics").write_text(ics, encoding="utf-8", newline="")
 
-    text = notify.digest(changes, os.environ.get("SITE_URL", ""))
-    if text and prev:  # no digest for the very first run, which would list everything as new
-        print(text)
+    text = notify.digest(changes, os.environ.get("SITE_URL", "")) if prev else ""  # no digest on the very first run
+    extra = notify.health_digest(health_alerts)
+    message = "\n\n".join(t for t in (text, extra) if t)
+    if message:
+        print(message)
         try:
-            notify.send(text)
+            sent = notify.send(message)
+            print("sent to", ", ".join(sent) if sent else "no channel (none configured)")
         except Exception as exc:
-            print(f"digest not sent: {exc}", file=sys.stderr)
+            print(f"digest not fully sent: {exc}", file=sys.stderr)
     return 0
 
 

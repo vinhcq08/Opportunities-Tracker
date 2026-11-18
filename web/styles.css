@@ -47,6 +47,7 @@ button { font: inherit; }
   padding: 12px 0; border-bottom: 4px solid transparent; }
 .nav a:hover { border-bottom-color: var(--ink); color: var(--ink); }
 .nav a[aria-current="page"] { border-bottom-color: var(--accent); color: var(--accent); }
+.nav .short { display: none; }
 
 main.wrap { padding-top: 28px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 26px; }
 
@@ -179,6 +180,8 @@ footer { border-top: 3px solid var(--ink); padding: 16px 0 40px; font-size: 13px
     border-bottom: 0; flex-wrap: nowrap; justify-content: space-around; column-gap: 0; padding-bottom: env(safe-area-inset-bottom); }
   .nav a { font-size: 10px; letter-spacing: 0; white-space: nowrap; padding: 14px 2px; border-bottom: 0; border-top: 4px solid transparent; }
   .nav a[aria-current="page"] { border-top-color: var(--accent); }
+  .nav .long { display: none; }
+  .nav .short { display: inline; }
   main.wrap { padding-bottom: 96px; }
   .cover { padding: 18px; min-height: 0; }
   .idx { width: 48px; font-size: 34px; }

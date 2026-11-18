@@ -10,8 +10,8 @@
 #   4. When the page shows this year's date, set deadline: YYYY-MM-DD (23:59 Vietnam time).
 #
 # FIELD VALUES
-#   kind:            underclassmen | insight | internship | summer_research | summer_school |
-#                    hackathon | challenge | business_comp
+#   kind:            underclassmen | insight | internship | open_source | summer_research |
+#                    summer_school | scholarship | travel_grant | hackathon | challenge | business_comp | contest
 #   org_type:        big_tech | government_space | university | nonprofit | local_company | other
 #   region:          asia | europe | north_america | middle_east | global
 #   format:          online | in_person | hybrid
@@ -48,6 +48,7 @@ programs:
     featured: true
     name: Student Summer Research Fellowship
     url: https://inf.ethz.ch/studies/summer-research-fellowship.html
+    deadline: 2026-12-16
     summary: Summer research in the Department of Computer Science for strong undergraduates worldwide.
     region: europe
     country: Switzerland
@@ -55,6 +56,7 @@ programs:
     funding: fully_funded
     nationality_ok: global
     window: [11, 12, 1]
+    notes: "2027 call: deadline 16 Dec 2026, 13:00 CET, applied through SiROP; results by end of February. Dates from public listings; confirm on the official page."
 
   - id: epfl-summer
     kind: summer_research
@@ -63,6 +65,7 @@ programs:
     featured: true
     name: Summer@EPFL
     url: https://summer.epfl.ch/
+    deadline: 2026-11-29
     summary: Research internship in computer and communication sciences.
     region: europe
     country: Switzerland
@@ -70,6 +73,7 @@ programs:
     funding: fully_funded
     nationality_ok: global
     window: [10, 11, 12]
+    notes: 2027 deadline listed as 29 Nov 2026 by several sites; EPFL had not posted it itself. Confirm on summer.epfl.ch.
 
   - id: oist-internship
     kind: summer_research
@@ -108,6 +112,7 @@ programs:
     featured: true
     name: Summer Student Programme
     url: https://careers.cern/summer
+    deadline: 2027-01-21
     summary: Summer at CERN in physics, computing or engineering. Separate track for non-member-state nationals.
     region: europe
     country: Switzerland
@@ -115,7 +120,7 @@ programs:
     funding: stipend
     nationality_ok: other_restriction
     window: [12, 1]
-    notes: Non-member-state track has its own nationality list; check whether Vietnam is included this year.
+    notes: 2027 call open to Member and Non-Member State applicants; deadline 21 Jan 2027, 23:59 Geneva time (from job listings). Check that Vietnam is on the non-member list.
 
   - id: utokyo-utrip
     kind: summer_research
@@ -124,6 +129,7 @@ programs:
     featured: true
     name: UTRIP (UTokyo Research Internship Program)
     url: https://www.s.u-tokyo.ac.jp/en/utrip/
+    deadline: 2026-12-25
     summary: Summer research internship in the Graduate School of Science for students at universities outside Japan.
     region: asia
     country: Japan
@@ -131,6 +137,7 @@ programs:
     funding: stipend
     nationality_ok: global
     window: [12, 1, 2]
+    notes: Most listings give 25 Dec 2026, 17:00 JST (one says 7 Jan 2027); recommendation form due by the same date. Program runs 23 Jun–3 Aug 2027.
 
   - id: amgen-scholars
     kind: summer_research
@@ -213,6 +220,7 @@ programs:
     featured: true
     name: Imagine Cup
     url: https://imaginecup.microsoft.com/
+    deadline: 2027-02-28
     summary: Microsoft's global student startup competition.
     region: global
     format: online
@@ -220,7 +228,7 @@ programs:
     prize: Cash and mentorship
     nationality_ok: unknown
     window: [10, 11, 12, 1]
-    notes: Official rules list eligible countries; check Vietnam.
+    notes: "2027 edition is now a startup competition: your startup must be incorporated, and founders need not be students. Applications close 28 Feb 2027 (official FAQ)."
 
   - id: google-solution-challenge
     kind: challenge
@@ -579,6 +587,7 @@ programs:
     featured: true
     name: Harvard Summer School
     url: https://summer.harvard.edu/
+    deadline: 2027-01-28
     summary: Summer courses at Harvard or Harvard-led study abroad programs, open to visiting college students.
     region: north_america
     country: USA
@@ -707,3 +716,170 @@ programs:
     nationality_ok: unknown
     window: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     notes: Team requirements and country rules differ per prize.
+
+  # ------------------------------------------------- open-source & remote programs (paid, global)
+  - id: gsoc
+    kind: open_source
+    org: Google
+    org_type: big_tech
+    featured: true
+    name: Google Summer of Code
+    url: https://summerofcode.withgoogle.com/
+    summary: Paid, remote summer project with an open-source organization, guided by a mentor.
+    region: global
+    format: online
+    funding: stipend
+    nationality_ok: global
+    window: [2, 3, 4]
+    notes: 18+ at registration. Contributor applications have run mid-March to early April; organizations are announced in February, so start talking to them early.
+
+  - id: outreachy
+    kind: open_source
+    org: Outreachy
+    org_type: nonprofit
+    featured: true
+    name: Outreachy internships
+    url: https://www.outreachy.org/
+    summary: Paid, remote 3-month open-source internships for people underrepresented in tech.
+    region: global
+    format: online
+    funding: stipend
+    nationality_ok: global
+    window: [1, 2, 8]
+    notes: Students at Northern Hemisphere universities (Vietnam included) can only join the May–August cohort, whose initial applications usually open in January–February. Eligibility also depends on the underrepresentation essays.
+
+  - id: lfx-mentorship
+    kind: open_source
+    org: Linux Foundation
+    org_type: nonprofit
+    featured: true
+    name: LFX Mentorship
+    url: https://mentorship.lfx.linuxfoundation.org/
+    summary: Paid, remote mentorships on Linux Foundation and CNCF projects, three terms a year.
+    region: global
+    format: online
+    funding: stipend
+    nationality_ok: global
+    window: [1, 2, 5, 8]
+    notes: 18+ by the start date; apply to up to 3 projects per term. Spring projects appear around mid-January, then summer (Jun–Aug) and fall (Sep–Nov) terms.
+
+  - id: mlh-fellowship
+    kind: open_source
+    org: Major League Hacking
+    org_type: nonprofit
+    featured: true
+    name: MLH Fellowship
+    url: https://fellowship.mlh.com/
+    summary: Remote 12-week fellowship in open source, software or SRE tracks, in small pods with mentors.
+    region: global
+    format: online
+    funding: stipend
+    nationality_ok: other_restriction
+    window: [10, 11, 12, 2, 3, 4, 6, 7]
+    notes: Requires having joined at least one MLH hackathon or Global Hack Week. Not open in every country; check yours on the eligibility page. The stipend is need-based and not guaranteed.
+
+  # ------------------------------------------------------------ scholarships & exchange
+  - id: mext-scholarship
+    kind: scholarship
+    org: Government of Japan (MEXT)
+    org_type: government_space
+    featured: true
+    name: MEXT Japanese Government Scholarship
+    url: https://www.vn.emb-japan.go.jp/itprtop_en/index.html
+    summary: Fully funded study in Japan; applications from Vietnam go through the embassy in Hanoi and the consulates in Ho Chi Minh City and Da Nang.
+    region: asia
+    country: Japan
+    funding: fully_funded
+    nationality_ok: vn_ok
+    window: [4, 5, 6]
+    notes: The Research Student track needs a finished bachelor's degree; the Undergraduate track starts a new degree. Good to plan for after graduation.
+
+  - id: gks-scholarship
+    kind: scholarship
+    org: Government of Korea (NIIED)
+    org_type: government_space
+    featured: true
+    name: Global Korea Scholarship (GKS)
+    url: https://www.studyinkorea.go.kr/
+    summary: Fully funded degree study in Korea, including a Korean-language year.
+    region: asia
+    country: South Korea
+    funding: fully_funded
+    nationality_ok: vn_ok
+    window: [9, 10, 2, 3]
+    notes: Undergraduate (GKS-U) applications usually open around September; the graduate track around February. Vietnam has a small embassy-track quota.
+
+  - id: erasmus-plus-exchange
+    kind: scholarship
+    org: European Union
+    org_type: government_space
+    featured: true
+    name: Erasmus+ exchange semester
+    url: https://erasmus-plus.ec.europa.eu/
+    summary: Funded exchange semester at a European partner university, with a monthly grant and travel support.
+    region: europe
+    funding: fully_funded
+    nationality_ok: global
+    enrollment_req: any
+    window: [1, 2, 3, 9, 10]
+    notes: Only possible if your university has an Erasmus+ partner agreement; ask your international office which partners and deadlines exist.
+
+  - id: asean-undergraduate-scholarship
+    kind: scholarship
+    org: Government of Singapore
+    org_type: government_space
+    name: ASEAN Undergraduate Scholarship (NUS, NTU)
+    url: https://www.nus.edu.sg/oam/scholarships
+    summary: Covers tuition and living costs for ASEAN nationals starting an undergraduate degree in Singapore.
+    region: asia
+    country: Singapore
+    funding: fully_funded
+    nationality_ok: vn_ok
+    window: [10, 11, 12, 1, 2, 3]
+    notes: For starting a new degree; mostly relevant if you are considering transferring or for younger friends and siblings.
+
+  # ------------------------------------------------------------------ contests & olympiads
+  - id: icpc-asia-vietnam
+    kind: contest
+    org: ICPC
+    org_type: university
+    featured: true
+    name: ICPC Asia regionals (Vietnam sites)
+    url: https://icpc.global/
+    summary: The world's biggest university programming contest; Vietnam hosts Asia regional sites, and the 2025 Ho Chi Minh City regional was the largest in Asia-Pacific.
+    region: asia
+    country: Vietnam
+    format: in_person
+    team_size: "3"
+    nationality_ok: vn_ok
+    window: [8, 9, 10, 11]
+    notes: Register as a team through your university's coach; regionals usually run late in the year.
+
+  - id: vnoi-olympiad
+    kind: contest
+    org: VNOI
+    org_type: nonprofit
+    featured: true
+    name: Vietnam informatics olympiads and contests (VNOI)
+    url: https://vnoi.info/
+    summary: Vietnam's competitive programming community; announces the national student olympiad (OLP) and ICPC Vietnam rounds.
+    region: asia
+    country: Vietnam
+    nationality_ok: vn_ok
+    window: [9, 10, 11, 12]
+
+  # ------------------------------------------------------------------ conference travel grants
+  - id: ghc-scholarship
+    kind: travel_grant
+    org: AnitaB.org
+    org_type: nonprofit
+    featured: true
+    name: Grace Hopper Celebration scholarship
+    url: https://ghc.anitab.org/attend/scholarships
+    summary: Covers registration, travel, hotel and meals to attend the world's largest gathering of women in computing.
+    region: north_america
+    country: USA
+    funding: fully_funded
+    nationality_ok: global
+    window: [6, 7, 8, 9]
+    notes: For women and non-binary students. The 2026 deadline was 25 Sep 2026; the 2027 call usually opens mid-year. Needs a US visa.

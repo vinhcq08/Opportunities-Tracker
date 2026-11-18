@@ -34,10 +34,36 @@ def digest(changes: list[dict], site_url: str = "") -> str:
     return "\n".join(lines)
 
 
-def send(text: str) -> bool:
-    url = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
-    if not text or not url:
-        return False
-    resp = http.session().post(url, json={"content": text[:1900]}, timeout=http.TIMEOUT)
-    resp.raise_for_status()
-    return True
+def health_digest(alerts: list[str]) -> str:
+    if not alerts:
+        return ""
+    return "**Source health**\n" + "\n".join(f"- {a}" for a in alerts)
+
+
+def send(text: str) -> list[str]:
+    """Send to every configured channel; return the channels that accepted it."""
+    if not text:
+        return []
+    sent, errors = [], []
+    discord = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
+    if discord:
+        try:
+            resp = http.session().post(discord, json={"content": text[:1900]}, timeout=http.TIMEOUT)
+            resp.raise_for_status()
+            sent.append("discord")
+        except Exception as exc:
+            errors.append(f"discord: {type(exc).__name__}")
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+    if token and chat:
+        try:
+            resp = http.session().post(f"https://api.telegram.org/bot{token}/sendMessage",
+                                       json={"chat_id": chat, "text": text.replace("**", "")[:4000],
+                                             "disable_web_page_preview": True}, timeout=http.TIMEOUT)
+            resp.raise_for_status()
+            sent.append("telegram")
+        except Exception as exc:  # never print the URL: it contains the bot token
+            errors.append(f"telegram: {type(exc).__name__}")
+    if errors:
+        raise RuntimeError("; ".join(errors) + (f" (sent: {', '.join(sent)})" if sent else ""))
+    return sent
