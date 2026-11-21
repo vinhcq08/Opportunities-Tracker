@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T07:02:00+00:00",
+ "generated_at": "2026-11-21T19:12:18+00:00",
  "profile": {
   "country": "VN",
   "year": 2,
@@ -11,9 +11,9 @@
   "devpost": "40 items",
   "mlh": "0 items",
   "simplify": "1 items",
-  "Opportunity Desk": "3 items",
+  "Opportunity Desk": "2 items",
   "Opportunities Corners": "2 items",
-  "UIT forum (latest)": "9 items",
+  "UIT forum (latest)": "10 items",
   "greenhouse:janestreet": "0 items",
   "greenhouse:optiver": "0 items",
   "greenhouse:imc": "0 items",
@@ -75,7 +75,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-21T07:02:18+00:00"
+   "last_checked": "2026-11-21T19:12:34+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-ho-tro-truyen-thong-chuong-trinh-ca",
@@ -172,51 +172,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T14:24:08+00:00",
-   "last_checked": "2026-11-21T07:02:17+00:00"
-  },
-  {
-   "id": "rss-https-opportunitydesk-org-2026-11-19-global-citizen-prize-20",
-   "source": "feed: Opportunity Desk",
-   "kind": "challenge",
-   "org": "Opportunity Desk",
-   "org_type": "other",
-   "featured": false,
-   "name": "Global Citizen Prize: 2027 Cisco Youth Leadership Award ($250,000 prize)",
-   "url": "https://opportunitydesk.org/2026/11/19/global-citizen-prize-2027-cisco-youth-leadership-award/",
-   "summary": "Deadline: December 18, 2026 Applications are invited for the Global Citizen Prize: 2027 Cisco Youth Leadership Award. Established by Cisco and Global Citizen, the Global Citizen Prize: 2027 Cisco Youth Leadership Award w…",
-   "region": "global",
-   "country": "",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "open",
-   "window": [],
-   "deadline": "2026-12-18",
-   "verified": false,
-   "manual_check": false,
-   "deadline_confirmed": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "elig_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-20T00:36:13+00:00",
-   "last_changed": "2026-11-20T00:36:13+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-21T19:12:34+00:00"
   },
   {
    "id": "imagine-cup",
@@ -265,7 +221,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:14+00:00"
+   "last_checked": "2026-11-21T19:12:33+00:00"
   },
   {
    "id": "james-dyson-award",
@@ -315,7 +271,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:35+00:00"
+   "last_checked": "2026-11-21T19:12:46+00:00"
   },
   {
    "id": "kaggle-competitions",
@@ -372,7 +328,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-21T07:02:18+00:00"
+   "last_checked": "2026-11-21T19:12:34+00:00"
   },
   {
    "id": "mit-solve",
@@ -421,7 +377,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-21T07:02:14+00:00"
+   "last_checked": "2026-11-21T19:12:32+00:00"
   },
   {
    "id": "openideo-challenges",
@@ -478,7 +434,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:36+00:00"
+   "last_checked": "2026-11-21T19:12:47+00:00"
   },
   {
    "id": "google-solution-challenge",
@@ -526,7 +482,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-19T00:20:29+00:00",
-   "last_checked": "2026-11-21T07:02:15+00:00"
+   "last_checked": "2026-11-21T19:12:33+00:00"
   },
   {
    "id": "stanford-longevity-design-challenge",
@@ -574,7 +530,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:35+00:00"
+   "last_checked": "2026-11-21T19:12:46+00:00"
   },
   {
    "id": "undergraduate-awards",
@@ -624,7 +580,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T18:20:46+00:00",
-   "last_checked": "2026-11-21T07:02:35+00:00"
+   "last_checked": "2026-11-21T19:12:46+00:00"
   },
   {
    "id": "xprize",
@@ -681,7 +637,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T17:57:14+00:00",
-   "last_checked": "2026-11-21T07:02:36+00:00"
+   "last_checked": "2026-11-21T19:12:47+00:00"
   },
   {
    "id": "icpc-asia-vietnam",
@@ -730,7 +686,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:44+00:00"
+   "last_checked": "2026-11-21T19:12:56+00:00"
   },
   {
    "id": "vnoi-olympiad",
@@ -779,7 +735,7 @@
    "fetch_error": "HTTP 403",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:44+00:00"
+   "last_checked": "2026-11-21T19:12:56+00:00"
   },
   {
    "id": "devpost-31808",
@@ -817,7 +773,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "3819 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "3979 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -865,7 +821,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "57 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "58 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -913,7 +869,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "305 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "310 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -961,7 +917,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "500 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "503 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1009,7 +965,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "215 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "226 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1057,7 +1013,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "193 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "201 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1105,7 +1061,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "1306 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "1334 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1153,55 +1109,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "494 registered on Devpost. Check the official rules for country restrictions.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "elig_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-17T17:09:19+00:00",
-   "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "devpost-30456",
-   "source": "devpost",
-   "kind": "hackathon",
-   "org": "Bridge The Gap Hacks",
-   "org_type": "other",
-   "featured": false,
-   "name": "Bridge The Gap Hacks",
-   "url": "https://sq-hacks.devpost.com/",
-   "summary": "",
-   "region": "global",
-   "country": "",
-   "city": "",
-   "format": "online",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "$ 0",
-   "team_size": "",
-   "themes": [
-    "Beginner Friendly",
-    "Machine Learning/AI",
-    "Social Good"
-   ],
-   "status": "open",
-   "window": [],
-   "deadline": "2026-11-21",
-   "verified": false,
-   "manual_check": false,
-   "deadline_confirmed": true,
-   "notes": "134 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "496 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1249,7 +1157,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "695 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "707 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1297,7 +1205,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "163 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "169 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1345,7 +1253,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "691 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "753 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1393,7 +1301,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "191 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "203 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1403,54 +1311,6 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "devpost-31504",
-   "source": "devpost",
-   "kind": "hackathon",
-   "org": "n/a",
-   "org_type": "other",
-   "featured": false,
-   "name": "Code For DFW",
-   "url": "https://code-for-dfw.devpost.com/",
-   "summary": "",
-   "region": "global",
-   "country": "",
-   "city": "",
-   "format": "online",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "$ 0",
-   "team_size": "",
-   "themes": [
-    "Open Ended",
-    "Social Good",
-    "Beginner Friendly"
-   ],
-   "status": "open",
-   "window": [],
-   "deadline": "2026-11-30",
-   "verified": false,
-   "manual_check": false,
-   "deadline_confirmed": true,
-   "notes": "36 registered on Devpost. Check the official rules for country restrictions.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "elig_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-17T17:09:19+00:00",
-   "last_changed": "2026-11-20T00:36:13+00:00",
    "last_checked": null
   },
   {
@@ -1489,7 +1349,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "4616 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "4724 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1537,7 +1397,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "39 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "58 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1585,7 +1445,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "206 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "209 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1633,7 +1493,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "262 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "269 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1681,7 +1541,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "1348 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "1417 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1691,6 +1551,100 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
+   "last_checked": null
+  },
+  {
+   "id": "devpost-31721",
+   "source": "devpost",
+   "kind": "hackathon",
+   "org": "EvoHacks",
+   "org_type": "other",
+   "featured": false,
+   "name": "EvoHacks 2",
+   "url": "https://evohacks2.devpost.com/",
+   "summary": "",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "online",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "$ 27,629",
+   "team_size": "",
+   "themes": [
+    "Beginner Friendly",
+    "Low/No Code",
+    "Social Good"
+   ],
+   "status": "open",
+   "window": [],
+   "deadline": "2026-11-22",
+   "verified": false,
+   "manual_check": false,
+   "deadline_confirmed": true,
+   "notes": "208 registered on Devpost. Check the official rules for country restrictions.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": null,
+   "elig_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-21T19:12:18+00:00",
+   "last_changed": "2026-11-21T19:12:18+00:00",
+   "last_checked": null
+  },
+  {
+   "id": "devpost-31826",
+   "source": "devpost",
+   "kind": "hackathon",
+   "org": "Refactor The World",
+   "org_type": "other",
+   "featured": false,
+   "name": "Global AI Builder’s Challenge",
+   "url": "https://global-ai-builders-challenge.devpost.com/",
+   "summary": "",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "online",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "$ 0",
+   "team_size": "",
+   "themes": [
+    "Machine Learning/AI"
+   ],
+   "status": "open",
+   "window": [],
+   "deadline": "2026-11-28",
+   "verified": false,
+   "manual_check": false,
+   "deadline_confirmed": true,
+   "notes": "400 registered on Devpost. Check the official rules for country restrictions.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": null,
+   "elig_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-21T19:12:18+00:00",
+   "last_changed": "2026-11-21T19:12:18+00:00",
    "last_checked": null
   },
   {
@@ -1728,7 +1682,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "256 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "258 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1785,7 +1739,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-21T07:02:14+00:00"
+   "last_checked": "2026-11-21T19:12:32+00:00"
   },
   {
    "id": "devpost-31737",
@@ -1823,7 +1777,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "237 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "239 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1871,7 +1825,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "95 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "97 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1881,6 +1835,54 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
+   "last_checked": null
+  },
+  {
+   "id": "devpost-32017",
+   "source": "devpost",
+   "kind": "hackathon",
+   "org": "Tech Council - Jain Univeristy",
+   "org_type": "other",
+   "featured": false,
+   "name": "Inceptrix 3.0",
+   "url": "https://inceptrix-hackathon.devpost.com/",
+   "summary": "",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "online",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "₹ 0",
+   "team_size": "",
+   "themes": [
+    "Beginner Friendly",
+    "Education",
+    "Web"
+   ],
+   "status": "open",
+   "window": [],
+   "deadline": "2026-12-24",
+   "verified": false,
+   "manual_check": false,
+   "deadline_confirmed": true,
+   "notes": "69 registered on Devpost. Check the official rules for country restrictions.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": null,
+   "elig_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-21T19:12:18+00:00",
+   "last_changed": "2026-11-21T19:12:18+00:00",
    "last_checked": null
   },
   {
@@ -1919,7 +1921,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "109 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "120 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -1977,7 +1979,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T18:20:46+00:00",
-   "last_checked": "2026-11-21T07:02:07+00:00"
+   "last_checked": "2026-11-21T19:12:25+00:00"
   },
   {
    "id": "devpost-31667",
@@ -2015,7 +2017,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "17865 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "18153 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2063,7 +2065,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "71 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "80 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2110,7 +2112,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "659 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "677 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2158,7 +2160,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "419 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "436 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2206,7 +2208,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "217 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "224 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2254,7 +2256,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "132 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "137 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2302,7 +2304,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "2195 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "2247 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2349,7 +2351,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "2005 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "2089 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2397,7 +2399,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "650 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "672 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2445,7 +2447,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "518 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "521 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2493,7 +2495,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "205 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "212 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2541,7 +2543,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "478 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "505 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2551,54 +2553,6 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": null
-  },
-  {
-   "id": "devpost-32155",
-   "source": "devpost",
-   "kind": "hackathon",
-   "org": "Small Money, Big Plan",
-   "org_type": "other",
-   "featured": false,
-   "name": "SMBP FinHack",
-   "url": "https://smbp-finhack.devpost.com/",
-   "summary": "",
-   "region": "global",
-   "country": "",
-   "city": "",
-   "format": "online",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "$ 0",
-   "team_size": "",
-   "themes": [
-    "Beginner Friendly",
-    "Fintech",
-    "Open Ended"
-   ],
-   "status": "open",
-   "window": [],
-   "deadline": "2026-11-27",
-   "verified": false,
-   "manual_check": false,
-   "deadline_confirmed": true,
-   "notes": "31 registered on Devpost. Check the official rules for country restrictions.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "elig_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-20T00:36:13+00:00",
-   "last_changed": "2026-11-20T15:24:32+00:00",
    "last_checked": null
   },
   {
@@ -2633,11 +2587,11 @@
    ],
    "status": "open",
    "window": [],
-   "deadline": "2026-11-21",
+   "deadline": "2026-11-29",
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "686 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "706 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2646,7 +2600,7 @@
    "elig_hash": null,
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
-   "last_changed": "2026-11-17T17:09:19+00:00",
+   "last_changed": "2026-11-21T19:12:18+00:00",
    "last_checked": null
   },
   {
@@ -2685,7 +2639,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "454 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "453 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2780,7 +2734,7 @@
    "verified": false,
    "manual_check": false,
    "deadline_confirmed": true,
-   "notes": "218 registered on Devpost. Check the official rules for country restrictions.",
+   "notes": "232 registered on Devpost. Check the official rules for country restrictions.",
    "eligible_for_me": "check",
    "elig_reasons": [
     "Eligibility text not confirmed yet"
@@ -2832,12 +2786,12 @@
    "elig_reasons": [
     "Eligibility text not confirmed yet"
    ],
-   "page_hash": "6a3f95f8c99bba02",
+   "page_hash": "32e4d65be9e97397",
    "elig_hash": "82ba26b6c0729d33",
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
-   "last_changed": "2026-11-21T07:02:00+00:00",
-   "last_checked": "2026-11-21T07:02:14+00:00"
+   "last_changed": "2026-11-21T19:12:18+00:00",
+   "last_checked": "2026-11-21T19:12:32+00:00"
   },
   {
    "id": "citadel-discover-hong-kong",
@@ -2882,7 +2836,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:24+00:00"
+   "last_checked": "2026-11-21T19:12:42+00:00"
   },
   {
    "id": "citadel-discover-singapore",
@@ -2928,7 +2882,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:24+00:00"
+   "last_checked": "2026-11-21T19:12:42+00:00"
   },
   {
    "id": "hrt-explore-singapore",
@@ -2975,7 +2929,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:30+00:00"
+   "last_checked": "2026-11-21T19:12:43+00:00"
   },
   {
    "id": "jane-street-fttp-hkg",
@@ -3020,7 +2974,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:24+00:00"
+   "last_checked": "2026-11-21T19:12:42+00:00"
   },
   {
    "id": "optiver-futurefocus-singapore",
@@ -3066,7 +3020,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-19T15:42:41+00:00",
-   "last_checked": "2026-11-21T07:02:24+00:00"
+   "last_checked": "2026-11-21T19:12:42+00:00"
   },
   {
    "id": "sig-discovery-hong-kong",
@@ -3111,7 +3065,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:30+00:00"
+   "last_checked": "2026-11-21T19:12:43+00:00"
   },
   {
    "id": "jane-street-insight-hkg",
@@ -3159,7 +3113,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:24+00:00"
+   "last_checked": "2026-11-21T19:12:42+00:00"
   },
   {
    "id": "jane-street-portal-sgp",
@@ -3206,7 +3160,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:24+00:00"
+   "last_checked": "2026-11-21T19:12:42+00:00"
   },
   {
    "id": "jane-street-see-hkg",
@@ -3255,7 +3209,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:24+00:00"
+   "last_checked": "2026-11-21T19:12:42+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-6-month-internship-with-allowance-a",
@@ -3884,7 +3838,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-21T07:02:24+00:00"
+   "last_checked": "2026-11-21T19:12:42+00:00"
   },
   {
    "id": "grab-internships",
@@ -3934,7 +3888,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:20+00:00"
+   "last_checked": "2026-11-21T19:12:37+00:00"
   },
   {
    "id": "greenhouse-stripe-8186367",
@@ -4206,7 +4160,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-21T07:02:21+00:00"
+   "last_checked": "2026-11-21T19:12:38+00:00"
   },
   {
    "id": "greenhouse-coinbase-8175873",
@@ -4385,6 +4339,50 @@
    "last_checked": null
   },
   {
+   "id": "rss-https-forum-uit-edu-vn-t-thuc-tap-sinh-trien-khai-phan-mem-w",
+   "source": "feed: UIT forum (latest)",
+   "kind": "internship",
+   "org": "UIT forum (latest)",
+   "org_type": "other",
+   "featured": false,
+   "name": "Thực tập sinh Triển khai phần mềm - Website (có lương)",
+   "url": "https://forum.uit.edu.vn/t/thuc-tap-sinh-trien-khai-phan-mem-website-co-luong/165040",
+   "summary": "Mô tả công việc Chủ động liên hệ khách hàng Doanh Nghiệp thông qua các kênh online, data công ty và các nguồn khai thác khác. Tham gia vào quy trình tư vấn – kinh doanh các giải pháp website, phần mềm và digital marketin…",
+   "region": "asia",
+   "country": "Vietnam",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "vn_ok",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "unknown",
+   "window": [],
+   "deadline": null,
+   "verified": false,
+   "manual_check": false,
+   "deadline_confirmed": false,
+   "notes": "Internship posted on a Vietnamese university board.",
+   "eligible_for_me": "likely",
+   "elig_reasons": [
+    "Rules look open to students in Vietnam; not verified yet"
+   ],
+   "page_hash": null,
+   "elig_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-21T19:12:18+00:00",
+   "last_changed": "2026-11-21T19:12:18+00:00",
+   "last_checked": null
+  },
+  {
    "id": "vng-internships",
    "source": "registry",
    "kind": "internship",
@@ -4431,7 +4429,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-21T07:02:22+00:00"
+   "last_checked": "2026-11-21T19:12:39+00:00"
   },
   {
    "id": "gsoc",
@@ -4479,7 +4477,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:36+00:00"
+   "last_checked": "2026-11-21T19:12:48+00:00"
   },
   {
    "id": "lfx-mentorship",
@@ -4528,7 +4526,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:37+00:00"
+   "last_checked": "2026-11-21T19:12:48+00:00"
   },
   {
    "id": "mlh-fellowship",
@@ -4581,7 +4579,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:38+00:00"
+   "last_checked": "2026-11-21T19:12:49+00:00"
   },
   {
    "id": "outreachy",
@@ -4629,7 +4627,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:36+00:00"
+   "last_checked": "2026-11-21T19:12:48+00:00"
   },
   {
    "id": "asean-undergraduate-scholarship",
@@ -4680,7 +4678,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-20T23:58:41+00:00",
-   "last_checked": "2026-11-21T07:02:42+00:00"
+   "last_checked": "2026-11-21T19:12:53+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-chuong-trinh-hoc-bong-amcham-nam-20",
@@ -4724,6 +4722,50 @@
    "fetch_error": null,
    "first_seen": "2026-11-21T07:02:00+00:00",
    "last_changed": "2026-11-21T07:02:00+00:00",
+   "last_checked": null
+  },
+  {
+   "id": "rss-https-opportunitydesk-org-2026-11-21-clements-archer-nationa",
+   "source": "feed: Opportunity Desk",
+   "kind": "scholarship",
+   "org": "Opportunity Desk",
+   "org_type": "other",
+   "featured": false,
+   "name": "Clements-Archer National Security Policy Postdoctoral Fellowship 2027-2028 ($80,000 stipend)",
+   "url": "https://opportunitydesk.org/2026/11/21/clements-archer-national-security-policy-postdoctoral-fellowship-2027-2028/",
+   "summary": "Deadline: January 15, 2027 Applications are open for the Clements-Archer National Security Policy Postdoctoral Fellowship 2027-2028. Through a partnership between the Clements Center for National Security and the Archer …",
+   "region": "global",
+   "country": "",
+   "city": "",
+   "format": "in_person",
+   "class_years": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "nationality_ok": "unknown",
+   "enrollment_req": "any",
+   "funding": "",
+   "prize": "",
+   "team_size": "",
+   "themes": [],
+   "status": "open",
+   "window": [],
+   "deadline": "2027-01-15",
+   "verified": false,
+   "manual_check": false,
+   "deadline_confirmed": false,
+   "notes": "No eligibility text found in the post. Read the official page before deciding.",
+   "eligible_for_me": "check",
+   "elig_reasons": [
+    "Eligibility text not confirmed yet"
+   ],
+   "page_hash": null,
+   "elig_hash": null,
+   "fetch_error": null,
+   "first_seen": "2026-11-21T19:12:18+00:00",
+   "last_changed": "2026-11-21T19:12:18+00:00",
    "last_checked": null
   },
   {
@@ -4774,7 +4816,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:41+00:00"
+   "last_checked": "2026-11-21T19:12:53+00:00"
   },
   {
    "id": "gks-scholarship",
@@ -4819,11 +4861,11 @@
     "Rules look open to students in Vietnam; not verified yet"
    ],
    "page_hash": "2e6700cccfd9931e",
-   "elig_hash": "6d8e34fd8febdb25",
+   "elig_hash": "1546680a49aae2ed",
    "fetch_error": null,
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-20T15:24:32+00:00",
-   "last_checked": "2026-11-21T07:02:38+00:00"
+   "last_checked": "2026-11-21T19:12:50+00:00"
   },
   {
    "id": "rss-https-forum-uit-edu-vn-t-marvell-vietnam-excellence-scholars",
@@ -4915,51 +4957,7 @@
    "fetch_error": "HTTP 403",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:38+00:00"
-  },
-  {
-   "id": "rss-https-opportunitydesk-org-2026-11-20-oxford-said-future-lead",
-   "source": "feed: Opportunity Desk",
-   "kind": "scholarship",
-   "org": "Opportunity Desk",
-   "org_type": "other",
-   "featured": false,
-   "name": "Oxford Saïd Future Leaders Scholarships 2027",
-   "url": "https://opportunitydesk.org/2026/11/20/oxford-said-future-leaders-scholarships-2027/",
-   "summary": "Deadline: On Rolling Basis Applications are open for the Oxford Saïd Future Leaders Scholarships 2027. The Oxford Saïd Future Leaders Scholarships are prestigious awards to honour the achievements and support the ambitio…",
-   "region": "global",
-   "country": "",
-   "city": "",
-   "format": "in_person",
-   "class_years": [
-    1,
-    2,
-    3,
-    4
-   ],
-   "nationality_ok": "unknown",
-   "enrollment_req": "any",
-   "funding": "",
-   "prize": "",
-   "team_size": "",
-   "themes": [],
-   "status": "unknown",
-   "window": [],
-   "deadline": null,
-   "verified": false,
-   "manual_check": false,
-   "deadline_confirmed": false,
-   "notes": "No eligibility text found in the post. Read the official page before deciding.",
-   "eligible_for_me": "check",
-   "elig_reasons": [
-    "Eligibility text not confirmed yet"
-   ],
-   "page_hash": null,
-   "elig_hash": null,
-   "fetch_error": null,
-   "first_seen": "2026-11-20T15:24:32+00:00",
-   "last_changed": "2026-11-20T15:24:32+00:00",
-   "last_checked": null
+   "last_checked": "2026-11-21T19:12:50+00:00"
   },
   {
    "id": "amgen-scholars",
@@ -5007,7 +5005,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-20T00:36:13+00:00",
-   "last_checked": "2026-11-21T07:02:07+00:00"
+   "last_checked": "2026-11-21T19:12:25+00:00"
   },
   {
    "id": "rss-https-opportunitydesk-org-2026-11-20-cambridge-africa-climat",
@@ -5100,7 +5098,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-21T07:02:00+00:00"
+   "last_checked": "2026-11-21T19:12:19+00:00"
   },
   {
    "id": "oist-internship",
@@ -5157,7 +5155,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-20T15:24:32+00:00",
-   "last_checked": "2026-11-21T07:02:02+00:00"
+   "last_checked": "2026-11-21T19:12:19+00:00"
   },
   {
    "id": "nsf-reu",
@@ -5206,7 +5204,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-21T07:02:20+00:00"
+   "last_checked": "2026-11-21T19:12:37+00:00"
   },
   {
    "id": "eth-ssrf",
@@ -5254,7 +5252,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:00+00:00"
+   "last_checked": "2026-11-21T19:12:19+00:00"
   },
   {
    "id": "cern-summer-student",
@@ -5301,7 +5299,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-20T15:24:32+00:00",
-   "last_checked": "2026-11-21T07:02:04+00:00"
+   "last_checked": "2026-11-21T19:12:22+00:00"
   },
   {
    "id": "epfl-summer",
@@ -5349,7 +5347,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:01+00:00"
+   "last_checked": "2026-11-21T19:12:19+00:00"
   },
   {
    "id": "utokyo-utrip",
@@ -5397,7 +5395,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:05+00:00"
+   "last_checked": "2026-11-21T19:12:23+00:00"
   },
   {
    "id": "kaust-vsrp",
@@ -5454,7 +5452,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-17T17:09:19+00:00",
-   "last_checked": "2026-11-21T07:02:02+00:00"
+   "last_checked": "2026-11-21T19:12:20+00:00"
   },
   {
    "id": "berkeley-summer-sessions",
@@ -5503,7 +5501,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:31+00:00"
+   "last_checked": "2026-11-21T19:12:44+00:00"
   },
   {
    "id": "cambridge-isp",
@@ -5554,7 +5552,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:32+00:00"
+   "last_checked": "2026-11-21T19:12:45+00:00"
   },
   {
    "id": "harvard-summer-school",
@@ -5604,7 +5602,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T14:11:01+00:00",
-   "last_checked": "2026-11-21T07:02:31+00:00"
+   "last_checked": "2026-11-21T19:12:44+00:00"
   },
   {
    "id": "rss-https-opportunitiescorners-com-hzdr-summer-student-program-2",
@@ -5698,7 +5696,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:31+00:00"
+   "last_checked": "2026-11-21T19:12:44+00:00"
   },
   {
    "id": "stanford-summer-session",
@@ -5748,7 +5746,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:30+00:00"
+   "last_checked": "2026-11-21T19:12:44+00:00"
   },
   {
    "id": "rss-https-opportunitiescorners-com-summer-programs-in-europe-in-",
@@ -5841,7 +5839,7 @@
    "fetch_error": "TooManyRedirects",
    "first_seen": "2026-11-18T11:56:00+00:00",
    "last_changed": "2026-11-18T11:56:00+00:00",
-   "last_checked": "2026-11-21T07:02:44+00:00"
+   "last_checked": "2026-11-21T19:12:56+00:00"
   },
   {
    "id": "microsoft-explore",
@@ -5887,7 +5885,7 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:09:19+00:00",
    "last_changed": "2026-11-20T00:36:13+00:00",
-   "last_checked": "2026-11-21T07:02:18+00:00"
+   "last_checked": "2026-11-21T19:12:34+00:00"
   },
   {
    "id": "google-step",
@@ -5933,10 +5931,118 @@
    "fetch_error": null,
    "first_seen": "2026-11-17T17:44:54+00:00",
    "last_changed": "2026-11-17T17:44:54+00:00",
-   "last_checked": "2026-11-21T07:02:30+00:00"
+   "last_checked": "2026-11-21T19:12:43+00:00"
   }
  ],
  "changes": [
+  {
+   "type": "page_updated",
+   "id": "treehacks",
+   "name": "TreeHacks",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "new",
+   "id": "devpost-31721",
+   "name": "EvoHacks 2",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "new",
+   "id": "devpost-31826",
+   "name": "Global AI Builder’s Challenge",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "deadline",
+   "id": "devpost-31789",
+   "name": "STEM2Connect AI Hackathon",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "2026-11-21 → 2026-11-29",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "new",
+   "id": "devpost-32017",
+   "name": "Inceptrix 3.0",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "new",
+   "id": "rss-https-opportunitydesk-org-2026-11-21-clements-archer-nationa",
+   "name": "Clements-Archer National Security Policy Postdoctoral Fellowship 2027-2028 ($80,000 stipend)",
+   "kind": "scholarship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "new",
+   "id": "rss-https-forum-uit-edu-vn-t-thuc-tap-sinh-trien-khai-phan-mem-w",
+   "name": "Thực tập sinh Triển khai phần mềm - Website (có lương)",
+   "kind": "internship",
+   "eligible_for_me": "likely",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-opportunitydesk-org-2026-11-19-global-citizen-prize-20",
+   "name": "Global Citizen Prize: 2027 Cisco Youth Leadership Award ($250,000 prize)",
+   "kind": "challenge",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "devpost-30456",
+   "name": "Bridge The Gap Hacks",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "devpost-31504",
+   "name": "Code For DFW",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "devpost-32155",
+   "name": "SMBP FinHack",
+   "kind": "hackathon",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
+  {
+   "type": "removed",
+   "id": "rss-https-opportunitydesk-org-2026-11-20-oxford-said-future-lead",
+   "name": "Oxford Saïd Future Leaders Scholarships 2027",
+   "kind": "scholarship",
+   "eligible_for_me": "check",
+   "detail": "",
+   "at": "2026-11-21T19:12:18+00:00"
+  },
   {
    "type": "page_updated",
    "id": "treehacks",
@@ -7178,120 +7284,12 @@
    "eligible_for_me": "check",
    "detail": "",
    "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-lam-research-taiwan-to-chuc-phong-v",
-   "name": "Lam Research Taiwan tổ chức phỏng vấn tuyển dụng tại Việt Nam - 12/2026",
-   "kind": "summer_research",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-6-month-internship-with-allowance-a",
-   "name": "***6-month Internship with allowance at Rosenxt VN (AI Engineer Intern)***",
-   "kind": "summer_research",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-marvell-vietnam-excellence-scholars",
-   "name": "Marvell Vietnam Excellence Scholarship 2027",
-   "kind": "scholarship",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-hoc-bong-gems-university-nam-hoc-20",
-   "name": "Học bổng GEMS-University năm học 2026-2027",
-   "kind": "scholarship",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-danh-sach-sinh-vien-nhan-hoc-bong-u",
-   "name": "Danh sách sinh viên nhận học bổng UIT Global tháng 10/2026",
-   "kind": "scholarship",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-netnam-sgn-thuc-tap-sinh-ho-tro-ky-",
-   "name": "NetNam SGN - Thực Tập Sinh Hỗ Trợ Kỹ Thuật",
-   "kind": "summer_research",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-tan-my-hcm-techlab-tuyen-dung-pente",
-   "name": "[Tân Mỹ - HCM] Techlab tuyển dụng Pentest Intern",
-   "kind": "contest",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-khmt-kham-pha-agentic-ai-he-thong-p",
-   "name": "[KHMT] Khám phá AGENTIC AI, hệ thống phân tán và mạng nano trong cơ thể người cùng giáo sư đến từ Đức!",
-   "kind": "challenge",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-bosch-hcp-internship-preventive-mai",
-   "name": "[Bosch HcP – Internship] Preventive Maintenance Planning Intern (Data Analysis Focus)",
-   "kind": "summer_research",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-thu-moi-sinh-vien-hoc-vien-tham-du-",
-   "name": "Thư mời sinh viên/học viên tham dự WorldQuant Office Tour 2026 Program",
-   "kind": "challenge",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-chuong-trinh-hoc-bong-amcham-nam-20",
-   "name": "Chương trình Học bổng AmCham năm 2026",
-   "kind": "scholarship",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
-  },
-  {
-   "type": "new",
-   "id": "rss-https-forum-uit-edu-vn-t-thuc-tap-sinh-trien-khai-phan-mem-w",
-   "name": "Thực tập sinh Triển khai phần mềm - Website (có lương)",
-   "kind": "summer_research",
-   "eligible_for_me": "check",
-   "detail": "",
-   "at": "2026-11-18T11:56:00+00:00"
   }
  ],
  "proposals": {},
  "claude_usage": {
   "months": {},
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "usd": 0.0,
   "pages": 0
  },
@@ -7300,35 +7298,35 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 54
   },
   "devpost": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 40
   },
   "mlh": {
    "fail_runs": 0,
-   "zero_runs": 22,
+   "zero_runs": 23,
    "ever_nonzero": false,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 0
   },
   "simplify": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 1
   },
   "kaggle": {
    "fail_runs": 0,
-   "zero_runs": 21,
+   "zero_runs": 22,
    "ever_nonzero": false,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 0
   },
   "challenge.gov": {
@@ -7342,8 +7340,8 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
-   "last_count": 3
+   "last_ok": "2026-11-21T19:12:18+00:00",
+   "last_count": 2
   },
   "Opportunities for Youth": {
    "fail_runs": 1,
@@ -7356,15 +7354,15 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 2
   },
   "UIT forum (latest)": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
-   "last_count": 9
+   "last_ok": "2026-11-21T19:12:18+00:00",
+   "last_count": 10
   },
   "VNOI news": {
    "fail_runs": 1,
@@ -7375,44 +7373,44 @@
   },
   "greenhouse:janestreet": {
    "fail_runs": 0,
-   "zero_runs": 22,
+   "zero_runs": 23,
    "ever_nonzero": false,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 0
   },
   "greenhouse:optiver": {
    "fail_runs": 0,
-   "zero_runs": 22,
+   "zero_runs": 23,
    "ever_nonzero": false,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 0
   },
   "greenhouse:imc": {
    "fail_runs": 0,
-   "zero_runs": 22,
+   "zero_runs": 23,
    "ever_nonzero": false,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 0
   },
   "greenhouse:stripe": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 3
   },
   "greenhouse:databricks": {
    "fail_runs": 0,
-   "zero_runs": 22,
+   "zero_runs": 23,
    "ever_nonzero": false,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 0
   },
   "greenhouse:coinbase": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 1
   },
   "greenhouse:airwallex": {
@@ -7426,28 +7424,28 @@
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 2
   },
   "greenhouse:jumptrading": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 6
   },
   "greenhouse:towerresearchcapital": {
    "fail_runs": 0,
    "zero_runs": 0,
    "ever_nonzero": true,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 3
   },
   "lever:binance": {
    "fail_runs": 0,
-   "zero_runs": 22,
+   "zero_runs": 23,
    "ever_nonzero": false,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 0
   },
   "lever:shopback": {
@@ -7459,9 +7457,9 @@
   },
   "lever:ninjavan": {
    "fail_runs": 0,
-   "zero_runs": 22,
+   "zero_runs": 23,
    "ever_nonzero": false,
-   "last_ok": "2026-11-21T07:02:00+00:00",
+   "last_ok": "2026-11-21T19:12:18+00:00",
    "last_count": 0
   }
  },
