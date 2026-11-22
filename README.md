@@ -44,7 +44,8 @@ The site is at `https://<user>.github.io/Opportunities-Tracker/`.
 - **Search:** the box in the header searches every program (name, organisation, country, theme). Press `/` to jump to it.
 - **Dark mode:** follows your device; the ◐ button switches between Auto, Dark and Light.
 - **Use it like an app:** on Android/Chrome tap **Install app**; on iPhone, Safari → Share → **Add to Home Screen**. It opens full-screen and works offline with the data from your last visit.
-- **Share:** each program page has a **Share** button (your phone's share menu, or copies the link).
+- **Program details:** tap any card or row. The details open in a panel over the list (a sheet from the bottom on phones), so you keep your place. **‹ ›** (or the arrow keys) step through the programs on screen; close it with ✕, a tap outside, the phone's back button, swiping the sheet down, or Esc.
+- **Share:** the details panel has a **Share** button (your phone's share menu, or copies the link). A shared link opens that program's details.
 - **Weekly digest:** every Monday from 07:00 Vietnam time (the first run after it, since GitHub's schedule runs late at busy times): what closes in the next 14 days, what's new, what opened or got a deadline, and any source that needs fixing. Each week is sent once; a missed Monday goes out with the next run. To test your channel, go to *Actions → Update opportunities → Run workflow*, tick **Send the weekly digest now**, and run it. To also get a message after every run with changes, set `notifications: every_run: true` in `sources.yaml`.
 
 - **Verify a program:** open its page, set `nationality_ok`, `enrollment_req`, `class_years` and `deadline` in `programs.yaml`, then set `verified: true`.
@@ -66,7 +67,7 @@ python -m http.server -d web 8000
 ## Keeping things safe
 
 - **Your personal data** (saved programs, notes, decisions, verifications) lives only in your browser. Use **Tracker → Back up my data** regularly; **Restore from backup** brings it back on any device or after clearing the browser.
-- **Verification:** open a program page, check the official page, and use **Verify this program**. Then copy your decisions from the Review tab into `overrides.yaml`. Only verified programs can show "Eligible", and only their deadlines count as confirmed; other dates show "unconfirmed" in the app and the calendar.
+- **Verification:** open a program's details, check the official page, and use **Verify this program**. Then copy your decisions from the Review tab into `overrides.yaml`. Only verified programs can show "Eligible", and only their deadlines count as confirmed; other dates show "unconfirmed" in the app and the calendar.
 - **Claude page reading is off.** It uses the paid Claude API (billed per use, separately from a Claude.ai subscription), so `sources.yaml` has `claude_page_reading: false` and the workflow passes no Anthropic key. Turning it back on needs both changes plus an `ANTHROPIC_API_KEY` secret; it is then capped by `CLAUDE_DAILY_BUDGET_USD` (default `1.00`) and rereads a page only when its eligibility or deadline sentences change.
 - **The schedule:** GitHub turns off scheduled workflows after 60 days without repository activity. Every run commits fresh data, which counts as activity, so this only happens if updates keep failing for two months (GitHub emails you about failed runs). Scheduled runs are best-effort: GitHub may delay or skip a slot when busy, so data can occasionally be up to 12 hours old.
 

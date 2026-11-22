@@ -525,13 +525,10 @@
     ${hiddenList(all)}`;
   }
 
-  // ------------------------------------------------------------ program page
-  function viewProgram(id) {
-    const item = state.items.find((i) => i.id === id);
-    if (!item) return `<a class="k" href="#overview">← Overview</a>${empty("This program is no longer listed. It may have closed or been removed from a feed.")}`;
+  // ------------------------------------------------------------ program details (shown in the panel)
+  function programDetails(item) {
     const big = bigNumber(item);
     const kind = KIND[item.kind] || { label: item.kind };
-    const back = { summer: "Summer & study", compete: "Compete", bigtech: "Tech & quant" }[sectionOf(item)];
     const proposal = (state.data.proposals || {})[item.id];
     const openProposal = proposal && proposal.changes && Object.keys(proposal.changes).length && !state.suggestions[item.id];
     const d = daysLeft(item);
@@ -548,19 +545,17 @@
       ["Source", item.source],
       ["Last checked", item.last_checked ? item.last_checked.slice(0, 10) : ""],
     ].filter(([, v]) => v);
+    const official = /^https?:\/\//i.test(item.url || "") ? `<a class="go small dark" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener">Official page ↗</a>` : "";
     return `
-    <a class="k" href="#${sectionOf(item)}" style="text-decoration:none">← ${esc(back)}</a>
-    <div class="row" style="justify-content:space-between;align-items:flex-end;gap:20px">
-      <div style="flex:999 1 520px;min-width:0">
-        <div class="row" style="margin-bottom:12px"><span class="tag bg-${bgFor(item)}">${esc(kind.label)}</span>${eligTag(item)}${statusTag(item)}${item.funding ? `<span class="tag">${esc(FUND_LABEL[item.funding] || item.funding)}</span>` : ""}</div>
-        <h1 class="h prog-title">${esc(item.name)}</h1>
-        <p style="margin:12px 0 0;font-size:17px">${esc(item.org)}${where(item) ? " · " + esc(where(item)) : ""}</p>
-        ${item.summary ? `<p style="margin:8px 0 0;max-width:640px">${esc(item.summary)}</p>` : ""}
-      </div>
-      <div class="prog-side">
-        <div style="text-align:right"><div class="prog-big">${esc(big.n)}</div><div class="k">${esc(big.l)}</div></div>
-        <div class="row" style="justify-content:flex-end">${saveButton(item)}${calLink(item)}<button class="go small" data-act="share" data-id="${esc(item.id)}">Share</button><a class="go small dark" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener">Official page ↗</a></div>
-      </div>
+    <div class="row"><span class="tag bg-${bgFor(item)}">${esc(kind.label)}</span>${eligTag(item)}${statusTag(item)}${item.funding ? `<span class="tag">${esc(FUND_LABEL[item.funding] || item.funding)}</span>` : ""}</div>
+    <div>
+      <h2 class="h sheet-title" id="sheet-title">${esc(item.name)}</h2>
+      <p class="sheet-org">${esc(item.org)}${where(item) ? " · " + esc(where(item)) : ""}</p>
+      ${item.summary ? `<p style="margin:8px 0 0">${esc(item.summary)}</p>` : ""}
+    </div>
+    <div class="sheet-key">
+      <div><div class="sheet-big">${esc(big.n)}</div><div class="k">${esc(big.l)}</div></div>
+      <div class="row sheet-acts">${official}${saveButton(item)}${calLink(item)}<button class="go small" data-act="share" data-id="${esc(item.id)}">Share</button></div>
     </div>
     <section class="prog-elig bg-${label(item) === "check" ? "yellow" : label(item) === "not_eligible" ? "sand" : "white"}">
       <h2 class="k" style="margin:0 0 6px">Can you enter?</h2>
@@ -577,10 +572,9 @@
     </section>` : ""}
     ${verifyBox(item)}
     <section>
-      <h2 class="k" style="margin:0 0 4px">Details</h2>
+      <h3 class="k" style="margin:0 0 4px">Details</h3>
       <dl class="facts">${facts.map(([k, v]) => `<div><dt class="k muted">${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
-    </section>
-`;
+    </section>`;
   }
 
   // ------------------------------------------------------------ verification
@@ -855,7 +849,7 @@
       </section>`).join("")}</div></div>` : empty("Save something from another tab to start your season")}`;
   }
 
-  const VIEWS = { overview: viewOverview, summer: viewSummer, compete: viewCompete, bigtech: viewBigTech, review: viewReview, tracker: viewTracker, p: viewProgram, search: viewSearch };
+  const VIEWS = { overview: viewOverview, summer: viewSummer, compete: viewCompete, bigtech: viewBigTech, review: viewReview, tracker: viewTracker, search: viewSearch };
 
   // ------------------------------------------------------------ rendering & routing
   function route() {
@@ -864,17 +858,25 @@
     const name = cut < 0 ? raw : raw.slice(0, cut);
     let focus = cut < 0 ? "" : raw.slice(cut + 1);
     try { focus = decodeURIComponent(focus); } catch (e) { /* keep raw */ }
-    return { name: VIEWS[name] ? name : "overview", focus };
+    return { name: VIEWS[name] || name === "p" ? name : "overview", focus };
   }
 
+  // The tab drawn under the details panel. "#p/<id>" keeps the tab you came from;
+  // a shared link opens the program's own tab.
+  const viewKey = (r) => r.name + (r.focus ? "/" + r.focus : "");
+  let drawn = "";
+
   function render(keepScroll) {
-    const { name, focus } = route();
+    const r = route();
+    const pid = r.name === "p" ? r.focus : null;
+    if (!pid) state.base = r;
+    else if (!state.base) { const it = state.items.find((i) => i.id === pid); state.base = { name: it ? sectionOf(it) : "overview", focus: "" }; }
+    const { name, focus } = state.base;
     const y = window.scrollY;
     document.getElementById("view").innerHTML = VIEWS[name](focus);
-    let section = name;
-    if (name === "p") { const it = state.items.find((i) => i.id === focus); section = it ? sectionOf(it) : ""; }
+    drawn = viewKey(state.base);
     document.querySelectorAll(".nav a").forEach((a) => {
-      if (a.getAttribute("href") === "#" + section) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+      if (a.getAttribute("href") === "#" + name) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
     const reviewCount = reviewQueue().length + pendingProposals().length;
     document.querySelector('.nav a[href="#review"] .count').textContent = reviewCount ? ` (${reviewCount})` : "";
@@ -883,9 +885,123 @@
     toggle.classList.toggle("dark", state.eligibleOnly);
     toggle.textContent = state.eligibleOnly ? "Eligible for me · VN" : "Showing everything";
     if (keepScroll) window.scrollTo(0, y);
-    else if (focus && name !== "p") { const el = document.getElementById("item-" + focus); if (el) el.scrollIntoView({ block: "center" }); }
+    else if (focus) { const el = document.getElementById("item-" + focus); if (el) el.scrollIntoView({ block: "center" }); }
     else window.scrollTo(0, 0);
+    if (pid) showPanel(pid, keepScroll); else hidePanel();
   }
+
+  // ------------------------------------------------------------ details panel
+  // A bottom sheet on phones, a side panel on wider screens. The list under it is never redrawn
+  // when the panel opens or closes, so you stay where you were.
+  const sheetBody = document.getElementById("sheet-body");
+  const panel = { id: null, pushed: false, list: [] };
+
+  function visibleIds() {
+    const ids = [];
+    document.querySelectorAll('#view a[href^="#p/"]').forEach((a) => {
+      let id = a.getAttribute("href").slice(3);
+      try { id = decodeURIComponent(id); } catch (e) { /* keep raw */ }
+      if (!ids.includes(id)) ids.push(id);
+    });
+    return ids;
+  }
+
+  // The programs to step through: those on screen, in order. If a decision just removed the
+  // current one from the list (Review), keep the previous order so "next" still works.
+  function neighbours() {
+    const fresh = visibleIds();
+    if (fresh.includes(panel.id)) panel.list = fresh;
+    return panel.list;
+  }
+
+  function markActive(id) {
+    document.querySelectorAll("#view .is-active").forEach((el) => el.classList.remove("is-active"));
+    if (id) document.querySelectorAll(`#view [id="item-${CSS.escape(id)}"]`).forEach((el) => el.classList.add("is-active"));
+  }
+
+  function showPanel(id, keep) {
+    const item = state.items.find((i) => i.id === id);
+    const opening = !panel.id;
+    const top = keep && panel.id === id ? sheetBody.scrollTop : 0;
+    panel.id = id;
+    sheetBody.innerHTML = item ? programDetails(item)
+      : `<h2 class="h sheet-title" id="sheet-title">Not listed</h2>${empty("This program is no longer listed. It may have closed or been removed from a feed.")}`;
+    sheetBody.scrollTop = top;
+    const list = neighbours();
+    const at = list.indexOf(id);
+    document.getElementById("sheet-pos").textContent = at >= 0 ? `${at + 1} of ${list.length}` : "";
+    document.querySelector('[data-act="sheet-prev"]').disabled = at <= 0;
+    document.querySelector('[data-act="sheet-next"]').disabled = at < 0 || at >= list.length - 1;
+    markActive(id);
+    document.title = (item ? item.name : "Not listed") + " · The Opportunity Tracker";
+    document.documentElement.classList.add("sheet-open");
+    if (opening) document.getElementById("sheet").focus({ preventScroll: true });
+  }
+
+  function hidePanel() {
+    if (!panel.id) return;
+    const id = panel.id;
+    panel.id = null; panel.pushed = false;
+    document.documentElement.classList.remove("sheet-open");
+    markActive(null);
+    document.title = "The Opportunity Tracker";
+    const back = document.querySelector(`#view a[href="#p/${CSS.escape(encodeURIComponent(id))}"]`);
+    if (back) back.focus({ preventScroll: true });
+  }
+
+  // Close the way the phone's back button would, so back never reopens it.
+  function closePanel() {
+    if (!panel.id) return;
+    if (panel.pushed) history.back();
+    else location.replace("#" + viewKey(state.base));
+  }
+
+  function openProgram(id) {
+    const href = "#p/" + encodeURIComponent(id);
+    if (panel.id) { if (panel.id !== id) location.replace(href); return; }  // switching programs adds no history
+    panel.pushed = true;
+    location.hash = href;
+  }
+
+  function step(dir) {
+    const list = neighbours();
+    const next = list[list.indexOf(panel.id) + dir];
+    if (list.indexOf(panel.id) < 0 || !next) return;
+    location.replace("#p/" + encodeURIComponent(next));
+    const el = document.getElementById("item-" + next);
+    if (el) el.scrollIntoView({ block: "nearest" });
+  }
+
+  // Every program link opens the panel (Ctrl/Cmd-click still opens a new tab).
+  document.addEventListener("click", (ev) => {
+    const a = ev.target.closest && ev.target.closest('a[href^="#p/"]');
+    if (!a || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+    ev.preventDefault();
+    let id = a.getAttribute("href").slice(3);
+    try { id = decodeURIComponent(id); } catch (e) { /* keep raw */ }
+    openProgram(id);
+  });
+
+  // Swipe the sheet's top bar down to close it (phones).
+  (function () {
+    const sheet = document.getElementById("sheet");
+    const bar = document.getElementById("sheet-bar");
+    let drag = null;
+    bar.addEventListener("touchstart", (ev) => { drag = { y: ev.touches[0].clientY, dy: 0 }; sheet.style.transition = "none"; }, { passive: true });
+    bar.addEventListener("touchmove", (ev) => {
+      if (!drag) return;
+      drag.dy = Math.max(0, ev.touches[0].clientY - drag.y);
+      sheet.style.transform = `translateY(${drag.dy}px)`;
+    }, { passive: true });
+    const end = () => {
+      if (!drag) return;
+      const far = drag.dy > 90;
+      drag = null; sheet.style.transition = ""; sheet.style.transform = "";
+      if (far) closePanel();
+    };
+    bar.addEventListener("touchend", end);
+    bar.addEventListener("touchcancel", end);
+  })();
 
   function toast(text) {
     const t = document.createElement("div");
@@ -900,6 +1016,8 @@
     const el = ev.target.closest("[data-act]");
     if (!el || el.tagName === "INPUT") return;
     const { act, id } = el.dataset;
+    if (act === "sheet-close") { closePanel(); return; }
+    if (act === "sheet-prev" || act === "sheet-next") { step(act === "sheet-next" ? 1 : -1); return; }
     if (act === "save") { state.tracker[id] = { stage: "saved", note: "", at: new Date().toISOString() }; saveTracker(); toast("Saved to your tracker"); }
     else if (act === "backup") { backup(); return; }
     else if (act === "share") { share(id); return; }
@@ -975,7 +1093,12 @@
   document.getElementById("elig-toggle").addEventListener("click", () => {
     state.eligibleOnly = !state.eligibleOnly; store.set("eligibleOnly", state.eligibleOnly); render(true);
   });
-  window.addEventListener("hashchange", () => { state.limits = {}; render(false); });
+  window.addEventListener("hashchange", () => {
+    const r = route();
+    if (r.name === "p" && state.base && drawn === viewKey(state.base)) { showPanel(r.focus); return; }
+    if (r.name !== "p" && panel.id && viewKey(r) === drawn) { hidePanel(); return; }
+    state.limits = {}; render(false);
+  });
   // Remember which Review groups are open across re-renders.
   document.addEventListener("toggle", (ev) => {
     const d = ev.target;
@@ -989,11 +1112,12 @@
     clearTimeout(qTimer);
     qTimer = setTimeout(() => {
       state.query = qInput.value;
+      hidePanel();
       if (route().name !== "search") location.hash = "#search"; else { state.limits = {}; render(false); }
     }, 150);
   });
   document.getElementById("search-form").addEventListener("submit", (ev) => {
-    ev.preventDefault(); state.query = qInput.value; qInput.blur();
+    ev.preventDefault(); state.query = qInput.value; qInput.blur(); hidePanel();
     if (route().name !== "search") location.hash = "#search"; else render(false);
   });
   qInput.addEventListener("keydown", (ev) => {
@@ -1002,6 +1126,11 @@
   document.addEventListener("keydown", (ev) => {
     const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement && document.activeElement.tagName);
     if (ev.key === "/" && !typing && !ev.metaKey && !ev.ctrlKey) { ev.preventDefault(); qInput.focus(); }
+    if (!panel.id) return;
+    if (ev.key === "Escape" && document.activeElement !== qInput) { ev.preventDefault(); closePanel(); }
+    else if ((ev.key === "ArrowLeft" || ev.key === "ArrowRight") && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
+      ev.preventDefault(); step(ev.key === "ArrowRight" ? 1 : -1);
+    }
   });
 
   // ---- theme: auto (device) → dark → light

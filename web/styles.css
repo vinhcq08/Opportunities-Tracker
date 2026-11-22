@@ -88,6 +88,7 @@ main.wrap { padding-top: 28px; padding-bottom: 72px; display: flex; flex-directi
 .go.small { min-height: 36px; padding: 0 14px; font-size: 13px; }
 .go.on-dark { border-color: #FFFFFF; color: #FFFFFF; }
 .go.on-dark.fill { background: #FFFFFF; color: #0A0A0A; }
+.go.on-dark:hover { background: #FFFFFF; border-color: #FFFFFF; color: #0A0A0A; }
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .spacer { flex: 1; }
 
@@ -196,7 +197,7 @@ textarea.export { width: 100%; min-height: 140px; font: 13px ui-monospace, monos
 .empty { border: 2px dashed var(--ink); border-radius: 4px; padding: 28px; font: 800 16px Archivo, sans-serif; text-transform: uppercase; }
 footer { border-top: 3px solid var(--ink); padding: 16px 0 40px; font-size: 13px; }
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: var(--white);
-  font: 800 14px Archivo, sans-serif; padding: 12px 18px; border-radius: 999px; z-index: 10; }
+  font: 800 14px Archivo, sans-serif; padding: 12px 18px; border-radius: 999px; z-index: 30; }
 
 
 /* ---- slim cards (whole card opens the program page) */
@@ -255,20 +256,50 @@ footer { border-top: 3px solid var(--ink); padding: 16px 0 40px; font-size: 13px
 .rrow-name { font: 800 16px Archivo, sans-serif; text-transform: uppercase; text-decoration: none; }
 .rrow-meta { font-size: 13px; color: var(--muted); margin-top: 3px; }
 
-/* ---- program page */
-.prog-title { font-size: clamp(40px, 7vw, 92px); line-height: .9; overflow-wrap: anywhere; }
-.prog-side { flex: 1 1 280px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
-.prog-big { font: 900 clamp(72px, 10vw, 120px)/.8 Archivo, sans-serif; letter-spacing: -.06em; }
-.prog-elig { border-radius: 4px; padding: 20px; border: 1px solid var(--rule); }
-.facts { margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); border-top: 1px solid var(--ink); }
+/* ---- program details panel: a side panel on wide screens, a bottom sheet on phones */
+.prog-elig { border-radius: 4px; padding: 18px; border: 1px solid var(--rule); }
+.facts { margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); border-top: 1px solid var(--ink); }
 .facts > div { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--rule); }
 .facts dd { margin: 4px 0 0; font: 800 15px Archivo, sans-serif; overflow-wrap: anywhere; }
-@media (prefers-reduced-motion: reduce) { .chev { transition: none; } }
-@media (max-width: 640px) {
-  .prog-side { align-items: flex-start; }
-  .prog-side > div:first-child { text-align: left !important; }
+.sheet { position: fixed; z-index: 20; top: 0; right: 0; bottom: 0; width: min(560px, 100vw); display: flex; flex-direction: column;
+  background: var(--ground); color: var(--ink); border-left: 2px solid var(--ink); box-shadow: -16px 0 48px rgba(0, 0, 0, .18);
+  transform: translateX(104%); visibility: hidden; transition: transform .24s ease, visibility 0s linear .24s; }
+html.sheet-open .sheet { transform: none; visibility: visible; transition: transform .24s ease; }
+.sheet:focus { outline: none; }
+.sheet-backdrop { display: none; }
+.sheet-bar { position: relative; display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--rule); }
+.sheet-pos { min-width: 64px; text-align: center; }
+.sheet-x { margin-left: auto; }
+.go:disabled { opacity: .35; pointer-events: none; }
+.sheet-grip { display: none; }
+.sheet-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 20px 22px 40px; display: flex; flex-direction: column; gap: 18px; }
+.sheet-title { margin: 0; font-size: clamp(28px, 3vw, 38px); line-height: .95; overflow-wrap: anywhere; }
+.sheet-org { margin: 10px 0 0; font-size: 16px; }
+.sheet-key { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 14px;
+  padding: 14px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.sheet-big { font: 900 56px/.85 Archivo, sans-serif; letter-spacing: -.05em; }
+.sheet-acts { justify-content: flex-end; }
+/* The card or row whose details are open. */
+.slim-wrap.is-active > .slim, .lrow.is-active, .rrow.is-active { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 760px) {
+  .sheet { top: auto; left: 0; width: auto; height: 88vh; height: 88dvh; border-left: 0; border-top: 2px solid var(--ink);
+    border-radius: 16px 16px 0 0; box-shadow: 0 -16px 48px rgba(0, 0, 0, .25); transform: translateY(104%); }
+  .sheet-backdrop { display: block; position: fixed; inset: 0; z-index: 19; background: rgba(10, 10, 10, .45);
+    opacity: 0; visibility: hidden; transition: opacity .24s ease, visibility 0s linear .24s; }
+  html.sheet-open .sheet-backdrop { opacity: 1; visibility: visible; transition: opacity .24s ease; }
+  html.sheet-open, html.sheet-open body { overflow: hidden; }
+  .sheet-bar { padding-top: 18px; touch-action: none; }
+  .sheet-grip { display: block; position: absolute; top: 6px; left: 50%; width: 40px; height: 4px; margin-left: -20px; border-radius: 4px; background: var(--rule); }
+  .sheet-body { padding: 16px 16px calc(32px + env(safe-area-inset-bottom)); gap: 16px; }
+  .sheet-title { font-size: 26px; }
+  .sheet-key > div:first-child { display: flex; align-items: baseline; gap: 10px; }
+  .sheet-big { font-size: 44px; }
+  .sheet-acts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; }
+  .sheet-acts > :first-child { grid-column: 1 / -1; }
+  .sheet-acts .go { padding: 0 8px; }
   .seg button { padding: 0 10px; }
 }
+@media (prefers-reduced-motion: reduce) { .chev { transition: none; } .sheet, .sheet-backdrop { transition: none !important; } }
 
 /* ---- verification form */
 .verify { display: flex; flex-direction: column; gap: 14px; }
